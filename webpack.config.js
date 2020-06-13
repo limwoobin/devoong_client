@@ -54,6 +54,16 @@ module.exports = {
             {
                 test: /\.(ttf|eot|woff|woff2)$/,
                 loader: 'file-loader',
+            },
+            {
+                test : /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use : {
+                    loader : "url-loader",
+                    options : {
+                        name: '[name].[ext]?[hash]',
+                        limit : 10000
+                    }
+                }
             }
         ]
     },
