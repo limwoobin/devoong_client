@@ -1,4 +1,5 @@
 import React , { useState } from 'react';
+import Test2 from './Test2';
 
 const Test = () => {
 
@@ -11,6 +12,7 @@ const Test = () => {
             <div>
                 <button onClick={onIncrease}>+1</button>
                 <button onClick={onDecrease}>-1</button>
+                <Test2 />
             </div>
         </div>
     )
