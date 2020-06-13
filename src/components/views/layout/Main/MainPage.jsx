@@ -3,7 +3,6 @@ import './MainPage.scss';
 import MainSide from './MainSide';
 import MyProfile from '../../MyProfile/MyProfile';
 import Test from '../../Test';
-import ToastEditor from '../../board/Editor/ToastEditor';
 
 const MainPage = () => {
     return (
@@ -13,7 +12,6 @@ const MainPage = () => {
                     <div className="sc-eqIVtm gLLJLX">
                         <MyProfile />
                         <Test />
-                        {/* <ToastEditor /> */}
                     </div>
                 </main>
                 <MainSide />
