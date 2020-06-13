@@ -1,5 +1,3 @@
-// https://summernote.org/ 섬머노트 적용하기
-
 import React , {useState} from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +5,8 @@ import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import SelectCategory from '../../common/SelectCategory';
-import MyEditor from './Editor/index';
+import ToastEditor from '../board/Editor/ToastEditor';
+
 import './BoardWrite.scss';
 
 const styles = theme => ({
@@ -56,7 +55,7 @@ const BoardWrite = () => {
             <div>
                 <div>
                     <div className="content-editor keditor">
-                      <div className="btn-category" role="button">
+                      <div className="btn-category">
                         <div className="mce-widget mce-btn" role="button">
                           {/* <SelectCategory className="mce-widget mce-btn" role="button" /> */}
                         </div>
@@ -65,7 +64,7 @@ const BoardWrite = () => {
                         <textarea className="textarea_tit" placeholder="제목을 입력하세요" style={{height: '42px'}} />
                       </div>
                       <div>
-                        <MyEditor />
+                        <ToastEditor />
                       </div>
                     </div>
                 </div>
