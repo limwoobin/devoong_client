@@ -49,12 +49,12 @@ body, button, input, select, td, textarea, th {
 
 .post-title {
     display: block;
+    border-bottom: 1px solid rgba(0,0,0,.05);
     width: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0,0,0,.05);
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .post-editor {
