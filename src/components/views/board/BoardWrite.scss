@@ -26,10 +26,11 @@ body, button, input, select, td, textarea, th {
 
 .btn-category {
     display: block;
-    width: 930px;
+    width: 1080px;
     height: 30px;
     margin: 46px auto 0;
-    position: relative;
+    margin-left: 5%;
+    margin-bottom: 10px;
 }
 
 .mce-btn {
@@ -47,10 +48,21 @@ body, button, input, select, td, textarea, th {
 }
 
 .post-title {
-    width: 930px;
-    margin: 18px auto 17px;
-    padding-bottom: 26px;
+    display: block;
     border-bottom: 1px solid rgba(0,0,0,.05);
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.post-editor {
+    display: block;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
 }
 
 .post-title .textarea_tit {
