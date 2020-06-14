@@ -23,7 +23,7 @@ const hookEditor = () => {
             el: document.querySelector('#editSection'),
             initialEditType: 'wysiwyg', // 'markdown'
             previewStyle: 'vertical',
-            height: '600px',
+            height: '700px',
             exts: ['colorSyntax'],
             plugins: [[codeSyntaxHighlight , { hljs }]],
             language: 'ko-KR'
@@ -38,7 +38,6 @@ const hookEditor = () => {
 
     return (
         <div id="toastEditor">
-            <h1>Toast UI Editor Example</h1>
             <div id="editSection"></div>
             <button onClick={saveArticle} className="btn_save">Save</button>
             <div>
