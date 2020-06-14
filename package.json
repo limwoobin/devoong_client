@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^1.0.0",
     "@toast-ui/react-editor": "^2.1.2",
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.13",
