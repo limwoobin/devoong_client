@@ -6,7 +6,6 @@ import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import SelectCategory from '../../common/SelectCategory';
 import ToastEditor from '../board/Editor/ToastEditor';
-import TestEditor from '../board/Editor/TestEditor';
 
 import './BoardWrite.scss';
 
