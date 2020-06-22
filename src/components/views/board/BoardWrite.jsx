@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import SelectCategory from '../../common/SelectCategory';
-import ToastEditor from '../board/Editor/ToastEditor';
+import MarkDownEditor from '../board/Editor/MarkDownEditor';
 
 import './BoardWrite.scss';
 
@@ -64,7 +64,7 @@ const BoardWrite = () => {
                         <textarea className="textarea_tit" placeholder="제목을 입력하세요" style={{height: '42px'}} />
                       </div>
                       <div className="post-editor">
-                        <ToastEditor />
+                        <MarkDownEditor />
                       </div>
                     </div>
                 </div>

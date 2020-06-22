@@ -10,16 +10,16 @@ hljs.registerLanguage('java', java);
 hljs.registerLanguage('python', python);
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/i18n/ko-kr';
-import './ToastEditor.css';
+import './MarkDownEditor.css';
 
-let toastEditor;
+let markdownEditor;
 
-const hookEditor = () => {
+const MarkDownEditor = () => {
     
     const [content , setContent] = useState('');
 
     useEffect(() => {
-        toastEditor = new Editor({
+        markdownEditor = new Editor({
             el: document.querySelector('#editSection'),
             initialEditType: 'wysiwyg', // 'markdown'
             previewStyle: 'vertical',
@@ -31,13 +31,13 @@ const hookEditor = () => {
     } , []);
 
     const saveArticle = () => {
-        const content = toastEditor.getHtml();
+        const content = markdownEditor.getHtml();
         console.log(content)
         setContent(content);
     };
 
     return (
-        <div id="toastEditor">
+        <div id="markdownEditor">
             <div id="editSection"></div>
             <button onClick={saveArticle} className="btn_save">Save</button>
             <div>
@@ -48,4 +48,4 @@ const hookEditor = () => {
     )
 }
 
-export default hookEditor;
+export default MarkDownEditor;
