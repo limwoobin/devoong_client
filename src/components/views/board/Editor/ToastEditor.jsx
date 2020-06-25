@@ -11,6 +11,13 @@ hljs.registerLanguage('python', python);
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/i18n/ko-kr';
 import './ToastEditor.css';
+import 'tui-color-picker/dist/tui-color-picker.min';
+import 'tui-editor/dist/tui-editor-extColorSyntax';
+import 'codemirror/lib/codemirror.css';
+import 'tui-editor/dist/tui-editor.css';
+import 'tui-editor/dist/tui-editor-contents.css';
+import 'highlight.js/styles/github.css';
+import 'tui-color-picker/dist/tui-color-picker.min.css';
 
 let toastEditor;
 

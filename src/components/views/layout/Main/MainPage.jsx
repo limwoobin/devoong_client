@@ -10,8 +10,8 @@ const MainPage = () => {
             <div className="sc-jlyJG lpgbkm">
                 <main className="sc-gipzik BAccj">
                     <div className="sc-eqIVtm gLLJLX">
-                        <MyProfile />
-                        <Test />
+                        {/* <MyProfile /> */}
+                        {/* <Test /> */}
                     </div>
                 </main>
                 <MainSide />

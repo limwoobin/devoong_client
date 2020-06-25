@@ -6,7 +6,6 @@ import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import SelectCategory from '../../common/SelectCategory';
 import ToastEditor from './Editor/ToastEditor';
-import TestEditor from './Editor/TestEditor';
 import './BoardWrite.scss';
 
 const styles = theme => ({
@@ -65,7 +64,6 @@ const BoardWrite = () => {
                       </div>
                       <div className="post-editor">
                         <ToastEditor />
-                        {/* <TestEditor /> */}
                       </div>
                     </div>
                 </div>
