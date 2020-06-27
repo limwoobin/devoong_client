@@ -47,6 +47,13 @@ const BoardWrite = () => {
         ...value , content : contentHtml
       }) 
     }
+
+    const getCategory = (category) => {
+      console.log(category);
+      setValue({
+        ...value , boardType : category
+      })
+    }
     
     return (
         <div classes={styles.root}>
@@ -56,12 +63,15 @@ const BoardWrite = () => {
             <div>
                 <div>
                     <div className="content-editor keditor">
-                      <div className="btn-category">
-                        <div className="mce-widget mce-btn" role="button">
-                          {/* <SelectCategory className="mce-widget mce-btn" role="button" /> */}
-                        </div>
-                      </div>
+                      {/* <div className="btn-category">
+                      </div> */}
                       <div className="post-title">
+                        <SelectCategory 
+                          className="mce-category" 
+                          role="button" 
+                          type="notice" 
+                          category={getCategory}
+                        />
                         <textarea className="textarea_tit" placeholder="제목을 입력하세요" style={{height: '42px'}} />
                       </div>
                       <div className="post-editor">

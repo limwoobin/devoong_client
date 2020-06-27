@@ -16,46 +16,47 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
   
-const renderCategory = (categories) => {
+const renderCategories = (categories) => {
     return categories.map((c) => {
-    return <MenuItem value={10}>{c.routerName}</MenuItem>
+    return <MenuItem value={c.routerName}>{c.name}</MenuItem>
     })
 }
 
-const SelectCategory = () => {
+const SelectCategory = (props) => {
     const classes = useStyles();
     const [categories, setCategories] = useState([]);
+    const [category , setCategory] = useState('');
 
     const handleChange = (event) => {
         setCategory(event.target.value);
+        props.category(event.target.value);
     };
 
     useEffect(() => {
-        API.GET_Categories()
+        API.GET_Categories(props.type)
         .then(res => {
-            setCategory(res.data.data);
+            setCategories(res.data.data);
         }).catch(err => {
             console.log(err);
         })
     } , []);
 
     return (
-        <>
+        // <div>
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">Category</InputLabel>
+                <InputLabel id="demo-simple-select-label">
+                    Category
+                </InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={categories}
+                    value={category}
                     onChange={handleChange}
                 >
-                {/* <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem> */}
-                {renderCategory(categories)}
+                {renderCategories(categories)}
                 </Select>
             </FormControl>
-        </>
+        // </div>
     )
 }
 
