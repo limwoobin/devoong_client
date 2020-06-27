@@ -1,9 +1,7 @@
-import React , {useState} from 'react';
+import React , { useState } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import Button from '@material-ui/core/Button';
 import SelectCategory from '../../common/SelectCategory';
 import ToastEditor from '../../common/Editor/ToastEditor';
 import './BoardWrite.scss';
@@ -23,38 +21,40 @@ const styles = theme => ({
       },
 });
 
-const contentSave = () => {
-  console.log('save');
-}
-
 const BoardWrite = () => {
 
     const [value , setValue] = useState({
         title : '',
-        userEmail : '',
+        userEmail : window.sessionStorage.getItem('loggedInUserEmail'),
         content : '',
-        boardType : '02',
+        boardType : '',
     });
+
+    const [conHtml , setConHtml] = useState('');
+
+    const {title , userEmail , content , boardType} = value;
 
     const handleValueChange = (e) => {
       setValue({
         ...value , [e.target.name] : e.target.value
       })
-    }
+    };
 
-    const getContentHtml = () => {
-      setValue({
-        ...value , content : contentHtml
-      }) 
-    }
+    const getContentHtml = (callBackContentHtml) => {
+      contentSave(callBackContentHtml);
+    };
 
     const getCategory = (category) => {
-      console.log(category);
       setValue({
         ...value , boardType : category
       })
     }
-    
+
+    const contentSave = (contentHtml) => {
+      console.log(value);
+      
+    }
+
     return (
         <div classes={styles.root}>
         <CssBaseline />
@@ -63,20 +63,23 @@ const BoardWrite = () => {
             <div>
                 <div>
                     <div className="content-editor keditor">
-                      {/* <div className="btn-category">
-                      </div> */}
                       <div className="post-title">
                         <SelectCategory 
                           className="mce-category" 
                           role="button" 
                           type="notice" 
-                          category={getCategory}
+                          callBackCategory={getCategory}
                         />
-                        <textarea className="textarea_tit" placeholder="제목을 입력하세요" style={{height: '42px'}} />
+                        <textarea 
+                          className="textarea_tit" 
+                          name="title" 
+                          placeholder="제목을 입력하세요" 
+                          style={{height: '42px'}} 
+                          onChange={handleValueChange} 
+                        />
                       </div>
                       <div className="post-editor">
-                        <ToastEditor contentHtml={getContentHtml} />
-                        <button color="teal" onClick={contentSave} className="sc-dnqmqq gzELJz btn_save">Save</button>
+                        <ToastEditor callBackContentHtml={getContentHtml} />
                       </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   
 const renderCategories = (categories) => {
     return categories.map((c) => {
-    return <MenuItem value={c.routerName}>{c.name}</MenuItem>
+    return <MenuItem value={c.routerName} key={c.id}>{c.name}</MenuItem>
     })
 }
 
@@ -29,7 +29,7 @@ const SelectCategory = (props) => {
 
     const handleChange = (event) => {
         setCategory(event.target.value);
-        props.category(event.target.value);
+        props.callBackCategory(event.target.value);
     };
 
     useEffect(() => {
@@ -42,21 +42,19 @@ const SelectCategory = (props) => {
     } , []);
 
     return (
-        // <div>
-            <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">
-                    Category
-                </InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={category}
-                    onChange={handleChange}
-                >
-                {renderCategories(categories)}
-                </Select>
-            </FormControl>
-        // </div>
+        <FormControl className={classes.formControl}>
+            <InputLabel id="demo-simple-select-label">
+                Category
+            </InputLabel>
+            <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={category}
+                onChange={handleChange}
+            >
+            {renderCategories(categories)}
+            </Select>
+        </FormControl>
     )
 }
 

@@ -16,7 +16,11 @@ import './ToastEditor.css';
 let toastEditor;
 
 const TestEditor = (props) => {
-    const [content , setContent] = useState('');
+
+    const contentSave = () => {
+        const content = toastEditor.getHtml();
+        props.callBackContentHtml(content);
+    };
 
     useEffect(() => {
         toastEditor = new Editor({
@@ -30,24 +34,10 @@ const TestEditor = (props) => {
         });
     } , []);
 
-    
-    // props.contentHtml(toastEditor.getHtml());
-
-    // const saveContent = () => {
-    //     const content = toastEditor.getHtml();
-    //     console.log(content)
-    //     setContent(content);
-    // };
-
     return (
         <div id="toastEditor">
             <div id="editSection" />
-            {/* <button color="teal" onClick={saveContent} className="sc-dnqmqq gzELJz btn_save">Save</button> */}
-            {/* <button onClick={saveArticle} className="btn_save">Save</button> */}
-            {/* <div>
-                <h2>result</h2>
-                <textarea className="tf_result" value={content} readOnly="readOnly"></textarea>
-            </div> */}
+            <button color="teal" onClick={contentSave} className="sc-dnqmqq gzELJz btn_save">Save</button>
         </div>
     )
 }
