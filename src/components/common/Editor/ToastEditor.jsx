@@ -17,11 +17,6 @@ let toastEditor;
 
 const TestEditor = (props) => {
 
-    const contentSave = () => {
-        const content = toastEditor.getHtml();
-        props.callBackContentHtml(content);
-    };
-
     useEffect(() => {
         toastEditor = new Editor({
             el: document.querySelector('#editSection'),
@@ -34,10 +29,14 @@ const TestEditor = (props) => {
         });
     } , []);
 
+    const handleChange = () => {
+        props.callBackContentHtml(toastEditor.getHtml());
+    }
+
     return (
         <div id="toastEditor">
-            <div id="editSection" />
-            <button color="teal" onClick={contentSave} className="sc-dnqmqq gzELJz btn_save">Save</button>
+            <div id="editSection" onKeyPress={handleChange} />
+            {/* <button color="teal" onClick={contentSave} className="sc-dnqmqq gzELJz btn_save">Save</button> */}
         </div>
     )
 }

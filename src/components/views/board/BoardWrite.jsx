@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import SelectCategory from '../../common/SelectCategory';
 import ToastEditor from '../../common/Editor/ToastEditor';
 import './BoardWrite.scss';
+import TestEditor from '../../common/Editor/TestEditor';
 
 const styles = theme => ({
     root: {
@@ -30,8 +31,6 @@ const BoardWrite = () => {
         boardType : '',
     });
 
-    const [conHtml , setConHtml] = useState('');
-
     const {title , userEmail , content , boardType} = value;
 
     const handleValueChange = (e) => {
@@ -41,7 +40,9 @@ const BoardWrite = () => {
     };
 
     const getContentHtml = (callBackContentHtml) => {
-      contentSave(callBackContentHtml);
+      setValue({
+        ...value , content : callBackContentHtml
+      })
     };
 
     const getCategory = (category) => {
@@ -50,9 +51,8 @@ const BoardWrite = () => {
       })
     }
 
-    const contentSave = (contentHtml) => {
+    const contentSave = () => {
       console.log(value);
-      
     }
 
     return (
@@ -80,6 +80,8 @@ const BoardWrite = () => {
                       </div>
                       <div className="post-editor">
                         <ToastEditor callBackContentHtml={getContentHtml} />
+                        <button color="teal" onClick={contentSave} className="sc-dnqmqq gzELJz btn_save">Save</button>
+                        {/* <TestEditor /> */}
                       </div>
                     </div>
                 </div>
