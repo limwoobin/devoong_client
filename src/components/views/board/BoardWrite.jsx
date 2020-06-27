@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import SelectCategory from '../../common/SelectCategory';
-import ToastEditor from './Editor/ToastEditor';
+import ToastEditor from '../../common/Editor/ToastEditor';
 import './BoardWrite.scss';
 
 const styles = theme => ({
@@ -23,6 +23,10 @@ const styles = theme => ({
       },
 });
 
+const contentSave = () => {
+  console.log('save');
+}
+
 const BoardWrite = () => {
 
     const [value , setValue] = useState({
@@ -33,17 +37,15 @@ const BoardWrite = () => {
     });
 
     const handleValueChange = (e) => {
-        setValue({
-          ...value , [e.target.name] : e.target.value
-        })
-      }
-
-    const handleBoardWrite = () => {
-
+      setValue({
+        ...value , [e.target.name] : e.target.value
+      })
     }
 
-    const onChange = (content) => {
-        console.log('onChange', content);
+    const getContentHtml = () => {
+      setValue({
+        ...value , content : contentHtml
+      }) 
     }
     
     return (
@@ -63,7 +65,8 @@ const BoardWrite = () => {
                         <textarea className="textarea_tit" placeholder="제목을 입력하세요" style={{height: '42px'}} />
                       </div>
                       <div className="post-editor">
-                        <ToastEditor />
+                        <ToastEditor contentHtml={getContentHtml} />
+                        <button color="teal" onClick={contentSave} className="sc-dnqmqq gzELJz btn_save">Save</button>
                       </div>
                     </div>
                 </div>

@@ -10,19 +10,12 @@ hljs.registerLanguage('java', java);
 hljs.registerLanguage('python', python);
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/i18n/ko-kr';
-import './ToastEditor.css';
-import 'tui-color-picker/dist/tui-color-picker.min';
-import 'tui-editor/dist/tui-editor-extColorSyntax';
 import 'codemirror/lib/codemirror.css';
-import 'tui-editor/dist/tui-editor.css';
-import 'tui-editor/dist/tui-editor-contents.css';
-import 'highlight.js/styles/github.css';
-import 'tui-color-picker/dist/tui-color-picker.min.css';
+import './ToastEditor.css';
 
 let toastEditor;
 
-const TestEditor = () => {
-    
+const TestEditor = (props) => {
     const [content , setContent] = useState('');
 
     useEffect(() => {
@@ -30,27 +23,31 @@ const TestEditor = () => {
             el: document.querySelector('#editSection'),
             initialEditType: 'markdown', // 'markdown' , wysiwyg
             previewStyle: 'vertical',
-            height: '1300px',
+            height: '700px',
             exts: ['colorSyntax'],
             plugins: [[codeSyntaxHighlight , { hljs }]],
             language: 'ko-KR',
         });
     } , []);
 
-    const saveArticle = () => {
-        const content = toastEditor.getHtml();
-        console.log(content)
-        setContent(content);
-    };
+    
+    // props.contentHtml(toastEditor.getHtml());
+
+    // const saveContent = () => {
+    //     const content = toastEditor.getHtml();
+    //     console.log(content)
+    //     setContent(content);
+    // };
 
     return (
         <div id="toastEditor">
-            <div id="editSection"></div>
-            <button onClick={saveArticle} className="btn_save">Save</button>
-            <div>
+            <div id="editSection" />
+            {/* <button color="teal" onClick={saveContent} className="sc-dnqmqq gzELJz btn_save">Save</button> */}
+            {/* <button onClick={saveArticle} className="btn_save">Save</button> */}
+            {/* <div>
                 <h2>result</h2>
                 <textarea className="tf_result" value={content} readOnly="readOnly"></textarea>
-            </div>
+            </div> */}
         </div>
     )
 }

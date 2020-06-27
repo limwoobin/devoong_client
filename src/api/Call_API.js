@@ -1,5 +1,14 @@
 import axios from 'axios';
-export default axios.create({
+// export default axios.create({
+//     baseURL: 'http://localhost:4000',
+//     timeout: 2500,
+//     header: {
+//         Authorization: 'bearer accessKey',
+//         'Content-Type': 'application/json'
+//     }
+// });
+
+const instance =  axios.create({
     baseURL: 'http://localhost:4000',
     timeout: 2500,
     header: {
@@ -7,7 +16,6 @@ export default axios.create({
         'Content-Type': 'application/json'
     }
 });
-
 
 // const myServer = 'http://localhost:4000'
 
@@ -44,7 +52,8 @@ export const API = {
     LOGIN               : (data) => axios.post(url.LOGIN , data , config),
     LOGOUT              : () => axios.get(url.LOGOUT , config),
     USER_EMAIL_CHK      : (data) => axios.get(url.USER_EMAIL_CHK + data),
-    GET_Categories      : () => axios.get(url.GET_Categories),
+    // GET_Categories      : () => axios.get(url.GET_Categories),
+    GET_Categories      : () => instance.get(url.GET_Categories),
     GET_MainPage        : () => axios.get(url.GET_MainPage , '' , config),
     GET_BoardList       : (data) => axios.get(url.GET_BoardList + data, config),
     GET_BoardData       : (data) => axios.get(url.GET_BoardData + data , config),
