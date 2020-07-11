@@ -11,7 +11,7 @@ const MainPage = () => {
                 <main className="sc-gipzik BAccj">
                     <div className="sc-eqIVtm gLLJLX">
                         {/* <MyProfile /> */}
-                        {/* <Test /> */}
+                        <Test />
                     </div>
                 </main>
                 <MainSide />
