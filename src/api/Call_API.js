@@ -9,6 +9,24 @@ const instance = axios.create({
     }
 });
 
+instance.interceptors.request.use(
+    function (config) {
+        return config;
+    },
+    function (error) {
+        return Promise.reject(error);
+    }
+)
+
+instance.interceptors.response.use(
+    function (response) {
+        return response;
+    },
+    function (error) {
+        return Promise.reject(error);
+    }
+)
+
 const url = {
     GET_Customers       : '/dr/customer/customers',
     ADD_Customer        : '/dr/customer/insert',
@@ -42,7 +60,6 @@ export const API = {
     LOGIN               : (data) => axios.post(url.LOGIN , data , config),
     LOGOUT              : () => axios.get(url.LOGOUT , config),
     USER_EMAIL_CHK      : (data) => axios.get(url.USER_EMAIL_CHK + data),
-    // GET_Categories      : () => axios.get(url.GET_Categories),
     GET_Categories      : (data) => instance.get(url.GET_Categories , {
         params: { 
             type: data

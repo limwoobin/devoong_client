@@ -7,7 +7,7 @@ type CounterProps = {
   onIncreaseBy: (diff: number) => void;
 };
 
-function Counter({
+export default function Counter({
   count,
   onIncrease,
   onDecrease,
@@ -22,5 +22,3 @@ function Counter({
     </div>
   );
 }
-
-export default Counter;

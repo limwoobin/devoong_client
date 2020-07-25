@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import { RootState } from '../reducers';
-import { increase , decrease , increaseBy } from '../reducers/counter';
+import { increase , decrease , increaseBy } from '../reducers/counterReducer';
 import Counter from '../components/views/Counter';
 
 function CounterContainer() {
-  const count = useSelector((state: RootState) => state.counter.count);
+  const count = useSelector((state: RootState) => state.counterReducer.count);
   const dispatch = useDispatch();
 
   const onIncrease = () => {
