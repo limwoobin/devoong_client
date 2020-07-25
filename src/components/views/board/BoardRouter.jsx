@@ -9,8 +9,8 @@ const BoardRouter = ({match}) => {
     return (
         <div>
             <Route exact path={match.path} component={BoardList} />
-            <Route path={`${match.path}/id/:id`} component={BoardView} />
-            <Route path={`${match.path}/write`} component={BoardWrite} />
+            <Route exact path={`${match.path}/id/:id`} component={BoardView} />
+            <Route exact path={`${match.path}/write`} component={BoardWrite} />
         </div>
     )
 }
