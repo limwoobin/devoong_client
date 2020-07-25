@@ -1,8 +1,8 @@
 import React from 'react';
 import './MainPage.scss';
-import MainSide from './MainSide';
-import MyProfile from '../../MyProfile/MyProfile';
-import Test from '../../Test';
+// import MainSide from './MainSide';
+// import MyProfile from '../../MyProfile/MyProfile';
+import CounterContainer from '../../../../container/CounterContainer';
 
 const MainPage = () => {
     return (
@@ -11,10 +11,10 @@ const MainPage = () => {
                 <main className="sc-gipzik BAccj">
                     <div className="sc-eqIVtm gLLJLX">
                         {/* <MyProfile /> */}
-                        <Test />
+                        <CounterContainer />
                     </div>
                 </main>
-                <MainSide />
+                {/* <MainSide /> */}
             </div>
         </div>
     )

@@ -2,20 +2,20 @@ import React from 'react';
 import { Route , Switch } from 'react-router-dom';
 import MainPage from './MainPage';
 import './Main.scss';
-import { 
-    NoticeRouter
-   ,Map
-   ,Think
-   ,SignIn
-   ,NoMatch
-   ,SignUp
-   ,test
-   ,BoardRouter
-   ,ProfileView
-   ,PostRouter
-   ,Member
-} 
-from '../../../page/pages';
+// import { 
+//     NoticeRouter
+//    ,Map
+//    ,Think
+//    ,SignIn
+//    ,NoMatch
+//    ,SignUp
+//    ,test
+//    ,BoardRouter
+//    ,ProfileView
+//    ,PostRouter
+//    ,Member
+// } 
+// from '../../../page/pages';
 
 const Main = () => {
     
@@ -23,7 +23,7 @@ const Main = () => {
         <div className="mainDiv" style={{backgroundColor: 'white'}}>
             <Switch>
                 <Route exact path="/" component={MainPage} />
-                <Route path="/ctg/profile" component={ProfileView} />
+                {/* <Route path="/ctg/profile" component={ProfileView} />
                 <Route path="/ctg/notice" component={NoticeRouter} />
                 <Route path="/ctg/think" component={Think} />
                 <Route path="/ctg/board" component={BoardRouter} />
@@ -33,7 +33,7 @@ const Main = () => {
                 <Route path="/login" component={SignIn} />
                 <Route path="/register" component={SignUp} />
                 <Route path="/hooks" component={test} />
-                <Route component={NoMatch} />
+                <Route component={NoMatch} /> */}
             </Switch>
         </div>
     )

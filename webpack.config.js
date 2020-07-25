@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
     mode:'none',
     entry: [
-        './src/index.js',
+        './src/index.tsx',
     ],
     output:{
         filename: 'bundle.js',
@@ -24,7 +24,7 @@ module.exports = {
                 use:['babel-loader']
             },
             {
-                test:/\.tsx$/,
+                test:/\.(ts|tsx)$/,
                 exclude:/node_modules/,
                 use:['ts-loader']
             },
