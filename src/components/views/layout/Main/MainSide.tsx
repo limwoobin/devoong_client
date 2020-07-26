@@ -1,8 +1,8 @@
 import React , { useEffect } from 'react';
 import './MainPage.scss';
 import RecentPost from './side/RecentPost';
-import RecentNotice from './side/RecentNotice';
-import XX from './side/XX';
+// import RecentNotice from './side/RecentNotice';
+// import XX from './side/XX';
 
 const MainSide = () => {
     return (
@@ -10,9 +10,9 @@ const MainSide = () => {
             <aside className="sc-csuQGl pDRpR">
                     <div className="sc-cHGsZl bHiaRe">
                         <div className="sc-TOsTZ eyrfCG">
-                            <RecentNotice />
                             <RecentPost />
-                            <XX />
+                            {/* <RecentNotice />
+                            <XX /> */}
                         </div>
                     </div>
                 </aside>
