@@ -5,11 +5,11 @@ import { INCREASE,
         } from '../actions/counterAction';
 
 type CounterState = {
-  count: number;
+  count: number | any;
 };
 
 const initialState: CounterState = {
-  count: 0
+  count: 0,
 };
 
 export default function counterReducer(state: CounterState = initialState, action: CounterAction) {

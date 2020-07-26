@@ -5,7 +5,8 @@ import { increase , decrease , increaseBy } from '../actions/counterAction';
 import Counter from '../components/views/Counter';
 
 export default function CounterContainer() {
-  const count = useSelector((state: RootState) => state.counterReducer.count);
+  const count: number = useSelector((state: RootState) => state.counterReducer.count);
+
   const dispatch = useDispatch();
 
   const onIncrease = () => {
