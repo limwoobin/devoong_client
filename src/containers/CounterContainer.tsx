@@ -4,7 +4,7 @@ import { RootState } from '../reducers';
 import { increase , decrease , increaseBy } from '../actions/counterAction';
 import Counter from '../components/views/Counter';
 
-function CounterContainer() {
+export default function CounterContainer() {
   const count = useSelector((state: RootState) => state.counterReducer.count);
   const dispatch = useDispatch();
 
@@ -29,5 +29,3 @@ function CounterContainer() {
     />
   );
 }
-
-export default CounterContainer;
