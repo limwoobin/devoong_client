@@ -6,9 +6,9 @@ import XX from './side/XX';
 import { RecentDataModel } from '../../../../core/models/RecentDataModel';
 
 type MainSideProps = {
-    recentPosts: [];
+    recentPosts: RecentDataModel[];
     onRecentPosts: () => void;
-    recentNotices: [];
+    recentNotices: RecentDataModel[];
     onRecentNotices: () => void;
 }
 

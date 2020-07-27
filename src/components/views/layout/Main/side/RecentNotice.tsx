@@ -16,6 +16,7 @@ import {Link} from 'react-router-dom';
 
 const RecentNotice = (props: any) => {
     const [noticeTitle , setNoticeTitle] = useState([]);
+    const { recentNotices , onRecentNotices } = props;
     // useEffect(() => {
     //      API.Get_RecentNotice()
     //      .then(res => {
@@ -30,8 +31,8 @@ const RecentNotice = (props: any) => {
         <section className="sc-fAjcbJ fNlsam sc-caSCKo wDGYV">
             <h4>공지사항</h4>
             <ol>
-                {props.recentNotices}
-                <button onClick={props.onRecentNotices}>Hi Notice</button>
+                {recentNotices}
+                <button onClick={onRecentNotices}>Hi Notice</button>
                 {/* {noticeTitle.length === 0 
                     ? <h3>공지사항이 없습니다.</h3>
                     : RenderNoticeTitle(noticeTitle)} */}

@@ -3,10 +3,11 @@ import { useSelector , useDispatch } from 'react-redux';
 import { RootState } from '../reducers';
 import { getRecentPost , getRecentNotice } from '../actions/commonAction';
 import MainSide from '../components/views/layout/Main/MainSide';
+import { RecentDataModel } from '../core/models/RecentDataModel';
 
 export default function CommonConatiner() {
-    const recentPosts: [] = useSelector((state: RootState) => state.commonReducer.recentPosts);
-    const recentNotices: [] = useSelector((state: RootState) => state.commonReducer.recentNotices);
+    const recentPosts: RecentDataModel[] = useSelector((state: RootState) => state.commonReducer.recentPosts);
+    const recentNotices: RecentDataModel[] = useSelector((state: RootState) => state.commonReducer.recentNotices);
 
     const dispatch = useDispatch();
 

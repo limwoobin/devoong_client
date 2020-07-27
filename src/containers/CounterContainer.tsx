@@ -17,8 +17,8 @@ export default function CounterContainer() {
     dispatch(decrease());
   };
 
-  const onIncreaseBy = (diff: number) => {
-    dispatch(increaseBy(diff));
+  const onIncreaseBy = () => {
+    dispatch(increaseBy());
   };
 
   return (

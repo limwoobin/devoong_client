@@ -19,7 +19,10 @@ export default function counterReducer(state: CounterState = initialState, actio
     case DECREASE:
       return { count: state.count - 1 };
     case INCREASE_BY:
-      return { count: state.count + action.payload };
+      return { 
+        ...state,
+        count: state.count + action.payload
+      };
     default:
       return state;
   }

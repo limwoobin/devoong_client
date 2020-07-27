@@ -4,9 +4,9 @@ const INCREASE_BY = 'counter/INCREASE_BY' as const;
 
 const increase = () => ({ type: INCREASE });
 const decrease = () => ({ type: DECREASE });
-const increaseBy = (diff: number) => ({
+const increaseBy = () => ({
   type: INCREASE_BY,
-  payload: diff
+  payload: 5
 });
 
 type CounterAction =

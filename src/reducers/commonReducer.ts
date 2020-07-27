@@ -1,12 +1,13 @@
 import {
     CommonAction,
-    CommonActionType
+    GET_RECENT_NOTICE,
+    GET_RECENT_POST
 } from '../actions/commonAction';
 import { RecentDataModel } from '../core/models/RecentDataModel';
 
 type CommonState = {
-    recentPosts : [] | any;
-    recentNotices : [] | any;
+    recentPosts : RecentDataModel[] | any;
+    recentNotices : RecentDataModel[] | any;
 };
 
 const initialState : CommonState = {
@@ -16,17 +17,17 @@ const initialState : CommonState = {
 
 export default function commonReducer(state: CommonState = initialState , action: CommonAction) {
     switch(action.type) {
-        case CommonActionType.GET_RECENT_POST:
+        case GET_RECENT_POST:
             return {
                 ...state,
-                recentPosts: [1,2,3]
+                recentPosts: state.recentPosts + action.payload
             }
-        case CommonActionType.GET_RECENT_NOTICE:
+        case GET_RECENT_NOTICE:
             return {
                 ...state,
                 recentNotices: [1,2,3,4,5]
             }
-        default :
+        default:
             return state;
     }
 } 
