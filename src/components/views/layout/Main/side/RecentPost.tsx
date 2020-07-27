@@ -20,7 +20,7 @@ export default function RecentPost(props: any) {
         <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
             <h4>최신글</h4>
             {props.recentPosts}
-            <button onClick={props.onRecentPosts}>Hi</button>
+            <button onClick={props.onRecentPosts}>Hi Post</button>
             {/* <ol>
                 {postTitle.length === 0 
                     ? <h3>최신글이 없습니다.</h3>

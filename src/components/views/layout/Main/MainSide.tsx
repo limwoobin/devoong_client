@@ -1,18 +1,22 @@
 import React , { useEffect } from 'react';
 import './MainPage.scss';
 import RecentPost from './side/RecentPost';
-// import RecentNotice from './side/RecentNotice';
-// import XX from './side/XX';
+import RecentNotice from './side/RecentNotice';
+import XX from './side/XX';
 import { RecentDataModel } from '../../../../core/models/RecentDataModel';
 
 type MainSideProps = {
     recentPosts: [];
     onRecentPosts: () => void;
+    recentNotices: [];
+    onRecentNotices: () => void;
 }
 
 export default function MainSide({
     recentPosts,
-    onRecentPosts
+    onRecentPosts,
+    recentNotices,
+    onRecentNotices,
 }: MainSideProps) {
 
     useEffect(() => {
@@ -28,8 +32,11 @@ export default function MainSide({
                                 recentPosts={recentPosts}
                                 onRecentPosts={onRecentPosts}
                             />
-                            {/* <RecentNotice />
-                            <XX /> */}
+                            <RecentNotice 
+                                recentNotices={recentNotices}
+                                onRecentNotices={onRecentNotices}
+                            />
+                            <XX />
                         </div>
                     </div>
                 </aside>
