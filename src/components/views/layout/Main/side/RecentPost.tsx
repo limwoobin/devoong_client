@@ -4,7 +4,7 @@ import {API} from '../../../../../api/callAA';
 import {Link} from 'react-router-dom';
 
 
-export default function RecentPost() {
+export default function RecentPost(props: any) {
     const [postTitle , setPostTitle] = useState([]);
     // useEffect(() => {
     //      API.Get_RecentPosts()
@@ -19,6 +19,8 @@ export default function RecentPost() {
     return (
         <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
             <h4>최신글</h4>
+            {props.recentPosts}
+            <button onClick={props.onRecentPosts}>Hi</button>
             {/* <ol>
                 {postTitle.length === 0 
                     ? <h3>최신글이 없습니다.</h3>
