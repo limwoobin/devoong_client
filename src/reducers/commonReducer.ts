@@ -16,12 +16,12 @@ const initialState : CommonState = {
 
 export default function commonReducer(state: CommonState = initialState , action: CommonAction) {
     switch(action.type) {
-        case CommonActionType.GET_RECENT_POST:
+        case CommonActionType.GET_RECENT_POST_REQUEST:
             return {
                 ...state,
-                recentPosts: state.recentPosts + action.payload
+                recentPosts: state.recentPosts
             }
-        case CommonActionType.GET_RECENT_NOTICE:
+        case CommonActionType.GET_RECENT_NOTICE_REQUEST:
             return {
                 ...state,
                 recentNotices: state.recentNotices + action.payload + action.payload2
