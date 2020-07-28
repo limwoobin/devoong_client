@@ -1,23 +1,33 @@
-
-const GET_RECENT_POST = 'common/GET_RECENT_POST' as const;
-const GET_RECENT_NOTICE = 'common/GET_RECENT_NOTICE' as const;
+const CommonActionType = {
+    GET_RECENT_POST : 'common/GET_RECENT_POST' as const,
+    GET_RECENT_NOTICE : 'common/GET_RECENT_NOTICE' as const
+}
 
 const getRecentPost = () => ({
-     type: GET_RECENT_POST,
+     type: CommonActionType.GET_RECENT_POST,
      payload: [1,2]
 });
 
+// import axios from 'axios';
+// const getData = () => {
+//     const data = axios.get('https://yts.mx/api/v2/list_movies.json');
+//     console.log('data' , data);
+//     return data;
+// }
+
 const getRecentNotice = () => ({ 
-     type: GET_RECENT_NOTICE
+     type: CommonActionType.GET_RECENT_NOTICE,
+     payload: [5],
+     payload2: [6]
 });
 
-export type CommonAction = 
+type CommonAction = 
     | ReturnType<typeof getRecentPost>
     | ReturnType<typeof getRecentNotice>;
 
 export {
-    GET_RECENT_POST,
-    GET_RECENT_NOTICE,
+    CommonActionType,
+    CommonAction,
     getRecentPost,
     getRecentNotice,
 }

@@ -1,6 +1,4 @@
-import { INCREASE, 
-         DECREASE,
-         INCREASE_BY,
+import { CounterActionType,
          CounterAction
         } from '../actions/counterAction';
 
@@ -14,11 +12,11 @@ const initialState: CounterState = {
 
 export default function counterReducer(state: CounterState = initialState, action: CounterAction) {
   switch (action.type) {
-    case INCREASE:
+    case CounterActionType.INCREASE:
       return { count: state.count + 1 };
-    case DECREASE:
+    case CounterActionType.DECREASE:
       return { count: state.count - 1 };
-    case INCREASE_BY:
+    case CounterActionType.INCREASE_BY:
       return { 
         ...state,
         count: state.count + action.payload

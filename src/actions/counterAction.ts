@@ -1,11 +1,13 @@
-const INCREASE = 'counter/INCREASE' as const;
-const DECREASE = 'counter/DECREASE' as const;
-const INCREASE_BY = 'counter/INCREASE_BY' as const;
+const CounterActionType = {
+  INCREASE : 'counter/INCREASE' as const,
+  DECREASE : 'counter/DECREASE' as const,
+  INCREASE_BY : 'counter/INCREASE_BY' as const
+}
 
-const increase = () => ({ type: INCREASE });
-const decrease = () => ({ type: DECREASE });
+const increase = () => ({ type: CounterActionType.INCREASE });
+const decrease = () => ({ type: CounterActionType.DECREASE });
 const increaseBy = () => ({
-  type: INCREASE_BY,
+  type: CounterActionType.INCREASE_BY,
   payload: 5
 });
 
@@ -16,9 +18,7 @@ type CounterAction =
 
 
 export {
-  INCREASE,
-  DECREASE,
-  INCREASE_BY,
+  CounterActionType,
   increase,
   decrease,
   increaseBy,
