@@ -8,12 +8,19 @@ export const CommonActionType = {
     GET_RECENT_NOTICE_FAILURE : 'common/GET_RECENT_NOTICE_FAILURE' as const,
 }
 
-export interface GetRecentPost {
-     type: typeof CommonActionType.GET_RECENT_POST_REQUEST
-}
 
-export const getRecentPost = (): GetRecentPost => ({
-     type: CommonActionType.GET_RECENT_POST_REQUEST
+export const getRecentPost = () => ({
+     type: CommonActionType.GET_RECENT_POST_REQUEST,
+});
+
+export const getRecentPostSuccess = (data: any) => ({
+     type: CommonActionType.GET_RECENT_POST_SUCCESS,
+     payload: data
+});
+
+export const getRecentPostFailure = (data: any) => ({
+     type: CommonActionType.GET_RECENT_POST_FAILURE,
+     payload: data
 });
 
 export const getRecentNotice = () => ({ 
@@ -24,4 +31,6 @@ export const getRecentNotice = () => ({
 
 export type CommonAction = 
     | ReturnType<typeof getRecentPost>
+    | ReturnType<typeof getRecentPostSuccess>
+    | ReturnType<typeof getRecentPostFailure>
     | ReturnType<typeof getRecentNotice>;

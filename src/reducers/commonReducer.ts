@@ -1,6 +1,6 @@
 import {
     CommonAction,
-    CommonActionType
+    CommonActionType,
 } from '../actions/commonAction';
 import { RecentDataModel } from '../core/models/RecentDataModel';
 
@@ -17,9 +17,16 @@ const initialState : CommonState = {
 export default function commonReducer(state: CommonState = initialState , action: CommonAction) {
     switch(action.type) {
         case CommonActionType.GET_RECENT_POST_REQUEST:
+            return {...state};
+        case CommonActionType.GET_RECENT_POST_SUCCESS:
             return {
                 ...state,
-                recentPosts: state.recentPosts
+                recentPosts: state.recentPosts + action.payload
+            }
+        case CommonActionType.GET_RECENT_POST_FAILURE:
+            return {
+                ...state,
+                recentPosts: state.recentPosts + action.payload
             }
         case CommonActionType.GET_RECENT_NOTICE_REQUEST:
             return {

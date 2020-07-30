@@ -1,7 +1,9 @@
 import { takeLatest, all, call, put, take } from 'redux-saga/effects';
 import { API } from '../api/callAA';
 import {
-    CommonActionType
+    CommonActionType,
+    getRecentPostSuccess,
+    getRecentPostFailure
 } from '../actions/commonAction';
 
 export default function* commonSaga() {
@@ -12,4 +14,11 @@ export default function* commonSaga() {
 
 function* getRecentPost$() {
     console.log('common saga~~~');
+    try {
+        console.log('saga success');
+        yield put(getRecentPostSuccess(['SUCCESS']));
+    } catch (error) {
+        console.log('saga:' + error);
+        yield put(getRecentPostFailure(['fail']));
+    }
 }
