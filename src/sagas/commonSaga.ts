@@ -3,7 +3,9 @@ import { API } from '../api/callAA';
 import {
     CommonActionType,
     getRecentPostSuccess,
-    getRecentPostFailure
+    getRecentPostFailure,
+    getRecentNoticeSuccess,
+    getRecentNoticeFailure
 } from '../actions/commonAction';
 import axios from 'axios';
 
@@ -17,10 +19,9 @@ export default function* commonSaga() {
 
 function* getRecentPost$() {
     const posts = yield axios.get('http://localhost:4000');
-    console.log(posts);
+    console.log(posts.data);
     try {
-        console.log('saga success');
-        yield put(getRecentPostSuccess(['SUCCESS']));
+        yield put(getRecentPostSuccess([posts.data]));
     } catch (error) {
         console.log('saga:' + error);
         yield put(getRecentPostFailure(['fail']));
@@ -32,9 +33,9 @@ function* getRecentNotice$() {
     console.log(notices);
     try {
         console.log('saga success');
-        yield put(getRecentPostSuccess(['SUCCESS']));
+        yield put(getRecentNoticeSuccess(['SUCCESS']));
     } catch (error) {
         console.log('saga:' + error);
-        yield put(getRecentPostFailure(['fail']));
+        yield put(getRecentNoticeFailure(['fail']));
     }
 }
