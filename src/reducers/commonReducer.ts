@@ -21,18 +21,25 @@ export default function commonReducer(state: CommonState = initialState , action
         case CommonActionType.GET_RECENT_POST_SUCCESS:
             return {
                 ...state,
-                recentPosts: state.recentPosts + action.payload
+                recentPosts: action.payload
             }
         case CommonActionType.GET_RECENT_POST_FAILURE:
             return {
                 ...state,
-                recentPosts: state.recentPosts + action.payload
+                recentPosts: action.payload
             }
         case CommonActionType.GET_RECENT_NOTICE_REQUEST:
+            return {...state};
+        case CommonActionType.GET_RECENT_NOTICE_SUCCESS:
             return {
                 ...state,
-                recentNotices: state.recentNotices + action.payload + action.payload2
-            }
+                recentNotices: action.payload
+            };
+        case CommonActionType.GET_RECENT_NOTICE_FAILURE:
+            return {
+                ...state,
+                recentNotices: action.payload
+            };
         default:
             return state;
     }

@@ -1,3 +1,5 @@
+import { RecentDataModel } from '../core//models/RecentDataModel';
+
 export const CommonActionType = {
     GET_RECENT_POST_REQUEST : 'common/GET_RECENT_POST_REQUEST' as const,
     GET_RECENT_POST_SUCCESS : 'common/GET_RECENT_POST_SUCCESS' as const,
@@ -25,12 +27,22 @@ export const getRecentPostFailure = (data: any) => ({
 
 export const getRecentNotice = () => ({ 
      type: CommonActionType.GET_RECENT_NOTICE_REQUEST,
-     payload: [5],
-     payload2: [6]
+});
+
+export const getRecentNoticeSuccess = (data: any) => ({ 
+     type: CommonActionType.GET_RECENT_NOTICE_SUCCESS,
+     payload: data
+});
+
+export const getRecentNoticeFailure = (data: any) => ({ 
+     type: CommonActionType.GET_RECENT_NOTICE_FAILURE,
+     payload: data
 });
 
 export type CommonAction = 
     | ReturnType<typeof getRecentPost>
     | ReturnType<typeof getRecentPostSuccess>
     | ReturnType<typeof getRecentPostFailure>
-    | ReturnType<typeof getRecentNotice>;
+    | ReturnType<typeof getRecentNotice>
+    | ReturnType<typeof getRecentNoticeSuccess>
+    | ReturnType<typeof getRecentNoticeFailure>;
