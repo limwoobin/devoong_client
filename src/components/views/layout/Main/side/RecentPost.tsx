@@ -1,33 +1,34 @@
 import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
-import {API} from '../../../../../api/callAA';
 import {Link} from 'react-router-dom';
 
-import axios from 'axios';
+
+const renderPostsTitle = (posts: []) => {
+    return <div>
+            {posts.map((c: any) => {
+                return  <Link to={`/ctg/notice/id/${c._id}`} key={c._id} style={{ textDecoration: 'none' }}>
+                            <h3><li><p>{c.title}</p></li></h3>
+                        </Link>
+            })} 
+           </div>
+}
 
 export default function RecentPost(props: any) {
-    const [postTitle , setPostTitle] = useState([]);
     const { recentPosts , onRecentPosts } = props;
-    // useEffect(() => {
-    //      API.Get_RecentPosts()
-    //      .then(res => {
-    //          console.log(res);
-    //         setPostTitle(res.data.data);
-    //      }).catch(err => {
-    //         console.log(err);
-    //      })
-    // } , []);
+    useEffect(() => {
+        onRecentPosts();
+        console.log('asdasd' , recentPosts[0]);
+    } , []);
 
+    
     return (
         <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
             <h4>최신글</h4>
-            {recentPosts}
-            <button onClick={onRecentPosts}>Hi Post</button>
-            {/* <ol>
-                {postTitle.length === 0 
-                    ? <h3>최신글이 없습니다.</h3>
-                    : RenderPostTitle(postTitle)}
-            </ol> */}
+            <ol>
+                {recentPosts.length === 0 
+                ? <h3>최신글이 없습니다.</h3> 
+                : renderPostsTitle(recentPosts)}      
+            </ol>
         </section>
     )
 }

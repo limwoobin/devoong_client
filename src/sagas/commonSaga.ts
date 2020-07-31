@@ -7,7 +7,6 @@ import {
     getRecentNoticeSuccess,
     getRecentNoticeFailure
 } from '../actions/commonAction';
-import axios from 'axios';
 
 
 export default function* commonSaga() {
@@ -18,24 +17,20 @@ export default function* commonSaga() {
 }
 
 function* getRecentPost$() {
-    const posts = yield axios.get('http://localhost:4000');
-    console.log(posts.data);
+    // const posts = yield API.Get_RecentPosts();
     try {
-        yield put(getRecentPostSuccess([posts.data]));
+        // yield put(getRecentPostSuccess([posts.data]));
+        yield put(getRecentPostSuccess(['SUCCESS']));
     } catch (error) {
-        console.log('saga:' + error);
         yield put(getRecentPostFailure(['fail']));
     }
 }
 
 function* getRecentNotice$() {
-    const notices = yield axios.get('http://localhost:4000');
-    console.log(notices);
+    // const notices = yield API.Get_RecentNotice();
     try {
-        console.log('saga success');
         yield put(getRecentNoticeSuccess(['SUCCESS']));
     } catch (error) {
-        console.log('saga:' + error);
         yield put(getRecentNoticeFailure(['fail']));
     }
 }
