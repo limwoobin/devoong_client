@@ -7,7 +7,9 @@ import {Link} from 'react-router-dom';
 const renderNoticeTitle = (notices: []) => {
     return <div>
             {notices.map((c: any) => {
-                return  <Link to={`/ctg/notice/id/${c._id}`} key={c._id} style={{ textDecoration: 'none' }}>
+                return  <Link to={`/ctg/notice/id/${c._id}`} 
+                              key={c._id} 
+                              style={{ textDecoration: 'none' }}>
                             <h3><li><p>{c.title}</p></li></h3>
                         </Link>
             })} 
@@ -18,14 +20,15 @@ const RecentNotice = (props: any) => {
     const { recentNotices , onRecentNotices } = props;
     useEffect(() => {
          onRecentNotices();
-         console.log('recentNotices' , recentNotices);
     } , []);
 
     return (
         <section className="sc-fAjcbJ fNlsam sc-caSCKo wDGYV">
             <h4>공지사항</h4>
             <ol>
-                {renderNoticeTitle(recentNotices)}
+                {recentNotices.length === 0 
+                ? <h3>최신글이 없습니다.</h3> 
+                : renderNoticeTitle(recentNotices)}
             </ol>
         </section>
     )

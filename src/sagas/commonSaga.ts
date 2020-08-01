@@ -17,20 +17,19 @@ export default function* commonSaga() {
 }
 
 function* getRecentPost$() {
-    // const posts = yield API.Get_RecentPosts();
+    const posts = yield API.Get_RecentPosts();
     try {
-        // yield put(getRecentPostSuccess([posts.data]));
-        yield put(getRecentPostSuccess(['SUCCESS']));
+        yield put(getRecentPostSuccess([posts.data]));
     } catch (error) {
-        yield put(getRecentPostFailure(['fail']));
+        yield put(getRecentPostFailure([error.message]));
     }
 }
 
 function* getRecentNotice$() {
-    // const notices = yield API.Get_RecentNotice();
+    const notices = yield API.Get_RecentNotice();
     try {
-        yield put(getRecentNoticeSuccess(['SUCCESS']));
+        yield put(getRecentNoticeSuccess([notices.data]));
     } catch (error) {
-        yield put(getRecentNoticeFailure(['fail']));
+        yield put(getRecentNoticeFailure([error.message]));
     }
 }

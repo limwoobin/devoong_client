@@ -6,7 +6,9 @@ import {Link} from 'react-router-dom';
 const renderPostsTitle = (posts: []) => {
     return <div>
             {posts.map((c: any) => {
-                return  <Link to={`/ctg/notice/id/${c._id}`} key={c._id} style={{ textDecoration: 'none' }}>
+                return  <Link to={`/ctg/notice/id/${c._id}`} 
+                              key={c._id} 
+                              style={{ textDecoration: 'none' }}>
                             <h3><li><p>{c.title}</p></li></h3>
                         </Link>
             })} 
@@ -17,7 +19,6 @@ export default function RecentPost(props: any) {
     const { recentPosts , onRecentPosts } = props;
     useEffect(() => {
         onRecentPosts();
-        console.log('asdasd' , recentPosts[0]);
     } , []);
 
     
@@ -27,7 +28,7 @@ export default function RecentPost(props: any) {
             <ol>
                 {recentPosts.length === 0 
                 ? <h3>최신글이 없습니다.</h3> 
-                : renderPostsTitle(recentPosts)}      
+                : renderPostsTitle(recentPosts)}
             </ol>
         </section>
     )

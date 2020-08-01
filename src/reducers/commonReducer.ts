@@ -10,8 +10,8 @@ type CommonState = {
 };
 
 const initialState : CommonState = {
-    recentPosts: [1],
-    recentNotices: [1 , 2],
+    recentPosts: [],
+    recentNotices: [],
 };
 
 export default function commonReducer(state: CommonState = initialState , action: CommonAction) {
