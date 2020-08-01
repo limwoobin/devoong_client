@@ -16,6 +16,10 @@ import './Main.scss';
 //    ,Member
 // } 
 // from '../../../page/pages';
+import {
+    ProfileView
+} from '../../../page/pages';
+
 
 const Main = () => {
     
@@ -23,8 +27,8 @@ const Main = () => {
         <div className="mainDiv" style={{backgroundColor: 'white'}}>
             <Switch>
                 <Route exact path="/" component={MainPage} />
-                {/* <Route path="/ctg/profile" component={ProfileView} />
-                <Route path="/ctg/notice" component={NoticeRouter} />
+                <Route path="/ctg/profile" component={ProfileView} />
+                {/* <Route path="/ctg/notice" component={NoticeRouter} />
                 <Route path="/ctg/think" component={Think} />
                 <Route path="/ctg/board" component={BoardRouter} />
                 <Route path="/ctg/map" component={Map} />

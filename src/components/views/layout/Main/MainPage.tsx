@@ -1,7 +1,6 @@
 import React from 'react';
 import './MainPage.scss';
-import MainSide from './MainSide';
-// import MyProfile from '../../MyProfile/MyProfile';
+import MyProfile from '../../MyProfile/MyProfile';
 import CounterContainer from '../../../../containers/CounterContainer';
 import MainSideContainer from '../../../../containers/CommonContainer';
 
@@ -11,7 +10,7 @@ const MainPage = () => {
             <div className="sc-jlyJG lpgbkm">
                 <main className="sc-gipzik BAccj">
                     <div className="sc-eqIVtm gLLJLX">
-                        {/* <MyProfile /> */}
+                        <MyProfile />
                         <CounterContainer />
                     </div>
                 </main>

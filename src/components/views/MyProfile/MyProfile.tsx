@@ -2,7 +2,7 @@ import React from 'react';
 import './MyProfile.scss';
 import {Link} from 'react-router-dom';
 
-const MyProfile = () => {
+const MyProfile : React.FC = () => {
     return (
         <div className="sc-jhAzac dvLbCX">
             <Link to="/ctg/profile" className="sc-hzDkRC ebEzFW">
@@ -30,5 +30,6 @@ const MyProfile = () => {
         </div>
     )
 }
+
 
 export default MyProfile;

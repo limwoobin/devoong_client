@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import './ProfileView.scss';
 
-const ProfileView = () => {
+const ProfileView : React.FC = () => {
     return (
         <div className="main">
             <CssBaseline />
@@ -12,7 +12,7 @@ const ProfileView = () => {
             <Typography component="div" className="mainArea">
             <div className="sc-kgAjT gXJKuQ sc-gGBfsJ kVIKkh">
                 <div className="head-wrapper">
-                    <h1 align="left">
+                    <h1>
                         사이트 개발자 소개!!!
                     </h1>
                     <div className="sc-jnlKLf efgoQf">
