@@ -1,25 +1,35 @@
-import {
-    CommonAction,
-    CommonActionType,
-} from '../actions/commonAction';
+import { CommonAction , CommonActionType } from '../actions/commonAction';
 import { RecentDataModel } from '../core/models/RecentDataModel';
+import { CategoryModel } from '../core/models/CategoryModel';
 
 type CommonState = {
+    categories : CategoryModel[];
     recentPosts : RecentDataModel[] | any;
     recentNotices : RecentDataModel[] | any;
 };
 
 const initialState : CommonState = {
+    categories: [],
     recentPosts: [],
     recentNotices: [],
 };
 
 export default function commonReducer(state: CommonState = initialState , action: CommonAction) {
     switch(action.type) {
-        case CommonActionType.GET_RECENT_POST_REQUEST:
+        case CommonActionType.GET_CATEGORY_REQUEST:
+            return {...state}
+        case CommonActionType.GET_CATEGORY_SUCCESS:
             return {
                 ...state,
-            };
+                categories: action.payload
+            }
+        case CommonActionType.GET_CATEGORY_FAILURE:
+            return {
+                ...state,
+                categories: action.payload
+            }
+        case CommonActionType.GET_RECENT_POST_REQUEST:
+            return {...state};
         case CommonActionType.GET_RECENT_POST_SUCCESS:
             return {
                 ...state,

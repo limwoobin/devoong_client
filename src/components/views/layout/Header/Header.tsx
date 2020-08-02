@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import RightMenu from './Sections/RightMenu';
 import { Drawer } from 'antd';
 import './Sections/Header.scss';
-import MenuBtn from '../Menu/Menu';
+import MenuBtn from '../menu/Menu';
 
 function Header() {
   const [visible, setVisible] = useState(false)
@@ -28,7 +28,7 @@ function Header() {
         </div>
         <div className="menu__container">
           <div className="menu_rigth">
-            <RightMenu mode="horizontal" />
+            <RightMenu />
           </div>
           <Drawer
             title="Basic Drawer"
@@ -38,7 +38,6 @@ function Header() {
             onClose={onClose}
             visible={visible}
           >
-            <RightMenu mode="inline" />
           </Drawer>
         </div>
       </nav>

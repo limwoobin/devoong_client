@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-// import Header from './views/layout/Header/Header';
+import Header from './views/layout/Header/Header';
 import MainRouter from './views/layout/Main/MainRouter';
 
 const App = () => {
   return (
     <div>
        <BrowserRouter>
-        {/* <Header /> */}
+        <Header />
           <div style={{paddingTop: '75px' , minHeight: 'calc(100vh - 80px)'}}>
           <MainRouter />
           </div>

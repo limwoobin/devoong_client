@@ -7,11 +7,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
-import { API } from '../../../../api/callAA';
 import Divider from '@material-ui/core/Divider';
 import { Link } from 'react-router-dom';
 import { util } from '../../../../core/util/util';
 import { CategoryModel } from '../../../../core/models/CategoryModel';
+import { useSelector , useDispatch } from 'react-redux';
+import { RootState } from '../../../../reducers';
+import { getCategories } from '../../../../actions/commonAction';
 import './Menu.scss';
 
 const useStyles = makeStyles({
@@ -28,11 +30,16 @@ const menuList = (menuItems: CategoryModel[]) => {
                 <List>
                     {menuItems.sort(util.Compare('id')).map((c) => {
                         if(c.code === 'BOARD') {
-                            return <Link to={`/ctg/${c.routerName}`} key={c._id} className="listItem" style={{ textDecoration: 'none'}}>
-                                        <ListItem button key={c.name}>
-                                            <ListItemText primary={c.name} className="menuItem" />
-                                        </ListItem>
-                                    </Link>
+                            return <Link 
+                                       to={`/ctg/${c.routerName}`} 
+                                       key={c._id} 
+                                       className="listItem" 
+                                       style={{ textDecoration: 'none'}}
+                                   >
+                                       <ListItem button key={c.name}>
+                                           <ListItemText primary={c.name} className="menuItem" />
+                                       </ListItem>
+                                   </Link>
                         }
                     })}
                 </List>
@@ -45,10 +52,15 @@ const postList = (menuItems: CategoryModel[]) => {
                 <List>
                     {menuItems.sort(util.Compare('id')).map((c) => {
                         if(c.code === 'POST') {
-                            return <Link to={`/ctg/posts/${c.routerName}`} key={c._id} className="listItem" style={{ textDecoration: 'none'}}>
-                                        <ListItem button key={c.name}>
-                                            <ListItemText primary={c.name} className="menuItem" />
-                                        </ListItem>
+                            return <Link 
+                                       to={`/ctg/posts/${c.routerName}`} 
+                                       key={c._id} 
+                                       className="listItem" 
+                                       style={{ textDecoration: 'none'}}
+                                   >
+                                       <ListItem button key={c.name}>
+                                           <ListItemText primary={c.name} className="menuItem" />
+                                       </ListItem>
                                    </Link>
                         }
                     })}
@@ -57,19 +69,21 @@ const postList = (menuItems: CategoryModel[]) => {
 }
 
 const Menu : React.FC = () => {
+    const apiCalling: boolean = useSelector((state: RootState) => state.appReducer.apiCalling);
+    const categories: CategoryModel[] = useSelector((state: RootState) => state.commonReducer.categories);
+
+    const dispatch = useDispatch();
+
+    const onCategories = () => {
+        dispatch(getCategories());
+    }
+
     const classes = useStyles();
     const [left , setLeft] = useState(false);
-    const [menuItems , setMenuItems] = useState([]);
 
     useEffect(() => {
-        _GetMenuItems();
+        onCategories();
     } , []);
-
-    const _GetMenuItems = async () => {
-        // const categories = await API.GET_Categories();
-        const categories = null;
-        setMenuItems(categories.data.data);
-    }
 
     const openSide = () => (
         <div
@@ -78,8 +92,8 @@ const Menu : React.FC = () => {
             onKeyDown={toggleDrawer(false)}
             className={clsx(classes.list)}
         >
-            {menuList(menuItems)}
-            {postList(menuItems)}
+            {menuList(categories)}
+            {postList(categories)}
         </div>
     );
 
