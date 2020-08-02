@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 // import Header from './views/layout/Header/Header';
-import Main from './views/layout/Main/Main';
+import MainRouter from './views/layout/Main/MainRouter';
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
        <BrowserRouter>
         {/* <Header /> */}
           <div style={{paddingTop: '75px' , minHeight: 'calc(100vh - 80px)'}}>
-          <Main />
+          <MainRouter />
           </div>
        </BrowserRouter>        
       </div>
