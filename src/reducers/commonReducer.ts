@@ -17,7 +17,10 @@ const initialState : CommonState = {
 export default function commonReducer(state: CommonState = initialState , action: CommonAction) {
     switch(action.type) {
         case CommonActionType.GET_RECENT_POST_REQUEST:
-            return {...state};
+            return {
+                ...state,
+                
+            };
         case CommonActionType.GET_RECENT_POST_SUCCESS:
             return {
                 ...state,

@@ -1,6 +1,8 @@
 import { RecentDataModel } from '../core//models/RecentDataModel';
 
 export const CommonActionType = {
+    CLEAR_API_CALL_STATUS : 'CLEAR_API_CALL_STATUS' as const,
+
     GET_RECENT_POST_REQUEST : 'common/GET_RECENT_POST_REQUEST' as const,
     GET_RECENT_POST_SUCCESS : 'common/GET_RECENT_POST_SUCCESS' as const,
     GET_RECENT_POST_FAILURE : 'common/GET_RECENT_POST_FAILURE' as const,
