@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
+import appReducer from './app';
 import counterReducer from './counterReducer';
 import commonReducer from './commonReducer';
 
 const rootReducer = combineReducers({
+    appReducer,
     counterReducer,
     commonReducer
 });

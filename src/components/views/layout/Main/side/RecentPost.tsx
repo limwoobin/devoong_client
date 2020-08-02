@@ -1,9 +1,10 @@
 import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
 import {Link} from 'react-router-dom';
+import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 
 
-const renderPostsTitle = (posts: []) => {
+const renderPostsTitle = (posts: RecentDataModel[]) => {
     return <div>
             {posts.map((c: any) => {
                 return  <Link to={`/ctg/notice/id/${c._id}`} 
@@ -15,12 +16,17 @@ const renderPostsTitle = (posts: []) => {
            </div>
 }
 
-export default function RecentPost(props: any) {
-    const { recentPosts , onRecentPosts } = props;
+interface Props {
+    apiCalling: boolean,
+    recentPosts: RecentDataModel[],
+    onRecentPosts: Function
+}
+
+const RecentPost : React.FC<Props> = props => {
+    const { apiCalling , recentPosts , onRecentPosts } = props;
     useEffect(() => {
         onRecentPosts();
     } , []);
-
     
     return (
         <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
@@ -33,3 +39,5 @@ export default function RecentPost(props: any) {
         </section>
     )
 }
+
+export default RecentPost;

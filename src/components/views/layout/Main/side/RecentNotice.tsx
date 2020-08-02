@@ -2,9 +2,9 @@ import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
 import {API} from '../../../../../api/callAA';
 import {Link} from 'react-router-dom';
+import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 
-
-const renderNoticeTitle = (notices: []) => {
+const renderNoticeTitle = (notices: RecentDataModel[]) => {
     return <div>
             {notices.map((c: any) => {
                 return  <Link to={`/ctg/notice/id/${c._id}`} 
@@ -16,8 +16,14 @@ const renderNoticeTitle = (notices: []) => {
            </div>
 }
 
-const RecentNotice = (props: any) => {
-    const { recentNotices , onRecentNotices } = props;
+interface Props {
+    apiCalling: boolean,
+    recentNotices: RecentDataModel[],
+    onRecentNotices: Function
+}
+
+const RecentNotice : React.FC<Props> = props => {
+    const { apiCalling , recentNotices , onRecentNotices } = props;
     useEffect(() => {
          onRecentNotices();
     } , []);

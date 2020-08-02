@@ -15,6 +15,7 @@ export default function* commonSaga() {
 function* getRecentPost$() {
     try {
         const posts = yield call(API.Get_RecentPosts);
+        yield put ({ type: CommonActionType.REQUEST_API_CALL_STATUS });
         yield put ({
             type: CommonActionType.GET_RECENT_POST_SUCCESS,
             payload: posts.data
@@ -24,12 +25,15 @@ function* getRecentPost$() {
             type: CommonActionType.GET_RECENT_POST_FAILURE,
             payload: error.message
         });
+    } finally {
+        yield put ({ type: CommonActionType.CLEAR_API_CALL_STATUS });
     }
 }
 
 function* getRecentNotice$() {
     try {
         const notices = yield call(API.Get_RecentNotice);
+        yield put({ type: CommonActionType.REQUEST_API_CALL_STATUS });
         yield put({
             type: CommonActionType.GET_RECENT_NOTICE_SUCCESS,
             payload: notices
@@ -39,5 +43,7 @@ function* getRecentNotice$() {
             type: CommonActionType.GET_RECENT_NOTICE_FAILURE,
             payload: error.message
         })
+    } finally {
+        yield put({ type: CommonActionType.CLEAR_API_CALL_STATUS });
     }
 }

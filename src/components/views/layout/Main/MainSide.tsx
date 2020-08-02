@@ -6,6 +6,7 @@ import XX from './side/XX';
 import { RecentDataModel } from '../../../../core/models/RecentDataModel';
 
 type MainSideProps = {
+    apiCalling: boolean,
     recentPosts: RecentDataModel[];
     onRecentPosts: () => void;
     recentNotices: RecentDataModel[];
@@ -13,6 +14,7 @@ type MainSideProps = {
 }
 
 export default function MainSide({
+    apiCalling,
     recentPosts,
     onRecentPosts,
     recentNotices,
@@ -28,11 +30,13 @@ export default function MainSide({
             <aside className="sc-csuQGl pDRpR">
                     <div className="sc-cHGsZl bHiaRe">
                         <div className="sc-TOsTZ eyrfCG">
-                            <RecentPost 
+                            <RecentPost
+                                apiCalling={apiCalling}
                                 recentPosts={recentPosts}
                                 onRecentPosts={onRecentPosts}
                             />
-                            <RecentNotice 
+                            <RecentNotice
+                                apiCalling={apiCalling}
                                 recentNotices={recentNotices}
                                 onRecentNotices={onRecentNotices}
                             />

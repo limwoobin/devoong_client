@@ -3,6 +3,7 @@ import {
     CommonActionType,
 } from '../actions/commonAction';
 import { RecentDataModel } from '../core/models/RecentDataModel';
+import * as app from './app';
 
 type CommonState = {
     recentPosts : RecentDataModel[] | any;
@@ -19,7 +20,6 @@ export default function commonReducer(state: CommonState = initialState , action
         case CommonActionType.GET_RECENT_POST_REQUEST:
             return {
                 ...state,
-                
             };
         case CommonActionType.GET_RECENT_POST_SUCCESS:
             return {

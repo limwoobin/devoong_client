@@ -6,6 +6,8 @@ import MainSide from '../components/views/layout/Main/MainSide';
 import { RecentDataModel } from '../core/models/RecentDataModel';
 
 export default function CommonConatiner() {
+    const apiCalling: boolean = useSelector((state: RootState) => state.appReducer.apiCalling);
+
     const recentPosts: RecentDataModel[] = useSelector((state: RootState) => state.commonReducer.recentPosts);
     const recentNotices: RecentDataModel[] = useSelector((state: RootState) => state.commonReducer.recentNotices);
 
@@ -20,7 +22,8 @@ export default function CommonConatiner() {
     }
 
     return (
-        <MainSide 
+        <MainSide
+            apiCalling={apiCalling} 
             recentPosts={recentPosts}
             onRecentPosts={onRecentPosts}
             recentNotices={recentNotices}
