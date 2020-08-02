@@ -1,7 +1,6 @@
 import React from 'react';
 import './MainPage.scss';
 import MyProfile from '../../MyProfile/MyProfile';
-import CounterContainer from '../../../../containers/CounterContainer';
 import MainSideContainer from '../../../../containers/CommonContainer';
 
 const MainPage : React.FC = () => {

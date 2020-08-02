@@ -23,16 +23,6 @@ const initialState : AppState = {
     apiCalling: false
 }
 
-// export interface RequestApiCallStatusAction {
-//     type: typeof types.CommonActionType.REQUEST_API_CALL_STATUS
-// }
-
-// export interface ClearApiCallStatusAction {
-//     type: typeof types.CommonActionType.CLEAR_API_CALL_STATUS
-// }
-
-// type AppActionTypes = RequestApiCallStatusAction | ClearApiCallStatusAction
-
 export default function appReducer (state: AppState = initialState , action: ApiAction) {
     switch(action.type) {
         case ApiAction.REQUEST_API_CALL_STATUS:
