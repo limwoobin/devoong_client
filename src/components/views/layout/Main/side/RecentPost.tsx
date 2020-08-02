@@ -3,17 +3,22 @@ import '../MainPage.scss';
 import {Link} from 'react-router-dom';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 
-
 const renderPostsTitle = (posts: RecentDataModel[]) => {
-    return <div>
-            {posts.map((c: any) => {
-                return  <Link to={`/ctg/notice/id/${c._id}`} 
-                              key={c._id} 
-                              style={{ textDecoration: 'none' }}>
-                            <h3><li><p>{c.title}</p></li></h3>
-                        </Link>
-            })} 
-           </div>
+    if (posts.length !== 0) {
+        return <div>
+                   {posts.map((c: any) => {
+                       return <Link to={`/ctg/notice/id/${c._id}`} 
+                                  key={c._id} 
+                                  style={{ textDecoration: 'none' }}>
+                                  <h3><li><p>{c.title}</p></li></h3>
+                              </Link>
+                   })} 
+                </div>
+    } else {
+        return <div>
+                   <h3>최신글이 없습니다.</h3> 
+               </div>
+    }
 }
 
 interface Props {
@@ -25,6 +30,8 @@ interface Props {
 const RecentPost : React.FC<Props> = props => {
     const { apiCalling , recentPosts , onRecentPosts } = props;
     useEffect(() => {
+        console.log('apicalling' , apiCalling);
+        console.log('asd' , recentPosts)
         onRecentPosts();
     } , []);
     
@@ -32,9 +39,7 @@ const RecentPost : React.FC<Props> = props => {
         <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
             <h4>최신글</h4>
             <ol>
-                {recentPosts.length === 0 
-                ? <h3>최신글이 없습니다.</h3> 
-                : renderPostsTitle(recentPosts)}
+                {renderPostsTitle(recentPosts)}
             </ol>
         </section>
     )

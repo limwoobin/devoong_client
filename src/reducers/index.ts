@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import appReducer from './app';
+import appReducer from './appReducer';
 import counterReducer from './counterReducer';
 import commonReducer from './commonReducer';
 

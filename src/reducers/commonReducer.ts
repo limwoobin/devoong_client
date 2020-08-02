@@ -3,7 +3,6 @@ import {
     CommonActionType,
 } from '../actions/commonAction';
 import { RecentDataModel } from '../core/models/RecentDataModel';
-import * as app from './app';
 
 type CommonState = {
     recentPosts : RecentDataModel[] | any;

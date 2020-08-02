@@ -1,8 +1,7 @@
 import { takeLatest, all, call, put, take } from 'redux-saga/effects';
 import { API } from '../api/callAA';
-import {
-    CommonActionType,
-} from '../actions/commonAction';
+import { CommonActionType } from '../actions/commonAction';
+import { ApiAction } from '../reducers/appReducer';
 import { push } from 'connected-react-router';
 
 export default function* commonSaga() {
@@ -15,7 +14,7 @@ export default function* commonSaga() {
 function* getRecentPost$() {
     try {
         const posts = yield call(API.Get_RecentPosts);
-        yield put ({ type: CommonActionType.REQUEST_API_CALL_STATUS });
+        yield put ({ type: ApiAction.REQUEST_API_CALL_STATUS });
         yield put ({
             type: CommonActionType.GET_RECENT_POST_SUCCESS,
             payload: posts.data
@@ -26,14 +25,14 @@ function* getRecentPost$() {
             payload: error.message
         });
     } finally {
-        yield put ({ type: CommonActionType.CLEAR_API_CALL_STATUS });
+        yield put ({ type: ApiAction.CLEAR_API_CALL_STATUS });
     }
 }
 
 function* getRecentNotice$() {
     try {
         const notices = yield call(API.Get_RecentNotice);
-        yield put({ type: CommonActionType.REQUEST_API_CALL_STATUS });
+        yield put({ type: ApiAction.REQUEST_API_CALL_STATUS });
         yield put({
             type: CommonActionType.GET_RECENT_NOTICE_SUCCESS,
             payload: notices
@@ -44,6 +43,6 @@ function* getRecentNotice$() {
             payload: error.message
         })
     } finally {
-        yield put({ type: CommonActionType.CLEAR_API_CALL_STATUS });
+        yield put({ type: ApiAction.CLEAR_API_CALL_STATUS });
     }
 }
