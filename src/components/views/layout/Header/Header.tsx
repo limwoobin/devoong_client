@@ -30,7 +30,7 @@ function Header() {
           <div className="menu_rigth">
             <RightMenu />
           </div>
-          <Drawer
+          {/* <Drawer
             title="Basic Drawer"
             placement="right"
             className="menu_drawer"
@@ -38,7 +38,7 @@ function Header() {
             onClose={onClose}
             visible={visible}
           >
-          </Drawer>
+          </Drawer> */}
         </div>
       </nav>
     </div>

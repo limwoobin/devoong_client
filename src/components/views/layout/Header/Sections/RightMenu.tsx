@@ -3,7 +3,7 @@ import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import { API } from '../../../../../api/callAA';
 
-const renderSignBtn = () => {
+const renderSignBtn = (data: any , action: any) => {
     if (false) {
         return <div>
                   <Menu mode="horizontal">
@@ -13,10 +13,11 @@ const renderSignBtn = () => {
                         "asdasd"
                       </Link>
                   </Menu.Item>
-                    {/* <Menu.Item key="logout" onClick={userLogout}> */}
+                    <Menu.Item key="logout" onClick={action}>
                       <Menu.Item key="logout">
                         <Link to="#" className="link-router" style={{ textDecoration: 'none' }}>Logout</Link>
                       </Menu.Item>
+                    </Menu.Item>
                   </Menu>
               </div>
     } else {
@@ -34,25 +35,25 @@ const renderSignBtn = () => {
 }
 
 const RightMenu : React.FC = (props: any) => {
-    // const isLogin = window.sessionStorage.getItem('isLogin');
-    // const loggedInUserEmail = window.sessionStorage.getItem('loggedInUserEmail');
+    const isLogin: boolean | any = window.sessionStorage.getItem('isLogin');
+    const loggedInUserEmail: string | any = window.sessionStorage.getItem('loggedInUserEmail');
 
-    // const userLogout = () => {
-    //     API.LOGOUT()
-    //     .then(res => {
-    //     console.log(res);
-    //     if(res.data.code === 'DR00'){
-    //         window.sessionStorage.removeItem('isLogin');
-    //         window.sessionStorage.removeItem('loggedInUserEmail');
-    //         window.location.reload();
-    //     }
-    //     }).catch(err => {
-    //     console.log(err);
-    // })
+    const userLogout = () => {
+        // API.LOGOUT()
+        // .then(res => {
+        // console.log(res);
+        // if(res.data.code === 'DR00'){
+        //     window.sessionStorage.removeItem('isLogin');
+        //     window.sessionStorage.removeItem('loggedInUserEmail');
+        //     window.location.reload();
+        // }
+        // }).catch(err => {
+        // console.log(err);
+    }
 
     return (
         <div className="menu_right">
-            {renderSignBtn()}
+            {renderSignBtn(1 , 2)}
         </div>
     )
 }
