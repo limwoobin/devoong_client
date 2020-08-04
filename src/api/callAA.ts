@@ -1,9 +1,10 @@
 import http from '../core/http/http';
+import { UserModel } from '../core/models/UserModel';
 
 const url = {
     GET_Customers       : '/dr/customer/customers',
     ADD_Customer        : '/dr/customer/insert',
-    ADD_Member          : '/dr/member/insert',
+    SIGN_UP             : '/dr/member/insert',
     LOGIN               : '/dr/member/login',
     LOGOUT              : '/dr/member/logout',
     USER_EMAIL_CHK      : '/dr/member/overlap/check/',
@@ -24,7 +25,7 @@ const url = {
 export const API = {
     GET_Customers       : () => http.get(url.GET_Customers),
     ADD_Customer        : (data: any) => http.post(url.ADD_Customer),
-    ADD_Member          : (data: any) => http.post(url.ADD_Member , data),
+    SIGN_UP             : (data: UserModel) => http.post(url.SIGN_UP , data),
     LOGIN               : (data: any) => http.post(url.LOGIN , data),
     LOGOUT              : () => http.get(url.LOGOUT),
     USER_EMAIL_CHK      : (data: any) => http.get(url.USER_EMAIL_CHK + data),

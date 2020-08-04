@@ -1,4 +1,4 @@
-import { UserAction , UserActionType } from '../actions/userAction';
+import { UserActionType } from '../actions/userAction';
 import { UserModel } from '../core/models/UserModel';
 
 type UserState = {
@@ -21,10 +21,70 @@ const initialState : UserState = {
     },
 }
 
+export interface SignUpRequest {
+    type: typeof UserActionType.SIGNUP_REQUEST,
+    payload: UserModel
+}
+
+export interface SignUpSuccess {
+    type: typeof UserActionType.SIGNUP_SUCCESS
+    payload: any
+}
+
+export interface SignUpFailure {
+    type: typeof UserActionType.SIGNUP_FAILURE,
+    payload: any
+}
+
+export interface LoginRequest {
+    type: typeof UserActionType.LOGIN_REQUEST,
+    payload: any
+}
+
+export interface LoginSuccess {
+    type: typeof UserActionType.LOGIN_SUCCESS,
+    payload: any
+}
+
+export interface LoginFailure {
+    type: typeof UserActionType.LOGIN_FAILURE,
+    payload: any
+}
+
+export interface LogoutRequest {
+    type: typeof UserActionType.LOGOUT_REQUEST,
+    payload: any
+}
+
+export interface LogoutSuccess {
+    type: typeof UserActionType.LOGOUT_SUCCESS,
+    payload: any
+}
+
+export interface LogoutFailure {
+    type: typeof UserActionType.LOGOUT_FAILURE,
+    payload: any
+}
+
+type UserAction =
+    | SignUpRequest
+    | SignUpSuccess
+    | SignUpFailure
+    | LoginRequest
+    | LoginSuccess
+    | LoginFailure
+    | LogoutRequest
+    | LogoutSuccess
+    | LogoutFailure;
+  
+
 export default function userReducer(state: UserState = initialState , action: UserAction) {
     switch(action.type) {
         case UserActionType.SIGNUP_REQUEST:
-            return {...state}
+            return {
+                ...state,
+                userData: action.payload
+            }
         case UserActionType.SIGNUP_SUCCESS:
             return {
                 ...state,

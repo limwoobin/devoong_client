@@ -1,3 +1,5 @@
+import { UserModel } from '../core/models/UserModel';
+
 export const UserActionType = {
     SIGNUP_REQUEST : 'user/SIGNUP_REQUEST' as const,
     SIGNUP_SUCCESS : 'user/SIGNUP_SUCCESS' as const,
@@ -12,51 +14,47 @@ export const UserActionType = {
     LOGOUT_FAILURE : 'user/LOGOUT_FAILURE' as const,
 }
 
-export const signUp = () => ({ type: UserActionType.SIGNUP_REQUEST });
+export const SignUp = (data: UserModel) => ({ 
+    type: UserActionType.SIGNUP_REQUEST,
+    payload: data
+});
 
-export const signUpSuccess = (data: any) => ({ 
+export const SignUpSuccess = (data: any) => ({ 
     type: UserActionType.SIGNUP_SUCCESS,
     payload: data
 });
 
-export const signUpFailure = (data: any) => ({ 
+export const SignUpFailure = (data: any) => ({ 
     type: UserActionType.SIGNUP_FAILURE,
     payload: data
 });
 
 
-export const login = () => ({ type: UserActionType.LOGIN_REQUEST });
+export const LoginRequest = (data: any) => ({ 
+    type: UserActionType.LOGIN_REQUEST 
+});
 
-export const loginSuccess = (data: any) => ({
+export const LoginSuccess = (data: any) => ({
     type: UserActionType.LOGIN_SUCCESS,
     payload: data
 });
 
-export const loginFailure = (data: any) => ({
+export const LoginFailure = (data: any) => ({
     type: UserActionType.LOGIN_FAILURE,
     payload: data
 })
 
 
-export const logout = (data: any) => ({ type: UserActionType.LOGOUT_REQUEST });
+export const LogoutRequest = (data: any) => ({ 
+    type: UserActionType.LOGOUT_REQUEST 
+});
 
-export const logoutSuccess = (data: any) => ({
+export const LogoutSuccess = (data: any) => ({
     type: UserActionType.LOGOUT_SUCCESS,
     payload: data
 });
 
-export const logoutFailure = (data: any) => ({
+export const LogoutFailure = (data: any) => ({
     type: UserActionType.LOGOUT_FAILURE,
     payload: data
 })
-
-export type UserAction = 
-    | ReturnType<typeof signUp>
-    | ReturnType<typeof signUpSuccess>
-    | ReturnType<typeof signUpFailure>
-    | ReturnType<typeof login>
-    | ReturnType<typeof loginSuccess>
-    | ReturnType<typeof loginFailure>
-    | ReturnType<typeof logout>
-    | ReturnType<typeof logoutSuccess>
-    | ReturnType<typeof logoutFailure>;
