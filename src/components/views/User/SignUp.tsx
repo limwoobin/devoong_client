@@ -13,8 +13,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import DateForm from '../../common/DateForm';
 import CopyRight from '../../common/CopyRight';
-import { Func } from '../../../common/common';
-import { API } from '../../../api/Call_API';
+import { util } from '../../../core/util/util';
+import { API } from '../../../api/callAA';
 import RedirectToMain from '../../common/RedirectToMain';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,20 +44,20 @@ const SignUp = () => {
         userEmail   : '',
         password    : '',
         password2   : '',
-        birthday    : Func.DateFormat2(new Date()),
+        birthday    : util.DateFormat2(new Date()),
         userPhone   : '',
         accept      : false
     });
 
     const {userNm , userEmail , password , password2 , birthday , userPhone , accept} = value;
 
-    const BirthdayCallback = (callBackDate) => {
+    const BirthdayCallback = (callBackDate: any) => {
         setValue({
             ...value , birthday : callBackDate
         })
     };
 
-    const onlyNumberChange = (e) => {
+    const onlyNumberChange = (e: any) => {
         const re = /^[0-9\b]+$/;
         if(e.target.value == '' || re.test(e.target.value)){
             setValue({
@@ -67,13 +67,13 @@ const SignUp = () => {
         return;
     }
 
-    const handleValueChange = (e) => {
+    const handleValueChange = (e: any) => {
         setValue({
             ...value , [e.target.name] : e.target.value
         })
     }
     
-    const toggleCheckbox = (e) => {
+    const toggleCheckbox = (e: any) => {
         setValue({
             ...value,
             [e.target.name] : !accept
@@ -81,13 +81,13 @@ const SignUp = () => {
     }
 
     const SignUpSubmit = () => {
-        if(!Func.emptyCheck(userNm)){
+        if(!util.emptyCheck(userNm)){
             alert('이름을 입력해주세요.');
             return;
-        }else if(!Func.setVerifyEmail(userEmail)){
+        }else if(!util.setVerifyEmail(userEmail)){
             alert('이메일을 확인해주세요.');
             return;
-        }else if(!Func.passwordCheck(password)){
+        }else if(!util.passwordCheck(password)){
             alert('숫자와 영문자 조합으로 8~12 자리를 사용해야 합니다.');
             return;
         }else if(password !== password2){
@@ -116,24 +116,24 @@ const SignUp = () => {
     }
     
     const addMemberInfo = () => {
-        const formData = new FormData();
-        formData.append('userNm' , userNm);
-        formData.append('userEmail' , userEmail);
-        formData.append('userPwd' , password);
-        formData.append('birthday' , birthday);
-        formData.append('userPhone' , userPhone);
-        API.ADD_Member(formData)
-        .then(res => {
-            console.log(res);
-            if(res.data.code === 'DR00'){
-                alert('회원가입이 되었습니다.');
-                window.location.href = "/login";
-            }
-        }).catch(err => {
-            console.log(err);
-            alert('회원가입에 실패하였습니다.');
-            window.location.href = "/register";
-        })
+        // const formData = new FormData();
+        // formData.append('userNm' , userNm);
+        // formData.append('userEmail' , userEmail);
+        // formData.append('userPwd' , password);
+        // formData.append('birthday' , birthday);
+        // formData.append('userPhone' , userPhone);
+        // API.SIGN_UP(formData)
+        // .then(res => {
+        //     console.log(res);
+        //     if(res.data.code === 'DR00'){
+        //         alert('회원가입이 되었습니다.');
+        //         window.location.href = "/login";
+        //     }
+        // }).catch(err => {
+        //     console.log(err);
+        //     alert('회원가입에 실패하였습니다.');
+        //     window.location.href = "/register";
+        // })
     }
     
     return (
@@ -209,7 +209,7 @@ const SignUp = () => {
                     />
                     </Grid>
                     <Grid item xs={12}>
-                    <DateForm callBackDate={BirthdayCallback}/>
+                    {/* <DateForm callBackDate={BirthdayCallback}/> */}
                     </Grid>
                     <Grid item xs={12}>
                     <FormControlLabel
@@ -230,7 +230,8 @@ const SignUp = () => {
                 </Button>
                 <Grid container justify="flex-end">
                     <Grid item>
-                    <Link to="/login" variant="body2">
+                    {/* <Link to="/login" variant="body2"> */}
+                    <Link to="/login">
                         Already have an account? Sign in
                     </Link>
                     </Grid>

@@ -8,10 +8,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {API} from '../../../api/Call_API';
+import {API} from '../../../api/callAA';
 
 
-const FindPasswordForm = () => {
+const FindPasswordForm : React.FC = () => {
     const [open , setOpen] = useState(false);
     const [toEmail , setToEmail] = useState('');
     const [load , setLoad] = useState(false);
@@ -38,7 +38,7 @@ const FindPasswordForm = () => {
         })
       }
 
-      const onChange = (e) => {
+      const onChange = (e: any) => {
         setToEmail(e.target.value);
       }
 
@@ -53,7 +53,7 @@ const FindPasswordForm = () => {
                 <DialogContentText>
                 To be find your password, please enter your email address here. We will send temporary password.
                 </DialogContentText>
-                {load && <div align="center"><CircularProgress /></div>}
+                {load && <div style={{ alignContent: 'center' }}><CircularProgress /></div>}
                 <TextField
                     autoFocus
                     margin="dense"

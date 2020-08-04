@@ -19,3 +19,47 @@ $violet: #7950f2;
     background-color: white;
 }
 
+.homeBtn {
+    margin-top: 20px;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 4rem;
+    width: 8rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 2rem;
+    outline: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    background: rgb(18, 184, 134);
+    border-radius: 4px;
+}
+
+.iRWwWQ {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.centerArea {
+    margin-top: 10%;
+    margin-bottom: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+

@@ -11,8 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CopyRight from '../../common/CopyRight';
 import FindPasswordForm from './FindPasswordForm';
-import { Func } from '../../../common/common';
-import { API } from '../../../api/Call_API';
+import { util } from '../../../core/util/util';
+import { API } from '../../../api/callAA';
 import RedirectToMain from '../../common/RedirectToMain';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,13 +46,13 @@ const SignIn = () => {
 
     const { userEmail , password , rememberEmail } = value;
 
-    const handleValueChange = (e) => {
+    const handleValueChange = (e: any) => {
       setValue({
         ...value , [e.target.name] : e.target.value
       })
     }
     
-    const toggleCheckbox = (e) => {
+    const toggleCheckbox = (e: any) => {
       setValue({
           ...value,
           [e.target.name] : !rememberEmail
@@ -60,10 +60,10 @@ const SignIn = () => {
     }
 
     const LoginSubmit = () => {
-        if(!Func.setVerifyEmail(userEmail)){
+        if(!util.setVerifyEmail(userEmail)){
           alert('이메일을 확인해주세요.');
           return;
-        }else if(!Func.emptyCheck(password)){
+        }else if(!util.emptyCheck(password)){
           alert('비밀번호를 입력해주세요.');
           return;
         }
@@ -136,7 +136,8 @@ const SignIn = () => {
                 <FindPasswordForm />
               </Grid>
               <Grid item>
-                <Link to="/register" variant="body2">
+                {/* <Link to="/register" variant="body2"> */}
+                <Link to="/register">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
