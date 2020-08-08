@@ -22,7 +22,7 @@ const url = {
 }
 
 
-export const API = {
+export const callApi = {
     GET_Customers       : () => http.get(url.GET_Customers),
     ADD_Customer        : (data: any) => http.post(url.ADD_Customer),
     SIGN_UP             : (data: UserModel) => http.post(url.SIGN_UP , data),

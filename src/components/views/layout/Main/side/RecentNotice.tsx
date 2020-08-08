@@ -1,6 +1,6 @@
 import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
-import {API} from '../../../../../api/callAA';
+import { callApi } from '../../../../../api/callApi';
 import {Link} from 'react-router-dom';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 

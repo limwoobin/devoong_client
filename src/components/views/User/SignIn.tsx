@@ -12,7 +12,7 @@ import Container from '@material-ui/core/Container';
 import CopyRight from '../../common/CopyRight';
 import FindPasswordForm from './FindPasswordForm';
 import { util } from '../../../core/util/util';
-import { API } from '../../../api/callAA';
+import { callApi } from '../../../api/callApi';
 import RedirectToMain from '../../common/RedirectToMain';
 
 const useStyles = makeStyles((theme) => ({
@@ -74,7 +74,7 @@ const SignIn = () => {
       const formData = new FormData();
       formData.append('userEmail' , userEmail);
       formData.append('userPwd' , password);
-      API.LOGIN(formData)
+      callApi.LOGIN(formData)
       .then(res => {
         console.log(res);
         if(res.data.code === 'DR00'){

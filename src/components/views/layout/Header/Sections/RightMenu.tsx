@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router-dom';
-import { API } from '../../../../../api/callAA';
+import { callApi } from '../../../../../api/callApi';
 
 const renderSignBtn = (data: any , action: any) => {
     if (false) {

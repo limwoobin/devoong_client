@@ -8,7 +8,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {API} from '../../../api/callAA';
+import { callApi } from '../../../api/callApi';
 
 
 const FindPasswordForm : React.FC = () => {
@@ -25,7 +25,7 @@ const FindPasswordForm : React.FC = () => {
 
       const sendMail = () => {
         setLoad(true);
-        API.FindforPassword(toEmail)
+        callApi.FindforPassword(toEmail)
         .then(res => {
             console.log(res);
             alert('임시 패스워드를 보내드렸습니다. 메일을 확인해주세요.');

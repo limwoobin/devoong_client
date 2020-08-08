@@ -14,7 +14,7 @@ import Container from '@material-ui/core/Container';
 import DateForm from '../../common/DateForm';
 import CopyRight from '../../common/CopyRight';
 import { util } from '../../../core/util/util';
-import { API } from '../../../api/callAA';
+import { callApi } from '../../../api/callApi';
 import RedirectToMain from '../../common/RedirectToMain';
 
 const useStyles = makeStyles((theme) => ({
@@ -101,7 +101,7 @@ const SignUp = () => {
     }
 
     const userEmailChk = () => {
-        API.USER_EMAIL_CHK(userEmail)
+        callApi.USER_EMAIL_CHK(userEmail)
         .then(res => {
             console.log(res);
             if(res.data.code === 'DR00'){

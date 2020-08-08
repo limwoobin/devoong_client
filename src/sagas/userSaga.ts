@@ -1,5 +1,5 @@
 import { takeLatest, all, call, put, take, delay } from 'redux-saga/effects';
-import { API } from '../api/callAA';
+import { callApi } from '../api/callApi';
 import { UserActionType , SignUp} from '../actions/userAction';
 import { ApiAction } from '../reducers/appReducer';
 import { UserModel } from '../core/models/UserModel';
@@ -20,7 +20,7 @@ export default function* userSaga () {
 
 function* emailOverlapCheck$ (action: EmailOverlapCheckRequest) {
     try {
-        const userEmailCheck = API.USER_EMAIL_CHK(action.payload);
+        const userEmailCheck = callApi.USER_EMAIL_CHK(action.payload);
         yield put ({ type: ApiAction.REQUEST_API_CALL_STATUS })
         yield put ({
             type: UserActionType.EMAIL_OVERLAP_CHECK_SUCCESS,
@@ -38,7 +38,7 @@ function* emailOverlapCheck$ (action: EmailOverlapCheckRequest) {
 
 function* signUp$ (action: SignUpRequest) {
     try {
-        API.SIGN_UP(action.payload);
+        callApi.SIGN_UP(action.payload);
         yield put ({ type: ApiAction.REQUEST_API_CALL_STATUS })
         yield put ({ 
             type: UserActionType.SIGNUP_SUCCESS,
@@ -56,7 +56,7 @@ function* signUp$ (action: SignUpRequest) {
 
 function* login$ (action: LoginRequest) {
     try {
-        API.LOGIN(action.payload);
+        callApi.LOGIN(action.payload);
         yield put ({ type: ApiAction.REQUEST_API_CALL_STATUS })
         yield put ({
             type: UserActionType.LOGIN_SUCCESS,
@@ -74,7 +74,7 @@ function* login$ (action: LoginRequest) {
 
 function* logout$ () {
     try {
-        API.LOGOUT();
+        callApi.LOGOUT();
         yield put ({ type: ApiAction.REQUEST_API_CALL_STATUS })
         yield put ({ 
             type: UserActionType.LOGOUT_SUCCESS,
