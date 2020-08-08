@@ -21,6 +21,21 @@ const initialState : UserState = {
     },
 }
 
+export interface EmailOverlapCheckRequest {
+    type: typeof UserActionType.EMAIL_OVERLAP_CHECK_REQUEST,
+    payload: string
+}
+
+export interface EmailOverlapCheckSuccess {
+    type: typeof UserActionType.EMAIL_OVERLAP_CHECK_SUCCESS,
+    payload: any
+}
+
+export interface EmailOverlapCheckFailure {
+    type: typeof UserActionType.EMAIL_OVERLAP_CHECK_FAILURE,
+    payload: any
+}
+
 export interface SignUpRequest {
     type: typeof UserActionType.SIGNUP_REQUEST,
     payload: UserModel
@@ -67,6 +82,9 @@ export interface LogoutFailure {
 }
 
 type UserAction =
+    | EmailOverlapCheckRequest
+    | EmailOverlapCheckSuccess
+    | EmailOverlapCheckFailure
     | SignUpRequest
     | SignUpSuccess
     | SignUpFailure
@@ -80,6 +98,21 @@ type UserAction =
 
 export default function userReducer(state: UserState = initialState , action: UserAction) {
     switch(action.type) {
+        case UserActionType.EMAIL_OVERLAP_CHECK_REQUEST:
+            return {
+                ...state,
+                userEmail: action.payload
+            }
+        case UserActionType.EMAIL_OVERLAP_CHECK_SUCCESS:
+            return {
+                ...state,
+                userData: action.payload
+            }
+        case UserActionType.EMAIL_OVERLAP_CHECK_FAILURE:
+            return {
+                ...state,
+                userData: action.payload
+            }
         case UserActionType.SIGNUP_REQUEST:
             return {
                 ...state,

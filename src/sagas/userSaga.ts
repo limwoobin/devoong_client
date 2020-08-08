@@ -6,16 +6,35 @@ import { UserModel } from '../core/models/UserModel';
 import {
     SignUpRequest,
     LoginRequest,
+    EmailOverlapCheckRequest,
 } from '../reducers/userReducer';
 
 export default function* userSaga () {
     yield all([
+        takeLatest(UserActionType.EMAIL_OVERLAP_CHECK_REQUEST , emailOverlapCheck$),
         takeLatest(UserActionType.SIGNUP_REQUEST , signUp$),
         takeLatest(UserActionType.LOGIN_REQUEST , login$),
         takeLatest(UserActionType.LOGOUT_REQUEST , logout$)
     ]);
 }
 
+function* emailOverlapCheck$ (action: EmailOverlapCheckRequest) {
+    try {
+        const userEmailCheck = API.USER_EMAIL_CHK(action.payload);
+        yield put ({ type: ApiAction.REQUEST_API_CALL_STATUS })
+        yield put ({
+            type: UserActionType.EMAIL_OVERLAP_CHECK_SUCCESS,
+            payload: userEmailCheck
+        })
+    } catch (error) {
+        yield put ({
+            type: UserActionType.EMAIL_OVERLAP_CHECK_FAILURE,
+            payload: error.message
+        })
+    } finally {
+        yield put ({ type: ApiAction.CLEAR_API_CALL_STATUS })
+    }
+}
 
 function* signUp$ (action: SignUpRequest) {
     try {

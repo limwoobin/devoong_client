@@ -10,6 +10,8 @@ module.exports = (env , options) => {
         path: `.env.${options.state || 'dev'}`
     });
 
+    console.log('Server State:' + options.state);
+
     return {
         mode:'none',
         entry: [
