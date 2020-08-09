@@ -4,7 +4,11 @@ import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 
-const DateForm : React.FC = (props) => {
+type DateFormTypes = {
+    callBackDate: (date: any) => any;
+}
+
+export default function DateForm(props: DateFormTypes) {
     const [selectedDate, setSelectedDate] = React.useState(new Date());
     const handleDateChange = (date: any) => {
         if(date >= new Date()){
@@ -12,7 +16,7 @@ const DateForm : React.FC = (props) => {
             return;
         }
         setSelectedDate(dateConvert(date));
-        // props.callBackDate(dateConvert(date));
+        props.callBackDate(dateConvert(date));
     };
 
     const dateConvert = (changeDate: any) => {
@@ -43,5 +47,3 @@ const DateForm : React.FC = (props) => {
         </MuiPickersUtilsProvider>
     )
 }
-
-export default DateForm;

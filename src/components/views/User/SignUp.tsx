@@ -209,7 +209,7 @@ const SignUp = () => {
                     />
                     </Grid>
                     <Grid item xs={12}>
-                    {/* <DateForm callBackDate={BirthdayCallback}/> */}
+                        <DateForm callBackDate={BirthdayCallback} />
                     </Grid>
                     <Grid item xs={12}>
                     <FormControlLabel
