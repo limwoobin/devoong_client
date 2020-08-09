@@ -4,13 +4,14 @@ import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 
-type DateFormTypes = {
+type DateFormPropTypes = {
     callBackDate: (date: any) => any;
 }
 
-export default function DateForm(props: DateFormTypes) {
+const DateForm : React.FC<DateFormPropTypes> = (props: DateFormPropTypes) => { 
     const [selectedDate, setSelectedDate] = React.useState(new Date());
     const handleDateChange = (date: any) => {
+        console.log('props' , props);
         if(date >= new Date()){
             alert('선택하신 날짜가 맞지 않습니다.');
             return;
@@ -47,3 +48,5 @@ export default function DateForm(props: DateFormTypes) {
         </MuiPickersUtilsProvider>
     )
 }
+
+export default DateForm;
