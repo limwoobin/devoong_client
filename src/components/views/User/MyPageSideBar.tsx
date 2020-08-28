@@ -2,7 +2,7 @@ import React from 'react';
 import './Member.scss';
 
 
-const MyPageSideBar = () => {
+const MyPageSideBar : React.FC = () => {
     return (
         <div id="mFeature">
             <h2 className="screen_out" />

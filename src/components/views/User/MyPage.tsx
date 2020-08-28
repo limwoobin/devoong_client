@@ -1,7 +1,7 @@
 import React from 'react';
 import './Member.scss';
 
-const MyPage = () => {
+const MyPage : React.FC = () => {
     return (
         <div id="mArticle">
             <div className="inner_article">
