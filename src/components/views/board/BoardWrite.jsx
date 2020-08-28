@@ -1,7 +1,7 @@
-import React , { useState } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import React , { useState } from './node_modules/react';
+import CssBaseline from './node_modules/@material-ui/core/CssBaseline';
+import Typography from './node_modules/@material-ui/core/Typography';
+import Container from './node_modules/@material-ui/core/Container';
 import SelectCategory from '../../common/SelectCategory';
 import ToastEditor from '../../common/Editor/ToastEditor';
 import './BoardWrite.scss';

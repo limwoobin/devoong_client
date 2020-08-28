@@ -20,7 +20,8 @@ import {
     SignIn,
     SignUp,
     NoMatch,
-    User
+    User,
+    // BoardRouter
 } from '../../../page/pages';
 
 
@@ -34,6 +35,7 @@ const Main = () => {
                 <Route path="/login" component={SignIn} />
                 <Route path="/register" component={SignUp} />
                 <Route path="/user" component={User} />
+                {/* <Route path="/ctg/board" component={BoardRouter} /> */}
                 {/* <Route path="/ctg/notice" component={NoticeRouter} />
                 <Route path="/ctg/think" component={Think} />
                 <Route path="/ctg/board" component={BoardRouter} />

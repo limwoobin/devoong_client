@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SignUp = () => {
+const SignUp : React.FC = () => {
     const classes = useStyles();
     const [value , setValue] = useState({
         userNm      : '',

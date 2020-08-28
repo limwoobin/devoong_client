@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 
-const Copyright = () => {
+const Copyright : React.FC = () => {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
