@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Think = () => {
+const Map : React.FC = () => {
     return (
         <div>
-            Think
+            Map
         </div>
     )
 }
 
-export default Think;
+export default Map;

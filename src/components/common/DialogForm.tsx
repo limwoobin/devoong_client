@@ -7,11 +7,15 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 
 
-const DialogForm = () => {
+const DialogForm : React.FC = () => {
     const [open, setOpen] = React.useState(false);
     useEffect(() => {
         setOpen(true);
     },[]);
+
+    const handleClose = () => {
+
+    }
 
     return (
         <div>
