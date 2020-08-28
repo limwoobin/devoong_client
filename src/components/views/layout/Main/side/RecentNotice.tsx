@@ -38,7 +38,10 @@ const RecentNotice : React.FC<Props> = props => {
         <section className="sc-fAjcbJ fNlsam sc-caSCKo wDGYV">
             <h4>공지사항</h4>
             <ol>
-                {renderNoticeTitle(recentNotices)}
+                {/* {renderNoticeTitle(recentNotices)} */}
+                    <h3><li><p>테스트 공지사항1</p></li></h3>
+                    <h3><li><p>테스트 공지사항2</p></li></h3>
+                    <h3><li><p>테스트 공지사항3</p></li></h3>
             </ol>
         </section>
     )

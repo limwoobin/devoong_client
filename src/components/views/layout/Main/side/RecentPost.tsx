@@ -39,7 +39,10 @@ const RecentPost : React.FC<Props> = props => {
         <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
             <h4>최신글</h4>
             <ol>
-                {renderPostsTitle(recentPosts)}
+                {/* {renderPostsTitle(recentPosts)} */}
+                <h3><li><p>테스트 최신글1</p></li></h3>
+                <h3><li><p>테스트 최신글2</p></li></h3>
+                <h3><li><p>테스트 최신글3</p></li></h3>
             </ol>
         </section>
     )

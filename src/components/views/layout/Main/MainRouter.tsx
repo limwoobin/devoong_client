@@ -13,14 +13,14 @@ import './Main.scss';
 //    ,BoardRouter
 //    ,ProfileView
 //    ,PostRouter
-//    ,Member
 // } 
 // from '../../../page/pages';
 import {
     ProfileView,
     SignIn,
     SignUp,
-    NoMatch
+    NoMatch,
+    User
 } from '../../../page/pages';
 
 
@@ -33,6 +33,7 @@ const Main = () => {
                 <Route path="/ctg/profile" component={ProfileView} />
                 <Route path="/login" component={SignIn} />
                 <Route path="/register" component={SignUp} />
+                <Route path="/user" component={User} />
                 {/* <Route path="/ctg/notice" component={NoticeRouter} />
                 <Route path="/ctg/think" component={Think} />
                 <Route path="/ctg/board" component={BoardRouter} />

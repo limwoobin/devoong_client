@@ -1,13 +1,10 @@
 import React , {useState , useEffect} from 'react';
 import './Member.scss';
 import RedirectToLogin from '../../common/RedirectToLogin';
-import MyPageSideBar from './MyPageSideBar';
-import MyPage from './MyPage';
+// import MyPageSideBar from './MyPageSideBar';
+// import MyPage from './MyPage';
 
-const Member = () => {
-    useEffect(() => {
-
-    });
+const User : React.FC = () => {
 
     return (
         <div id="myPage">
@@ -18,4 +15,4 @@ const Member = () => {
     )
 }
 
-export default Member;
+export default User;
