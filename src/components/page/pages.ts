@@ -3,7 +3,7 @@ export {default as SignUp} from '../views/User/SignUp';
 export {default as ProfileView} from '../views/MyProfile/ProfileView';
 export {default as NoMatch} from '../NoMatch';
 export {default as User} from '../views/User/User';
-export {default as BoardRouter} from '../views/Board/BoardRouter';
+// export {default as BoardRouter} from '../views/Board/BoardRouter';
 
 // export {default as NoticeRouter} from '../views/Notice/NoticeRouter'; 
 // export {default as Map} from '../views/MenuPage/Map'; 

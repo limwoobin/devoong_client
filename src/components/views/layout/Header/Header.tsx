@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import RightMenu from './Sections/RightMenu';
-import { Drawer } from 'antd';
 import './Sections/Header.scss';
-import MenuBtn from '../menu/Menu';
+import MainHeader from './MainHeader';
+import SubHeader from './SubHeader';
 
 function Header() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
     setVisible(true)
@@ -17,32 +16,10 @@ function Header() {
 
   return (
     <div className="header_area">
-      <nav className="menu" style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-        <div className="menu__btn" >
-          <MenuBtn />
-        </div>
-        <div className="menu__logo" >
-          <a href="/" style={{ textDecoration: 'none'}}>
-            Drogbalog
-          </a>
-        </div>
-        <div className="menu__container">
-          <div className="menu_rigth">
-            <RightMenu />
-          </div>
-          {/* <Drawer
-            title="Basic Drawer"
-            placement="right"
-            className="menu_drawer"
-            closable={false}
-            onClose={onClose}
-            visible={visible}
-          >
-          </Drawer> */}
-        </div>
-      </nav>
+      <MainHeader />
+      <SubHeader />
     </div>
   )
 }
 
-export default Header
+export default Header;
