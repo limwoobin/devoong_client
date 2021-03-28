@@ -1,8 +1,6 @@
 import React , { useEffect } from 'react';
 import './MainPage.scss';
 import RecentPost from './side/RecentPost';
-import RecentNotice from './side/RecentNotice';
-import XX from './side/XX';
 import { RecentDataModel } from '../../../../core/models/RecentDataModel';
 
 type MainSideProps = {
@@ -28,22 +26,14 @@ export default function MainSide({
     return (
         <div>
             <aside className="sc-csuQGl pDRpR">
-                    <div className="sc-cHGsZl bHiaRe">
-                        <div className="sc-TOsTZ eyrfCG">
-                            <RecentPost
-                                apiCalling={apiCalling}
-                                recentPosts={recentPosts}
-                                onRecentPosts={onRecentPosts}
-                            />
-                            <RecentNotice
-                                apiCalling={apiCalling}
-                                recentNotices={recentNotices}
-                                onRecentNotices={onRecentNotices}
-                            />
-                            <XX />
-                        </div>
-                    </div>
-                </aside>
+                <div className="sc-TOsTZ eyrfCG">
+                    <RecentPost
+                        apiCalling={apiCalling}
+                        recentPosts={recentPosts}
+                        onRecentPosts={onRecentPosts}
+                    />
+                </div>
+            </aside>
         </div>
     )
 }
