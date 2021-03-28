@@ -1,4 +1,4 @@
-import { UserActionType } from '../actions/userAction';
+import { UserActionType } from '../api/actions/userAction';
 import { UserModel } from '../core/models/UserModel';
 
 type UserState = {

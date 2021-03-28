@@ -1,6 +1,6 @@
 import { takeLatest, all, call, put, take, delay } from 'redux-saga/effects';
 import { callApi } from '../api/callApi';
-import { CommonActionType } from '../actions/commonAction';
+import { CommonActionType } from '../api/actions/commonAction';
 import { ApiAction } from '../reducers/appReducer';
 import { push } from 'connected-react-router';
 

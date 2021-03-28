@@ -1,4 +1,4 @@
-import { CommonAction , CommonActionType } from '../actions/commonAction';
+import { CommonAction , CommonActionType } from '../api/actions/commonAction';
 import { RecentDataModel } from '../core/models/RecentDataModel';
 import { CategoryModel } from '../core/models/CategoryModel';
 

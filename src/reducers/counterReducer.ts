@@ -1,6 +1,6 @@
 import { CounterActionType,
          CounterAction
-        } from '../actions/counterAction';
+        } from '../api/actions/counterAction';
 
 type CounterState = {
   count: number | any;
