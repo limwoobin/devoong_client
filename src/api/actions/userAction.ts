@@ -1,4 +1,4 @@
-import { UserModel } from '../core/models/UserModel';
+import { UserModel } from '../../core/models/UserModel';
 
 export const UserActionType = {
     EMAIL_OVERLAP_CHECK_REQUEST : 'user/EMAIL_OVERLAP_CHECK_REQUEST' as const,

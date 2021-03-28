@@ -1,5 +1,5 @@
-import { RecentDataModel } from '../core/models/RecentDataModel';
-import { CategoryModel } from '../core/models/CategoryModel';
+import { RecentDataModel } from '../../core/models/RecentDataModel';
+import { CategoryModel } from '../../core/models/CategoryModel';
 
 export const CommonActionType = {
     GET_CATEGORY_REQUEST : 'GET_CATEGORY_REQUEST' as const,

@@ -1,6 +1,6 @@
 import { takeLatest, all, call, put, take, delay } from 'redux-saga/effects';
 import { callApi } from '../api/callApi';
-import { UserActionType , SignUp} from '../actions/userAction';
+import { UserActionType , SignUp} from '../api/actions/userAction';
 import { ApiAction } from '../reducers/appReducer';
 import { UserModel } from '../core/models/UserModel';
 import {
