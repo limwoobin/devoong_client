@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import { RootState } from '../../../../../reducers';
-import { getRecentPost , getRecentNotice } from '../../../../../api/actions/commonAction';
-import MainSide from '../MainSide';
+import { getRecentPost } from '../../../../../api/actions/commonAction';
+import RecentPostsCall from './RecentPostsCall';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 
 export default function CommonConatiner() {
@@ -17,7 +17,7 @@ export default function CommonConatiner() {
     }
 
     return (
-        <MainSide
+        <RecentPostsCall
             apiCalling={apiCalling} 
             recentPosts={recentPosts}
             onRecentPosts={onRecentPosts}

@@ -1,19 +1,19 @@
 import React , { useEffect } from 'react';
 import './MainPage.scss';
-import RecentPosts from './recentPosts/RecentPosts';
-import { RecentDataModel } from '../../../../core/models/RecentDataModel';
+import RecentPosts from './RecentPosts';
+import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 
-type MainSideProps = {
+type RecentPostsProps = {
     apiCalling: boolean,
     recentPosts: RecentDataModel[];
     onRecentPosts: () => void;
 }
 
-export default function MainSide({
+export default function RecentPostsCall({
     apiCalling,
     recentPosts,
     onRecentPosts,
-}: MainSideProps) {
+}: RecentPostsProps) {
 
     useEffect(() => {
 

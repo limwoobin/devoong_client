@@ -1,6 +1,6 @@
 import React from 'react';
 import './MainPage.scss';
-import MainSideContainer from './recentPosts/RecentPostsContainer';
+import RecentPostsContainer from './recentPosts/RecentPostsContainer';
 import {useMediaQuery} from 'react-responsive';
 import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';
 
@@ -22,14 +22,14 @@ const PcRecentPosts = () => {
                     <div className="BAccj">
                         
                     </div>
-                    <MainSideContainer />
+                    <RecentPostsContainer />
                 </div>
             </div>
 }
 
 const MobileRecentPosts = () => {
     return <div>
-                <MainSideContainer />
+                <RecentPostsContainer />
                 'AA'
            </div>
 }
