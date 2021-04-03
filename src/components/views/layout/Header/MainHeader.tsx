@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './style/Header.scss';
-import {useMediaQuery} from 'react-responsive';
 import MenuBtn from './MenuBtn';
+import {useMediaQuery} from 'react-responsive';
+import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';
 
 export default function MainHeader() {
-    const isPc = useMediaQuery({query: "(min-width: 767px)"});
-    const isMobile = useMediaQuery({query: "(max-width: 767px)"});
+    const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
+    const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
 
     return (
         <>

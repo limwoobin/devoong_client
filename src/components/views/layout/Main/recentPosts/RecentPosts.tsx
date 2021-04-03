@@ -2,6 +2,11 @@ import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
 import {Link} from 'react-router-dom';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
+import { useMediaQuery } from 'react-responsive';
+import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../../core/constant/constants';
+import RecentPostsPc from './RecentPostsPc';
+import RecentPostsMobile from './RecentPostsMobile';
+
 
 const renderPostsTitle = (posts: RecentDataModel[]) => {
     if (posts.length !== 0) {
@@ -21,13 +26,16 @@ const renderPostsTitle = (posts: RecentDataModel[]) => {
     }
 }
 
-interface Props {
+type RecentPostsProps = {
     apiCalling: boolean,
-    recentPosts: RecentDataModel[],
-    onRecentPosts: Function
+    recentPosts: RecentDataModel[];
+    onRecentPosts: () => void;
 }
 
-const RecentPost : React.FC<Props> = props => {
+const RecentPosts : React.FC<RecentPostsProps> = props => {
+    const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
+    const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
+
     const { apiCalling , recentPosts , onRecentPosts } = props;
     useEffect(() => {
         console.log('apicalling' , apiCalling);
@@ -36,16 +44,11 @@ const RecentPost : React.FC<Props> = props => {
     } , []);
     
     return (
-        <section className="sc-fAjcbJ fNlsam sc-gisBJw kPSwsK">
-            <h4>최신글</h4>
-            <ol>
-                {/* {renderPostsTitle(recentPosts)} */}
-                <h3><li><p>테스트 최신글1</p></li></h3>
-                <h3><li><p>테스트 최신글2</p></li></h3>
-                <h3><li><p>테스트 최신글3</p></li></h3>
-            </ol>
-        </section>
+        <>
+            {isPc && <RecentPostsPc />}
+            {isMobile && <RecentPostsMobile />}
+        </>
     )
 }
 
-export default RecentPost;
+export default RecentPosts;

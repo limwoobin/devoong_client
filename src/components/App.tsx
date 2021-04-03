@@ -9,9 +9,7 @@ const App = () => {
     <div>
        <BrowserRouter>
         <Header />
-          <div style={{paddingTop: '75px' , minHeight: 'calc(100vh - 80px)'}}>
           <MainRouter />
-          </div>
        </BrowserRouter>        
       </div>
   );

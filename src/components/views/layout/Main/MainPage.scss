@@ -64,6 +64,7 @@ div {
 .lpgbkm {
     display: flex;
     margin-top: 1rem;
+    flex: 1 1 0%;
 }
 
 .BAccj {
@@ -72,23 +73,13 @@ div {
 
 .pDRpR {
     margin-left: 3rem;
-    width: 12rem;
+    margin-bottom: 3rem;
+    width: 14rem;
 }
 
 .bHiaRe {
     position: fixed;
     top: 118px;
-}
-
-.gLLJLX {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 1440px){
-    .eyrfCG {
-        width: auto;
-    }
 }
 
 h4 {
@@ -141,6 +132,7 @@ li {
 
 .kPSwsK ul {
     padding-left: 0px;
+    margin-left: 3rem;
     list-style: none;
 }
 
