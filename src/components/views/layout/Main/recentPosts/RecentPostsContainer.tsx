@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import { RootState } from '../../../../../reducers';
 import { getRecentPost } from '../../../../../api/actions/commonAction';
-import RecentPostsCall from './RecentPostsCall';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
+import RecentPosts from '../recentPosts/RecentPosts';
 
 export default function CommonConatiner() {
     const apiCalling: boolean = useSelector((state: RootState) => state.appReducer.apiCalling);
@@ -17,7 +17,7 @@ export default function CommonConatiner() {
     }
 
     return (
-        <RecentPostsCall
+        <RecentPosts
             apiCalling={apiCalling} 
             recentPosts={recentPosts}
             onRecentPosts={onRecentPosts}

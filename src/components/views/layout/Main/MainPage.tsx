@@ -1,6 +1,7 @@
 import React from 'react';
 import './MainPage.scss';
 import RecentPostsContainer from './recentPosts/RecentPostsContainer';
+import ChipsContainer from './chips/ChipsContainer';
 import {useMediaQuery} from 'react-responsive';
 import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';
 
@@ -23,6 +24,7 @@ const PcRecentPosts = () => {
                         
                     </div>
                     <RecentPostsContainer />
+                    <ChipsContainer />
                 </div>
             </div>
 }
@@ -30,6 +32,7 @@ const PcRecentPosts = () => {
 const MobileRecentPosts = () => {
     return <div>
                 <RecentPostsContainer />
+                <ChipsContainer />
                 'AA'
            </div>
 }

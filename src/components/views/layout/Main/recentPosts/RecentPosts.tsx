@@ -26,13 +26,13 @@ const renderPostsTitle = (posts: RecentDataModel[]) => {
     }
 }
 
-interface Props {
+type RecentPostsProps = {
     apiCalling: boolean,
-    recentPosts: RecentDataModel[],
-    onRecentPosts: Function
+    recentPosts: RecentDataModel[];
+    onRecentPosts: () => void;
 }
 
-const RecentPosts : React.FC<Props> = props => {
+const RecentPosts : React.FC<RecentPostsProps> = props => {
     const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
     const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
 
