@@ -27,7 +27,7 @@ interface Props {
     onRecentPosts: Function
 }
 
-const RecentPost : React.FC<Props> = props => {
+const RecentPosts : React.FC<Props> = props => {
     const { apiCalling , recentPosts , onRecentPosts } = props;
     useEffect(() => {
         console.log('apicalling' , apiCalling);
@@ -50,4 +50,4 @@ const RecentPost : React.FC<Props> = props => {
     )
 }
 
-export default RecentPost;
+export default RecentPosts;

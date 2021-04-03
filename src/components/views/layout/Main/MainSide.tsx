@@ -7,16 +7,12 @@ type MainSideProps = {
     apiCalling: boolean,
     recentPosts: RecentDataModel[];
     onRecentPosts: () => void;
-    recentNotices: RecentDataModel[];
-    onRecentNotices: () => void;
 }
 
 export default function MainSide({
     apiCalling,
     recentPosts,
     onRecentPosts,
-    recentNotices,
-    onRecentNotices,
 }: MainSideProps) {
 
     useEffect(() => {
