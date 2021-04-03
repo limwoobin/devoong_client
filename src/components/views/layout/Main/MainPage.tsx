@@ -18,10 +18,10 @@ const MainPage : React.FC = () => {
 
 const PcRecentPosts = () => {
     return <div>
-                <div className="sc-jlyJG lpgbkm">
-                    <main className="sc-gipzik BAccj">
-
-                    </main>
+                <div className="lpgbkm">
+                    <div className="BAccj">
+                        
+                    </div>
                     <MainSideContainer />
                 </div>
             </div>
@@ -29,7 +29,8 @@ const PcRecentPosts = () => {
 
 const MobileRecentPosts = () => {
     return <div>
-                Mobile
+                <MainSideContainer />
+                'AA'
            </div>
 }
 

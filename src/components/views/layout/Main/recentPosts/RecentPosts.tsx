@@ -2,6 +2,11 @@ import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
 import {Link} from 'react-router-dom';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
+import { useMediaQuery } from 'react-responsive';
+import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../../core/constant/constants';
+import PcRecentPosts from './PcRecentPosts';
+import MobileRecentPosts from './MobileRecentPosts';
+
 
 const renderPostsTitle = (posts: RecentDataModel[]) => {
     if (posts.length !== 0) {
@@ -28,6 +33,9 @@ interface Props {
 }
 
 const RecentPosts : React.FC<Props> = props => {
+    const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
+    const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
+
     const { apiCalling , recentPosts , onRecentPosts } = props;
     useEffect(() => {
         console.log('apicalling' , apiCalling);
@@ -36,17 +44,10 @@ const RecentPosts : React.FC<Props> = props => {
     } , []);
     
     return (
-        <aside className="sc-csuQGl pDRpR">
-            <section className="fNlsam kPSwsK">
-                <h4>최신글</h4>
-                <ol>
-                    {/* {renderPostsTitle(recentPosts)} */}
-                    <h3><li><p>테스트 최신글1</p></li></h3>
-                    <h3><li><p>테스트 최신글2</p></li></h3>
-                    <h3><li><p>테스트 최신글3</p></li></h3>
-                </ol>
-            </section>
-        </aside>
+        <>
+            {isPc && <PcRecentPosts />}
+            {isMobile && <MobileRecentPosts />}
+        </>
     )
 }
 
