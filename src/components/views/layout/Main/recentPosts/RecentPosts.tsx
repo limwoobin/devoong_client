@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 import { useMediaQuery } from 'react-responsive';
 import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../../core/constant/constants';
-import PcRecentPosts from './PcRecentPosts';
-import MobileRecentPosts from './MobileRecentPosts';
+import RecentPostsPc from './RecentPostsPc';
+import RecentPostsMobile from './RecentPostsMobile';
 
 
 const renderPostsTitle = (posts: RecentDataModel[]) => {
@@ -45,8 +45,8 @@ const RecentPosts : React.FC<RecentPostsProps> = props => {
     
     return (
         <>
-            {isPc && <PcRecentPosts />}
-            {isMobile && <MobileRecentPosts />}
+            {isPc && <RecentPostsPc />}
+            {isMobile && <RecentPostsMobile />}
         </>
     )
 }

@@ -23,8 +23,10 @@ const PcRecentPosts = () => {
                     <div className="BAccj">
                         
                     </div>
-                    <RecentPostsContainer />
-                    <ChipsContainer />
+                    <div className="sideBar">
+                        <RecentPostsContainer />
+                        <ChipsContainer />
+                    </div>
                 </div>
             </div>
 }
