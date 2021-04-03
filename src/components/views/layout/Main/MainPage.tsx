@@ -1,20 +1,36 @@
 import React from 'react';
 import './MainPage.scss';
 import MainSideContainer from '../../../../containers/CommonContainer';
+import {useMediaQuery} from 'react-responsive';
+import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';
 
 const MainPage : React.FC = () => {
+    const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
+    const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
+
     return (
-        <div className="sc-fjdhpX iqwyib">
-            <div className="sc-jlyJG lpgbkm">
-                <main className="sc-gipzik BAccj">
-                    <div className="sc-eqIVtm gLLJLX">
-                        
-                    </div>
-                </main>
-                <MainSideContainer />
-            </div>
-        </div>
+        <>
+            {isPc && <PcRecentPosts />}
+            {isMobile && <MobileRecentPosts />}
+        </>
     )
+}
+
+const PcRecentPosts = () => {
+    return <div>
+                <div className="sc-jlyJG lpgbkm">
+                    <main className="sc-gipzik BAccj">
+                        PC
+                    </main>
+                    <MainSideContainer />
+                </div>
+            </div>
+}
+
+const MobileRecentPosts = () => {
+    return <div>
+                Mobile
+           </div>
 }
 
 export default MainPage;
