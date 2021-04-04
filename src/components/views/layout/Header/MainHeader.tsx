@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style/Header.scss';
+import './scss/Header.scss';
 import MenuBtn from './MenuBtn';
 import {useMediaQuery} from 'react-responsive';
 import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style/Header.scss';
+import './scss/Header.scss';
 
 export default function SubHeader() {
     return (
