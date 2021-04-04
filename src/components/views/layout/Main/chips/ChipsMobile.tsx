@@ -16,7 +16,7 @@ const theme = createMuiTheme({
       contrastThreshold: 3,
       tonalOffset: 0.2,
     },
-  });
+});
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

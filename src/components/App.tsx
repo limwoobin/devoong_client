@@ -6,12 +6,12 @@ import '../styles/style.scss';
 
 const App = () => {
   return (
-    <div>
+    <div style={{backgroundColor: '#363636'}}>
        <BrowserRouter>
-        <Header />
+          <Header />
           <MainRouter />
        </BrowserRouter>        
-      </div>
+    </div>
   );
 };
 

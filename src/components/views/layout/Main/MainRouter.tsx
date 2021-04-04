@@ -28,7 +28,7 @@ import {
 const Main = () => {
     
     return (
-        <div className="mainDiv" style={{backgroundColor: 'white'}}>
+        <div className="mainDiv">
             <Switch>
                 <Route exact path="/" component={MainPage} />
                 <Route path="/ctg/profile" component={ProfileView} />
