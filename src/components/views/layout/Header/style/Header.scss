@@ -16,11 +16,19 @@
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  a {
-    padding-left: 10px;
-    margin-right: 1%;
-    color: gray;
-    font-size: 0.85rem;
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    a {
+      padding-left: 10px;
+      margin-right: 1%;
+      color: gray;
+      font-size: 0.85rem;
+      
+    }
   }
 } 
 

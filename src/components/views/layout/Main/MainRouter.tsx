@@ -16,7 +16,6 @@ import './Main.scss';
 // } 
 // from '../../../page/pages';
 import {
-    ProfileView,
     NoMatch,
     // BoardRouter
 } from '../../../page/pages';
@@ -28,7 +27,6 @@ const Main = () => {
         <div className="mainDiv">
             <Switch>
                 <Route exact path="/" component={MainPage} />
-                <Route path="/ctg/profile" component={ProfileView} />
                 {/* <Route path="/ctg/board" component={BoardRouter} /> */}
                 {/* <Route path="/ctg/notice" component={NoticeRouter} />
                 <Route path="/ctg/think" component={Think} />

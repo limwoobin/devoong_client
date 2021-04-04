@@ -1,4 +1,3 @@
-export {default as ProfileView} from '../views/MyProfile/ProfileView';
 export {default as NoMatch} from '../NoMatch';
 // export {default as BoardRouter} from '../views/Board/BoardRouter';
 
