@@ -89,6 +89,7 @@ h4 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    color: #c6c6c6;
 }
 
 .fNlsam h4 {
@@ -124,6 +125,7 @@ ul {
 li {
     display: list-item;
     text-align: -webkit-match-parent;
+    color: #c6c6c6;
 }
 
 .fNlsam + .sc-fAjcbJ {
@@ -143,7 +145,10 @@ p {
     line-height: 1.5;
     display: -webkit-box;
     text-overflow: ellipsis;
-    color: rgb(73, 80, 87);
     margin: 0px 0px 1.5rem;
     overflow: hidden;
+}
+
+span {
+    color: #c6c6c6;
 }

@@ -11,7 +11,7 @@ export default function MenuBtn() {
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         console.log(event);
         console.log(event.currentTarget);
-      setAnchorEl(event.currentTarget);
+        setAnchorEl(event.currentTarget);
     };
   
     const handleClose = () => {
@@ -21,7 +21,7 @@ export default function MenuBtn() {
     return (
         <>
             <div className="menu_btn">
-                <IconButton onClick={handleClick} className="menu_btn" color="inherit" aria-label="menu">
+                <IconButton onClick={handleClick} className="menu_btn" color="primary" aria-label="menu">
                     <MenuIcon />
                 </IconButton>
             </div>

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     heading: {
       fontSize: theme.typography.pxToRem(15),
       fontWeight: 'bold',
-      color: 'white',
+      color: '#c6c6c6',
       width: '100%',
       padding: '0 15px',
     },
