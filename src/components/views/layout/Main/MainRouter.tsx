@@ -17,10 +17,7 @@ import './Main.scss';
 // from '../../../page/pages';
 import {
     ProfileView,
-    SignIn,
-    SignUp,
     NoMatch,
-    User,
     // BoardRouter
 } from '../../../page/pages';
 
@@ -32,9 +29,6 @@ const Main = () => {
             <Switch>
                 <Route exact path="/" component={MainPage} />
                 <Route path="/ctg/profile" component={ProfileView} />
-                <Route path="/login" component={SignIn} />
-                <Route path="/register" component={SignUp} />
-                <Route path="/user" component={User} />
                 {/* <Route path="/ctg/board" component={BoardRouter} /> */}
                 {/* <Route path="/ctg/notice" component={NoticeRouter} />
                 <Route path="/ctg/think" component={Think} />
