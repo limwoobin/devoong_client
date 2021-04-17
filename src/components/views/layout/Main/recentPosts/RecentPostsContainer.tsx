@@ -5,7 +5,7 @@ import { getRecentPost } from '../../../../../api/actions/commonAction';
 import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
 import RecentPosts from './RecentPosts';
 
-export default function CommonConatiner() {
+export default function RecentPostsContainer() {
     const apiCalling: boolean = useSelector((state: RootState) => state.appReducer.apiCalling);
 
     const recentPosts: RecentDataModel[] = useSelector((state: RootState) => state.commonReducer.recentPosts);
