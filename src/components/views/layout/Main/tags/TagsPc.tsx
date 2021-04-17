@@ -17,23 +17,23 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function TagsPc() {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <aside className="pDRpR">
-            <section className="fNlsam kPSwsK">
-                <h4>Tag</h4>
-                <div className={classes.root}>
-                    <Tag color="magenta">magenta</Tag>
-                    <Tag color="#f50">#f50</Tag>
-                    <Tag color="#f50">#f50</Tag>
-                    <Tag color="lime">lime</Tag>
-                    <Tag color="green">green</Tag>
-                    <Tag color="cyan">cyan</Tag>
-                    <Tag color="blue">blue</Tag>
-                    <Tag color="geekblue">geekblue</Tag>
-                </div>
-            </section>
-        </aside>
-    )
+  return (
+      <aside className="pDRpR">
+          <section className="fNlsam kPSwsK">
+              <h4>Tag</h4>
+              <div className={classes.root}>
+                  <Tag color="magenta">magenta</Tag>
+                  <Tag color="#f50">#f50</Tag>
+                  <Tag color="#f50">#f50</Tag>
+                  <Tag color="lime">lime</Tag>
+                  <Tag color="green">green</Tag>
+                  <Tag color="cyan">cyan</Tag>
+                  <Tag color="blue">blue</Tag>
+                  <Tag color="geekblue">geekblue</Tag>
+              </div>
+          </section>
+      </aside>
+  )
 }

@@ -12,6 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(0.5),
       },
       backgroundColor: '#3d3d3d',
+      paddingTop: '8px',
+      paddingBottom: '8px',
     },
   }),
 );
