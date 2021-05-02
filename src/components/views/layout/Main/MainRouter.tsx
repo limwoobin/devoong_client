@@ -4,7 +4,6 @@ import MainPage from './MainPage';
 import './Main.scss';
 import {
     NoMatch,
-    // PostRouter
 } from '../../../../page/pages';
 
 

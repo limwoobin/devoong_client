@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Tag } from 'antd';
+import Chip from '@material-ui/core/Chip';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -11,7 +12,6 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > *': {
         margin: theme.spacing(0.5),
       },
-      backgroundColor: '#3d3d3d',
       paddingTop: '8px',
       paddingBottom: '8px',
     },
@@ -27,10 +27,18 @@ export default function TagsMobile() {
             <Tag color="#f50">#f50</Tag>
             <Tag color="#f50">#f50</Tag>
             <Tag color="lime">lime</Tag>
-            <Tag color="green">green</Tag>
-            <Tag color="cyan">cyan</Tag>
-            <Tag color="blue">blue</Tag>
-            <Tag color="geekblue">geekblue</Tag>
+            <Chip
+              label="Rrimary"
+              color="primary"
+            />
+            <Chip
+              label="Secondary"
+              color="secondary"
+            />
+            <Chip
+              label="Default"
+              color="default"
+            />
         </div>
     )
 }

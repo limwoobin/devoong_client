@@ -8,6 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles({
     card: {
@@ -21,7 +22,32 @@ const useStyles = makeStyles({
     },
 });
 
-export default function Posts(props: any) {
+const featuredPosts =  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageText: 'Image Text',
+};
+
+export default function Posts() {
+    return (
+        <>
+            <Container maxWidth="lg">
+                <Grid container spacing={2}>
+                    <PostsCard key={featuredPosts.title} post={featuredPosts} />
+                    <PostsCard key={featuredPosts.title} post={featuredPosts} />
+                    <PostsCard key={featuredPosts.title} post={featuredPosts} />
+                    <PostsCard key={featuredPosts.title} post={featuredPosts} />
+                    <PostsCard key={featuredPosts.title} post={featuredPosts} />
+                </Grid>
+            </Container>
+        </>
+    )
+}
+
+function PostsCard(props: any) {
     const classes = useStyles();
     const { post } = props;
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector , useDispatch } from 'react-redux';
-import { RootState } from '../../../../../store/module';
-import { getRecentPost } from '../../../../../core/api/actions/commonAction';
-import { RecentDataModel } from '../../../../../models/RecentDataModel';
-import RecentPosts from './RecentPosts';
+import { RootState } from '../store/module';
+import { getRecentPost } from '../core/api/actions/commonAction';
+import { RecentDataModel } from '../models/RecentDataModel';
+import RecentPosts from '../components/views/layout/main/recentPosts/RecentPosts';
 
 export default function RecentPostsContainer() {
     const apiCalling: boolean = useSelector((state: RootState) => state.appReducer.apiCalling);
