@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector , useDispatch } from 'react-redux';
-import { RootState } from '../../../../../reducers';
-import { getRecentPost } from '../../../../../api/actions/commonAction';
-import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
+import { RootState } from '../../../../../store/module';
+import { getRecentPost } from '../../../../../core/api/actions/commonAction';
+import { RecentDataModel } from '../../../../../models/RecentDataModel';
 import RecentPosts from './RecentPosts';
 
 export default function RecentPostsContainer() {

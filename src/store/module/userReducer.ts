@@ -1,5 +1,5 @@
-import { UserActionType } from '../api/actions/userAction';
-import { UserModel } from '../core/models/UserModel';
+import { UserActionType } from '../../core/api/actions/userAction';
+import { UserModel } from '../../models/UserModel';
 
 type UserState = {
     loggedUserEmail: string,

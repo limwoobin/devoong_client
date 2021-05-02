@@ -1,6 +1,6 @@
-import { CommonAction , CommonActionType } from '../api/actions/commonAction';
-import { RecentDataModel } from '../core/models/RecentDataModel';
-import { CategoryModel } from '../core/models/CategoryModel';
+import { CommonAction , CommonActionType } from '../../core/api/actions/commonAction';
+import { RecentDataModel } from '../../models/RecentDataModel';
+import { CategoryModel } from '../../models/CategoryModel';
 
 type CommonState = {
     categories : CategoryModel[];

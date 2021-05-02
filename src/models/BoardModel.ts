@@ -1,4 +1,4 @@
-import { CategoryType } from '../code/CategoryType';
+import { CategoryType } from '../core/code/CategoryType';
 import { CommentModel } from './CommentModel';
 
 export type BoardModel = {

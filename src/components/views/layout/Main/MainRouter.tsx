@@ -5,7 +5,7 @@ import './Main.scss';
 import {
     NoMatch,
     // PostRouter
-} from '../../../page/pages';
+} from '../../../../page/pages';
 
 
 const Main = () => {

@@ -1,5 +1,5 @@
-import http from '../core/http/http';
-import { UserModel } from '../core/models/UserModel';
+import http from '../http/http';
+import { UserModel } from '../../models/UserModel';
 
 const url = {
     GET_Customers       : '/dr/customer/customers',

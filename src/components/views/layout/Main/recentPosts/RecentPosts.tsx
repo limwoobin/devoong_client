@@ -1,7 +1,7 @@
 import React , {useState , useEffect} from 'react';
 import '../MainPage.scss';
 import {Link} from 'react-router-dom';
-import { RecentDataModel } from '../../../../../core/models/RecentDataModel';
+import { RecentDataModel } from '../../../../../models/RecentDataModel';
 import { useMediaQuery } from 'react-responsive';
 import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../../core/constant/constants';
 import RecentPostsPc from './RecentPostsPc';

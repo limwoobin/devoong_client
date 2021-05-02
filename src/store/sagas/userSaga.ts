@@ -1,13 +1,13 @@
 import { takeLatest, all, call, put, take, delay } from 'redux-saga/effects';
-import { callApi } from '../api/callApi';
-import { UserActionType , SignUp} from '../api/actions/userAction';
-import { ApiAction } from '../reducers/appReducer';
-import { UserModel } from '../core/models/UserModel';
+import { callApi } from '../../core/api/callApi';
+import { UserActionType , SignUp} from '../../core/api/actions/userAction';
+import { ApiAction } from '../module/appReducer';
+import { UserModel } from '../../models/UserModel';
 import {
     SignUpRequest,
     LoginRequest,
     EmailOverlapCheckRequest,
-} from '../reducers/userReducer';
+} from '../module/userReducer';
 
 export default function* userSaga () {
     yield all([
