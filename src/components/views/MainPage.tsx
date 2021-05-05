@@ -1,11 +1,11 @@
 import React from 'react';
 import './MainPage.scss';
-import RecentPostsContainer from '../../../../containers/RecentPostsContainer';
+import RecentPostsContainer from '../../containers/RecentPostsContainer';
 import Posts from './posts/Posts';
 import Tags from './tags/Tags';
-import SocialContainer from './social/SocialContainer';
+import Socials from './socials/Socials';
 import {useMediaQuery} from 'react-responsive';
-import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';
+import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../core/constant/constants';
 
 const MainPage : React.FC = () => {
     const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
@@ -28,7 +28,7 @@ const PcRecentPosts = () => {
                     <div className="sideBar">
                         <RecentPostsContainer />
                         <Tags />
-                        <SocialContainer />
+                        <Socials />
                     </div>
                 </div>
             </div>

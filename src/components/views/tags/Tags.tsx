@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../../core/constant/constants';
+import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../core/constant/constants';
 import TagsPc from './TagsPc';
 import TagsMobile from './TagsMobile';
 

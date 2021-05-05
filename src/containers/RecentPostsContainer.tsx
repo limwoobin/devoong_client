@@ -3,7 +3,7 @@ import { useSelector , useDispatch } from 'react-redux';
 import { RootState } from '../store/module';
 import { getRecentPost } from '../core/api/actions/commonAction';
 import { RecentDataModel } from '../models/RecentDataModel';
-import RecentPosts from '../components/views/layout/main/recentPosts/RecentPosts';
+import RecentPosts from '../components/views/recentPosts/RecentPosts';
 
 export default function RecentPostsContainer() {
     const apiCalling: boolean = useSelector((state: RootState) => state.appReducer.apiCalling);
@@ -17,10 +17,12 @@ export default function RecentPostsContainer() {
     }
 
     return (
-        <RecentPosts
-            apiCalling={apiCalling} 
-            recentPosts={recentPosts}
-            onRecentPosts={onRecentPosts}
-        />
+        // <RecentPosts
+        //     apiCalling={apiCalling} 
+        //     recentPosts={recentPosts}
+        //     onRecentPosts={onRecentPosts}
+        // />
+        <>
+        </>
     )
 }

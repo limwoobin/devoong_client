@@ -1,7 +1,7 @@
 import React from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../../core/constant/constants';
+import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../core/constant/constants';
 import { useMediaQuery } from 'react-responsive';
 import SocialPC from './SocialPC';
 import SocialMobile from './SocialMobile';

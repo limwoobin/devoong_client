@@ -4,7 +4,7 @@ import MainPage from './MainPage';
 import './Main.scss';
 import {
     NoMatch,
-} from '../../../../page/pages';
+} from '../../page/pages';
 
 
 const Main = () => {
@@ -13,7 +13,6 @@ const Main = () => {
         <div className="mainDiv">
             <Switch>
                 <Route exact path="/" component={MainPage} />
-                {/* <Route path="/ctg/posts" component={PostRouter} /> */}
                 <Route component={NoMatch} />
             </Switch>
         </div>
