@@ -1,5 +1,5 @@
 import React from 'react';
-import '../mainPage.scss';
+import '../main.scss';
 import { useMediaQuery } from 'react-responsive';
 import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../core/constant/constants';
 import RecentPostsPc from './RecentPostsPc';

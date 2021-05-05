@@ -1,5 +1,5 @@
 import React from 'react';
-import './mainPage.scss';
+import './main.scss';
 import RecentPostsContainer from '../../containers/RecentPostsContainer';
 import Posts from './posts/Posts';
 import Tags from './tags/Tags';
@@ -7,7 +7,7 @@ import Socials from './socials/Socials';
 import {useMediaQuery} from 'react-responsive';
 import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../core/constant/constants';
 
-const MainPage : React.FC = () => {
+export default function MainView() {
     const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
     const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
 
@@ -41,5 +41,3 @@ const MobileRecentPosts = () => {
                 <Posts />
            </div>
 }
-
-export default MainPage;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './views/layout/header/Header';
-import MainRouter from './views/MainRouter';
-import FooterContainer from './views/layout/footer/FooterContainer';
+import Router from './views/Router';
+import Footer from './views/layout/footer/Footer';
 import '../styles/style.scss';
 
 const App = () => {
@@ -11,9 +11,9 @@ const App = () => {
        <BrowserRouter>
           <Header />
           <div style={{paddingBottom: '20px'}}>
-            <MainRouter />
+            <Router />
           </div>
-          <FooterContainer />
+          <Footer />
        </BrowserRouter>
     </div>
   );

@@ -6,7 +6,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
-import { makeStyles , createStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import './Posts.scss';
@@ -23,19 +23,8 @@ const useStyles = makeStyles({
     },
 });
 
-const buttonStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-    },
-  }),
-);
-
 export default function PostsCard(props: any) {
     const classes = useStyles();
-    const btnClasses = buttonStyles();
     const { post } = props;
 
     return (
@@ -45,20 +34,20 @@ export default function PostsCard(props: any) {
                     <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                         <CardContent>
-                        <Typography component="h2" variant="h5">
-                            {post.title}
-                        </Typography>
-                        <Typography variant="subtitle1" color="textSecondary">
-                            {post.date}
-                        </Typography>
-                        <Typography variant="subtitle1" paragraph>
-                            <p className="description">
-                            {post.description}
-                            </p>
-                        </Typography>
-                        <Typography variant="subtitle1" color="primary">
-                            <Button variant="contained" color="primary">READ MORE</Button>
-                        </Typography>
+                            <Typography component="h2" variant="h5">
+                                {post.title}
+                            </Typography>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                {post.date}
+                            </Typography>
+                            <Typography variant="subtitle1" paragraph>
+                                <p className="description">
+                                {post.description}
+                                </p>
+                            </Typography>
+                            <Typography variant="subtitle1" color="primary">
+                                <Button variant="contained" color="primary">READ MORE</Button>
+                            </Typography>
                         </CardContent>
                     </div>
                     <Hidden xsDown>

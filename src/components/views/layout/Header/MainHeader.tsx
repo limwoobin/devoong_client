@@ -3,6 +3,7 @@ import './scss/header.scss';
 import MenuBtn from './MenuBtn';
 import {useMediaQuery} from 'react-responsive';
 import {MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH} from '../../../../core/constant/constants';
+import { Link } from 'react-router-dom';
 
 export default function MainHeader() {
     const isPc = useMediaQuery({query: MOBILE_MIN_WIDTH});
@@ -23,10 +24,10 @@ export default function MainHeader() {
 function HeaderBtns() {
     return (
         <p>
-            <a href="/">AAAAA</a>
-            <a href="/">BBBBB</a>
-            <a href="/">CCCCC</a>
-            <a href="/">DDDDD</a>
+            <a href="">HOME</a>
+            <Link to="about">ABOUT</Link>
+            <Link to="tags">TAGS</Link>
+            <Link to="my">MY</Link>
         </p>
     )
 }
