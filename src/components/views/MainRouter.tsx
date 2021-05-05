@@ -4,6 +4,7 @@ import MainPage from './MainPage';
 import './Main.scss';
 import {
     NoMatch,
+    PostsDetail,
 } from '../../page/pages';
 
 
@@ -13,6 +14,7 @@ const Main = () => {
         <div className="mainDiv">
             <Switch>
                 <Route exact path="/" component={MainPage} />
+                <Route path="/posts" component={PostsDetail} />
                 <Route component={NoMatch} />
             </Switch>
         </div>
