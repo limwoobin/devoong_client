@@ -41,7 +41,7 @@ export default function PostsCard(props: any) {
                         </Typography>
                         <Typography variant="subtitle1" paragraph>
                             <p className="description">
-                                {post.description}
+                            {post.description}
                             </p>
                         </Typography>
                         <Typography variant="subtitle1" color="primary">

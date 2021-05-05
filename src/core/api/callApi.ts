@@ -1,5 +1,4 @@
 import http from '../http/http';
-import { UserModel } from '../../models/UserModel';
 
 const url = {
     GET_Customers       : '/dr/customer/customers',
@@ -25,9 +24,6 @@ const url = {
 export const callApi = {
     GET_Customers       : () => http.get(url.GET_Customers),
     ADD_Customer        : (data: any) => http.post(url.ADD_Customer),
-    SIGN_UP             : (data: UserModel) => http.post(url.SIGN_UP , data),
-    LOGIN               : (data: any) => http.post(url.LOGIN , data),
-    LOGOUT              : () => http.get(url.LOGOUT),
     USER_EMAIL_CHK      : (data: any) => http.get(url.USER_EMAIL_CHK + data),
     GET_Categories      : (data: any) => http.get(url.GET_Categories , {
         params: { 
