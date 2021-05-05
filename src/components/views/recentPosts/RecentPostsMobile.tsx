@@ -1,5 +1,5 @@
 import React from 'react';
-import '../MainPage.scss';
+import '../mainPage.scss';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';

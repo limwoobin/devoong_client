@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainPage.scss';
+import './mainPage.scss';
 import RecentPostsContainer from '../../containers/RecentPostsContainer';
 import Posts from './posts/Posts';
 import Tags from './tags/Tags';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './scss/Header.scss';
+import './scss/header.scss';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';

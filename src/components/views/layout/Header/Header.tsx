@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './scss/Header.scss';
+import './scss/header.scss';
 import MainHeader from './MainHeader';
 import SubHeader from './SubHeader';
 

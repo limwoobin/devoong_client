@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import '../MainPage.scss';
+import '../mainPage.scss';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../MainPage.scss';
+import '../mainPage.scss';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Tag } from 'antd';
 
