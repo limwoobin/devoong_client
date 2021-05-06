@@ -1,10 +1,10 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { MOBILE_MIN_WIDTH , MOBILE_MAX_WIDTH } from '../../../../core/constant/constants';
+import { constants } from '../../../../core/constant';
 import FooterMobile from './FooterMobile';
 
 export default function FooterContainer() {
-    const isMobile = useMediaQuery({query: MOBILE_MAX_WIDTH});
+    const isMobile = useMediaQuery({query: constants.mobileMaxWidth});
 
     return (
         <div style={{bottom: 0}}>

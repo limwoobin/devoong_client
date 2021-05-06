@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './scss/header.scss';
-import MainHeader from './MainHeader';
+import MainHeader from './main/MainHeader';
 import SubHeader from './SubHeader';
 
 function Header() {

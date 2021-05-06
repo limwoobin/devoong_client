@@ -1,5 +1,4 @@
-export type TagsModel = {
-    id: string;
-    name: string;
-    routerName: string;
+export default class TagsModel {
+    public id?: number;
+    public name?: string;
 }
