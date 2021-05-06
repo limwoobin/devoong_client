@@ -8,8 +8,8 @@ import {useMediaQuery} from 'react-responsive';
 import { constants } from '../../core/constant';
 
 export default function MainView() {
-    const isPc = useMediaQuery({query: constants.mobileMinWidth});
-    const isMobile = useMediaQuery({query: constants.mobileMaxWidth});
+    const isPc = useMediaQuery({query: constants.MIN_WIDTH});
+    const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
     return (
         <>

@@ -1,4 +1,4 @@
 export const constants = {
-    mobileMinWidth : '(min-width: 767px)',
-    mobileMaxWidth : '(max-width: 767px)',
+    MIN_WIDTH : '(min-width: 767px)',
+    MAX_WIDTH : '(max-width: 767px)',
 };

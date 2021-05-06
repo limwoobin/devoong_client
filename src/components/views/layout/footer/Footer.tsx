@@ -4,7 +4,7 @@ import { constants } from '../../../../core/constant';
 import FooterMobile from './FooterMobile';
 
 export default function FooterContainer() {
-    const isMobile = useMediaQuery({query: constants.mobileMaxWidth});
+    const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
     return (
         <div style={{bottom: 0}}>

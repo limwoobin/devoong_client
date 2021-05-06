@@ -12,8 +12,8 @@ const socials = [
 ];
 
 export default function SocialContainer() {
-    const isPc = useMediaQuery({query: constants.mobileMinWidth});
-    const isMobile = useMediaQuery({query: constants.mobileMaxWidth});
+    const isPc = useMediaQuery({query: constants.MIN_WIDTH});
+    const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
     return (
         <>
