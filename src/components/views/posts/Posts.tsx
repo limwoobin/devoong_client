@@ -29,7 +29,3 @@ export default function Posts() {
         </>
     )
 }
-
-Posts.propTypes = {
-    post: PropTypes.object,
-};

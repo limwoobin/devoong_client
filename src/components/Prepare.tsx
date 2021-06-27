@@ -6,9 +6,9 @@ const NoMatch : React.FC = () => {
     <div>
       <div className="iRWwWQ">
         {/* <img src="https://www.gaia-wind.com/images/404.png" style={{ marginTop: '10%' }} /> */}
-        <img src="../../public/404.png" style={{ marginTop: '10%' }} />
+        <img src="../../public/preparing.png" style={{ marginTop: '10%' }} />
         <Link to="/" style={{ textDecoration: 'none' }}>
-            <button color="teal" className="homeBtn">홈으로</button>
+            <button color="teal" className="homeBtn">준비중...</button>
         </Link>
       </div>
     </div>

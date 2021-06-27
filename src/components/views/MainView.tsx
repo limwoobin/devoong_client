@@ -1,8 +1,8 @@
 import React from 'react';
 import './main.scss';
-import RecentPostsContainer from '../../containers/RecentPostsContainer';
 import Posts from './posts/Posts';
 import Tags from './tags/Tags';
+import RecentPosts from './recentPosts/RecentPosts';
 import Socials from './socials/Socials';
 import {useMediaQuery} from 'react-responsive';
 import { constants } from '../../core/constant';
@@ -26,7 +26,7 @@ const PcRecentPosts = () => {
                         <Posts />
                     </div>
                     <div className="sideBar">
-                        <RecentPostsContainer />
+                        <RecentPosts />
                         <Tags />
                         <Socials />
                     </div>
@@ -36,7 +36,7 @@ const PcRecentPosts = () => {
 
 const MobileRecentPosts = () => {
     return <div>
-                <RecentPostsContainer />
+                <RecentPosts />
                 <Tags />
                 <Posts />
            </div>

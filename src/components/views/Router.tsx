@@ -4,7 +4,8 @@ import MainView from './MainView';
 import styled from 'styled-components';
 import {
     NoMatch,
-    PostsDetail,
+    Prepare,
+    PostsView,
     About,
     Tags,
     My
@@ -20,10 +21,10 @@ export default function Router() {
         <MainDiv>
             <Switch>
                 <Route exact path="/" component={MainView} />
-                <Route path="/posts" component={PostsDetail} />
-                <Route path="/about" component={About} />
-                <Route path="/tags" component={Tags} />
-                <Route path="/my" component={My} />
+                <Route path="/posts" component={PostsView} />
+                <Route path="/about" component={Prepare} />
+                <Route path="/tags" component={Prepare} />
+                <Route path="/my" component={Prepare} />
                 <Route component={NoMatch} />
             </Switch>
         </MainDiv>

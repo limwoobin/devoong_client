@@ -40,6 +40,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "@toast-ui/editor-plugin-code-syntax-highlight": "^1.0.0",
     "@toast-ui/react-editor": "^2.1.2",
     "@types/jest": "^26.0.0",
@@ -78,6 +80,7 @@
     "react-dom": "^16.13.1",
     "react-draft-wysiwyg": "^1.14.5",
     "react-icons": "^3.9.0",
+    "react-markdown": "^6.0.2",
     "react-redux": "^7.2.0",
     "react-responsive": "^8.2.0",
     "react-router-dom": "^5.1.2",
