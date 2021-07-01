@@ -25,7 +25,9 @@ export default function TagsPc() {
               <h4>Tag</h4>
               <div className={classes.root}>
                   <Tag color="magenta">magenta</Tag>
-                  <Tag color="#f50">#f50</Tag>
+                    <Tag color="#670000"
+                    style={{fontSize: '15px' , fontWeight: 'bold'}}
+                    >#f50</Tag>
                   <Tag color="#f50">#f50</Tag>
                   <Tag color="lime">lime</Tag>
                   <Tag color="green">green</Tag>

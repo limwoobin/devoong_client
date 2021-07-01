@@ -14,7 +14,6 @@ const MarkDownStyle = styled.div`
 
 export default function MarkdownRender(props: any) {
     const { contents } = props;
-    // const markdownContents = ;
 
     return (
         // <MarkDownStyle>
