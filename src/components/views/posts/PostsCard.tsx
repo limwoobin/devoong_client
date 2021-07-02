@@ -28,6 +28,7 @@ export default function PostsCard(props: any) {
     const { post } = props;
 
     return (
+        // https://material-ui.com/getting-started/templates/album/
         <Grid item xs={12} md={6}>
             <Link to={`/posts/${post.id}`}>
                 <CardActionArea>

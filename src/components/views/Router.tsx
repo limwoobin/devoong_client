@@ -22,7 +22,7 @@ export default function Router() {
             <Switch>
                 <Route exact path="/" component={MainView} />
                 <Route path="/posts" component={PostsView} />
-                <Route path="/about" component={Prepare} />
+                <Route path="/about" component={About} />
                 <Route path="/tags" component={Prepare} />
                 <Route path="/my" component={Prepare} />
                 <Route component={NoMatch} />
