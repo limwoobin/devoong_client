@@ -26,8 +26,8 @@ const PcRecentPosts = () => {
                         <Posts />
                     </div>
                     <div className="sideBar">
-                        <RecentPosts />
                         <Tags />
+                        <RecentPosts />
                         <Socials />
                     </div>
                 </div>
@@ -36,8 +36,8 @@ const PcRecentPosts = () => {
 
 const MobileRecentPosts = () => {
     return <div>
-                <RecentPosts />
                 <Tags />
+                <RecentPosts />
                 <Posts />
            </div>
 }

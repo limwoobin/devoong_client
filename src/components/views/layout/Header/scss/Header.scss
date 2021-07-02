@@ -22,15 +22,15 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    a {
-      padding-left: 10px;
-      margin-right: 1%;
-      color: gray;
-      font-size: 0.85rem;
-      
-    }
   }
-} 
+}
+
+.asd {
+  padding-left: 10px;
+  margin-right: 1%;
+  color: gray;
+  font-size: 0.85rem;
+}
 
 .sub_head {
   padding: 0 20px;
@@ -70,4 +70,9 @@
 
 .menu_item {
   color: black;
+}
+
+.searchArea {
+  position: relative;
+  float: right;
 }

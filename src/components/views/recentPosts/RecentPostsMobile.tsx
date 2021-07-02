@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function MobileRecentPosts() {
     const classes = useStyles();
-
     
     return (
         <div className={classes.root}>
