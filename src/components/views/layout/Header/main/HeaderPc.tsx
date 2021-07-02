@@ -6,7 +6,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import Button from '@material-ui/core/Button';
 
 import '../scss/header.scss';
 
@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
         marginLeft: theme.spacing(1),
         width: 'auto',
       },
+      marginRight: '20px'
     },
     searchIcon: {
       padding: theme.spacing(0, 2),
@@ -67,13 +68,13 @@ const useStyles = makeStyles((theme: Theme) =>
 const headerBtns = (headers: HeaderModel[]) => {
 
     return <div>
-            <p>
-                {headers.map((c: HeaderModel) => {
-                    return <Link to={c.path} className="asd">
-                                {c.value}
-                            </Link>
-                })}
-            </p>
+                <p>
+                    {headers.map((c: HeaderModel) => {
+                        return <Link to={c.path} className="btn_test_style">
+                                    {c.value}
+                                </Link>
+                    })}
+                </p>
             </div>
 }
 
@@ -104,6 +105,7 @@ export default function HeaderPc(props: HeaderProps) {
                         }}
                         inputProps={{ 'aria-label': 'search' }}
                     />
+                <Button>OK</Button>
                 </div>
             </Toolbar>
         </div>
