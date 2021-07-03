@@ -11,6 +11,7 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { withStyles } from '@material-ui/core/styles';
 
 const headerBtns = (headers: HeaderModel[]) => {
     return <div>
@@ -30,10 +31,20 @@ const headerBtns = (headers: HeaderModel[]) => {
            </div>
 }
 
+const CustomDrawer = withStyles({
+    paper: {
+        backgroundColor: 'black' 
+    }
+})(Drawer);
+
 const useStyles = makeStyles({
+    paper: {
+      backgroundColor: 'black'
+    },
     list: {
       width: '200px',
     },
+
 });
 
 type HeaderProps = {
@@ -58,6 +69,7 @@ export default function HeaderMobile({headers}: HeaderProps) {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
             className={clsx(classes.list)}
+            style={{ backgroundColor: 'black' }}
         >
         {headerBtns(headers)}
         </div>
@@ -69,9 +81,9 @@ export default function HeaderMobile({headers}: HeaderProps) {
                 <IconButton onClick={toggleDrawer(true)} className="menu_btn" color="primary" aria-label="menu">
                     <MenuIcon />
                 </IconButton>
-                <Drawer open={left} onClose={toggleDrawer(false)}>
+                <CustomDrawer open={left} onClose={toggleDrawer(false)}>
                     {openSide(headers)}
-                </Drawer>
+                </CustomDrawer>
             </div>
         </>
     )

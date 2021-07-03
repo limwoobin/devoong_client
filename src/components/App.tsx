@@ -5,7 +5,7 @@ import Footer from './views/layout/footer/Footer';
 import '../styles/style.scss';
 import MainView from './views/MainView';
 
-const App = () => {
+export default function App() {
   return (
     <div style={{backgroundColor: '#363636'}}>
        <BrowserRouter>
@@ -18,6 +18,3 @@ const App = () => {
     </div>
   );
 };
-
-
-export default App;
