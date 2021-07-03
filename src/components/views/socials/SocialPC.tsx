@@ -27,7 +27,7 @@ export default function SocialPC(props: any) {
                 <h4>Social</h4>
                 <div className={classes.root}>
                     {socials.map((data: any) => (
-                        <Link display="block" variant="body1" href={data.url} key={data} target="_blank" color="inherit">
+                        <Link display="block" variant="body1" href={data.url} key={data.name} target="_blank" color="inherit">
                             <Grid container direction="row" spacing={1} alignItems="center">
                                 <Grid item>
                                     <data.icon />

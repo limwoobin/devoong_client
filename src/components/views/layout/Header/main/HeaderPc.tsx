@@ -66,11 +66,10 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const headerBtns = (headers: HeaderModel[]) => {
-
     return <div>
                 <p>
                     {headers.map((c: HeaderModel) => {
-                        return <Link to={c.path} className="btn_test_style">
+                        return <Link to={c.path} key={c.value} className="btn_test_style">
                                     {c.value}
                                 </Link>
                     })}

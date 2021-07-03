@@ -20,8 +20,8 @@ export default function Router() {
     return (
         <MainDiv>
             <Switch>
-                <Route exact path="/" component={MainView} />
-                <Route path="/posts" component={PostsView} />
+                <Route exact path="/" component={PostsView} />
+                {/* <Route path="/posts" component={PostsView} /> */}
                 <Route path="/about" component={About} />
                 <Route path="/tags" component={Prepare} />
                 <Route path="/my" component={Prepare} />
