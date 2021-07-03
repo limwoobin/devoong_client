@@ -13,14 +13,22 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 
-const headerBtns = (headers: HeaderModel[]) => {
+const useStyles = makeStyles({
+    list: {
+      width: '100%',
+    },
+});
+
+type Anchor = 'top';
+
+function headerBtns (headers: HeaderModel[]) {
     return <div>
                <List>
                    {headers.map((c: HeaderModel) => {
                        return <Link 
                             to={c.path} 
                             className="listItem" 
-                            style={{ textDecoration: 'none' , backgroundColor: 'black'}}
+                            style={{ textDecoration: 'none'}}
                         >
                                 <ListItem button key={c.value}>
                                     <ListItemText primary={c.value} className="menu_item" />
@@ -31,45 +39,42 @@ const headerBtns = (headers: HeaderModel[]) => {
            </div>
 }
 
-const CustomDrawer = withStyles({
-    paper: {
-        backgroundColor: 'black' 
-    }
-})(Drawer);
-
-const useStyles = makeStyles({
-    paper: {
-      backgroundColor: 'black'
-    },
-    list: {
-      width: '200px',
-    },
-
-});
-
 type HeaderProps = {
     headers: HeaderModel[],
 }
 
+const CustomDrawer = withStyles({
+    paper: {
+        backgroundColor: '#3d3d3d' 
+    }
+})(Drawer);
+
 export default function HeaderMobile({headers}: HeaderProps) {
     const classes = useStyles();
-    const [left , setLeft] = useState(false);
+    const [state, setState] = React.useState({
+        top: false,
+    });
 
-    const toggleDrawer = (open: boolean) => (event: any) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    const toggleDrawer = (anchor: Anchor, open: boolean) => (
+        event: React.KeyboardEvent | React.MouseEvent,
+    ) => {
+        if (
+            event.type === 'keydown' &&
+            ((event as React.KeyboardEvent).key === 'Tab' ||
+              (event as React.KeyboardEvent).key === 'Shift')
+          ) {
             return;
           }
 
-          setLeft(open);
+          setState({...state , [anchor]: open});
     }
 
-    const openSide = (headers: HeaderModel[]) => (
+    const openSide = (anchor: Anchor , headers: HeaderModel[]) => (
         <div
             role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
+            onClick={toggleDrawer(anchor , false)}
+            onKeyDown={toggleDrawer(anchor , false)}
             className={clsx(classes.list)}
-            style={{ backgroundColor: 'black' }}
         >
         {headerBtns(headers)}
         </div>
@@ -78,11 +83,11 @@ export default function HeaderMobile({headers}: HeaderProps) {
     return (
         <>
             <div className="menu_btn">
-                <IconButton onClick={toggleDrawer(true)} className="menu_btn" color="primary" aria-label="menu">
+                <IconButton onClick={toggleDrawer('top' , true)} className="menu_btn" color="primary" aria-label="menu">
                     <MenuIcon />
                 </IconButton>
-                <CustomDrawer open={left} onClose={toggleDrawer(false)}>
-                    {openSide(headers)}
+                <CustomDrawer anchor="top" open={state.top} onClose={toggleDrawer('top' , false)}>
+                    {openSide('top' , headers)}
                 </CustomDrawer>
             </div>
         </>
