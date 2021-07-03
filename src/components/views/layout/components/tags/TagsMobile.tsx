@@ -2,7 +2,7 @@ import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Tag } from 'antd';
 import Chip from '@material-ui/core/Chip';
-import '../main.scss';
+import '../layout.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../main.scss';
+import '../layout.scss';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Tag } from 'antd';
 import { Link } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../main.scss';
+import '../layout.scss';
 
 export default function PcRecentPosts() {
     return (

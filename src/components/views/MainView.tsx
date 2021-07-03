@@ -1,9 +1,8 @@
 import React from 'react';
 import './main.scss';
-import Posts from './posts/Posts';
-import Tags from './tags/Tags';
-import RecentPosts from './recentPosts/RecentPosts';
-import Socials from './socials/Socials';
+import Tags from './layout/components/tags/Tags';
+import RecentPosts from './layout/components/recents/RecentPosts';
+import Socials from './layout/components/socials/Socials';
 import { useMediaQuery } from 'react-responsive';
 import { constants } from '../../core/constant';
 import Router from './Router';
