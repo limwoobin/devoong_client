@@ -4,3 +4,4 @@ export { default as PostsView } from '../components/views/posts/PostsView';
 export { default as About } from '../components/views/about/About';
 export { default as Tags } from '../components/views/menus/tags/TagsView';
 export { default as My } from '../components/views/menus/my/My';
+export { default as Posts } from '../components/views/posts/Posts';

@@ -6,10 +6,6 @@ import RecentPosts from './recentPosts/RecentPosts';
 import Socials from './socials/Socials';
 import { useMediaQuery } from 'react-responsive';
 import { constants } from '../../core/constant';
-
-import Header from './layout/header/Header';
-import Footer from './layout/footer/Footer';
-import { BrowserRouter } from 'react-router-dom';
 import Router from './Router';
 
 export default function MainView() {
@@ -17,12 +13,10 @@ export default function MainView() {
     const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
     return (
-        <BrowserRouter>
-            <Header />
-                {isPc && <PcMainView />}
-                {isMobile && <MobileMainView />}
-            <Footer />
-        </BrowserRouter>
+        <>
+            {isPc && <PcMainView />}
+            {isMobile && <MobileMainView />}
+        </>
     )
 }
 
@@ -30,7 +24,6 @@ const PcMainView = () => {
     return <div>
                 <div className="lpgbkm">
                     <div className="BAccj">
-                        {/* <Posts /> */}
                         <Router />
                     </div>
                     <div className="sideBar">
@@ -46,6 +39,6 @@ const MobileMainView = () => {
     return <div>
                 <Tags />
                 <RecentPosts />
-                {/* <Posts /> */}
+                <Router />
            </div>
 }

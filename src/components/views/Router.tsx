@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route , Switch } from 'react-router-dom';
-import MainView from './MainView';
 import styled from 'styled-components';
 import {
     NoMatch,
     Prepare,
+    Posts,
     PostsView,
     About,
     Tags,
@@ -20,8 +20,8 @@ export default function Router() {
     return (
         <MainDiv>
             <Switch>
-                <Route exact path="/" component={PostsView} />
-                {/* <Route path="/posts" component={PostsView} /> */}
+                <Route exact path="/" component={Posts} />
+                <Route path="/posts" component={PostsView} />
                 <Route path="/about" component={About} />
                 <Route path="/tags" component={Prepare} />
                 <Route path="/my" component={Prepare} />
