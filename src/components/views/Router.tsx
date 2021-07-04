@@ -7,8 +7,6 @@ import {
     Posts,
     PostsView,
     About,
-    Tags,
-    My
 } from '../../page/pages';
 
 const MainDiv = styled.div`
