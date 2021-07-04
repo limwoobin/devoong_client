@@ -8,8 +8,16 @@ const contents = `
 # H1 ~
 ## H2 zz
 ### H312e313rr
-`;
+> # 1asdasd
+>> ## asdasdasd
+* zz
+\`\`\` 
+const a = function() {
+    console.log('aaa');
+}
+\`\`\`
 
+`;
 
 export default function PostsView() {
     return (

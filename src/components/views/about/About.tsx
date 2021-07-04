@@ -6,7 +6,9 @@ import Container from '@material-ui/core/Container';
 import MarkdownRender from '../../MarkdownRender';
 
 const contents = `
-
+# 임우빈
+> #### 테스트
+>> asdasd
 `;
 
 export default function About() {
@@ -14,7 +16,7 @@ export default function About() {
         <React.Fragment>
             <CssBaseline />
             <Container maxWidth="md">
-                <Typography component="div" style={{ height: '100vh' }}>
+                <Typography component="div" style={{ backgroundColor: 'black' , height: '100vh' }}>
                     <MarkdownRender contents={contents} />
                 </Typography>
             </Container>
