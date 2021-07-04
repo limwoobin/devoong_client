@@ -1,5 +1,8 @@
 import React from 'react';
 import MarkdownRender from '../../MarkdownRender';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const contents = `
 # H1 ~
@@ -10,8 +13,13 @@ const contents = `
 
 export default function PostsView() {
     return (
-        <>
-            <MarkdownRender contents={contents} />
-        </>
+        <React.Fragment>
+            <CssBaseline />
+            <Container maxWidth="md">
+                <Typography component="div" style={{ height: '100vh' }}>
+                    <MarkdownRender contents={contents} />
+                </Typography>
+            </Container>
+        </React.Fragment>
     )
 }
