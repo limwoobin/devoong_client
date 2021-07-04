@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > *': {
         margin: theme.spacing(0.5),
       },
+      color: 'white'
     },
   }),
 );

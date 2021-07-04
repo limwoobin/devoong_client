@@ -7,6 +7,8 @@ export default function MarkdownRender(props: any) {
     const { contents } = props;
 
     return (
+        <div style={{ color: 'white' }}>
             <ReactMarkdown children={contents} />
+        </div>
     )
 }
