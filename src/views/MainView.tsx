@@ -4,7 +4,7 @@ import Tags from './layout/components/tags/Tags';
 import RecentPosts from './layout/components/recents/RecentPosts';
 import Socials from './layout/components/socials/Socials';
 import { useMediaQuery } from 'react-responsive';
-import { constants } from '../../core/constant';
+import { constants } from '../core/constant';
 import Router from './Router';
 
 export default function MainView() {

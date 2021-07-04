@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { HeaderModel } from '../../../../../models';
+import { HeaderModel } from '../../../../models';
 import { Link } from 'react-router-dom';
 import '../scss/header.scss';
 

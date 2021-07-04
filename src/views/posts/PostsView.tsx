@@ -1,5 +1,5 @@
 import React from 'react';
-import MarkdownRender from '../../MarkdownRender';
+import MarkdownRender from '../MarkdownRender';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';

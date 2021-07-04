@@ -1,7 +1,7 @@
 import React from 'react';
 import '../layout.scss';
 import { useMediaQuery } from 'react-responsive';
-import { constants } from '../../../../../core/constant';
+import { constants } from '../../../../core/constant';
 import RecentPostsPc from './RecentPostsPc';
 import RecentPostsMobile from './RecentPostsMobile';
 

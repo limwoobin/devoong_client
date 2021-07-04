@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { constants } from '../../../../../core/constant';
+import { constants } from '../../../../core/constant';
 import TagsPc from './TagsPc';
 import TagsMobile from './TagsMobile';
 

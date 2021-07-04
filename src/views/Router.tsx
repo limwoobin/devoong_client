@@ -7,7 +7,7 @@ import {
     Posts,
     PostsView,
     About,
-} from '../../page/pages';
+} from '../page/pages';
 
 const MainDiv = styled.div`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

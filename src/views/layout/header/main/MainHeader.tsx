@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../scss/header.scss';
 import {useMediaQuery} from 'react-responsive';
-import { constants } from '../../../../../core/constant';
-import { headers } from '../../../../../core/constant';
+import { constants } from '../../../../core/constant';
+import { headers } from '../../../../core/constant';
 import HeaderPC from './HeaderPc';
 import HeaderMobile from './HeaderMobile';
 
