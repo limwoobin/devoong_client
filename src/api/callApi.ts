@@ -1,4 +1,4 @@
-import http from '../http/http';
+import http from '../core/http/http';
 
 const url = {
     GET_Customers       : '/dr/customer/customers',
