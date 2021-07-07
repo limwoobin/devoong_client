@@ -33,7 +33,7 @@ export default function PostsCard(props: any) {
                 <Card className={classes.card}>
                 <div className={classes.cardDetails}>
                     <CardContent>
-                        <Typography component="h2" variant="h5">
+                        <Typography component="h2" variant="h5" style={{ color: 'black' }}>
                             {post.title}
                         </Typography>
                         <Typography variant="subtitle1" color="textSecondary">
