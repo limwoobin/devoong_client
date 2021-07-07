@@ -2,7 +2,6 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
@@ -31,31 +30,27 @@ export default function PostsCard(props: any) {
         // https://material-ui.com/getting-started/templates/album/
         <Grid item xs={12} md={6}>
             <Link to={`/posts/${post.id}`}>
-                <CardActionArea>
-                    <Card className={classes.card}>
-                    <div className={classes.cardDetails}>
-                        <CardContent>
-                            <Typography component="h2" variant="h5">
-                                {post.title}
-                            </Typography>
-                            <Typography variant="subtitle1" color="textSecondary">
-                                {post.date}
-                            </Typography>
-                            <Typography variant="subtitle1" paragraph>
-                                <p className="description">
-                                {post.description}
-                                </p>
-                            </Typography>
-                            <Typography variant="subtitle1" color="primary">
-                                <Button variant="contained" color="primary">READ MORE</Button>
-                            </Typography>
-                        </CardContent>
-                    </div>
-                    <Hidden xsDown>
-                        <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
-                    </Hidden>
-                    </Card>
-                </CardActionArea>
+                <Card className={classes.card}>
+                <div className={classes.cardDetails}>
+                    <CardContent>
+                        <Typography component="h2" variant="h5">
+                            {post.title}
+                        </Typography>
+                        <Typography variant="subtitle1" color="textSecondary">
+                            {post.date}
+                        </Typography>
+                        <Typography variant="subtitle1" paragraph className="description">
+                            {post.description}
+                        </Typography>
+                        <Typography variant="subtitle1" color="primary">
+                            <Button variant="contained" color="primary">READ MORE</Button>
+                        </Typography>
+                    </CardContent>
+                </div>
+                <Hidden xsDown>
+                    <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+                </Hidden>
+                </Card>
             </Link>    
         </Grid>
     )
