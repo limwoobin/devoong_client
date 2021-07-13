@@ -7,7 +7,11 @@ import rootReducer , { rootSaga } from './reducer/rootReducer';
 import { configureStore } from '@reduxjs/toolkit';
 
 const sagaMiddleware = createSagaMiddleware();
-const store = configureStore({ reducer: rootReducer , middleware: [sagaMiddleware] });
+const store = configureStore({ 
+    reducer: rootReducer,
+    middleware: [sagaMiddleware],
+    devTools: process.env.NODE_ENV !== 'production'
+});
 
 sagaMiddleware.run(rootSaga);
 

@@ -7,6 +7,7 @@ import {
     Posts,
     PostsView,
     About,
+    PostsContainer
 } from '../page/pages';
 
 const MainDiv = styled.div`
@@ -17,8 +18,9 @@ const MainDiv = styled.div`
 export default function Router() {   
     return (
         <MainDiv>
-            <Switch>
-                <Route exact path="/" component={Posts} />
+            <Switch>PostsContainer
+                {/* <Route exact path="/" component={Posts} /> */}
+                <Route exact path="/" component={PostsContainer} />
                 <Route path="/posts" component={PostsView} />
                 <Route path="/about" component={About} />
                 <Route path="/tags" component={Prepare} />

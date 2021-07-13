@@ -32,18 +32,20 @@ const initialState = {
 // Toolkit Reducer
 export default createReducer(initialState , {
     [SEARCH_DATA]: (state: any, {payload: data}) => {
-        state.posts.length = 0;
-        for (let i=0; i<data.length; i++) {
-            state.posts.push({
-                id: data[i].id,
-                title: data[i].title,
-                content: data[i].contents,
-                views: data[i].views
-            });
+        state.posts = data;
+        
+        // state.posts.length = 0;
+        // for (let i=0; i<data.length; i++) {
+        //     state.posts.push({
+        //         id: data[i].id,
+        //         title: data[i].title,
+        //         content: data[i].contents,
+        //         views: data[i].views
+        //     });
 
-            if (i == data.length - 1) {
-                state.lastId = data[i].id;
-            }
-        }
+        //     if (i == data.length - 1) {
+        //         state.lastId = data[i].id;
+        //     }
+        // }
     }
 })
