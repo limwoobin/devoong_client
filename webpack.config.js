@@ -94,7 +94,7 @@ module.exports = (env , options) => {
             open: true,
             historyApiFallback: true,
             // proxy : {
-            //     "**" : "http://localhost:4000"
+            //     "**" : "http://localhost:8080"
             // }
         }   
     }

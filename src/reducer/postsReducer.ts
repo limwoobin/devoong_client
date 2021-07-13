@@ -19,13 +19,14 @@ export function* postsSaga() {
 }
 
 export function* searchDataSaga() {
+    console.log('searchDataSaga...');
     const response: PostsModel[] = yield call(API.getPostsAll);
     yield put(searchData(response));
 }
 
 // initState
 const initialState = {
-    posts: [],
+    Posts: [],
     lastId: 0
 }
 
@@ -33,19 +34,5 @@ const initialState = {
 export default createReducer(initialState , {
     [SEARCH_DATA]: (state: any, {payload: data}) => {
         state.posts = data;
-        
-        // state.posts.length = 0;
-        // for (let i=0; i<data.length; i++) {
-        //     state.posts.push({
-        //         id: data[i].id,
-        //         title: data[i].title,
-        //         content: data[i].contents,
-        //         views: data[i].views
-        //     });
-
-        //     if (i == data.length - 1) {
-        //         state.lastId = data[i].id;
-        //     }
-        // }
     }
 })

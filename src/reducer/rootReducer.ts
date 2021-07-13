@@ -7,7 +7,7 @@ const rootReducer = combineReducers({
 });
 
 export function* rootSaga() {
-    yield all([postsReducer]);
+    yield all([postsSaga()]);
 }
 
 export default rootReducer;
