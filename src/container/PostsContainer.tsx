@@ -10,13 +10,13 @@ import { PostsModel } from '../models';
 export default function PostsContainer() {
     const dispatch = useDispatch();
 
+
     useEffect(() => {
-       onSearchPosts();
+        onSearchPosts();
     } , [])
     
 
     const onSearchPosts = () => {
-        console.log('onSearchPosts...');
         dispatch(searchPostsAsync());
     }
 
@@ -37,7 +37,9 @@ export default function PostsContainer() {
 
     function renderProgress() {
         return (
-            <Progress />
+            <div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
+                <Progress />
+            </div>
         );
     }
 
@@ -45,11 +47,7 @@ export default function PostsContainer() {
 
     return (
         <>
-            {!isPostsLoading ? 
-                <div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-                    <Progress />
-                </div> 
-                : 
+            {!isPostsLoading ? renderProgress() : 
                 <Container maxWidth="lg">
                     <Grid container spacing={2}>
                         {renderPosts(posts)}

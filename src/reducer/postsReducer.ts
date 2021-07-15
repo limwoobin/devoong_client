@@ -20,8 +20,6 @@ export const getPosts: any = createAction(GET_POSTS);
 export function* postsSaga() {
     yield takeEvery(SEARCH_POSTS_ASYNC , searchPostsSaga);
     yield takeEvery(GET_POSTS_ASYNC , getPostsSaga);
-    // insert
-    // delete
 }
 
 export function* searchPostsSaga() {
