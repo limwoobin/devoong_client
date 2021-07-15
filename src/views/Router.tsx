@@ -17,7 +17,7 @@ const MainDiv = styled.div`
 export default function Router() {   
     return (
         <MainDiv>
-            <Switch>PostsContainer
+            <Switch>
                 <Route exact path="/" component={PostsContainer} />
                 <Route path="/posts" component={PostsView} />
                 <Route path="/about" component={About} />

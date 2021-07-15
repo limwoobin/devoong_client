@@ -38,6 +38,7 @@ export function* getPostsSaga({payload: id}: any) {
 
 // initState
 const initialState = {
+    isPostsLoading: false,
     posts: [],
     lastId: 0,
     data: {},
@@ -47,6 +48,7 @@ const initialState = {
 export default createReducer(initialState , {
     [SEARCH_DATA]: (state , {payload: data}) => {
         state.posts = data;
+        state.isPostsLoading = true;
     },
     [GET_POSTS]: (state: any, {paylod: data}) => {
         state.data = data;

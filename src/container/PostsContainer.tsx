@@ -3,7 +3,9 @@ import { useDispatch , useSelector } from 'react-redux';
 import PostsCard from '../views/posts/PostsCard';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Progress from '../views/Progress';
 import { searchPostsAsync , getPostsAsync } from '../reducer/postsReducer';
+import { PostsModel } from '../models';
 
 export default function PostsContainer() {
     const dispatch = useDispatch();
@@ -22,33 +24,38 @@ export default function PostsContainer() {
         dispatch(getPostsAsync(id));
     }
 
-    const onPostsClick = (id: string , title: string , contents: any , views: number) => {
+    function renderPosts(posts: PostsModel[]) {
+        if (posts.length > 0) {
+            
+            return posts.map((data) => (
+                <PostsCard key={data.id} post={data} />
+            ));    
+        }
         
+        return '데이터가없습니다...';
     }
 
-    const { posts } = useSelector(state => state.postsReducer);
-
-    function asd() {
-        posts.map((c: any) => {
-            console.log(c);
-        })
+    function renderProgress() {
+        return (
+            <Progress />
+        );
     }
+
+    const { posts , isPostsLoading } = useSelector(state => state.postsReducer);
 
     return (
         <>
-            {/* <PostsCard key={featuredPosts.id} post={featuredPosts} /> */}
-
-            {/* <Posts /> */}
-            <Container maxWidth="lg">
-                <Grid container spacing={2}>
-                    {posts.length > 0 && posts.map((data: any) => 
-                        <PostsCard key={data.id} post={data} />
-                    )}
-                    {/* {posts.map((c: any) => {
-                        <PostsCard key={c.id} post={c} />
-                    })} */}
-                </Grid>
-            </Container>
+            {!isPostsLoading ? 
+                <div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
+                    <Progress />
+                </div> 
+                : 
+                <Container maxWidth="lg">
+                    <Grid container spacing={2}>
+                        {renderPosts(posts)}
+                    </Grid>
+                </Container>
+            }
         </>
     )
 }
