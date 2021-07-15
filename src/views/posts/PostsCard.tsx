@@ -27,9 +27,9 @@ export default function PostsCard(props: any) {
     const { post } = props;
 
     return (
-        // https://material-ui.com/getting-started/templates/album/
         <Grid item xs={12} md={6}>
             <Link to={`/posts/${post.id}`}>
+                {/* {post.id} */}
                 <Card className={classes.card}>
                 <div className={classes.cardDetails}>
                     <CardContent>
@@ -37,10 +37,11 @@ export default function PostsCard(props: any) {
                             {post.title}
                         </Typography>
                         <Typography variant="subtitle1" color="textSecondary">
-                            {post.date}
+                            {post.createdDate}
                         </Typography>
                         <Typography variant="subtitle1" paragraph className="description">
-                            {post.description}
+                            {/* {post.description} */}
+                            description...
                         </Typography>
                         <Typography variant="subtitle1" color="primary">
                             <Button variant="contained" color="primary">READ MORE</Button>
@@ -48,7 +49,10 @@ export default function PostsCard(props: any) {
                     </CardContent>
                 </div>
                 <Hidden xsDown>
-                    <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+                    <CardMedia 
+                        className={classes.cardMedia} 
+                        image="http://www.itworld.co.kr/files/itworld/2020/06_01/google-password-manager-primary-100841457-large.jpg" 
+                    />
                 </Hidden>
                 </Card>
             </Link>    

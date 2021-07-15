@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {
     NoMatch,
     Prepare,
-    Posts,
     PostsView,
     About,
     PostsContainer
@@ -19,7 +18,6 @@ export default function Router() {
     return (
         <MainDiv>
             <Switch>PostsContainer
-                {/* <Route exact path="/" component={Posts} /> */}
                 <Route exact path="/" component={PostsContainer} />
                 <Route path="/posts" component={PostsView} />
                 <Route path="/about" component={About} />
