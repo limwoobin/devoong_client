@@ -89,12 +89,15 @@ module.exports = (env , options) => {
             new webpack.EnvironmentPlugin(['API_BASE_URL'])
         ],
         devServer: {
-            // host: 'localhost',
             port: port,
             open: true,
             historyApiFallback: true,
             proxy : {
-                "**" : "http://localhost:8080"
+                // "**" : "http://localhost:8080"
+                "**": {
+                    target: 'http://localhost:8080',
+                    changeOrigin: true,
+                }
             }
         }   
     }
