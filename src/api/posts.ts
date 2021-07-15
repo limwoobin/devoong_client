@@ -1,14 +1,13 @@
 import axios from 'axios';
-import { PostsModel } from '../models';
 
-export const getPostsAll = async(): Promise<PostsModel[]> => {
-    const url = 'http://localhost:8080/posts';
+export const getPostsAll = async(): Promise<any> => {
+    const url = '/posts';
     const response = await axios.get(url);
     return response.data;
 }
 
-export const getPosts = async(id: number): Promise<PostsModel> => {
-    const url = 'http://localhost:8080/posts/' + id;
+export const getPosts = async(id: number): Promise<any> => {
+    const url = '/posts' + id;
     const response = await axios.get(url);
     return response.data;
 }

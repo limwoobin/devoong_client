@@ -15,7 +15,7 @@ export default function PostsContainer() {
 
     useEffect(() => {
        onSearchPosts();  
-    })
+    } , [])
 
     const {posts , lastId} = useSelector(state => state.postsReducer);
 

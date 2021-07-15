@@ -1,7 +1,7 @@
 import * as API from '../api/posts';
 import { call , put , takeEvery } from 'redux-saga/effects';
 import { createAction , createReducer } from '@reduxjs/toolkit';
-import { PostsModel } from '../models';
+import { PageModel } from '../models';
 
 // Action Type
 const SEARCH_DATA_ASYNC = 'SEARCH_DATA_ASYNC';
@@ -20,7 +20,8 @@ export function* postsSaga() {
 
 export function* searchDataSaga() {
     console.log('searchDataSaga...');
-    const response: PostsModel[] = yield call(API.getPostsAll);
+    const response: PageModel = yield call(API.getPostsAll);
+    console.log('response' , response.content);
     yield put(searchData(response));
 }
 
