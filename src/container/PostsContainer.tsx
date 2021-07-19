@@ -10,12 +10,10 @@ import { PostsModel } from '../models';
 export default function PostsContainer() {
     const dispatch = useDispatch();
 
-
     useEffect(() => {
         onSearchPosts();
     } , [])
     
-
     const onSearchPosts = () => {
         dispatch(searchPostsAsync());
     }

@@ -3,6 +3,8 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Tag } from 'antd';
 import Chip from '@material-ui/core/Chip';
 import '../layout.scss';
+import { Link } from 'react-router-dom';
+import { TagsModel } from '../../../../models';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -13,33 +15,25 @@ const useStyles = makeStyles((theme: Theme) =>
       '& > *': {
         margin: theme.spacing(0.5),
       },
-      // paddingTop: '8px',
-      // paddingBottom: '8px',
     },
   }),
 );
 
-export default function TagsMobile() {
+function renderTags(tags: TagsModel[]) {
+  return tags.map((tag: TagsModel) => (
+    <Tag color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
+      <Link to={`/tags/${tag.id}`}>{ tag.name }</Link>
+    </Tag>
+  ))    
+}
+
+export default function TagsMobile(props: any) {
     const classes = useStyles();
+    const { tags } = props;
     
     return (
         <div className={classes.root}>
-            <Tag color="magenta">magenta</Tag>
-            <Tag color="#f50">#f50</Tag>
-            <Tag color="#f50">#f50</Tag>
-            <Tag color="lime">lime</Tag>
-            <Chip
-              label="Rrimary"
-              color="primary"
-            />
-            <Chip
-              label="Secondary"
-              color="secondary"
-            />
-            <Chip
-              label="Default"
-              color="default"
-            />
+          {renderTags(tags)}
         </div>
     )
 }
