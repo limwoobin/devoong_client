@@ -12,3 +12,9 @@ export const getPosts = async(id: number): Promise<PostsModel> => {
 	const response = await axios.get(url);
 	return response.data;
 };
+
+export const getRecentPosts = async(): Promise<PostsModel[]> => {
+	const url = '/recents';
+	const response = await axios.get(url);
+	return response.data;
+};
