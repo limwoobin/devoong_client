@@ -4,12 +4,12 @@ import tagsReducer , {tagsSaga} from './tagsReducer';
 import { all } from 'redux-saga/effects';
 
 const rootReducer = combineReducers({
-    postsReducer,
-    tagsReducer
+	postsReducer,
+	tagsReducer
 });
 
 export function* rootSaga() {
-    yield all([postsSaga() , tagsSaga()]);
+	yield all([postsSaga() , tagsSaga()]);
 }
 
 export default rootReducer;

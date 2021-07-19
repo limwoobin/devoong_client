@@ -18,37 +18,35 @@ export const getPosts: any = createAction(GET_POSTS);
 
 // Main Saga
 export function* postsSaga() {
-    yield takeEvery(SEARCH_POSTS_ASYNC , searchPostsSaga);
-    yield takeEvery(GET_POSTS_ASYNC , getPostsSaga);
+	yield takeEvery(SEARCH_POSTS_ASYNC , searchPostsSaga);
+	yield takeEvery(GET_POSTS_ASYNC , getPostsSaga);
 }
 
 export function* searchPostsSaga() {
-    const response: PageModel = yield call(API.getPostsAll);
-    console.log('response' , response);
-    yield put(searchData(response.content));
+	const response: PageModel = yield call(API.getPostsAll);
+	yield put(searchData(response.content));
 }
 
 export function* getPostsSaga({payload: id}: any) {
-    const response: PostsModel = yield call(API.getPosts , id);
-    console.log('response' , response);
-    yield put(getPosts(response));
+	const response: PostsModel = yield call(API.getPosts , id);
+	yield put(getPosts(response));
 }
 
 // initState
 const initialState = {
-    isPostsLoading: false,
-    posts: [],
-    lastId: 0,
-    data: {},
-}
+	isPostsLoading: false,
+	posts: [],
+	lastId: 0,
+	data: {},
+};
 
 // Toolkit Reducer
 export default createReducer(initialState , {
-    [SEARCH_DATA]: (state , {payload: data}) => {
-        state.posts = data;
-        state.isPostsLoading = true;
-    },
-    [GET_POSTS]: (state: any, {paylod: data}) => {
-        state.data = data;
-    }
-})
+	[SEARCH_DATA]: (state , {payload: data}) => {
+			state.posts = data;
+			state.isPostsLoading = true;
+	},
+	[GET_POSTS]: (state: any, {paylod: data}) => {
+			state.data = data;
+	}
+});

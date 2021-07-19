@@ -18,41 +18,41 @@ function renderProgress() {
 
 
 function onSearchPosts(dispatch: any) {
-  dispatch(searchPostsAsync());
+	dispatch(searchPostsAsync());
 }
 
 function getPosts(dispatch: any , id: number) {
-    dispatch(getPostsAsync(id));
+	dispatch(getPostsAsync(id));
 }
 
 function renderPosts(posts: PostsModel[]) {
-    if (posts.length > 0) {
-        return posts.map((data) => (
-            <PostsCard key={data.id} post={data} />
-        ));    
-    }
-    
-    return '데이터가없습니다...';
+	if (posts.length > 0) {
+			return posts.map((data) => (
+					<PostsCard key={data.id} post={data} />
+			));    
+	}
+
+	return '데이터가없습니다...';
 }
 
 export default function PostsContainer() {
-    const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-    useEffect(() => {
-        onSearchPosts(dispatch);
-    } , [])
+	useEffect(() => {
+			onSearchPosts(dispatch);
+	} , []);
 
-    const { posts , isPostsLoading } = useSelector(state => state.postsReducer);
+	const { posts , isPostsLoading } = useSelector(state => state.postsReducer);
 
-    return (
-        <>
-            {!isPostsLoading ? renderProgress() : 
-                <Container maxWidth="lg">
-                    <Grid container spacing={2}>
-                        {renderPosts(posts)}
-                    </Grid>
-                </Container>
-            }
-        </>
-    )
+	return (
+			<>
+					{!isPostsLoading ? renderProgress() : 
+							<Container maxWidth="lg">
+									<Grid container spacing={2}>
+											{renderPosts(posts)}
+									</Grid>
+							</Container>
+					}
+			</>
+	);
 }
