@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Tag } from 'antd';
-import Chip from '@material-ui/core/Chip';
 import '../layout.scss';
 import { Link } from 'react-router-dom';
 import { TagsModel } from '../../../../models';

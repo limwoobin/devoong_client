@@ -7,39 +7,39 @@ import Progress from '../views/Progress';
 import { searchPostsAsync , getPostsAsync } from '../reducer/postsReducer';
 import { PostsModel } from '../models';
 
+
+function renderProgress() {
+    return (
+        <div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
+            <Progress />
+        </div>
+    );
+}
+
+function onSearchPosts(dispatch: any) {
+    dispatch(searchPostsAsync());
+}
+
+function getPosts(dispatch: any , id: number) {
+    dispatch(getPostsAsync(id));
+}
+
+function renderPosts(posts: PostsModel[]) {
+    if (posts.length > 0) {
+        return posts.map((data) => (
+            <PostsCard key={data.id} post={data} />
+        ));    
+    }
+    
+    return '데이터가없습니다...';
+}
+
 export default function PostsContainer() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        onSearchPosts();
+        onSearchPosts(dispatch);
     } , [])
-    
-    const onSearchPosts = () => {
-        dispatch(searchPostsAsync());
-    }
-
-    const getPosts = (id: number) => {
-        dispatch(getPostsAsync(id));
-    }
-
-    function renderPosts(posts: PostsModel[]) {
-        if (posts.length > 0) {
-            
-            return posts.map((data) => (
-                <PostsCard key={data.id} post={data} />
-            ));    
-        }
-        
-        return '데이터가없습니다...';
-    }
-
-    function renderProgress() {
-        return (
-            <div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-                <Progress />
-            </div>
-        );
-    }
 
     const { posts , isPostsLoading } = useSelector(state => state.postsReducer);
 
