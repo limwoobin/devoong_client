@@ -20,14 +20,14 @@ const a = function() {
 `;
 
 export default function PostsView() {
-    return (
-        <React.Fragment>
-            <CssBaseline />
-            <Container maxWidth="md">
-                <Typography component="div" style={{ height: '100vh' }}>
-                    <MarkdownRender contents={contents} />
-                </Typography>
-            </Container>
-        </React.Fragment>
-    )
+	return (
+		<React.Fragment>
+			<CssBaseline />
+			<Container maxWidth="md">
+				<Typography component="div" style={{ height: '100vh' }}>
+					<MarkdownRender contents={contents} />
+				</Typography>
+			</Container>
+		</React.Fragment>
+	);
 }

@@ -7,13 +7,13 @@ import RecentPostsMobile from './RecentPostsMobile';
 
 
 export default function RecentPosts(props: any) {
-    const isPc = useMediaQuery({query: constants.MIN_WIDTH});
-    const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
+	const isPc = useMediaQuery({query: constants.MIN_WIDTH});
+	const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
-    return (
-        <>
-            {isPc && <RecentPostsPc />}
-            {isMobile && <RecentPostsMobile />}
-        </>
-    )
+	return (
+		<>
+			{isPc && <RecentPostsPc />}
+			{isMobile && <RecentPostsMobile />}
+		</>
+	);
 }

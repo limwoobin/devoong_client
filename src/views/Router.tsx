@@ -2,11 +2,11 @@ import React from 'react';
 import { Route , Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import {
-    NoMatch,
-    Prepare,
-    PostsView,
-    About,
-    PostsContainer
+	NoMatch,
+	Prepare,
+	PostsView,
+	About,
+	PostsContainer
 } from '../page/pages';
 
 const MainDiv = styled.div`
@@ -15,16 +15,16 @@ const MainDiv = styled.div`
 `;
 
 export default function Router() {   
-    return (
-        <MainDiv>
-            <Switch>
-                <Route exact path="/" component={PostsContainer} />
-                <Route path="/posts" component={PostsView} />
-                <Route path="/about" component={About} />
-                <Route path="/tags" component={Prepare} />
-                <Route path="/my" component={Prepare} />
-                <Route component={NoMatch} />
-            </Switch>
-        </MainDiv>
-    )
+	return (
+		<MainDiv>
+			<Switch>
+				<Route exact path="/" component={PostsContainer} />
+				<Route path="/posts" component={PostsView} />
+				<Route path="/about" component={About} />
+				<Route path="/tags" component={Prepare} />
+				<Route path="/my" component={Prepare} />
+				<Route component={NoMatch} />
+			</Switch>
+		</MainDiv>
+	);
 }

@@ -31,14 +31,14 @@ const contents = `
 `;
 
 export default function About() {
-    return (
-        <React.Fragment>
-            <CssBaseline />
-            <Container maxWidth="md">
-                <Typography component="div" style={{ backgroundColor: '#363636' , height: '100vh' }}>
-                    <MarkdownRender contents={contents} />
-                </Typography>
-            </Container>
-        </React.Fragment>
-    )
+	return (
+		<React.Fragment>
+			<CssBaseline />
+			<Container maxWidth="md">
+				<Typography component="div" style={{ backgroundColor: '#363636' , height: '100vh' }}>
+						<MarkdownRender contents={contents} />
+				</Typography>
+			</Container>
+		</React.Fragment>
+	);
 }

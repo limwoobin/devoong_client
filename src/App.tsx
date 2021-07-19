@@ -6,15 +6,15 @@ import './styles/style.scss';
 import MainView from './views/MainView';
 
 export default function App() {
-  return (
-    <div style={{backgroundColor: '#363636'}}>
-       <BrowserRouter>
-          <Header />
-          <div style={{paddingBottom: '20px'}}>
-            <MainView />
-          </div>
-          <Footer />
-       </BrowserRouter>
-    </div>
-  );
-};
+	return (
+		<div style={{backgroundColor: '#363636'}}>
+				<BrowserRouter>
+					<Header />
+					<div style={{paddingBottom: '20px'}}>
+						<MainView />
+					</div>
+					<Footer />
+				</BrowserRouter>
+		</div>
+	);
+}

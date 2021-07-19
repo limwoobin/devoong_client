@@ -11,7 +11,7 @@ import { PostsModel } from '../models';
 function renderProgress() {
 	return (
 		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-				<Progress />
+			<Progress />
 		</div>
 	);
 }
@@ -32,7 +32,7 @@ function renderPosts(posts: PostsModel[]) {
 			));    
 	}
 
-	return '데이터가없습니다...';
+	return '데이터가 없습니다...';
 }
 
 export default function PostsContainer() {
@@ -46,13 +46,13 @@ export default function PostsContainer() {
 
 	return (
 			<>
-					{!isPostsLoading ? renderProgress() : 
-							<Container maxWidth="lg">
-									<Grid container spacing={2}>
-											{renderPosts(posts)}
-									</Grid>
-							</Container>
-					}
+				{!isPostsLoading ? renderProgress() : 
+						<Container maxWidth="lg">
+								<Grid container spacing={2}>
+										{renderPosts(posts)}
+								</Grid>
+						</Container>
+				}
 			</>
 	);
 }

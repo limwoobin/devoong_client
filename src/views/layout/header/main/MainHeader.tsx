@@ -7,17 +7,17 @@ import HeaderPC from './HeaderPc';
 import HeaderMobile from './HeaderMobile';
 
 export default function MainHeader() {
-    const isPc = useMediaQuery({query: constants.MIN_WIDTH});
-    const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
+	const isPc = useMediaQuery({query: constants.MIN_WIDTH});
+	const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
-    return (
-        <>
-            <nav className="main_head">
-                <div className="head_category">
-                    {isPc && <HeaderPC headers={headers} />}
-                    {isMobile && <HeaderMobile headers={headers} />}
-                </div>
-            </nav>
-        </>
-    )
+	return (
+		<>
+			<nav className="main_head">
+				<div className="head_category">
+					{isPc && <HeaderPC headers={headers} />}
+					{isMobile && <HeaderMobile headers={headers} />}
+				</div>
+			</nav>
+		</>
+	);
 }

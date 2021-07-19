@@ -14,26 +14,25 @@ export const findTags: any = createAction(FIND_TAGS);
 
 // Main Saga
 export function* tagsSaga() {
-    yield takeEvery(FIND_TAGS_ASYNC , findTagsSaga);
+	yield takeEvery(FIND_TAGS_ASYNC , findTagsSaga);
 }
 
 export function* findTagsSaga() {
-    const response: TagsModel = yield call(API.findTags);
-    console.log('response' , response);
-    yield put(findTags(response));
+	const response: TagsModel = yield call(API.findTags);
+	yield put(findTags(response));
 }
 
 
 // initState
 const initialState = {
-    isTagsLoading: false,
-    tags: [],
-}
+	isTagsLoading: false,
+	tags: [],
+};
 
 // Toolkit Reducer
 export default createReducer(initialState , {
-    [FIND_TAGS]: (state , {payload: data}) => {
-        state.tags = data;
-        state.isTagsLoading = true;
-    },
-})
+	[FIND_TAGS]: (state , {payload: data}) => {
+		state.tags = data;
+		state.isTagsLoading = true;
+	},
+});

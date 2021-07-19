@@ -14,82 +14,82 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    list: {
-      width: '100%',
-    },
+	list: {
+		width: '100%',
+	},
 });
 
 type Anchor = 'top';
 
 function headerBtns (headers: HeaderModel[]) {
-    return <div>
-               <List>
-                   {headers.map((c: HeaderModel) => {
-                       return <Link 
-                            to={c.path} 
-                            className="listItem" 
-                            style={{ textDecoration: 'none'}}
-                        >
-                                <ListItem button key={c.value}>
-                                    <ListItemText primary={c.value} className="menu_item" />
-                                </ListItem>
-                            </Link>
-                   })}
-                   </List>      
-           </div>
+	return <div>
+						<List>
+							{headers.map((c: HeaderModel) => {
+								return <Link 
+										to={c.path} 
+										className="listItem" 
+										style={{ textDecoration: 'none'}}
+								>
+									<ListItem button key={c.value}>
+											<ListItemText primary={c.value} className="menu_item" />
+									</ListItem>
+								</Link>;
+							})}
+								</List>      
+					</div>;
 }
 
 type HeaderProps = {
-    headers: HeaderModel[],
-}
+	headers: HeaderModel[],
+};
 
 const CustomDrawer = withStyles({
-    paper: {
-        backgroundColor: '#3d3d3d' 
-    }
+	paper: {
+			backgroundColor: '#3d3d3d' 
+	}
 })(Drawer);
 
 export default function HeaderMobile({headers}: HeaderProps) {
-    const classes = useStyles();
-    const [state, setState] = React.useState({
-        top: false,
-    });
+	const classes = useStyles();
+	const [state, setState] = React.useState({
+			top: false,
+	});
 
-    const toggleDrawer = (anchor: Anchor, open: boolean) => (
-        event: React.KeyboardEvent | React.MouseEvent,
-    ) => {
-        if (
-            event.type === 'keydown' &&
-            ((event as React.KeyboardEvent).key === 'Tab' ||
-              (event as React.KeyboardEvent).key === 'Shift')
-          ) {
-            return;
-          }
+	const toggleDrawer = (anchor: Anchor, open: boolean) => (
+			event: React.KeyboardEvent | React.MouseEvent,
+	) => {
+		if (
+			event.type === 'keydown' &&
+			((event as React.KeyboardEvent).key === 'Tab' ||
+				(event as React.KeyboardEvent).key === 'Shift')
+			) {
+			return;
+		}
 
-          setState({...state , [anchor]: open});
-    }
+		setState({...state , [anchor]: open});
+	};
 
-    const openSide = (anchor: Anchor , headers: HeaderModel[]) => (
-        <div
-            role="presentation"
-            onClick={toggleDrawer(anchor , false)}
-            onKeyDown={toggleDrawer(anchor , false)}
-            className={clsx(classes.list)}
-        >
-        {headerBtns(headers)}
-        </div>
-    );
+	const openSide = (anchor: Anchor , headersData: HeaderModel[]) => (
+		<div
+				role="presentation"
+				onClick={toggleDrawer(anchor , false)}
+				onKeyDown={toggleDrawer(anchor , false)}
+				className={clsx(classes.list)}
+		>
+		{headerBtns(headersData)}
+		</div>
+	);
 
-    return (
-        <>
-            <div className="menu_btn">
-                <IconButton onClick={toggleDrawer('top' , true)} className="menu_btn" color="primary" aria-label="menu">
-                    <MenuIcon />
-                </IconButton>
-                <CustomDrawer anchor="top" open={state.top} onClose={toggleDrawer('top' , false)}>
-                    {openSide('top' , headers)}
-                </CustomDrawer>
-            </div>
-        </>
-    )
+	return (
+		<>
+			<div className="menu_btn">
+				<IconButton onClick={toggleDrawer('top' , true)} className="menu_btn" color="primary" aria-label="menu">
+					<MenuIcon />
+				</IconButton>
+				<CustomDrawer anchor="top" open={state.top} onClose={toggleDrawer('top' , false)}>
+					{openSide('top' , headers)}
+				</CustomDrawer>
+			</div>
+		</>
+	);
 }

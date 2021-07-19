@@ -8,17 +8,17 @@ import { configureStore } from '@reduxjs/toolkit';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({ 
-    reducer: rootReducer,
-    middleware: [sagaMiddleware],
-    // devTools: process.env.NODE_ENV !== 'production'
-    devTools: true
+	reducer: rootReducer,
+	middleware: [sagaMiddleware],
+	// devTools: process.env.NODE_ENV !== 'production'
+	devTools: true
 });
 
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>, 
-    document.getElementById('root')
+	<Provider store={store}>
+			<App />
+	</Provider>, 
+	document.getElementById('root')
 );

@@ -1,4 +1,4 @@
 export type HeaderModel = {
-    path: string,
-    value: string
-}
+	path: string,
+	value: string
+};
