@@ -1,4 +1,4 @@
-import React , {useState , useEffect} from 'react';
+import React , { useState , useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsCard from '../views/posts/PostsCard';
 import Grid from '@material-ui/core/Grid';
@@ -9,15 +9,16 @@ import { PostsModel } from '../models';
 
 
 function renderProgress() {
-    return (
-        <div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-            <Progress />
-        </div>
-    );
+	return (
+		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
+				<Progress />
+		</div>
+	);
 }
 
+
 function onSearchPosts(dispatch: any) {
-    dispatch(searchPostsAsync());
+  dispatch(searchPostsAsync());
 }
 
 function getPosts(dispatch: any , id: number) {
