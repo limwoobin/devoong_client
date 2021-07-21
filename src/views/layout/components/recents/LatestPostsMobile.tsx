@@ -6,6 +6,9 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { PostsModel } from '../../../../models';
+import { LatestPostsInterface } from './LatestPostsInterface';
+import { Link } from 'react-router-dom';
 import './mobileRecentPosts.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,8 +26,21 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
-export default function MobileRecentPosts() {
+function renderLatestPosts(latestPosts: PostsModel[]) {
+	return latestPosts.map((data: PostsModel , index: number) => (
+		<AccordionDetails key={index}>
+			<Typography className="typography">
+				<Link to={`/posts/${data.id}`}>
+					<li><b>{data.title}</b></li>
+				</Link>	
+			</Typography>
+		</AccordionDetails>
+	));
+}
+
+export default function LatestPostsMobile(props: LatestPostsInterface) {
 	const classes = useStyles();
+	const { latestPosts } = props;
 
 	return (
 		<div className={classes.root}>
@@ -36,16 +52,7 @@ export default function MobileRecentPosts() {
 				>
 				<Typography className={classes.heading}>최근 게시물 보기</Typography>
 				</AccordionSummary>
-					<AccordionDetails className="accordionDetails">
-					<Typography className="typography">
-							<span>123123</span>
-					</Typography>
-					</AccordionDetails>
-					<AccordionDetails>
-					<Typography className="typography">
-							<span>123123</span>
-					</Typography>
-					</AccordionDetails>
+					{renderLatestPosts(latestPosts)}
 			</Accordion>
 		</div>
 	);

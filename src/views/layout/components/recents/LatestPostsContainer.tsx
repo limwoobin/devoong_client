@@ -3,8 +3,8 @@ import '../layout.scss';
 import { useDispatch , useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { constants } from '../../../../core/constant';
-import RecentPostsPc from './RecentPostsPc';
-import RecentPostsMobile from './RecentPostsMobile';
+import LatestPostsPc from './LatestPostsPc';
+import LatestPostsMobile from './LatestPostsMobile';
 import { findLatestPostsAsync } from '../../../../reducer/postsReducer';
 
 function onFindLatestPosts(dispatch: any) {
@@ -25,8 +25,8 @@ export default function LatestPostsContainer() {
 
 	return (
 		<>
-			{isPc && <RecentPostsPc latestPosts={latestPosts} />}
-			{/* {isMobile && <RecentPostsMobile latestPosts={latestPosts} />} */}
+			{isPc && <LatestPostsPc latestPosts={latestPosts} />}
+			{isMobile && <LatestPostsMobile latestPosts={latestPosts} />}
 		</>
 	);
 }

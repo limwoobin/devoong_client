@@ -24,8 +24,9 @@ type Anchor = 'top';
 function headerBtns (headers: HeaderModel[]) {
 	return <div>
 						<List>
-							{headers.map((c: HeaderModel) => {
+							{headers.map((c: HeaderModel , index: number) => {
 								return <Link 
+										key={index}
 										to={c.path} 
 										className="listItem" 
 										style={{ textDecoration: 'none'}}

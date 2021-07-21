@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function renderTags(tags: TagsModel[]) {
-	return tags.map((tag: TagsModel) => (
-		<Tag color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
+	return tags.map((tag: TagsModel , index: number) => (
+		<Tag key={index} color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
 			<Link to={`/tags/${tag.id}`}>{ tag.name }</Link>
 		</Tag>
 	));
