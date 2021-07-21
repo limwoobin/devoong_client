@@ -35,12 +35,28 @@ function renderPosts(posts: PostsModel[]) {
 	return '데이터가 없습니다...';
 }
 
-export default function PostsContainer() {
+interface PostsContainerProps {
+	tagId: number;
+	searchWord: string;
+}
+
+export default function PostsContainer(props: PostsContainerProps) {
+	const { tagId , searchWord } = props;
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		if (posts.length === 0) {
 			onSearchPosts(dispatch);
+		}
 	} , []);
+
+	function isPropsNull(param: PostsContainerProps) : boolean {
+		if (param.tagId == null && param.searchWord == null) {
+			return true;
+		}
+
+		return false;
+	}
 
 	const { posts , isPostsLoading } = useSelector(state => state.postsReducer);
 

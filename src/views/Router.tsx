@@ -20,6 +20,7 @@ export default function Router() {
 			<Switch>
 				<Route exact path="/" component={PostsContainer} />
 				<Route path="/posts" component={PostsView} />
+				<Route path="/search" component={PostsContainer} />
 				<Route path="/about" component={About} />
 				<Route path="/tags" component={Prepare} />
 				<Route path="/my" component={Prepare} />

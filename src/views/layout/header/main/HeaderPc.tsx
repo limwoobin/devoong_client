@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderModel } from '../../../../models';
 import SearchIcon from '@material-ui/icons/Search';
@@ -86,6 +86,8 @@ export default function HeaderPc(props: HeaderProps) {
 	const classes = useStyles();
 	const { headers } = props;
 
+	const [searchWord , setSearchWord] = useState('');
+
 	return (
 		<div className={classes.root}>
 			<Toolbar>
@@ -103,8 +105,10 @@ export default function HeaderPc(props: HeaderProps) {
 									input: classes.inputInput,
 							}}
 							inputProps={{ 'aria-label': 'search' }}
+							// value={searchWord}
+							// onKeyUp={setSearchWord(e.target.value)}
 					/>
-				<Button>OK</Button>
+				<Button>OK | {searchWord} </Button>
 				</div>
 			</Toolbar>
 		</div>
