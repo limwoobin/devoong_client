@@ -13,8 +13,8 @@ export const getPosts = async(id: number): Promise<PostsModel> => {
 	return response.data;
 };
 
-export const getRecentPosts = async(): Promise<PostsModel[]> => {
-	const url = '/recents';
+export const getLatestPosts = async(): Promise<PostsModel[]> => {
+	const url = '/posts/latest';
 	const response = await axios.get(url);
 	return response.data;
 };

@@ -10,8 +10,8 @@ const SEARCH_DATA = 'SEARCH_DATA';
 const GET_POSTS_ASYNC = 'GET_POSTS_ASYNC';
 const GET_POSTS = 'GET_POSTS';
 
-const FIND_RECENT_POSTS_ASYNC = 'FIND_RECENT_POSTS_ASYNC';
-const FIND_RECENT_POSTS = 'FIND_RECENT_POSTS';
+const FIND_LATEST_POSTS_ASYNC = 'FIND_LATEST_POSTS_ASYNC';
+const FIND_LATEST_POSTS = 'FIND_LATEST_POSTS';
 
 // Action Creator
 export const searchPostsAsync: any = createAction(SEARCH_POSTS_ASYNC);
@@ -20,14 +20,14 @@ export const searchData: any = createAction(SEARCH_DATA);
 export const getPostsAsync: any = createAction(GET_POSTS_ASYNC);
 export const getPosts: any = createAction(GET_POSTS);
 
-export const findRecentPostsAsync: any = createAction(FIND_RECENT_POSTS_ASYNC);
-export const findRecentPosts: any = createAction(FIND_RECENT_POSTS);
+export const findLatestPostsAsync: any = createAction(FIND_LATEST_POSTS_ASYNC);
+export const findLatestPosts: any = createAction(FIND_LATEST_POSTS);
 
 // Main Saga
 export function* postsSaga() {
 	yield takeEvery(SEARCH_POSTS_ASYNC , searchPostsSaga);
 	yield takeEvery(GET_POSTS_ASYNC , getPostsSaga);
-	yield takeEvery(FIND_RECENT_POSTS_ASYNC , findRecentPostsSaga);
+	yield takeEvery(FIND_LATEST_POSTS_ASYNC , findLatestPostsSaga);
 }
 
 export function* searchPostsSaga() {
@@ -40,9 +40,9 @@ export function* getPostsSaga({payload: id}: any) {
 	yield put(getPosts(response));
 }
 
-export function* findRecentPostsSaga() {
-	const response: PostsModel[] = yield call(API.getRecentPosts);
-	yield put(findRecentPosts(response));
+export function* findLatestPostsSaga() {
+	const response: PostsModel[] = yield call(API.getLatestPosts);
+	yield put(findLatestPosts(response));
 }
 
 // initState
@@ -51,6 +51,7 @@ const initialState = {
 	posts: [],
 	lastId: 0,
 	data: {},
+	latestPosts: [],
 };
 
 // Toolkit Reducer
@@ -61,5 +62,8 @@ export default createReducer(initialState , {
 	},
 	[GET_POSTS]: (state: any, {paylod: data}) => {
 		state.data = data;
-	}
+	},
+	[FIND_LATEST_POSTS]: (state , {payload: data}) => {
+		state.latestPosts = data;
+	},
 });

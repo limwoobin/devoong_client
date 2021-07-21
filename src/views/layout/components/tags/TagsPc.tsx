@@ -19,14 +19,18 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function renderTags(tags: TagsModel[]) {
-	return tags.map((tag: TagsModel) => (
-		<Tag color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
-			<Link to={`/tags/${tag.id}`}>{ tag.name }</Link>
+	return tags.map((tag: TagsModel , index: number) => (
+		<Tag key={index} color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
+			<Link key={index} to={`/tags/${tag.id}`}>{ tag.name }</Link>
 		</Tag>
 	));
 }
 
-export default function TagsPc(props: any) {
+interface TagsPcProps {
+	tags: TagsModel[];
+}
+
+export default function TagsPc(props: TagsPcProps) {
 	const classes = useStyles();
 	const { tags } = props;
 

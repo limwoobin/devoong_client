@@ -1,6 +1,6 @@
 import React from 'react';
 import './main.scss';
-import RecentPosts from './layout/components/recents/RecentPosts';
+import LatestPostsContainer from './layout/components/recents/LatestPostsContainer';
 import Socials from './layout/components/socials/Socials';
 import { useMediaQuery } from 'react-responsive';
 import { constants } from '../core/constant';
@@ -27,7 +27,7 @@ const PcMainView = () => {
 						</div>
 						<div className="sideBar">
 							<TagsContainer />
-							<RecentPosts />
+							<LatestPostsContainer />
 							<Socials />
 						</div>
 					</div>
@@ -37,7 +37,7 @@ const PcMainView = () => {
 const MobileMainView = () => {
 	return <div>
 					<TagsContainer />
-					<RecentPosts />
+					<LatestPostsContainer />
 					<Router />
 				 </div>;
 };
