@@ -1,11 +1,10 @@
 import React from 'react';
 import './main.scss';
-import LatestPostsContainer from './layout/components/recents/LatestPostsContainer';
 import Socials from './layout/components/socials/Socials';
 import { useMediaQuery } from 'react-responsive';
 import { constants } from '../core/constant';
 import Router from './Router';
-import { TagsContainer } from '../container';
+import { TagsContainer , LatestPostsContainer } from '../container';
 
 export default function MainView() {
 const isPc = useMediaQuery({query: constants.MIN_WIDTH});

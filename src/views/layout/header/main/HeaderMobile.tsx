@@ -36,7 +36,7 @@ function headerBtns (headers: HeaderModel[]) {
 									</ListItem>
 								</Link>;
 							})}
-								</List>      
+						</List>
 					</div>;
 }
 

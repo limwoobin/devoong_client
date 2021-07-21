@@ -78,9 +78,9 @@ const headerBtns = (headers: HeaderModel[]) => {
 };
 
 
-type HeaderProps = {
-	headers: HeaderModel[],
-};
+interface HeaderProps {
+	headers: HeaderModel[];
+}
 
 export default function HeaderPc(props: HeaderProps) {
 	const classes = useStyles();
