@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { PostsModel } from '../models';
+import http from '../core/http/http';
 
 export const getPostsAll = async(): Promise<any> => {
 	const url = '/posts';
-	const response = await axios.get(url);
+	const response = await http.get(url);
 	return response.data;
 };
 

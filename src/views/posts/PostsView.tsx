@@ -16,7 +16,7 @@ const a = function() {
     console.log('aaa');
 }
 \`\`\`
-
+![fetch](https://user-images.githubusercontent.com/28802545/108589005-931bd080-739f-11eb-93d1-e6a72b9549cc.png)
 `;
 
 export default function PostsView() {
