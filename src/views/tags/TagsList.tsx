@@ -6,7 +6,7 @@ import { TagsModel } from '../../models';
 function renderTags(tags: TagsModel[]) {
 	return tags.map((tag: TagsModel , index: number) => (
 		<Tag key={index} color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
-			<Link key={index} to={`/tags/${tag.name}`}>{ tag.name }</Link>
+			<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
 		</Tag>
 	));
 }
