@@ -5,7 +5,8 @@
     "rules": {
         "semicolon": true,
         "indent": [true , "tabs" , 2],
-        "no-console": false
+        "no-console": false,
+        "no-string-literal": false
     },
     "rulesDirectory": []
 }
