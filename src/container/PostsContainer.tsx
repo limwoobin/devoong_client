@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsCard from '../views/posts/PostsCard';
 import Grid from '@material-ui/core/Grid';
@@ -15,7 +15,6 @@ function renderProgress() {
 		</div>
 	);
 }
-
 
 function onSearchPosts(dispatch: any) {
 	dispatch(searchPostsAsync());
@@ -45,6 +44,7 @@ export default function PostsContainer(props: PostsContainerProps) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		console.log('main ###');
 		if (posts.length === 0) {
 			onSearchPosts(dispatch);
 		}
