@@ -1,20 +1,7 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import PostsCard from '../views/posts/PostsCard';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import Progress from '../views/Progress';
+import PostsList from '../views/posts/PostsList';
 import { searchPostsAsync , getPostsAsync } from '../reducer/postsReducer';
-import { PostsModel } from '../models';
-
-
-function renderProgress() {
-	return (
-		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-			<Progress />
-		</div>
-	);
-}
 
 function onSearchPosts(dispatch: any) {
 	dispatch(searchPostsAsync());
@@ -22,16 +9,6 @@ function onSearchPosts(dispatch: any) {
 
 function getPosts(dispatch: any , id: number) {
 	dispatch(getPostsAsync(id));
-}
-
-function renderPosts(posts: PostsModel[]) {
-	if (posts.length > 0) {
-			return posts.map((data) => (
-					<PostsCard key={data.id} post={data} />
-			));    
-	}
-
-	return '데이터가 없습니다...';
 }
 
 interface PostsContainerProps {
@@ -62,13 +39,7 @@ export default function PostsContainer(props: PostsContainerProps) {
 
 	return (
 			<>
-				{!isPostsLoading ? renderProgress() : 
-						<Container maxWidth="lg">
-								<Grid container spacing={2}>
-										{renderPosts(posts)}
-								</Grid>
-						</Container>
-				}
+				<PostsList posts={posts} isPostsLoading={isPostsLoading} />
 			</>
 	);
 }
