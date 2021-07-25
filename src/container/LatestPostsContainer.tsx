@@ -16,9 +16,12 @@ export default function LatestPostsContainer() {
 
 	const dispatch = useDispatch();
 
-	// useEffect(() => {
-	// 	onFindLatestPosts(dispatch);
-	// } , []);
+	useEffect(() => {
+		if (latestPosts.length === 0) {
+			onFindLatestPosts(dispatch);
+		}
+		
+	} , []);
 
 	const { latestPosts } = useSelector(state => state.postsReducer);
 

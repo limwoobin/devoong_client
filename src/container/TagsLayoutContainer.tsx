@@ -16,9 +16,12 @@ export default function TagsLayoutContainer() {
 
 	const dispatch = useDispatch();
 
-	// useEffect(() => {
-	// 	onFindTags(dispatch);
-	// } , []);
+	useEffect(() => {
+		if (tags.length === 0) {
+			onFindTags(dispatch);
+		}
+		
+	} , []);
 
 	const { tags } = useSelector(state => state.tagsReducer);
 

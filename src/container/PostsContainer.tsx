@@ -44,12 +44,10 @@ export default function PostsContainer(props: PostsContainerProps) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		console.log('main ###');
-		// if (posts.length === 0) {
-		// 	onSearchPosts(dispatch);
-		// }
-
-		onSearchPosts(dispatch);
+		if (posts.length === 0) {
+			onSearchPosts(dispatch);
+		}
+		
 	} , []);
 
 	function isPropsNull(param: PostsContainerProps) : boolean {
