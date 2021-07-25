@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from './views/layout/header/Header';
 import Footer from './views/layout/footer/Footer';
 import './styles/style.scss';
-import MainView from './views/MainView';
+import Main from './views/Main';
 
 export default function App() {
 	return (
@@ -11,7 +11,7 @@ export default function App() {
 				<BrowserRouter>
 					<Header />
 					<div style={{paddingBottom: '20px'}}>
-						<MainView />
+						<Main />
 					</div>
 					<Footer />
 				</BrowserRouter>

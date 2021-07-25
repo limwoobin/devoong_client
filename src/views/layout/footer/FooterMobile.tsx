@@ -5,7 +5,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Link from '@material-ui/core/Link';
 
-
 export default function FooterMobile() {
 	return (
 		<BottomNavigation style={{backgroundColor: '#424242'}}>

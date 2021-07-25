@@ -12,7 +12,7 @@ function renderPosts(posts: PostsModel[]) {
 			));    
 	}
 
-	return '데이터가 없습니다...';
+	return;
 }
 
 function renderProgress() {
@@ -23,18 +23,29 @@ function renderProgress() {
 	);
 }
 
+function renderTagName(name: string) {
+	return (
+		<div>
+				<h1 style={{ color: '#6B66FF' }}>{name}</h1>
+		</div>
+	);
+}
+
+
 interface PostsListProps {
 	posts: PostsModel[];
 	isLoading: false;
+	name?: string;
 }
 
 export default function PostsList(props: PostsListProps) {
-	const { posts , isLoading } = props;
+	const { posts , isLoading , name } = props;
 
 	return (
 		<>
 			{!isLoading ? renderProgress() : 
 				<Container maxWidth="lg">
+					{name ? renderTagName(name) : ''}
 						<Grid container spacing={2}>
 								{renderPosts(posts)}
 						</Grid>

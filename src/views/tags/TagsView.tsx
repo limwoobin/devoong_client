@@ -21,8 +21,7 @@ export default function TagsView(props: any) {
 
 	return (
 		<div>
-			{name}
-			<PostsList posts={postsByTags} isLoading={isLoading} />
+			<PostsList posts={postsByTags} isLoading={isLoading} name={name} />
 		</div>
 	);
 }
