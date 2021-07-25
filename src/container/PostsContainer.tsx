@@ -35,11 +35,11 @@ export default function PostsContainer(props: PostsContainerProps) {
 		return false;
 	}
 
-	const { posts , isPostsLoading } = useSelector(state => state.postsReducer);
+	const { posts , isLoading } = useSelector(state => state.postsReducer);
 
 	return (
 			<>
-				<PostsList posts={posts} isPostsLoading={isPostsLoading} />
+				<PostsList posts={posts} isLoading={isLoading} />
 			</>
 	);
 }

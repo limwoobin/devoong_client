@@ -1,7 +1,11 @@
 import React , { useState , useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import {  } from '../../reducer/tagsReducer';
+import { findPostsByTagsAsync } from '../../reducer/postsReducer';
+import PostsList from '../posts/PostsList';
 
+function onFindPostsByTags(dispatch: any , tagId: number) {
+	dispatch(findPostsByTagsAsync(tagId));
+}
 
 export default function TagsView(props: any) {
 	const id = props.location.state.id;
@@ -10,12 +14,15 @@ export default function TagsView(props: any) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		console.log('props' , props);
+		onFindPostsByTags(dispatch , id);
 	} , []);
+
+	const { postsByTags , isLoading } = useSelector(state => state.postsReducer);
 
 	return (
 		<div>
-			
+			{name}
+			<PostsList posts={postsByTags} isLoading={isLoading} />
 		</div>
 	);
 }

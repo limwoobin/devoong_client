@@ -25,15 +25,15 @@ function renderProgress() {
 
 interface PostsListProps {
 	posts: PostsModel[];
-	isPostsLoading: false;
+	isLoading: false;
 }
 
 export default function PostsList(props: PostsListProps) {
-	const { posts , isPostsLoading } = props;
+	const { posts , isLoading } = props;
 
 	return (
 		<>
-			{!isPostsLoading ? renderProgress() : 
+			{!isLoading ? renderProgress() : 
 				<Container maxWidth="lg">
 						<Grid container spacing={2}>
 								{renderPosts(posts)}
