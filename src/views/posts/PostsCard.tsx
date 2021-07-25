@@ -28,7 +28,7 @@ export default function PostsCard(props: any) {
 
 	return (
 		<Grid item xs={12} md={6}>
-			<Link to={`/posts/${post.id}`}>
+			<Link to={{ pathname: `/posts/${post.id}` , state: {contents: post.contents} }}>
 				<Card className={classes.card}>
 				<div className={classes.cardDetails}>
 					<CardContent>
@@ -39,8 +39,7 @@ export default function PostsCard(props: any) {
 							{post.createdDate}
 						</Typography>
 						<Typography variant="subtitle1" paragraph className="description">
-							{/* {post.description} */}
-							description...
+							{post.contents}
 						</Typography>
 						<Typography variant="subtitle1" color="primary">
 							<Button variant="contained" color="primary">READ MORE</Button>
