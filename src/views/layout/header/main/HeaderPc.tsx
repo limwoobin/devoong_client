@@ -108,7 +108,7 @@ export default function HeaderPc(props: HeaderProps) {
 							// value={searchWord}
 							// onKeyUp={setSearchWord(e.target.value)}
 					/>
-				<Button>OK | {searchWord} </Button>
+				<Button>OK</Button>
 				</div>
 			</Toolbar>
 		</div>

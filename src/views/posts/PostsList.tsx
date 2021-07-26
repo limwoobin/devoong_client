@@ -8,7 +8,7 @@ import PostsCard from './PostsCard';
 function renderPosts(posts: PostsModel[]) {
 	if (posts.length > 0) {
 			return posts.map((data) => (
-					<PostsCard key={data.id} post={data} />
+				<PostsCard key={data.id} post={data} />
 			));    
 	}
 
@@ -26,7 +26,7 @@ function renderProgress() {
 function renderTagName(name: string) {
 	return (
 		<div>
-				<h1 style={{ color: '#6B66FF' }}>{name}</h1>
+			<h1 style={{ color: '#6B66FF' }}>{name}</h1>
 		</div>
 	);
 }

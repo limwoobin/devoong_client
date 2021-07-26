@@ -1,14 +1,10 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsList from '../views/posts/PostsList';
-import { searchPostsAsync , getPostsAsync } from '../reducer/postsReducer';
+import { searchPostsAsync } from '../reducer/postsReducer';
 
 function onSearchPosts(dispatch: any) {
 	dispatch(searchPostsAsync());
-}
-
-function getPosts(dispatch: any , id: number) {
-	dispatch(getPostsAsync(id));
 }
 
 interface PostsContainerProps {
@@ -24,7 +20,6 @@ export default function PostsContainer(props: PostsContainerProps) {
 		if (posts.length === 0) {
 			onSearchPosts(dispatch);
 		}
-		
 	} , []);
 
 	function isPropsNull(param: PostsContainerProps) : boolean {

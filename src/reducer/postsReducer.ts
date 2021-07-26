@@ -75,7 +75,9 @@ export default createReducer(initialState , {
 		state.isLoading = true;
 	},
 	[GET_POSTS]: (state, {paylod: data}) => {
+		state.isLoading = false;
 		state.data = data;
+		state.isLoading = true;
 	},
 	[FIND_LATEST_POSTS]: (state , {payload: data}) => {
 		state.latestPosts = data;

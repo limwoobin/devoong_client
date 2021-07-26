@@ -28,7 +28,7 @@ export default function PostsCard(props: any) {
 
 	return (
 		<Grid item xs={12} md={6}>
-			<Link to={{ pathname: `/posts/${post.id}` , state: {contents: post.contents} }}>
+			<Link to={{ pathname: `/posts/${post.id}` , state: {contents: post.contents , id: post.id} }}>
 				<Card className={classes.card}>
 				<div className={classes.cardDetails}>
 					<CardContent>
