@@ -1,15 +1,10 @@
-import React , { useEffect } from 'react';
-import { useDispatch , useSelector } from 'react-redux';
-import { getPostsAsync } from '../../reducer/postsReducer';
+import React from 'react';
 import MarkdownRender from '../MarkdownRender';
 import Progress from '../Progress';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
-function onFindPosts(dispatch: any , id: number) {
-	dispatch(getPostsAsync(id));
-}
+import { PostsModel } from '../../models';
 
 function renderProgress() {
 	return (
@@ -19,28 +14,26 @@ function renderProgress() {
 	);
 }
 
-export default function PostsView(props: any) {
-	const id = props.location.state.id;
-	const contents = props.location.state.contents;
+interface PostsViewProps {
+	data: PostsModel;
+	isLoading: false;
+}
 
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		onFindPosts(dispatch , id);
-	} , []);
-
-	const { data , isLoading } = useSelector(state => state.postsReducer);
+export default function PostsView(props: PostsViewProps) {
+	const { data , isLoading } = props;
 
 	return (
-		// <React.Fragment>
-		// 	<CssBaseline />
-		// 	<Container maxWidth="md">
-		// 		<Typography component="div" style={{ height: '100vh' }}>
-					<>
-
-					</>
-		// 		</Typography>
-		// 	</Container>
-		// </React.Fragment>
+		<>
+			{!isLoading ? renderProgress() : 
+				<React.Fragment>
+					<CssBaseline />
+					<Container maxWidth="md">
+						<Typography component="div" style={{ height: '100vh' }}>
+							<MarkdownRender contents={data.contents} />
+						</Typography>
+					</Container>
+				</React.Fragment>
+			}
+		</>
 	);
 }

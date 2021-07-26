@@ -33,8 +33,8 @@ export default function PostsContainer(props: PostsContainerProps) {
 	const { posts , isLoading } = useSelector(state => state.postsReducer);
 
 	return (
-			<>
-				<PostsList posts={posts} isLoading={isLoading} />
-			</>
+		<>
+			<PostsList posts={posts} isLoading={isLoading} />
+		</>
 	);
 }

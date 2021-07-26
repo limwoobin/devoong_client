@@ -7,9 +7,9 @@ import PostsCard from './PostsCard';
 
 function renderPosts(posts: PostsModel[]) {
 	if (posts.length > 0) {
-			return posts.map((data) => (
-				<PostsCard key={data.id} post={data} />
-			));    
+		return posts.map((data) => (
+			<PostsCard key={data.id} post={data} />
+		));    
 	}
 
 	return;

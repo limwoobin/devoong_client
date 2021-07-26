@@ -62,9 +62,9 @@ const initialState = {
 	isLoading: false,
 	posts: [],
 	lastId: 0,
-	data: {},
 	latestPosts: [],
 	postsByTags: [],
+	data: {},
 };
 
 // Toolkit Reducer
@@ -74,7 +74,7 @@ export default createReducer(initialState , {
 		state.posts = data;
 		state.isLoading = true;
 	},
-	[GET_POSTS]: (state, {paylod: data}) => {
+	[GET_POSTS]: (state , {payload: data}) => {
 		state.isLoading = false;
 		state.data = data;
 		state.isLoading = true;

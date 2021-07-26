@@ -7,6 +7,7 @@ import {
 	PostsView,
 	About,
 	PostsContainer,
+	PostsViewContainer,
 	TagsRouter
 } from '../page/pages';
 
@@ -20,7 +21,7 @@ export default function Router() {
 		<MainDiv>
 			<Switch>
 				<Route exact path="/" component={PostsContainer} />
-				<Route path="/posts" component={PostsView} />
+				<Route path="/posts" component={PostsViewContainer} />
 				<Route path="/tags" component={TagsRouter} />
 				<Route path="/search" component={PostsContainer} />
 				<Route path="/about" component={About} />
