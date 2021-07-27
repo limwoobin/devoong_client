@@ -12,14 +12,6 @@ function onInitLoadingState(dispatch: any) {
 	dispatch(initLoadingState());
 }
 
-function renderProgress() {
-	return (
-		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-			<Progress />
-		</div>
-	);
-}
-
 export default function TagsView(props: any) {
 	const id = props.location.state.id;
 	const name = props.match.params.name;
@@ -27,7 +19,6 @@ export default function TagsView(props: any) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		console.log('name' , name);
 		onInitLoadingState(dispatch);
 		onFindPostsByTags(dispatch , id);
 	} , [name]);
@@ -36,7 +27,7 @@ export default function TagsView(props: any) {
 
 	return (
 		<>
-			{!isLoading ? renderProgress() : <PostsList posts={postsByTags} isLoading={isLoading} name={name} />}
+			{!isLoading ? <Progress /> : <PostsList posts={postsByTags} isLoading={isLoading} name={name} />}
 		</>
 	);
 }

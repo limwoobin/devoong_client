@@ -1,10 +1,14 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { getPostsAsync } from '../reducer/postsReducer';
+import { getPostsAsync , initLoadingState } from '../reducer/postsReducer';
 import PostsView from '../views/posts/PostsView';
 
 function onFindPosts(dispatch: any , id: number) {
 	dispatch(getPostsAsync(id));
+}
+
+function onInitLoadingState(dispatch: any) {
+	dispatch(initLoadingState());
 }
 
 export default function PostsViewContainer(props: any) {
@@ -12,6 +16,7 @@ export default function PostsViewContainer(props: any) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		onInitLoadingState(dispatch);
 		onFindPosts(dispatch , id);
 	} , []);
 

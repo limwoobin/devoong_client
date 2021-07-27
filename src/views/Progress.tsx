@@ -17,8 +17,13 @@ export default function Progress() {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.root}>
-			<LinearProgress color="secondary" />
+		// <div className={classes.root}>
+		// 	<LinearProgress color="secondary" />
+		// </div>
+		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
+			<div className={classes.root}>
+				<LinearProgress color="secondary" />
+			</div>
 		</div>
 	);
 }

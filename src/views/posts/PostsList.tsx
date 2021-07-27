@@ -15,14 +15,6 @@ function renderPosts(posts: PostsModel[]) {
 	return;
 }
 
-function renderProgress() {
-	return (
-		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-			<Progress />
-		</div>
-	);
-}
-
 function renderTagName(name: string) {
 	return (
 		<div>
@@ -43,11 +35,11 @@ export default function PostsList(props: PostsListProps) {
 
 	return (
 		<>
-			{!isLoading ? renderProgress() : 
+			{!isLoading ? <Progress /> : 
 				<Container maxWidth="lg">
 					{name ? renderTagName(name) : ''}
 						<Grid container spacing={2}>
-								{renderPosts(posts)}
+							{renderPosts(posts)}
 						</Grid>
 				</Container>
 			}
