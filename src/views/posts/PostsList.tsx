@@ -23,7 +23,6 @@ function renderTagName(name: string) {
 	);
 }
 
-
 interface PostsListProps {
 	posts: PostsModel[];
 	isLoading: false;

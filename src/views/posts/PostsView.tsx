@@ -27,6 +27,12 @@ function renderTags(tagsList: TagsModel[]) {
 	}
 }
 
+function renderViews(views: number) {
+	return (
+		<div style={{ float: 'right', color: 'white' }}>{views}</div>
+	);
+}
+
 interface PostsViewProps {
 	data: PostsModel;
 	isLoading: false;
@@ -41,6 +47,7 @@ export default function PostsView(props: PostsViewProps) {
 				<React.Fragment>
 					<CssBaseline />
 					<Container maxWidth="md">
+						{renderViews(data.views!)}
 						{renderTags(data.tagsResponseList!)}
 						<Typography component="div" style={{ height: '100vh' }}>
 							<MarkdownRender contents={data.contents} />
