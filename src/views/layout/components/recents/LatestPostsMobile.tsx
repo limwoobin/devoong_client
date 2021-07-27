@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { PostsModel } from '../../../../models';
 import { LatestPostsInterface } from './LatestPostsInterface';
 import { Link } from 'react-router-dom';
-import './mobileRecentPosts.scss';
+import './mobileLatestPosts.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({

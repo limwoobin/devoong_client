@@ -27,9 +27,10 @@ export default function TagsView(props: any) {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		console.log('name' , name);
 		onInitLoadingState(dispatch);
 		onFindPostsByTags(dispatch , id);
-	} , []);
+	} , [name]);
 
 	const { postsByTags , isLoading } = useSelector(state => state.postsReducer);
 
