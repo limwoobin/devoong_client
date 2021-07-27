@@ -16,6 +16,9 @@ const FIND_LATEST_POSTS = 'FIND_LATEST_POSTS';
 const FIND_POSTS_BY_TAGS_ASYNC = 'FIND_POSTS_BY_TAGS_ASYNC';
 const FIND_POSTS_BY_TAGS = 'FIND_POSTS_BY_TAGS';
 
+const INIT_LOADING_STATE = 'INIT_LOADING_STATE';
+const INIT_LOADING_STATE_FALSE = 'INIT_LOADING_STATE_FALSE';
+
 // Action Creator
 export const searchPostsAsync: any = createAction(SEARCH_POSTS_ASYNC);
 export const searchData: any = createAction(SEARCH_DATA);
@@ -29,12 +32,16 @@ export const findLatestPosts: any = createAction(FIND_LATEST_POSTS);
 export const findPostsByTagsAsync: any = createAction(FIND_POSTS_BY_TAGS_ASYNC);
 export const findPostsByTags: any = createAction(FIND_POSTS_BY_TAGS);
 
+export const initLoadingState: any = createAction(INIT_LOADING_STATE);
+export const initLoadingStateFalse: any = createAction(INIT_LOADING_STATE_FALSE);
+
 // Main Saga
 export function* postsSaga() {
 	yield takeEvery(SEARCH_POSTS_ASYNC , searchPostsSaga);
 	yield takeEvery(GET_POSTS_ASYNC , getPostsSaga);
 	yield takeEvery(FIND_LATEST_POSTS_ASYNC , findLatestPostsSaga);
 	yield takeEvery(FIND_POSTS_BY_TAGS_ASYNC , findPostsByTagsSaga);
+	yield takeEvery(INIT_LOADING_STATE , initLoadingStateSaga);
 }
 
 export function* searchPostsSaga() {
@@ -55,6 +62,10 @@ export function* findLatestPostsSaga() {
 export function* findPostsByTagsSaga({payload: tagId}: any) {
 	const response: PageModel = yield call(API.getPostsByTags , tagId);
 	yield put(findPostsByTags(response.content));
+}
+
+export function* initLoadingStateSaga() {
+	yield put(initLoadingStateFalse());
 }
 
 // initState
@@ -86,5 +97,8 @@ export default createReducer(initialState , {
 		state.isLoading = false;
 		state.postsByTags = data;
 		state.isLoading = true;
+	},
+	[INIT_LOADING_STATE_FALSE]: (state) => {
+		state.isLoading = false;
 	}
 });

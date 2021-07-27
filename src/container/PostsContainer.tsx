@@ -1,10 +1,14 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsList from '../views/posts/PostsList';
-import { searchPostsAsync } from '../reducer/postsReducer';
+import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
 
 function onSearchPosts(dispatch: any) {
 	dispatch(searchPostsAsync());
+}
+
+function onInitLoadingState(dispatch: any) {
+	dispatch(initLoadingState());
 }
 
 interface PostsContainerProps {
@@ -18,6 +22,7 @@ export default function PostsContainer(props: PostsContainerProps) {
 
 	useEffect(() => {
 		if (posts.length === 0) {
+			onInitLoadingState(dispatch);
 			onSearchPosts(dispatch);
 		}
 	} , []);
