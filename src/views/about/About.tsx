@@ -3,7 +3,7 @@ import './about.scss';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import MarkdownRender from '../MarkdownRender';
+import MarkdownRender from '../common/MarkdownRender';
 
 const contents = `
 > # 임우빈 (woobeen lim)

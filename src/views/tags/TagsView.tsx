@@ -2,7 +2,7 @@ import React , { useState , useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
 import PostsList from '../posts/PostsList';
-import Progress from '../Progress';
+import Progress from '../common/Progress';
 
 function onFindPostsByTags(dispatch: any , tagId: number) {
 	dispatch(findPostsByTagsAsync(tagId));
