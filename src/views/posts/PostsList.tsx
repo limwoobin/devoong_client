@@ -1,9 +1,10 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Progress from '../../views/Progress';
+import Progress from '../common/Progress';
 import { PostsModel } from '../../models';
 import PostsCard from './PostsCard';
+import TitleView from '../common/TitleView';
 
 function renderPosts(posts: PostsModel[]) {
 	if (posts.length > 0) {
@@ -15,10 +16,10 @@ function renderPosts(posts: PostsModel[]) {
 	return;
 }
 
-function renderTagName(name: string) {
+function renderTitle(name: string) {
 	return (
-		<div>
-			<h1 style={{ color: '#6B66FF' }}>{name}</h1>
+		<div style={{ paddingTop: '10px' , paddingBottom: '20px' }}>
+			<TitleView title={name} />
 		</div>
 	);
 }
@@ -36,7 +37,7 @@ export default function PostsList(props: PostsListProps) {
 		<>
 			{!isLoading ? <Progress /> : 
 				<Container maxWidth="lg">
-					{name ? renderTagName(name) : ''}
+					{name ? renderTitle(name) : ''}
 						<Grid container spacing={2}>
 							{renderPosts(posts)}
 						</Grid>

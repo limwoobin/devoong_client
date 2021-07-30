@@ -1,19 +1,13 @@
 import React from 'react';
-import MarkdownRender from '../MarkdownRender';
-import Progress from '../Progress';
+import MarkdownRender from '../common/MarkdownRender';
+import Progress from '../common/Progress';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { PostsModel, TagsModel } from '../../models';
 import { Tag } from 'antd';
-
-function renderProgress() {
-	return (
-		<div style={{ paddingLeft: '10%' , paddingRight: '10%' , paddingTop: '30%' }}>
-			<Progress />
-		</div>
-	);
-}
+import TitleView from '../common/TitleView';
+import { string } from 'yargs';
 
 function renderTags(tagsList: TagsModel[]) {
 	if (tagsList) {
@@ -47,9 +41,9 @@ export default function PostsView(props: PostsViewProps) {
 				<React.Fragment>
 					<CssBaseline />
 					<Container maxWidth="md">
-						{renderViews(data.views!)}
 						{renderTags(data.tagsResponseList!)}
 						<Typography component="div" style={{ height: '100vh' }}>
+							<TitleView title={data.title!} />
 							<MarkdownRender contents={data.contents} />
 						</Typography>
 					</Container>
