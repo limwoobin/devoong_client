@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 import { PostsModel, TagsModel } from '../../models';
 import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
-import { string } from 'yargs';
+import Utterances from './Utterances';
 
 function renderTags(tagsList: TagsModel[]) {
 	if (tagsList) {
@@ -21,15 +21,13 @@ function renderTags(tagsList: TagsModel[]) {
 	}
 }
 
-function renderViews(views: number) {
-	return (
-		<div style={{ float: 'right', color: 'white' }}>{views}</div>
-	);
-}
-
 interface PostsViewProps {
 	data: PostsModel;
 	isLoading: false;
+}
+
+function Blank() {
+	return <div style={{paddingTop: '20px' , paddingBottom: '20px'}} />;
 }
 
 export default function PostsView(props: PostsViewProps) {
@@ -45,6 +43,8 @@ export default function PostsView(props: PostsViewProps) {
 						<Typography component="div" style={{ height: '100vh' }}>
 							<TitleView title={data.title!} />
 							<MarkdownRender contents={data.contents} />
+							<Blank />
+							<Utterances />
 						</Typography>
 					</Container>
 				</React.Fragment>
