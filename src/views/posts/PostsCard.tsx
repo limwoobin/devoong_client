@@ -8,7 +8,7 @@ import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import './Posts.scss';
+import './posts.scss';
 
 const useStyles = makeStyles({
 	card: {

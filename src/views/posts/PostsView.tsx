@@ -4,10 +4,13 @@ import Progress from '../common/Progress';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { PostsModel, TagsModel } from '../../models';
+import { PostsModel, TagsModel, PostsCard } from '../../models';
 import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
 import Utterances from './Utterances';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import './posts.scss';
 
 function renderTags(tagsList: TagsModel[]) {
 	if (tagsList) {
@@ -30,6 +33,15 @@ function Blank() {
 	return <div style={{paddingTop: '20px' , paddingBottom: '20px'}} />;
 }
 
+function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCard) {
+	return (
+		<div>
+			<div className="blockArea">{previousData ? <label>previous - {previousData.title}</label> : '이전글이 없습니다.'}</div>
+			<div className="blockArea">{nextData ? <label>next - {nextData.title}</label> : '다음글이 없습니다.'}</div>
+		</div>
+	);
+}
+
 export default function PostsView(props: PostsViewProps) {
 	const { data , isLoading } = props;
 
@@ -44,6 +56,7 @@ export default function PostsView(props: PostsViewProps) {
 							<TitleView title={data.title!} />
 							<MarkdownRender contents={data.contents} />
 							<Blank />
+							{renderPreviousAndNextPosts(data.previousPostsCard! , data.nextPostsCard!)}
 							<Utterances />
 						</Typography>
 					</Container>

@@ -1,3 +1,4 @@
+import PostsCard from "./PostsCard";
 import TagsModel from "./TagsModel";
 
 export default class PostsModel {
@@ -8,4 +9,6 @@ export default class PostsModel {
 	public createdDate?: Date;
 	public updatedDate?: Date;
 	public tagsResponseList!: TagsModel[];
+	public previousPostsCard!: PostsCard;
+	public nextPostsCard!: PostsCard;
 }
