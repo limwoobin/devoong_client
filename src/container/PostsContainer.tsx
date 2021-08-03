@@ -16,8 +16,7 @@ interface PostsContainerProps {
 	searchWord: string;
 }
 
-export default function PostsContainer(props: PostsContainerProps) {
-	const { tagId , searchWord } = props;
+export default function PostsContainer({ tagId, searchWord }: PostsContainerProps) {
 	const dispatch = useDispatch();
 	
 	useEffect(() => {
