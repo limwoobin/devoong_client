@@ -9,6 +9,8 @@ import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
 import Utterances from './Utterances';
 import { Link } from 'react-router-dom';
+import PostsBox from './PostsBox';
+import { Direction } from '../../core/enums';
 import './posts.scss';
 
 function renderTags(tagsList: TagsModel[]) {
@@ -36,26 +38,20 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 	return (
 		<div>
 			{previousData ?
-				<Link key={previousData.id} to={{ pathname: `/posts/${previousData.id}` , state: {id: previousData.id}}}>
-					<div className="blockArea">
-						<label>previous - {previousData.title}</label>
-					</div>
-				</Link>
-				:
-				<div className="blockArea">
-						이전글이 없습니다.
-				</div>
+				<PostsBox 
+					id={previousData.id}
+					title={previousData.title}
+					state={Direction.PREVIOUS}
+				/>	:
+				<PostsBox emptyMessage="이전글이 없습니다." />
 			}
 			{nextData ?
-				<Link key={nextData.id} to={{ pathname: `/posts/${nextData.id}` , state: {id: nextData.id} }}>
-					<div className="blockArea">
-						<label>next - {nextData.title}</label>
-					</div>
-				</Link>
-				:
-				<div className="blockArea">
-					다음글이 없습니다.
-				</div>
+				<PostsBox 
+					id={nextData.id}
+					title={nextData.title}
+					state={Direction.NEXT}
+				/>	:
+				<PostsBox emptyMessage="다음글이 없습니다." />
 			}
 		</div>
 	);
