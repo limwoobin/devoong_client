@@ -8,8 +8,7 @@ import { PostsModel, TagsModel, PostsCard } from '../../models';
 import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
 import Utterances from './Utterances';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import { Link } from 'react-router-dom';
 import './posts.scss';
 
 function renderTags(tagsList: TagsModel[]) {
@@ -36,8 +35,28 @@ function Blank() {
 function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCard) {
 	return (
 		<div>
-			<div className="blockArea">{previousData ? <label>previous - {previousData.title}</label> : '이전글이 없습니다.'}</div>
-			<div className="blockArea">{nextData ? <label>next - {nextData.title}</label> : '다음글이 없습니다.'}</div>
+			{previousData ?
+				<Link key={previousData.id} to={{ pathname: `/posts/${previousData.id}` , state: {id: previousData.id}}}>
+					<div className="blockArea">
+						<label>previous - {previousData.title}</label>
+					</div>
+				</Link>
+				:
+				<div className="blockArea">
+						이전글이 없습니다.
+				</div>
+			}
+			{nextData ?
+				<Link key={nextData.id} to={{ pathname: `/posts/${nextData.id}` , state: {id: nextData.id} }}>
+					<div className="blockArea">
+						<label>next - {nextData.title}</label>
+					</div>
+				</Link>
+				:
+				<div className="blockArea">
+					다음글이 없습니다.
+				</div>
+			}
 		</div>
 	);
 }

@@ -18,7 +18,7 @@ export default function PostsViewContainer(props: any) {
 	useEffect(() => {
 		onInitLoadingState(dispatch);
 		onFindPosts(dispatch , id);
-	} , []);
+	} , [id]);
 
 	const { data , isLoading } = useSelector(state => state.postsReducer);
 
