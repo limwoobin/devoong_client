@@ -1,30 +1,41 @@
-import React , { useEffect } from 'react';
-import { useDispatch , useSelector } from 'react-redux';
-import { getPostsAsync , initLoadingState } from '../reducer/postsReducer';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Dispatch } from 'redux';
+import { getPostsAsync, initLoadingState } from '../reducer/postsReducer';
 import PostsView from '../views/posts/PostsView';
 
-function onFindPosts(dispatch: any , id: number) {
-	dispatch(getPostsAsync(id));
+function onFindPosts(dispatch: Dispatch, id: number) {
+  dispatch(getPostsAsync(id));
 }
 
-function onInitLoadingState(dispatch: any) {
-	dispatch(initLoadingState());
+function onInitLoadingState(dispatch: Dispatch) {
+  dispatch(initLoadingState());
 }
 
-export default function PostsViewContainer(props: any) {
-	const id = props.location.state.id;
-	const dispatch = useDispatch();
+interface PostViewContainerProps {
+  location: {
+    state: {
+      id: string;
+    };
+  };
+}
 
-	useEffect(() => {
-		onInitLoadingState(dispatch);
-		onFindPosts(dispatch , id);
-	} , []);
+export default function PostsViewContainer({
+  location,
+}: PostViewContainerProps) {
+  const id = location.state.id;
+  const dispatch = useDispatch();
 
-	const { data , isLoading } = useSelector(state => state.postsReducer);
+  useEffect(() => {
+    onInitLoadingState(dispatch);
+    onFindPosts(dispatch, id);
+  }, []);
 
-	return (
-		<>
-			<PostsView data={data} isLoading={isLoading} />
-		</>
-	);
+  const { data, isLoading } = useSelector(state => state.postsReducer);
+
+  return (
+    <>
+      <PostsView data={data} isLoading={isLoading} />
+    </>
+  );
 }
