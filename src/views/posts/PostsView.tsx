@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useLayoutEffect } from 'react';
 import MarkdownRender from '../common/MarkdownRender';
 import Progress from '../common/Progress';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,7 +58,7 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 
 export default function PostsView(props: PostsViewProps) {
 	const { data , isLoading } = props;
-
+	
 	return (
 		<>
 			{!isLoading ? <Progress /> : 
