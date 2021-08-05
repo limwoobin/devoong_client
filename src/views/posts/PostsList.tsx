@@ -36,7 +36,7 @@ export default function PostsList(props: PostsListProps) {
 	return (
 		<>
 			{!isLoading ? <Progress /> : 
-				<Container maxWidth="lg">
+				<Container maxWidth="lg" style={{ paddingTop: '1rem' }}>
 					{name ? renderTitle(name) : ''}
 						<Grid container spacing={2}>
 							{renderPosts(posts)}

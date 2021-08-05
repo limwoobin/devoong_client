@@ -9,16 +9,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import './posts.scss';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
 
 const useStyles = makeStyles({
+	media: {
+		height: 140,
+	},
 	card: {
 		display: 'flex',
 	},
 	cardDetails: {
 		flex: 1,
-	},
-	cardMedia: {
-		width: 160,
 	},
 });
 
@@ -31,27 +33,27 @@ export default function PostsCard(props: any) {
 			<Link to={{ pathname: `/posts/${post.id}` , state: {id: post.id} }}>
 				<Card className={classes.card}>
 				<div className={classes.cardDetails}>
-					<CardContent>
-						<Typography component="h2" variant="h5" style={{ color: 'black' }}>
-							{post.title}
-						</Typography>
-						<Typography variant="subtitle1" color="textSecondary">
-							{post.createdDate}
-						</Typography>
-						<Typography variant="subtitle1" paragraph className="description">
-							{post.contents}
-						</Typography>
-						<Typography variant="subtitle1" color="primary">
-							<Button variant="contained" color="primary">READ MORE</Button>
-						</Typography>
-					</CardContent>
-				</div>
-				<Hidden xsDown>
-					<CardMedia 
-						className={classes.cardMedia} 
-						image="http://www.itworld.co.kr/files/itworld/2020/06_01/google-password-manager-primary-100841457-large.jpg" 
-					/>
-				</Hidden>
+					<CardActionArea>
+						<CardMedia
+							className={classes.media}
+							image="http://www.itworld.co.kr/files/itworld/2020/06_01/google-password-manager-primary-100841457-large.jpg"
+							title="Contemplative Reptile"
+						/>
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
+								{post.title}
+							</Typography>
+							<Typography variant="body2" color="textSecondary" component="p">
+								{post.createdDate}
+							</Typography>
+						</CardContent>
+					</CardActionArea>
+					<CardActions>
+						<Button size="small" color="primary">
+							View
+						</Button>
+					</CardActions>
+					</div>
 				</Card>
 			</Link>    
 		</Grid>
