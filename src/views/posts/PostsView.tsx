@@ -8,7 +8,6 @@ import { PostsModel, TagsModel, PostsCard } from '../../models';
 import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
 import Utterances from './Utterances';
-import { Link } from 'react-router-dom';
 import PostsBox from './PostsBox';
 import { Direction } from '../../core/enums';
 import './posts.scss';

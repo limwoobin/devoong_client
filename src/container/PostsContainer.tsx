@@ -19,7 +19,7 @@ interface PostsContainerProps {
 export default function PostsContainer(props: PostsContainerProps) {
 	const { tagId , searchWord } = props;
 	const dispatch = useDispatch();
-
+	
 	useEffect(() => {
 		if (posts.length === 0) {
 			onInitLoadingState(dispatch);

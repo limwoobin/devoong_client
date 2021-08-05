@@ -1,4 +1,4 @@
-import React , { useEffect } from 'react';
+import React , { useLayoutEffect} from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { getPostsAsync , initLoadingState } from '../reducer/postsReducer';
 import PostsView from '../views/posts/PostsView';
@@ -15,7 +15,7 @@ export default function PostsViewContainer(props: any) {
 	const id = props.location.state.id;
 	const dispatch = useDispatch();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		onInitLoadingState(dispatch);
 		onFindPosts(dispatch , id);
 	} , [id]);
