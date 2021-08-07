@@ -2,6 +2,7 @@ import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsList from '../views/posts/PostsList';
 import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
+import Paging from '../views/common/Paging';
 
 function onSearchPosts(dispatch: any) {
 	dispatch(searchPostsAsync());
@@ -39,6 +40,7 @@ export default function PostsContainer({ tagId , searchWord }: PostsContainerPro
 	return (
 		<>
 			<PostsList posts={posts} isLoading={isLoading} />
+			<Paging />
 		</>
 	);
 }

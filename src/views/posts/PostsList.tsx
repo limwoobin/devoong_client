@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container';
 import Progress from '../common/Progress';
 import { PostsModel } from '../../models';
 import PostsCard from './PostsCard';
-import Pagination from '../common/Pagination';
 import TitleView from '../common/TitleView';
 
 function renderPosts(posts: PostsModel[]) {
@@ -42,7 +41,6 @@ export default function PostsList(props: PostsListProps) {
 						<Grid container spacing={2}>
 							{renderPosts(posts)}
 						</Grid>
-						{/* <Pagination /> */}
 				</Container>
 			}
 		</>
