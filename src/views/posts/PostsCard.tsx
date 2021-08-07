@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -14,10 +13,12 @@ import CardActions from '@material-ui/core/CardActions';
 
 const useStyles = makeStyles({
 	media: {
-		height: 140,
+		height: 300,
+		maxHeight: 500,
 	},
 	card: {
 		display: 'flex',
+		maxWidth: 850,
 	},
 	cardDetails: {
 		flex: 1,
@@ -29,7 +30,7 @@ export default function PostsCard(props: any) {
 	const { post } = props;
 
 	return (
-		<Grid item xs={12} md={6}>
+		<Grid item xs={12} md={12} style={{ paddingBottom: '20px' }}>
 			<Link to={{ pathname: `/posts/${post.id}` , state: {id: post.id} }}>
 				<Card className={classes.card}>
 				<div className={classes.cardDetails}>

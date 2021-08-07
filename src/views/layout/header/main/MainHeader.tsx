@@ -5,6 +5,7 @@ import { constants } from '../../../../core/constant';
 import { headers } from '../../../../core/constant';
 import HeaderPC from './HeaderPc';
 import HeaderMobile from './HeaderMobile';
+import Container from '@material-ui/core/Container';
 
 export default function MainHeader() {
 	const isPc = useMediaQuery({query: constants.MIN_WIDTH});
@@ -13,10 +14,12 @@ export default function MainHeader() {
 	return (
 		<>
 			<nav className="main_head">
-				<div className="head_category">
-					{isPc && <HeaderPC headers={headers} />}
-					{isMobile && <HeaderMobile headers={headers} />}
-				</div>
+				<Container maxWidth="lg">
+					<div className="head_category">
+						{isPc && <HeaderPC headers={headers} />}
+						{isMobile && <HeaderMobile headers={headers} />}
+					</div>
+				</Container>
 			</nav>
 		</>
 	);

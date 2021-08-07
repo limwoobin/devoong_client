@@ -19,8 +19,7 @@ const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 }
 
 const PcMainView = () => {
-	return <div>
-					<div className="lpgbkm">
+	return <div className="lpgbkm">
 						<div className="BAccj">
 							<Router />
 						</div>
@@ -29,8 +28,7 @@ const PcMainView = () => {
 							<LatestPostsContainer />
 							<Socials />
 						</div>
-					</div>
-				</div>;
+					</div>;
 };
 
 const MobileMainView = () => {
