@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useLayoutEffect } from 'react';
 import MarkdownRender from '../common/MarkdownRender';
 import Progress from '../common/Progress';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,8 +8,8 @@ import { PostsModel, TagsModel, PostsCard } from '../../models';
 import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
 import Utterances from './Utterances';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import PostsBox from './PostsBox';
+import { Direction } from '../../core/enums';
 import './posts.scss';
 
 function renderTags(tagsList: TagsModel[]) {
@@ -36,15 +36,29 @@ function Blank() {
 function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCard) {
 	return (
 		<div>
-			<div className="blockArea">{previousData ? <label>previous - {previousData.title}</label> : '이전글이 없습니다.'}</div>
-			<div className="blockArea">{nextData ? <label>next - {nextData.title}</label> : '다음글이 없습니다.'}</div>
+			{previousData ?
+				<PostsBox 
+					id={previousData.id}
+					title={previousData.title}
+					state={Direction.PREVIOUS}
+				/>	:
+				<PostsBox emptyMessage="이전글이 없습니다." />
+			}
+			{nextData ?
+				<PostsBox 
+					id={nextData.id}
+					title={nextData.title}
+					state={Direction.NEXT}
+				/>	:
+				<PostsBox emptyMessage="다음글이 없습니다." />
+			}
 		</div>
 	);
 }
 
 export default function PostsView(props: PostsViewProps) {
 	const { data , isLoading } = props;
-
+	
 	return (
 		<>
 			{!isLoading ? <Progress /> : 

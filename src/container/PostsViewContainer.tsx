@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Dispatch } from 'redux';
-import { getPostsAsync, initLoadingState } from '../reducer/postsReducer';
+import React , { useLayoutEffect} from 'react';
+import { useDispatch , useSelector } from 'react-redux';
+import { getPostsAsync , initLoadingState } from '../reducer/postsReducer';
 import PostsView from '../views/posts/PostsView';
 
 function onFindPosts(dispatch: Dispatch, id: number) {
@@ -26,10 +25,10 @@ export default function PostsViewContainer({
   const id = location.state.id;
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    onInitLoadingState(dispatch);
-    onFindPosts(dispatch, id);
-  }, []);
+	useLayoutEffect(() => {
+		onInitLoadingState(dispatch);
+		onFindPosts(dispatch , id);
+	} , [id]);
 
   const { data, isLoading } = useSelector(state => state.postsReducer);
 

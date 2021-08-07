@@ -1,0 +1,30 @@
+import * as API from '../api/markdown';
+import { call , put , takeEvery } from 'redux-saga/effects';
+import { createAction , createReducer } from '@reduxjs/toolkit';
+
+// Action Type
+const GET_MARKDOWN_ASYNC = 'GET_MARKDOWN_ASYNC';
+const GET_MARKDOWN = 'GET_MARKDOWN';
+
+// Action Creator
+export const getMarkdownAsync: any = createAction(GET_MARKDOWN_ASYNC);
+export const getMarkdown: any = createAction(GET_MARKDOWN);
+
+export function* markdownSaga() {
+	yield takeEvery(GET_MARKDOWN_ASYNC , getMarkdownSaga);
+}
+
+export function* getMarkdownSaga({payload: githubUri}: any) {
+	const response: string = yield call(API.getMarkdown , githubUri);
+	yield put(getMarkdown(response));
+}
+
+const initialState = {
+	data: '',
+};
+
+export default createReducer(initialState , {
+	[GET_MARKDOWN]: (state , {payload: data}) => {
+		state.data = data;
+	}
+});

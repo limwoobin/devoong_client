@@ -17,7 +17,6 @@ export default function Utterances() {
 			src,
 			repo,
 			'issue-term': 'pathname',
-			// theme: 'github-light',
 			theme: 'github-dark',
 			crossorigin: 'anonymous',
 			async: 'true',

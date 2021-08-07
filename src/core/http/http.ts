@@ -10,6 +10,7 @@ const instance = axios.create({
 // set default header config
 instance.defaults.headers['Accept'] = 'application/json';
 instance.defaults.headers['Authorization'] = localStorage.getItem('authorization');
+// instance.defaults.headers['Authorization'] = 'Bearer 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';
 instance.defaults.headers['RefreshToken'] = localStorage.getItem('refreshtoken');
 instance.defaults.headers.post['Content-Type'] = 'application/json';
 
