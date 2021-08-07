@@ -17,7 +17,8 @@ export default function Utterances() {
 			src,
 			repo,
 			'issue-term': 'pathname',
-			theme: 'github-dark',
+			// theme: 'github-dark',
+			theme: 'github-light',
 			crossorigin: 'anonymous',
 			async: 'true',
 		};
@@ -29,7 +30,7 @@ export default function Utterances() {
 		containerRef.current?.appendChild(utterances);
 	} , [repo]);
 
-	return <div ref={containerRef} />;
+	return <div ref={containerRef} style={{paddingLeft: '0px'}} />;
 }
 
 Utterances.displayName = 'Utterances';
