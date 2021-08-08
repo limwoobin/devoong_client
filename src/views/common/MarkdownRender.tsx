@@ -2,12 +2,15 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import './markdown.scss';
 
-export default function MarkdownRender(props: any) {
-	const { contents } = props;
+interface IMarkdownRender {
+	data: string;
+}
+
+export default function MarkdownRender({data}: IMarkdownRender) {
 
 	return (
 		<div style={{ color: 'white' , paddingTop: '10px' }}>
-			<ReactMarkdown children={contents} />
+			<ReactMarkdown children={data} />
 		</div>
 	);
 }

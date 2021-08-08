@@ -4,15 +4,15 @@ const instance = axios.create({
 	baseURL: '/',
 	timeout: 30000,
 	withCredentials: true,
-	responseType: "json"
 });
 
 // set default header config
-instance.defaults.headers['Accept'] = 'application/json';
-instance.defaults.headers['Authorization'] = localStorage.getItem('authorization');
-instance.defaults.headers['RefreshToken'] = localStorage.getItem('refreshtoken');
-instance.defaults.headers.post['Content-Type'] = 'application/json';
+instance.defaults.headers['Accept'] = '*/*';
+instance.defaults.headers['Authorization'] = 'Bearer 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';
+instance.defaults.headers['Access-Control-Allow-Origin'] = "*";
+instance.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 
+// https://raw.githubusercontent.com/limwoobin/posts/main/test/test_1.md
 instance.interceptors.request.use((config) => {
 	return config;
 });

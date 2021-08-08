@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import MarkdownRender from '../common/MarkdownRender';
 
-const contents = `
+const data = `
 > # 임우빈 (woobeen lim)
 3년차 백엔드 개발자입니다.  
 백엔드 , 네트워크 , 인프라에 관심이 있습니다.
@@ -36,7 +36,7 @@ export default function About() {
 			<CssBaseline />
 			<Container maxWidth="md">
 				<Typography component="div" style={{ backgroundColor: '#363636' , height: '100vh' }}>
-						<MarkdownRender contents={contents} />
+						<MarkdownRender data={data} />
 				</Typography>
 			</Container>
 		</React.Fragment>

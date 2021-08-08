@@ -93,12 +93,15 @@ module.exports = (env , options) => {
             open: true,
             historyApiFallback: true,
             proxy : {
-                // "**" : "http://localhost:8080"
-                "**": {
-                    target: 'http://localhost:8080',
+                // "**": {
+                //     target: 'http://localhost:8080',
+                //     changeOrigin: true,
+                // }
+                "/limwoobin": {
+                    target: 'https://raw.githubusercontent.com',
                     changeOrigin: true,
                 }
             }
         }   
     }
-};
+}; 

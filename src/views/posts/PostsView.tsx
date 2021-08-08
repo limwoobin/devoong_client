@@ -11,6 +11,7 @@ import Utterances from './Utterances';
 import PostsBox from './PostsBox';
 import { Direction } from '../../core/enums';
 import './posts.scss';
+import { MarkdownContainer } from '../../container';
 
 function renderTags(tagsList: TagsModel[]) {
 	if (tagsList) {
@@ -58,7 +59,7 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 
 export default function PostsView(props: PostsViewProps) {
 	const { data , isLoading } = props;
-	
+
 	return (
 		<>
 			{!isLoading ? <Progress /> : 
@@ -68,7 +69,7 @@ export default function PostsView(props: PostsViewProps) {
 						{renderTags(data.tagsResponseList!)}
 						<Typography component="div" style={{ height: '100vh' }}>
 							<TitleView title={data.title!} />
-							<MarkdownRender contents={data.contents} />
+							<MarkdownContainer uri={data.contents!} />
 							<Blank />
 							{renderPreviousAndNextPosts(data.previousPostsCard! , data.nextPostsCard!)}
 							<Utterances />
