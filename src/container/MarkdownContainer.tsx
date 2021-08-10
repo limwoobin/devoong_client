@@ -1,11 +1,15 @@
 import React , { useLayoutEffect} from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { getMarkdownAsync } from '../reducer/markdownReducer';
+import { getMarkdownAsync , initMarkdown } from '../reducer/markdownReducer';
 import { Dispatch } from 'redux';
 import MarkdownRender from '../views/common/MarkdownRender';
 
 function onFindMarkdown(dispatch: Dispatch , uri: string) {
 	dispatch(getMarkdownAsync(uri));
+}
+
+function onInitMarkdown(dispatch: Dispatch) {
+	dispatch(initMarkdown());
 }
 
 interface IMarkdownProps {
@@ -16,6 +20,7 @@ export default function MarkdownContainer({uri} : IMarkdownProps) {
 	const dispatch = useDispatch();
 
 	useLayoutEffect(() => {
+		onInitMarkdown(dispatch);
 		onFindMarkdown(dispatch , uri);
 	} , [uri]);
 

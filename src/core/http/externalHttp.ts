@@ -41,11 +41,10 @@ instance.interceptors.response.use((response) => {
 	console.log('axios response' , response);
 	return response;
 } , (error) => {
-	console.log('axios response error' , error);
-	console.log('###' , error.response);
-	console.log('###' , error.message);
+	console.log('error.response ###' , error.response);
 	alert(error.message);
-	return error.message;
+	location.href="/about";
+	// return Promise.reject(error.response);
 });
 
 export default instance;
