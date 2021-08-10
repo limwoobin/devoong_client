@@ -8,11 +8,11 @@ const instance = axios.create({
 
 // set default header config
 instance.defaults.headers['Accept'] = '*/*';
-instance.defaults.headers['Authorization'] = 'Bearer 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';
 instance.defaults.headers['Access-Control-Allow-Origin'] = "*";
 instance.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+instance.defaults.headers['Authorization'] = 'Bearer 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';
 
-// https://raw.githubusercontent.com/limwoobin/posts/main/test/test_1.md
+
 instance.interceptors.request.use((config) => {
 	return config;
 });

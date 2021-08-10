@@ -4,7 +4,6 @@ import { getMarkdownAsync } from '../reducer/markdownReducer';
 import { Dispatch } from 'redux';
 import MarkdownRender from '../views/common/MarkdownRender';
 
-
 function onFindMarkdown(dispatch: Dispatch , uri: string) {
 	dispatch(getMarkdownAsync(uri));
 }
