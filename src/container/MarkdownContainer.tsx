@@ -17,7 +17,7 @@ export default function MarkdownContainer({uri} : IMarkdownProps) {
 
 	useLayoutEffect(() => {
 		onFindMarkdown(dispatch , uri);
-	} , []);
+	} , [uri]);
 
 	const { data } = useSelector(state => state.markdownReducer);
 

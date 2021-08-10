@@ -12,7 +12,6 @@ instance.defaults.headers['Access-Control-Allow-Origin'] = "*";
 instance.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 instance.defaults.headers['Authorization'] = 'Bearer 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';
 
-
 instance.interceptors.request.use((config) => {
 	return config;
 });
@@ -43,7 +42,10 @@ instance.interceptors.response.use((response) => {
 	return response;
 } , (error) => {
 	console.log('axios response error' , error);
-	return Promise.reject(error);
+	console.log('###' , error.response);
+	console.log('###' , error.message);
+	alert(error.message);
+	return error.message;
 });
 
 export default instance;
