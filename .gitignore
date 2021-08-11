@@ -3,3 +3,4 @@ node_modules
 .env.prod
 yarn-error.log
 secret_data.json
+./build
