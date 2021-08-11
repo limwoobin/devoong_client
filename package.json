@@ -78,6 +78,7 @@
     "global": "^4.4.0",
     "immer": "^8.0.1",
     "immutable": "^4.0.0-rc.12",
+    "json-loader": "^0.5.7",
     "moment": "^2.24.0",
     "path": "^0.12.7",
     "react": "^16.13.1",

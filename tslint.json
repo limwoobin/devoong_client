@@ -1,12 +1,12 @@
 {
-    "defaultSeverity": "error",
-    "extends": ["tslint:recommended" , "tslint-config-prettier"],
-    "jsRules": {},
-    "rules": {
-        "semicolon": true,
-        "indent": [true , "tabs" , 2],
-        "no-console": false,
-        "no-string-literal": false
-    },
-    "rulesDirectory": []
+	"defaultSeverity": "error",
+	"extends": ["tslint:recommended" , "tslint-config-prettier"],
+	"jsRules": {},
+	"rules": {
+			"semicolon": true,
+			"indent": [true , "tabs" , 2],
+			"no-console": false,
+			"no-string-literal": false
+	},
+	"rulesDirectory": []
 }

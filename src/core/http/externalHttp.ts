@@ -1,4 +1,5 @@
 import axios from 'axios';
+import secret_data from '../../../secret_data.json';
 
 const instance = axios.create({
 	baseURL: '/',
@@ -10,7 +11,7 @@ const instance = axios.create({
 instance.defaults.headers['Accept'] = '*/*';
 instance.defaults.headers['Access-Control-Allow-Origin'] = "*";
 instance.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-instance.defaults.headers['Authorization'] = 'Bearer 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';
+instance.defaults.headers['Authorization'] = 'Bearer ' + secret_data.token.github;
 
 instance.interceptors.request.use((config) => {
 	return config;
