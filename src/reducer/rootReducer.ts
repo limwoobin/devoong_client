@@ -4,7 +4,7 @@ import tagsReducer , { tagsSaga } from './tagsReducer';
 import markdownReducer , { markdownSaga } from './markdownReducer';
 import { all } from 'redux-saga/effects';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
 	postsReducer,
 	tagsReducer,
 	markdownReducer
@@ -14,4 +14,4 @@ export function* rootSaga() {
 	yield all([postsSaga() , tagsSaga() , markdownSaga()]);
 }
 
-export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>;

@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { constants } from '../core/constant/constants';
 import TagsPc from '../views/layout/components/tags/TagsPc';
 import TagsMobile from '../views/layout/components/tags/TagsMobile';
+import { RootState } from '../reducer/rootReducer';
 
 function onFindTags(dispatch: any) {
 	dispatch(findTagsAsync());
@@ -23,7 +24,8 @@ export default function TagsLayoutContainer() {
 		
 	} , []);
 
-	const { tags } = useSelector(state => state.tagsReducer);
+	const { tags } = useSelector(
+		(state: RootState) => state.tagsReducer);
 
 	return (
 		<div>

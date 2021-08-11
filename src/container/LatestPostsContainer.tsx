@@ -5,6 +5,7 @@ import { constants } from '../core/constant';
 import LatestPostsPc from '../views/layout/components/recents/LatestPostsPc';
 import LatestPostsMobile from '../views/layout/components/recents/LatestPostsMobile';
 import { findLatestPostsAsync } from '../reducer/postsReducer';
+import { RootState } from '../reducer/rootReducer';
 
 function onFindLatestPosts(dispatch: any) {
 	dispatch(findLatestPostsAsync());
@@ -23,7 +24,8 @@ export default function LatestPostsContainer() {
 		
 	} , []);
 
-	const { latestPosts } = useSelector(state => state.postsReducer);
+	const { latestPosts } = useSelector(
+		(state: RootState) => state.postsReducer);
 
 	return (
 		<>

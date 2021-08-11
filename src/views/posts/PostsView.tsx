@@ -26,8 +26,8 @@ function renderTags(tagsList: TagsModel[]) {
 }
 
 interface PostsViewProps {
-	data: PostsModel;
-	isLoading: false;
+	data: PostsModel | any;
+	isLoading: boolean;
 }
 
 function Blank() {

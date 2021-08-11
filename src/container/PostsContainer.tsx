@@ -3,6 +3,7 @@ import { useDispatch , useSelector } from 'react-redux';
 import PostsList from '../views/posts/PostsList';
 import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
 import Paging from '../views/common/Paging';
+import { RootState } from '../reducer/rootReducer';
 
 function onSearchPosts(dispatch: any) {
 	dispatch(searchPostsAsync());
@@ -35,7 +36,8 @@ export default function PostsContainer({ tagId , searchWord }: PostsContainerPro
 		return false;
 	}
 
-	const { posts , isLoading } = useSelector(state => state.postsReducer);
+	const { posts , isLoading } = useSelector(
+		(state: RootState) => state.postsReducer);
 
 	return (
 		<>

@@ -3,6 +3,7 @@ import { useDispatch , useSelector } from 'react-redux';
 import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
 import PostsList from '../posts/PostsList';
 import Progress from '../common/Progress';
+import { RootState } from '../../reducer/rootReducer';
 
 function onFindPostsByTags(dispatch: any , tagId: number) {
 	dispatch(findPostsByTagsAsync(tagId));
@@ -23,7 +24,8 @@ export default function TagsView(props: any) {
 		onFindPostsByTags(dispatch , id);
 	} , [name]);
 
-	const { postsByTags , isLoading } = useSelector(state => state.postsReducer);
+	const { postsByTags , isLoading } = useSelector(
+		(state: RootState) => state.postsReducer);
 
 	return (
 		<>

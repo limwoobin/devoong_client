@@ -26,7 +26,7 @@ function renderTitle(name: string) {
 
 interface PostsListProps {
 	posts: PostsModel[];
-	isLoading: false;
+	isLoading: boolean;
 	name?: string;
 }
 

@@ -3,6 +3,7 @@ import { useDispatch , useSelector } from 'react-redux';
 import { getMarkdownAsync , initMarkdown } from '../reducer/markdownReducer';
 import { Dispatch } from 'redux';
 import MarkdownRender from '../views/common/MarkdownRender';
+import { RootState } from '../reducer/rootReducer';
 
 function onFindMarkdown(dispatch: Dispatch , uri: string) {
 	dispatch(getMarkdownAsync(uri));
@@ -24,7 +25,8 @@ export default function MarkdownContainer({uri} : IMarkdownProps) {
 		onFindMarkdown(dispatch , uri);
 	} , [uri]);
 
-	const { data } = useSelector(state => state.markdownReducer);
+	const { data } = useSelector(
+		(state: RootState) => state.markdownReducer);
 
 	return (
 		<>
