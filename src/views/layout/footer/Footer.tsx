@@ -7,8 +7,10 @@ export default function FooterContainer() {
 	const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
 
 	return (
-		<div style={{bottom: 0}}>
+		<footer>
+			<div style={{ bottom: 0 , position: 'fixed' , width:'100%'}}>
 			{isMobile && <FooterMobile />}
-		</div>
+			</div>
+		</footer>
 	);
 }

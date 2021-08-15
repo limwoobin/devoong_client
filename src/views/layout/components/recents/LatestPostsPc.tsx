@@ -7,7 +7,7 @@ import '../layout.scss';
 function renderLatestPosts(latestPosts: PostsModel[]) {
 	return latestPosts.map((data: PostsModel , index: number) => (
 		<Link key={index} to={{ pathname: `/posts/${data.id}` , state: {id: data.id} }}>
-				<li><b>{data.title}</b></li>
+			<li><b style={{ fontSize: '1.4rem' }}>{data.title}</b></li>
 		</Link>
 	));
 }
@@ -18,7 +18,7 @@ export default function LatestPostsPc(props: ILatestPosts) {
 	return (
 		<aside className="sc-csuQGl pDRpR">
 			<section className="fNlsam kPSwsK">
-				<h4>최신글</h4>
+				<h3>최신글</h3>
 					{renderLatestPosts(latestPosts)}
 			</section>
 		</aside>

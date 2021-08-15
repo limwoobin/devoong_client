@@ -12,12 +12,12 @@ export default function App() {
 				<BrowserRouter>
 					<Header />
 					<Container maxWidth="lg">
-						<div style={{paddingBottom: '20px'}}>
+						<div style={{paddingBottom: '20px' , minHeight: '100%'}}>
 							<Main />
 						</div>
-						<Footer />
 					</Container>
 				</BrowserRouter>
+				<Footer />
 		</div>
 	);
 }

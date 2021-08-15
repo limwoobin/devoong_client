@@ -26,7 +26,7 @@ export default function Utterances() {
 		containerRef.current?.appendChild(utterances);
 	} , [repo]);
 
-	return <div ref={containerRef} style={{paddingLeft: '0px'}} />;
+	return <div ref={containerRef} style={{paddingLeft: '0px' , paddingBottom: '50px'}} />;
 }
 
 Utterances.displayName = 'Utterances';

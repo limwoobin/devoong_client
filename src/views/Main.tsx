@@ -1,10 +1,10 @@
 import React from 'react';
-import './main.scss';
 import Socials from './layout/components/socials/Socials';
 import { useMediaQuery } from 'react-responsive';
 import { constants } from '../core/constant';
 import Router from './Router';
 import { TagsLayoutContainer , LatestPostsContainer } from '../container';
+import './main.scss';
 
 export default function Main() {
 const isPc = useMediaQuery({query: constants.MIN_WIDTH});
@@ -33,7 +33,7 @@ const PcMainView = () => {
 
 const MobileMainView = () => {
 	return <div>
-					<TagsLayoutContainer />
+					{/* <TagsLayoutContainer /> */}
 					<LatestPostsContainer />
 					<Router />
 				 </div>;

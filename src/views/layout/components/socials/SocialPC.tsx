@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			'& > *': {
 				margin: theme.spacing(0.5),
 			},
-			color: 'white'
+			color: 'white',
 		},
 	}),
 );
@@ -25,13 +25,13 @@ export default function SocialPC(props: any) {
 	return (
 		<aside className="pDRpR">
 			<section className="fNlsam kPSwsK">
-				<h4>Social</h4>
+				<h3>Social</h3>
 				<div className={classes.root}>
 					{socials.map((data: any) => (
 						<Link display="block" variant="body1" href={data.url} key={data.name} target="_blank" color="inherit">
 							<Grid container direction="row" spacing={1} alignItems="center">
 								<Grid item>
-										<data.icon />
+										<data.icon fontSize="large" />
 								</Grid>
 							<Grid item>{data.name}</Grid>
 							</Grid>

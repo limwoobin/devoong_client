@@ -49,7 +49,21 @@
 .sub_head_area {
   padding-left: 10px;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.main_text {
+  a {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .main_text {
+    a {
+      font-size: 2rem;
+    }
+  }
 }
 
 @media (max-width: 767px) {

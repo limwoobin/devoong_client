@@ -31,7 +31,7 @@ function renderLatestPosts(latestPosts: PostsModel[]) {
 		<AccordionDetails key={index}>
 			<Typography className="typography">
 				<Link to={`/posts/${data.id}`}>
-					<li><b>{data.title}</b></li>
+					<li><b style={{ fontSize: '1.2rem' }}>{data.title}</b></li>
 				</Link>	
 			</Typography>
 		</AccordionDetails>

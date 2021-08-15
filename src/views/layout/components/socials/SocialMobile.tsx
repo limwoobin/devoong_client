@@ -11,7 +11,7 @@ export default function SocialMobile(props: any) {
 				<Link display="block" variant="body1" href={data.url} key={data} target="_blank">
 					<Grid container direction="row" spacing={1} alignItems="center">
 						<Grid item>
-								<data.icon />
+								<data.icon fontSize="large" />
 						</Grid>
 					<Grid item>{data.name}</Grid>
 					</Grid>

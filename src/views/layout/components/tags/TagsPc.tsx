@@ -37,7 +37,7 @@ export default function TagsPc(props: TagsPcProps) {
 	return (
 		<aside className="pDRpR">
 				<section className="fNlsam kPSwsK">
-						<h4>Tag</h4>
+						<h3>Tag</h3>
 						<div className={classes.root}>
 							{renderTags(tags)}
 						</div>
