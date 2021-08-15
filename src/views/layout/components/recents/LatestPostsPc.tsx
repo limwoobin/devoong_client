@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PostsModel } from '../../../../models';
-import { LatestPostsInterface } from './LatestPostsInterface';
+import { ILatestPosts } from './ILatestPosts';
 import '../layout.scss';
 
 function renderLatestPosts(latestPosts: PostsModel[]) {
@@ -12,7 +12,7 @@ function renderLatestPosts(latestPosts: PostsModel[]) {
 	));
 }
 
-export default function LatestPostsPc(props: LatestPostsInterface) {
+export default function LatestPostsPc(props: ILatestPosts) {
 	const { latestPosts } = props;
 
 	return (

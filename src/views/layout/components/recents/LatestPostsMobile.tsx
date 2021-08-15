@@ -7,7 +7,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { PostsModel } from '../../../../models';
-import { LatestPostsInterface } from './LatestPostsInterface';
+import { ILatestPosts } from './ILatestPosts';
 import { Link } from 'react-router-dom';
 import './mobileLatestPosts.scss';
 
@@ -38,7 +38,7 @@ function renderLatestPosts(latestPosts: PostsModel[]) {
 	));
 }
 
-export default function LatestPostsMobile(props: LatestPostsInterface) {
+export default function LatestPostsMobile(props: ILatestPosts) {
 	const classes = useStyles();
 	const { latestPosts } = props;
 

@@ -3,10 +3,6 @@ import React , { createRef , useLayoutEffect } from 'react';
 const src = 'https://utteranc.es/client.js';
 const repo = 'limwoobin/blog-comments';
 
-export interface IUtterancesProps {
-	repo: string;
-}
-
 export default function Utterances() {
 	const containerRef = createRef<HTMLDivElement>();
 

@@ -25,7 +25,7 @@ function renderTags(tagsList: TagsModel[]) {
 	}
 }
 
-interface PostsViewProps {
+interface IPostsView {
 	data: PostsModel | any;
 	isLoading: boolean;
 }
@@ -57,7 +57,7 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 	);
 }
 
-export default function PostsView(props: PostsViewProps) {
+export default function PostsView(props: IPostsView) {
 	const { data , isLoading } = props;
 
 	return (

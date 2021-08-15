@@ -13,12 +13,12 @@ function onInitLoadingState(dispatch: any) {
 	dispatch(initLoadingState());
 }
 
-interface PostsContainerProps {
+interface IPostsContainer {
 	tagId: number;
 	searchWord: string;
 }
 
-export default function PostsContainer({ tagId , searchWord }: PostsContainerProps) {
+export default function PostsContainer({ tagId , searchWord }: IPostsContainer) {
 	const dispatch = useDispatch();
 	
 	useEffect(() => {
@@ -28,7 +28,7 @@ export default function PostsContainer({ tagId , searchWord }: PostsContainerPro
 		}
 	} , []);
 
-	function isPropsNull(param: PostsContainerProps) : boolean {
+	function isPropsNull(param: IPostsContainer) : boolean {
 		if (param.tagId == null && param.searchWord == null) {
 			return true;
 		}

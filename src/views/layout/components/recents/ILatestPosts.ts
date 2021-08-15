@@ -1,5 +1,5 @@
 import { PostsModel } from '../../../../models';
 
-export interface LatestPostsInterface {
+export interface ILatestPosts {
 	latestPosts: PostsModel[];
 }

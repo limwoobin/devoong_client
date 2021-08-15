@@ -24,13 +24,13 @@ function renderTitle(name: string) {
 	);
 }
 
-interface PostsListProps {
+interface IPostsList {
 	posts: PostsModel[];
 	isLoading: boolean;
 	name?: string;
 }
 
-export default function PostsList(props: PostsListProps) {
+export default function PostsList(props: IPostsList) {
 	const { posts , isLoading , name } = props;
 
 	return (

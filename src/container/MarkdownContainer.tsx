@@ -13,11 +13,11 @@ function onInitMarkdown(dispatch: Dispatch) {
 	dispatch(initMarkdown());
 }
 
-interface IMarkdownProps {
+interface IMarkdownContainer {
 	uri: string;
 }
 
-export default function MarkdownContainer({uri} : IMarkdownProps) {
+export default function MarkdownContainer({uri} : IMarkdownContainer) {
 	const dispatch = useDispatch();
 
 	useLayoutEffect(() => {

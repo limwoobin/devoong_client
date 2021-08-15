@@ -12,11 +12,11 @@ function renderTags(tags: TagsModel[]) {
 	));
 }
 
-interface TagsListProps {
+interface ITagsList {
 	tags: TagsModel[];
 }
 
-export default function TagsList(props: TagsListProps) {
+export default function TagsList(props: ITagsList) {
 	const { tags } = props;
 
 	return (

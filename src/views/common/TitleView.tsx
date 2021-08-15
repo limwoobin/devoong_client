@@ -13,11 +13,11 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-interface TitleViewProps {
+interface ITitleView {
 	title: string;
 }
 
-export default function TitleView(props: TitleViewProps) {
+export default function TitleView(props: ITitleView) {
 	const classes = useStyles();
 	const {title} = props;
 

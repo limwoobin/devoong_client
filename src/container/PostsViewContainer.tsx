@@ -13,7 +13,7 @@ function onInitLoadingState(dispatch: Dispatch) {
 	dispatch(initLoadingState());
 }
 
-interface PostViewContainerProps {
+interface IPostViewContainer {
 	location: {
 		state: {
 			id: number;
@@ -23,7 +23,7 @@ interface PostViewContainerProps {
 
 export default function PostsViewContainer({
 	location,
-}: PostViewContainerProps) {
+}: IPostViewContainer) {
 	const id = location.state.id;
 	const dispatch = useDispatch();
 

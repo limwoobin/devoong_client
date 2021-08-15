@@ -78,11 +78,11 @@ const headerBtns = (headers: HeaderModel[]) => {
 };
 
 
-interface HeaderProps {
+interface IHeader {
 	headers: HeaderModel[];
 }
 
-export default function HeaderPc(props: HeaderProps) {
+export default function HeaderPc(props: IHeader) {
 	const classes = useStyles();
 	const { headers } = props;
 
@@ -105,8 +105,6 @@ export default function HeaderPc(props: HeaderProps) {
 									input: classes.inputInput,
 							}}
 							inputProps={{ 'aria-label': 'search' }}
-							// value={searchWord}
-							// onKeyUp={setSearchWord(e.target.value)}
 					/>
 				<Button>OK</Button>
 				</div>
