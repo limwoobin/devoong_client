@@ -1,25 +1,22 @@
-import * as API from '../api/posts';
-import { call , put , takeEvery } from 'redux-saga/effects';
 import { createAction , createReducer } from '@reduxjs/toolkit';
-import { PageModel, PostsModel } from '../models';
 
 // Action Type
-const SEARCH_POSTS_ASYNC = 'SEARCH_POSTS_ASYNC';
+export const SEARCH_POSTS_ASYNC = 'SEARCH_POSTS_ASYNC';
 const SEARCH_DATA = 'SEARCH_DATA';
 
-const GET_POSTS_ASYNC = 'GET_POSTS_ASYNC';
+export const GET_POSTS_ASYNC = 'GET_POSTS_ASYNC';
 const GET_POSTS = 'GET_POSTS';
 
-const FIND_LATEST_POSTS_ASYNC = 'FIND_LATEST_POSTS_ASYNC';
+export const FIND_LATEST_POSTS_ASYNC = 'FIND_LATEST_POSTS_ASYNC';
 const FIND_LATEST_POSTS = 'FIND_LATEST_POSTS';
 
-const FIND_POSTS_BY_TAGS_ASYNC = 'FIND_POSTS_BY_TAGS_ASYNC';
+export const FIND_POSTS_BY_TAGS_ASYNC = 'FIND_POSTS_BY_TAGS_ASYNC';
 const FIND_POSTS_BY_TAGS = 'FIND_POSTS_BY_TAGS';
 
-const INIT_LOADING_STATE = 'INIT_LOADING_STATE';
+export const INIT_LOADING_STATE = 'INIT_LOADING_STATE';
 const INIT_LOADING_STATE_FALSE = 'INIT_LOADING_STATE_FALSE';
 
-const INIT_STATE = 'INIT_STATE';
+export const INIT_STATE = 'INIT_STATE';
 const INIT_STATE_COMPLETE = 'INIT_STATE_COMPLETE';
 
 // Action Creator
@@ -40,44 +37,6 @@ export const initLoadingStateFalse: any = createAction(INIT_LOADING_STATE_FALSE)
 
 export const initState: any = createAction(INIT_STATE);
 export const initStateComplete: any = createAction(INIT_STATE_COMPLETE);
-
-// Main Saga
-export function* postsSaga() {
-	yield takeEvery(SEARCH_POSTS_ASYNC , searchPostsSaga);
-	yield takeEvery(GET_POSTS_ASYNC , getPostsSaga);
-	yield takeEvery(FIND_LATEST_POSTS_ASYNC , findLatestPostsSaga);
-	yield takeEvery(FIND_POSTS_BY_TAGS_ASYNC , findPostsByTagsSaga);
-	yield takeEvery(INIT_LOADING_STATE , initLoadingStateSaga);
-	yield takeEvery(INIT_STATE , initStateSaga);
-}
-
-export function* searchPostsSaga() {
-	const response: PageModel = yield call(API.getPostsAll);
-	yield put(searchData(response.content));
-}
-
-export function* getPostsSaga({payload: id}: any) {
-	const response: PostsModel = yield call(API.getPosts , id);
-	yield put(getPosts(response));
-}
-
-export function* findLatestPostsSaga() {
-	const response: PostsModel[] = yield call(API.getLatestPosts);
-	yield put(findLatestPosts(response));
-}
-
-export function* findPostsByTagsSaga({payload: tagId}: any) {
-	const response: PageModel = yield call(API.getPostsByTags , tagId);
-	yield put(findPostsByTags(response.content));
-}
-
-export function* initLoadingStateSaga() {
-	yield put(initLoadingStateFalse());
-}
-
-export function* initStateSaga() {
-	yield put(initStateComplete());
-}
 
 // initState
 const initialState = {
