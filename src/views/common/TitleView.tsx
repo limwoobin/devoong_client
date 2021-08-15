@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundColor: '#22b3eb',
 			fontWeight: 'bold',
 			fontSize: '25px',
-			color: 'white'
+			color: 'white',
+			marginBottom: '25px',
 		}
 	})
 );

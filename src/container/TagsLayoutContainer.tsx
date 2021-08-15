@@ -1,10 +1,7 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { findTagsAsync } from '../reducer/tagsReducer';
-import { useMediaQuery } from 'react-responsive';
-import { constants } from '../core/constant/constants';
-import TagsPc from '../views/layout/components/tags/TagsPc';
-import TagsMobile from '../views/layout/components/tags/TagsMobile';
+import TagsLayout from '../views/layout/components/tags/TagsLayout';
 import { RootState } from '../reducer/rootReducer';
 
 function onFindTags(dispatch: any) {
@@ -12,9 +9,6 @@ function onFindTags(dispatch: any) {
 }
 
 export default function TagsLayoutContainer() {
-	const isPc = useMediaQuery({query: constants.MIN_WIDTH});
-	const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
-
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -29,8 +23,7 @@ export default function TagsLayoutContainer() {
 
 	return (
 		<div>
-			{isPc && <TagsPc tags={tags} />}
-			{isMobile && <TagsMobile tags={tags} />}
+			<TagsLayout tags={tags} />
 		</div>
 	);
 }

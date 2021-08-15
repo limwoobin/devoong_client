@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import MarkdownRender from '../common/MarkdownRender';
+import TitleView from '../../views/common/TitleView';
 
 const data = `
 > # 임우빈 (woobeen lim)
@@ -36,7 +37,8 @@ export default function About() {
 			<CssBaseline />
 			<Container maxWidth="md">
 				<Typography component="div" style={{ backgroundColor: '#363636' , height: '100vh' }}>
-						<MarkdownRender data={data} isLoading={true} />
+					<TitleView title="About" />
+					<MarkdownRender data={data} isLoading={true} />
 				</Typography>
 			</Container>
 		</React.Fragment>

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function renderTags(tags: TagsModel[]) {
 	return tags.map((tag: TagsModel , index: number) => (
-		<Tag key={index} color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
+		<Tag key={index} color="#757575" style={{ fontSize: '18px' , fontWeight: 'bold' , height: '25px' }}>
 			<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
 		</Tag>
 	));
@@ -30,7 +30,7 @@ interface TagsPcProps {
 	tags: TagsModel[];
 }
 
-export default function TagsPc(props: TagsPcProps) {
+export default function TagsLayout(props: TagsPcProps) {
 	const classes = useStyles();
 	const { tags } = props;
 
