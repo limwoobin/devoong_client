@@ -36,7 +36,7 @@ export default function About() {
 			<CssBaseline />
 			<Container maxWidth="md">
 				<Typography component="div" style={{ backgroundColor: '#363636' , height: '100vh' }}>
-						<MarkdownRender data={data} />
+						<MarkdownRender data={data} isLoading={true} />
 				</Typography>
 			</Container>
 		</React.Fragment>

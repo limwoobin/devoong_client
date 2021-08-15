@@ -25,12 +25,12 @@ export default function MarkdownContainer({uri} : IMarkdownProps) {
 		onFindMarkdown(dispatch , uri);
 	} , [uri]);
 
-	const { data } = useSelector(
+	const { data , isLoading } = useSelector(
 		(state: RootState) => state.markdownReducer);
 
 	return (
 		<>
-			<MarkdownRender data={data} />
+			<MarkdownRender data={data} isLoading={isLoading} />
 		</>
 	);
 }

@@ -16,13 +16,17 @@ export const initMarkdownComplete: any = createAction(INIT_MARKDOWN_COMPLETE);
 
 const initialState = {
 	data: '',
+	isLoading: false,
 };
 
 export default createReducer(initialState , {
 	[GET_MARKDOWN]: (state , {payload: data}) => {
+		state.isLoading = false;
 		state.data = data;
+		state.isLoading = true;
 	},
 	[INIT_MARKDOWN_COMPLETE]: (state) => {
 		state.data = '';
+		state.isLoading = false;
 	}
 });
