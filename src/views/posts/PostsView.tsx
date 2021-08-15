@@ -1,29 +1,16 @@
-import React , { useLayoutEffect } from 'react';
-import MarkdownRender from '../common/MarkdownRender';
+import React from 'react';
 import Progress from '../common/Progress';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { PostsModel, TagsModel, PostsCard } from '../../models';
-import { Tag } from 'antd';
 import TitleView from '../common/TitleView';
 import Utterances from './Utterances';
 import PostsBox from './PostsBox';
 import { Direction } from '../../core/enums';
-import './posts.scss';
 import { MarkdownContainer } from '../../container';
-
-function renderTags(tagsList: TagsModel[]) {
-	if (tagsList) {
-		return (
-			tagsList.map((tag: TagsModel , index: number) => (
-				<Tag key={index} color="#757575" style={{fontSize: '15px' , fontWeight: 'bold'}}>
-					{tag.name}
-				</Tag>
-			))
-		);
-	}
-}
+import { RenderTags } from '../tags';
+import './posts.scss';
 
 interface IPostsView {
 	data: PostsModel | any;
@@ -59,6 +46,7 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 
 export default function PostsView(props: IPostsView) {
 	const { data , isLoading } = props;
+	const tags: TagsModel[] = data.tagsResponseList!;
 
 	return (
 		<>
@@ -66,7 +54,7 @@ export default function PostsView(props: IPostsView) {
 				<React.Fragment>
 					<CssBaseline />
 					<Container maxWidth="md">
-						{renderTags(data.tagsResponseList!)}
+						<RenderTags tags={tags} />
 						<Typography component="div" style={{ height: '100vh' }}>
 							<TitleView title={data.title!} />
 							<MarkdownContainer uri={data.contents!} />

@@ -1,9 +1,8 @@
 import React from 'react';
 import '../layout.scss';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import { Tag } from 'antd';
-import { Link } from 'react-router-dom';
 import { TagsModel } from '../../../../models';
+import { RenderTags } from '../../../tags';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -18,14 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
 	}),
 );
 
-function renderTags(tags: TagsModel[]) {
-	return tags.map((tag: TagsModel , index: number) => (
-		<Tag key={index} color="#757575" style={{ fontSize: '18px' , fontWeight: 'bold' , height: '25px' }}>
-			<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
-		</Tag>
-	));
-}
-
 interface TagsPcProps {
 	tags: TagsModel[];
 }
@@ -39,7 +30,7 @@ export default function TagsLayout(props: TagsPcProps) {
 				<section className="fNlsam kPSwsK">
 						<h3>Tag</h3>
 						<div className={classes.root}>
-							{renderTags(tags)}
+							<RenderTags tags={tags} />
 						</div>
 				</section>
 		</aside>
