@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
 import PostsList from '../posts/PostsList';
@@ -14,12 +14,15 @@ function onInitLoadingState(dispatch: any) {
 }
 
 export default function TagsView(props: any) {
-	const id = props.location.state.id;
-	const name = props.match.params.name;
-
+	const id = props.location.state?.id;
+	const name = props.match.params?.name;
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		if (id === undefined) {
+			location.href = "/";
+		}
+
 		onInitLoadingState(dispatch);
 		onFindPostsByTags(dispatch , id);
 	} , [name]);

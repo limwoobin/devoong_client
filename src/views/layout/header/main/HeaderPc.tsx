@@ -89,25 +89,23 @@ export default function HeaderPc(props: IHeader) {
 
 	return (
 		<div className={classes.root}>
-			<Toolbar>
-				<Typography className={classes.title} variant="h6" noWrap>
-						{headerBtns(headers)}
-				</Typography>
-				<div className={classes.search}>
-					<div className={classes.searchIcon}>
-							<SearchIcon fontSize="small" />
-					</div>
-					<InputBase
-							placeholder="Search…"
-							classes={{
-									root: classes.inputRoot,
-									input: classes.inputInput,
-							}}
-							inputProps={{ 'aria-label': 'search' }}
-					/>
-				<Button>OK</Button>
+			<Typography className={classes.title} variant="h6" noWrap>
+					{headerBtns(headers)}
+			</Typography>
+			{/* <div className={classes.search}>
+				<div className={classes.searchIcon}>
+						<SearchIcon fontSize="small" />
 				</div>
-			</Toolbar>
+				<InputBase
+						placeholder="Search…"
+						classes={{
+								root: classes.inputRoot,
+								input: classes.inputInput,
+						}}
+						inputProps={{ 'aria-label': 'search' }}
+				/>
+			<Button>OK</Button>
+			</div> */}
 		</div>
 	);
 }

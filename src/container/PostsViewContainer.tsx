@@ -14,17 +14,15 @@ function onInitLoadingState(dispatch: Dispatch) {
 }
 
 interface IPostViewContainer {
-	location: {
-		state: {
+	match: {
+		params: {
 			id: number;
 		};
 	};
 }
 
-export default function PostsViewContainer({
-	location,
-}: IPostViewContainer) {
-	const id = location.state.id;
+	export default function PostsViewContainer({match}: IPostViewContainer) {
+	const id = match.params.id;
 	const dispatch = useDispatch();
 
 	useLayoutEffect(() => {

@@ -44,7 +44,7 @@ instance.interceptors.response.use((response) => {
 } , (error) => {
 	console.log('error.response ###' , error.response);
 	alert(error.message);
-	location.href="/about";
+	location.href = "/about";
 	// return Promise.reject(error.response);
 });
 
