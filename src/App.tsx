@@ -17,7 +17,7 @@ export default function App() {
 						</div>
 					</Container>
 				</BrowserRouter>
-				<Footer />
+				{/* <Footer /> */}
 		</div>
 	);
 }

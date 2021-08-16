@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-import './paging.scss';
+
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) =>
 			'& > *': {
 				marginTop: theme.spacing(2),
 			},
+			// paddingLeft: '30%'
 		},
 	}),
 );
@@ -17,8 +18,8 @@ export default function Paging() {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.root}>
-			<Pagination count={5} color="secondary" />
+		<div className={classes.root} style={{ textAlign: 'center' }}>
+			<Pagination size="large" count={10} color="primary" />
 		</div>
 	);
 }

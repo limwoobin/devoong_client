@@ -1,4 +1,4 @@
-import React , { useLayoutEffect} from 'react';
+import React , { useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { getPostsAsync , initLoadingState } from '../reducer/postsReducer';
 import { Dispatch } from 'redux';

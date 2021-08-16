@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			color: '#c6c6c6',
 			width: '100%',
 			padding: '0 15px',
+			paddingBottom: '20px'
 		},
 	}),
 );

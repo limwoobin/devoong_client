@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			fontSize: '25px',
 			color: 'white',
 			marginBottom: '25px',
+			marginTop: '20px',
 		}
 	})
 );

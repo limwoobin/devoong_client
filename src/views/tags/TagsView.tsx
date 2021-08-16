@@ -4,12 +4,13 @@ import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsRedu
 import PostsList from '../posts/PostsList';
 import Progress from '../common/Progress';
 import { RootState } from '../../reducer/rootReducer';
+import { Dispatch } from 'redux';
 
-function onFindPostsByTags(dispatch: any , tagId: number) {
+function onFindPostsByTags(dispatch: Dispatch , tagId: number) {
 	dispatch(findPostsByTagsAsync(tagId));
 }
 
-function onInitLoadingState(dispatch: any) {
+function onInitLoadingState(dispatch: Dispatch) {
 	dispatch(initLoadingState());
 }
 

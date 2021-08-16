@@ -24,7 +24,7 @@ export default function Router() {
 				<Route path="/tags" component={TagsRouter} />
 				<Route path="/about" component={About} />
 				<Route path="/tags" component={Prepare} />
-				<Route path="/my" component={Prepare} />
+				<Route path="/archive" component={Prepare} />
 				<Route component={NoMatch} />
 			</Switch>
 		</MainDiv>

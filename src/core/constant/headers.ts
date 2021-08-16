@@ -4,5 +4,5 @@ export const headers: HeaderModel[] = [
 	{path:'' , value:'HOME'},
 	{path:'/about' , value:'ABOUT'},
 	{path:'/tags' , value:'TAGS'},
-	{path:'/my' , value:'MY'}
+	{path:'/archive' , value:'ARCHIVE'}
 ];

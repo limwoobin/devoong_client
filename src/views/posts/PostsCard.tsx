@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 	},
 	card: {
 		display: 'flex',
-		maxWidth: 850,
+		maxWidth: 960,
 	},
 	cardDetails: {
 		flex: 1,
@@ -31,7 +31,6 @@ export default function PostsCard(props: any) {
 
 	return (
 		<Grid item xs={12} md={12} style={{ paddingBottom: '20px' }}>
-			{/* <Link to={{ pathname: `/posts/${post.id}` , state: {id: post.id} }}> */}
 			<Link to={{ pathname: `/posts/${post.id}` }}>
 				<Card className={classes.card}>
 				<div className={classes.cardDetails}>
