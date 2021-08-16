@@ -2,7 +2,7 @@ import React , { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Progress from '../common/Progress';
-import { PostsModel } from '../../models';
+import { PageModel, PostsModel } from '../../models';
 import PostsCard from './PostsCard';
 import TitleView from '../common/TitleView';
 import Paging from '../common/Paging';
@@ -26,13 +26,14 @@ function renderTitle(name: string) {
 }
 
 interface IPostsList {
-	posts: PostsModel[];
+	data: PageModel;
 	isLoading: boolean;
 	name?: string;
 }
 
 export default function PostsList(props: IPostsList) {
-	const { posts , isLoading , name } = props;
+	const { data , isLoading , name } = props;
+	
 
 	return (
 		<>
@@ -40,9 +41,9 @@ export default function PostsList(props: IPostsList) {
 				<Container maxWidth="md" style={{ paddingTop: '1rem' }}>
 					{name ? renderTitle(name) : ''}
 					<Grid container spacing={1}>
-						{renderPosts(posts)}
+						{renderPosts(data.content!)}
 					</Grid>
-					<Paging />
+					<Paging totalPages={data.totalPages} pagable={data.pageable} />
 				</Container>
 			}
 		</>

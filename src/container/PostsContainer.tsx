@@ -21,7 +21,7 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 	const dispatch = useDispatch();
 	
 	useEffect(() => {
-		if (posts.length === 0) {
+		if (posts.content === undefined) {
 			onInitLoadingState(dispatch);
 			onSearchPosts(dispatch);
 		}
@@ -40,7 +40,7 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 
 	return (
 		<>
-			<PostsList posts={posts} isLoading={isLoading} />
+			<PostsList data={posts} isLoading={isLoading} />
 		</>
 	);
 }

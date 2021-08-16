@@ -7,7 +7,7 @@ import '../layout.scss';
 function renderLatestPosts(latestPosts: PostsModel[]) {
 	return latestPosts.map((data: PostsModel , index: number) => (
 		<Link key={index} to={{ pathname: `/posts/${data.id}` , state: {id: data.id} }}>
-			<li><b style={{ fontSize: '1.4rem' }}>{data.title}</b></li>
+			<li><b style={{ fontSize: '1.2rem' }}>{data.title}</b></li>
 		</Link>
 	));
 }

@@ -18,7 +18,8 @@ export default function* postsSaga() {
 
 function* searchPostsSaga() {
 	const response: PageModel = yield call(API.getPostsAll);
-	yield put(searchData(response.content));
+	// yield put(searchData(response.content));
+	yield put(searchData(response));
 }
 
 function* getPostsSaga({payload: id}: any) {

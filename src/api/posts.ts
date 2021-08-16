@@ -1,7 +1,7 @@
 import { PageModel, PostsModel } from '../models';
 import http from '../core/http/http';
 
-export const getPostsAll = async(): Promise<any> => {
+export const getPostsAll = async(): Promise<PageModel> => {
 	const url = 'http://localhost:8080/posts';
 	const response = await http.get(url);
 	return response.data;

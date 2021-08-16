@@ -33,7 +33,7 @@ export default function TagsView(props: any) {
 
 	return (
 		<>
-			{!isLoading ? <Progress /> : <PostsList posts={postsByTags} isLoading={isLoading} name={name} />}
+			{/* {!isLoading ? <Progress /> : <PostsList posts={postsByTags} isLoading={isLoading} name={name} />} */}
 		</>
 	);
 }

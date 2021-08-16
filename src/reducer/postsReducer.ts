@@ -1,4 +1,5 @@
 import { createAction , createReducer } from '@reduxjs/toolkit';
+import { PageModel } from '../models';
 
 // Action Type
 export const SEARCH_POSTS_ASYNC = 'SEARCH_POSTS_ASYNC';
@@ -41,11 +42,14 @@ export const initStateComplete: any = createAction(INIT_STATE_COMPLETE);
 // initState
 const initialState = {
 	isLoading: false,
-	posts: [],
+	// posts: [],
+	posts: new PageModel(),
 	lastId: 0,
 	latestPosts: [],
 	postsByTags: [],
 	data: {},
+	pagable: {},
+	totalElements: 0,
 };
 
 // Toolkit Reducer
@@ -73,7 +77,7 @@ export default createReducer(initialState , {
 	},
 	[INIT_STATE_COMPLETE]: (state) => {
 		state.isLoading= false;
-		state.posts= [];
+		state.posts= new PageModel();
 		state.lastId= 0;
 		state.latestPosts= [];
 		state.postsByTags= [];
