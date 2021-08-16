@@ -8,7 +8,7 @@ export default class PostsModel {
 	public views?: number;
 	public createdDate?: Date;
 	public updatedDate?: Date;
-	public tagsResponseList!: TagsModel[];
+	public tagsResponseList?: TagsModel[];
 	public previousPostsCard!: PostsCard;
 	public nextPostsCard!: PostsCard;
 }

@@ -12,11 +12,6 @@ import { MarkdownContainer } from '../../container';
 import { RenderTags } from '../tags';
 import './posts.scss';
 
-interface IPostsView {
-	data: PostsModel | any;
-	isLoading: boolean;
-}
-
 function Blank() {
 	return <div style={{paddingTop: '20px' , paddingBottom: '20px'}} />;
 }
@@ -44,9 +39,13 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 	);
 }
 
-export default function PostsView(props: IPostsView) {
-	const { data , isLoading } = props;
-	const tags: TagsModel[] = data.tagsResponseList!;
+interface IPostsView {
+	data: PostsModel | any;
+	isLoading: boolean;
+}
+
+export default function PostsView({data , isLoading}: IPostsView) {
+	const tags: TagsModel[] = data.tagsResponseList;
 
 	return (
 		<>
@@ -55,7 +54,7 @@ export default function PostsView(props: IPostsView) {
 					<CssBaseline />
 					<Container maxWidth="md">
 						<RenderTags tags={tags} />
-						<Typography component="div" style={{ height: '100vh' }}>
+						<Typography component="div" style={{ height: '100vh' , paddingTop: '3rem' }}>
 							<TitleView title={data.title!} />
 							<MarkdownContainer uri={data.contents!} />
 							<Blank />
