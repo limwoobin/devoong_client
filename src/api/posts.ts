@@ -1,8 +1,8 @@
-import { PageModel, PostsModel } from '../models';
+import { Pageable, PageModel, PostsModel } from '../models';
 import http from '../core/http/http';
 
-export const getPostsAll = async(): Promise<PageModel> => {
-	const url = 'http://localhost:8080/posts';
+export const getPostsAll = async(pageable: Pageable): Promise<PageModel> => {
+	const url = 'http://localhost:8080/posts' + '?page=' + pageable.page;
 	const response = await http.get(url);
 	return response.data;
 };

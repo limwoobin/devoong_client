@@ -5,7 +5,6 @@ import Progress from '../common/Progress';
 import { PageModel, PostsModel } from '../../models';
 import PostsCard from './PostsCard';
 import TitleView from '../common/TitleView';
-import Paging from '../common/Paging';
 
 function renderPosts(posts: PostsModel[]) {
 	if (posts.length > 0) {
@@ -43,7 +42,6 @@ export default function PostsList(props: IPostsList) {
 					<Grid container spacing={1}>
 						{renderPosts(data.content!)}
 					</Grid>
-					<Paging totalPages={data.totalPages} pagable={data.pageable} />
 				</Container>
 			}
 		</>

@@ -48,14 +48,20 @@ const useStyles = makeStyles({
 interface IPaging {
 	totalPages: number;
 	pagable: any;
+	handlePageChange: any;
 }
 
-export default function Paging({totalPages , pagable}: IPaging) {
+export default function Paging({totalPages , pagable , handlePageChange}: IPaging) {
 	const classes = useStyles();
 
 	return (
 		<div className={classes.paginationContainer} style={{ textAlign: 'center' }}>
-			<Pagination size="large" count={totalPages} color="primary" />
+			<Pagination 
+				size="large" 
+				count={totalPages} 
+				color="primary"  
+				onChange={handlePageChange} 
+			/>
 		</div>
 	);
 }

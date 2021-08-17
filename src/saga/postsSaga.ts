@@ -1,6 +1,6 @@
 import * as API from '../api/posts';
 import { call , put , takeEvery } from 'redux-saga/effects';
-import { PageModel, PostsModel } from '../models';
+import { Pageable, PageModel, PostsModel } from '../models';
 import { SEARCH_POSTS_ASYNC , GET_POSTS_ASYNC , FIND_LATEST_POSTS_ASYNC ,
 	FIND_POSTS_BY_TAGS_ASYNC , INIT_LOADING_STATE , INIT_STATE ,
 	searchData , getPosts , findLatestPosts , findPostsByTags 
@@ -16,8 +16,8 @@ export default function* postsSaga() {
 	yield takeEvery(INIT_STATE , initStateSaga);
 }
 
-function* searchPostsSaga() {
-	const response: PageModel = yield call(API.getPostsAll);
+function* searchPostsSaga({payload: paggeable}: any) {
+	const response: PageModel = yield call(API.getPostsAll , paggeable);
 	// yield put(searchData(response.content));
 	yield put(searchData(response));
 }
