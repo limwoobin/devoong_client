@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React , { useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Progress from '../common/Progress';
@@ -33,7 +33,6 @@ interface IPostsList {
 export default function PostsList(props: IPostsList) {
 	const { data , isLoading , name } = props;
 	
-
 	return (
 		<>
 			{!isLoading ? <Progress /> : 

@@ -7,6 +7,7 @@ import Main from './views/Main';
 import Container from '@material-ui/core/Container';
 
 export default function App() {
+
 	return (
 		<div style={{backgroundColor: '#363636'}}>
 				<BrowserRouter>

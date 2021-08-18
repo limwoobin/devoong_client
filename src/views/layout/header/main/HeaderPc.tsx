@@ -69,7 +69,7 @@ const headerBtns = (headers: HeaderModel[]) => {
 						<p>
 							{headers.map((c: HeaderModel) => {
 								return <Link to={c.path} key={c.value} className="btn_test_style">
-													{c.value}
+													<label style={{ marginLeft: '0.5rem' }}>{c.value}</label>
 												</Link>;
 							})}
 						</p>

@@ -16,6 +16,10 @@ function onInitLoadingState(dispatch: any) {
 	dispatch(initLoadingState());
 }
 
+function onPageChange(e: any , page: number) {
+	window.location.href=`/posts?page=${page}`;
+}
+
 interface IPostsContainer {
 	tagId: number;
 	searchWord: string;
@@ -28,22 +32,7 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 
 	const history = createBrowserHistory();
 
-	function onPageChange(e: any , page: number) {
-		console.log('page' , page);
-		setPageNumber(page);
-
-		if (page === 1) {
-			history.push(`/`);
-			onSearchPosts(dispatch , new Pageable(page - 1));	
-			return;
-		}
-
-		history.push(`/posts?page=${page}`);
-	}
-
 	useEffect(() => {
-		console.log('effect 222 ###');
-		console.log('pageNumber' , pageNumber);
 		onSearchPosts(dispatch , new Pageable(pageNumber - 1));
 	} , [pageNumber]);
 
@@ -51,11 +40,8 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
 
-		console.log('effect 111 ###');
-		console.log('effect hooks' , filtersFromParams);
-
 		if (filtersFromParams.page) {
-			onPageChange(null , Number(filtersFromParams.page));
+			setPageNumber(Number(filtersFromParams.page));
 			return;
 		}
 
@@ -65,21 +51,12 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 		}
 	} , []);
 
-	function isPropsNull(param: IPostsContainer) : boolean {
-		if (param.tagId == null && param.searchWord == null) {
-			return true;
-		}
-
-		return false;
-	}
-
 	const { posts , isLoading } = useSelector(
 		(state: RootState) => state.postsReducer);
 
 	return (
 		<>
 			<PostsList data={posts} isLoading={isLoading} />
-			{pageNumber}
 			<Paging 
 				totalPages={posts.totalPages} 
 				pagable={posts.pageable}
