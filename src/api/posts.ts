@@ -1,4 +1,4 @@
-import { Pageable, PageModel, PostsModel } from '../models';
+import { Pageable, PageModel, PostsModel , TagsByPostsModel } from '../models';
 import http from '../core/http/http';
 
 export const getPostsAll = async(pageable: Pageable): Promise<PageModel> => {
@@ -19,8 +19,8 @@ export const getLatestPosts = async(): Promise<PostsModel[]> => {
 	return response.data;
 };
 
-export const getPostsByTags = async(tagId: number): Promise<PageModel> => {
-	const url = 'http://localhost:8080/posts/tags/' + tagId;
+export const getPostsByTags = async(tagsByPostsModel: TagsByPostsModel): Promise<PageModel> => {
+	const url = 'http://localhost:8080/posts/tags/' + tagsByPostsModel.tagId + '?page=' + tagsByPostsModel.pageable?.page;
 	const response = await http.get(url);
 	return response.data;
 };

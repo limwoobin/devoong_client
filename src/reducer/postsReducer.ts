@@ -46,7 +46,7 @@ const initialState = {
 	posts: new PageModel(),
 	lastId: 0,
 	latestPosts: [],
-	postsByTags: [],
+	postsByTags: new PageModel(),
 	data: {},
 	pagable: {},
 	totalElements: 0,
@@ -80,7 +80,7 @@ export default createReducer(initialState , {
 		state.posts= new PageModel();
 		state.lastId= 0;
 		state.latestPosts= [];
-		state.postsByTags= [];
+		state.postsByTags= new PageModel();
 		state.data= {};
 	}
 });

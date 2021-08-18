@@ -4,3 +4,4 @@ export { default as TagsModel } from './TagsModel';
 export { default as PageModel } from './PageModel';
 export { default as PostsCard } from './PostsCard';
 export { default as Pageable } from './Pageable';
+export { default as TagsByPostsModel } from './TagsByPostsModel';

@@ -16,7 +16,7 @@ function onInitLoadingState(dispatch: any) {
 	dispatch(initLoadingState());
 }
 
-function onPageChange(e: any , page: number) {
+function onChangePage(e: any , page: number) {
 	window.location.href=`/posts?page=${page}`;
 }
 
@@ -60,7 +60,7 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 			<Paging 
 				totalPages={posts.totalPages} 
 				pagable={posts.pageable}
-				handlePageChange={onPageChange}
+				handlePageChange={onChangePage}
 				selectedPage={pageNumber}
 			/>
 		</>
