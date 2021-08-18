@@ -49,9 +49,14 @@ interface IPaging {
 	totalPages: number;
 	pagable: any;
 	handlePageChange: any;
+	selectedPage: number;
 }
 
-export default function Paging({totalPages , pagable , handlePageChange}: IPaging) {
+export default function Paging({totalPages, 
+	pagable, 
+	handlePageChange,
+	selectedPage
+}: IPaging) {
 	const classes = useStyles();
 
 	return (
@@ -60,7 +65,8 @@ export default function Paging({totalPages , pagable , handlePageChange}: IPagin
 				size="large" 
 				count={totalPages} 
 				color="primary"  
-				onChange={handlePageChange} 
+				onChange={handlePageChange}
+				page={selectedPage}
 			/>
 		</div>
 	);

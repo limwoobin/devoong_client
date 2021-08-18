@@ -29,25 +29,32 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 	const history = createBrowserHistory();
 
 	function onPageChange(e: any , page: number) {
+		console.log('page' , page);
 		setPageNumber(page);
-		onSearch();
+
+		if (page === 1) {
+			history.push(`/`);
+			onSearchPosts(dispatch , new Pageable(page - 1));	
+			return;
+		}
+
+		history.push(`/posts?page=${page}`);
 	}
 
-	function onSearch() {
+	useEffect(() => {
+		console.log('effect 222 ###');
 		console.log('pageNumber' , pageNumber);
-		history.push(`/posts?page=${pageNumber}`);
 		onSearchPosts(dispatch , new Pageable(pageNumber - 1));
-	}
+	} , [pageNumber]);
 
 	useEffect(() => {
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
 
-		console.log('filtersFromParams' , filtersFromParams);
-		console.log('filtersFromParams.page' , filtersFromParams.page);
+		console.log('effect 111 ###');
+		console.log('effect hooks' , filtersFromParams);
 
 		if (filtersFromParams.page) {
-			setPageNumber(Number(filtersFromParams.page));
 			onPageChange(null , Number(filtersFromParams.page));
 			return;
 		}
@@ -77,6 +84,7 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 				totalPages={posts.totalPages} 
 				pagable={posts.pageable}
 				handlePageChange={onPageChange}
+				selectedPage={pageNumber}
 			/>
 		</>
 	);
