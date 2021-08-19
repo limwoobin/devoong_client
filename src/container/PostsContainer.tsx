@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React , { useState , useEffect , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsList from '../views/posts/PostsList';
 import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
@@ -32,11 +32,13 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 
 	const history = createBrowserHistory();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
+		console.log('### useHook param');
 		onSearchPosts(dispatch , new Pageable(pageNumber - 1));
 	} , [pageNumber]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
+		console.log('### useHook');
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
 

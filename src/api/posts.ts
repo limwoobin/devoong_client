@@ -19,8 +19,8 @@ export const getLatestPosts = async(): Promise<PostsModel[]> => {
 	return response.data;
 };
 
-export const getPostsByTags = async(tagId: number , pageable: Pageable): Promise<PageModel> => {
-	const url = 'http://localhost:8080/posts/tags/' + tagId + '?page=' + pageable.page;
+export const getPostsByTags = async(name: string , pageable: Pageable): Promise<PageModel> => {
+	const url = 'http://localhost:8080/posts/tags/' + name + '?page=' + pageable.page;
 	const response = await http.get(url);
 	return response.data;
 };

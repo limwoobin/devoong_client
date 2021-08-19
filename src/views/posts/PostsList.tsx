@@ -7,7 +7,8 @@ import PostsCard from './PostsCard';
 import TitleView from '../common/TitleView';
 
 function renderPosts(posts: PostsModel[]) {
-	if (posts.length > 0) {
+	// if (posts.length > 0) {
+	if (posts) {
 		return posts.map((data) => (
 			<PostsCard key={data.id} post={data} />
 		));    

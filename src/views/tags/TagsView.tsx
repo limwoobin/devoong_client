@@ -10,8 +10,8 @@ import qs from 'qs';
 import { createBrowserHistory } from 'history';
 import { Pageable } from '../../models';
 
-function onFindPostsByTags(dispatch: Dispatch , id: number , pageable: Pageable) {
-	dispatch(findPostsByTagsAsync({'id': id , 'pageable': pageable}));
+function onFindPostsByTags(dispatch: Dispatch , name: string , pageable: Pageable) {
+	dispatch(findPostsByTagsAsync({'name': name , 'pageable': pageable}));
 }
 
 function onInitLoadingState(dispatch: Dispatch) {
@@ -25,21 +25,17 @@ export default function TagsView(props: any) {
 
 	const [pageNumber , setPageNumber] = useState(1);
 
-	const history = createBrowserHistory();
+	const history = createBrowserHistory({ forceRefresh: true });
 
 	function onChangePage(e: any , page: number) {
 		window.location.href=`/tags/${name}/?page=${page}`;
 	}
 
 	useEffect(() => {
-		onFindPostsByTags(dispatch , id , new Pageable(pageNumber - 1));
+		onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
 	} , [pageNumber]);
 
 	useEffect(() => {
-		// if (id === undefined) {
-		// 	location.href = "/";
-		// }
-
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
 
@@ -50,7 +46,7 @@ export default function TagsView(props: any) {
 
 		if (!postsByTags.content) {
 			onInitLoadingState(dispatch);
-			onFindPostsByTags(dispatch , id , new Pageable(pageNumber - 1));
+			onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
 		}
 	} , [name]);
 
