@@ -32,8 +32,8 @@ function* findLatestPostsSaga() {
 	yield put(findLatestPosts(response));
 }
 
-function* findPostsByTagsSaga({payload: tagsByPostsModel}: any) {
-	const response: PageModel = yield call(API.getPostsByTags , tagsByPostsModel);
+function* findPostsByTagsSaga({payload: {id , pageable}}: any) {
+	const response: PageModel = yield call(API.getPostsByTags , id , pageable);
 	yield put(findPostsByTags(response.content));
 }
 

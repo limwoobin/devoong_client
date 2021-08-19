@@ -9,10 +9,9 @@ import Paging from '../../views/common/Paging';
 import qs from 'qs';
 import { createBrowserHistory } from 'history';
 import { Pageable } from '../../models';
-import TagsByPostsModel from '../../models/TagsByPostsModel';
 
-function onFindPostsByTags(dispatch: Dispatch , tagsByPostsModel: TagsByPostsModel) {
-	dispatch(findPostsByTagsAsync(tagsByPostsModel));
+function onFindPostsByTags(dispatch: Dispatch , id: number , pageable: Pageable) {
+	dispatch(findPostsByTagsAsync({'id': id , 'pageable': pageable}));
 }
 
 function onInitLoadingState(dispatch: Dispatch) {
@@ -33,7 +32,8 @@ export default function TagsView(props: any) {
 	}
 
 	useEffect(() => {
-		onFindPostsByTags(dispatch , new TagsByPostsModel(id , new Pageable(pageNumber - 1)));
+		// onFindPostsByTags(dispatch , new TagsByPostsModel(id , new Pageable(pageNumber - 1)));
+		onFindPostsByTags(dispatch , id , new Pageable(pageNumber - 1));
 	} , [pageNumber]);
 
 	useEffect(() => {
@@ -51,7 +51,7 @@ export default function TagsView(props: any) {
 
 		if (!postsByTags.content) {
 			onInitLoadingState(dispatch);
-			onFindPostsByTags(dispatch , new TagsByPostsModel(id , new Pageable(pageNumber - 1)));
+			onFindPostsByTags(dispatch , id , new Pageable(pageNumber - 1));
 		}
 	} , [name]);
 
@@ -63,13 +63,13 @@ export default function TagsView(props: any) {
 			{!isLoading ? 
 				<Progress /> : 
 				<div>
-					{/* <PostsList data={postsByTags} isLoading={isLoading} name={name} />
+					<PostsList data={postsByTags} isLoading={isLoading} name={name} />
 					<Paging 
 						totalPages={postsByTags.totalPages} 
 						pagable={postsByTags.pageable}
 						handlePageChange={onChangePage}
 						selectedPage={pageNumber}
-					/> */}
+					/>
 				</div>
 			}
 		</>
