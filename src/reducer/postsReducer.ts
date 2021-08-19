@@ -42,7 +42,6 @@ export const initStateComplete: any = createAction(INIT_STATE_COMPLETE);
 // initState
 const initialState = {
 	isLoading: false,
-	// posts: [],
 	posts: new PageModel(),
 	lastId: 0,
 	latestPosts: [],

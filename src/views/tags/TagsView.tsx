@@ -1,6 +1,6 @@
 import React , { useState , useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import postsReducer, { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
+import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
 import PostsList from '../posts/PostsList';
 import Progress from '../common/Progress';
 import { RootState } from '../../reducer/rootReducer';
@@ -32,14 +32,13 @@ export default function TagsView(props: any) {
 	}
 
 	useEffect(() => {
-		// onFindPostsByTags(dispatch , new TagsByPostsModel(id , new Pageable(pageNumber - 1)));
 		onFindPostsByTags(dispatch , id , new Pageable(pageNumber - 1));
 	} , [pageNumber]);
 
 	useEffect(() => {
-		if (id === undefined) {
-			location.href = "/";
-		}
+		// if (id === undefined) {
+		// 	location.href = "/";
+		// }
 
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);

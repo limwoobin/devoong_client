@@ -18,7 +18,6 @@ export default function* postsSaga() {
 
 function* searchPostsSaga({payload: paggeable}: any) {
 	const response: PageModel = yield call(API.getPostsAll , paggeable);
-	// yield put(searchData(response.content));
 	yield put(searchData(response));
 }
 
@@ -34,7 +33,7 @@ function* findLatestPostsSaga() {
 
 function* findPostsByTagsSaga({payload: {id , pageable}}: any) {
 	const response: PageModel = yield call(API.getPostsByTags , id , pageable);
-	yield put(findPostsByTags(response.content));
+	yield put(findPostsByTags(response));
 }
 
 function* initLoadingStateSaga() {
