@@ -7,7 +7,8 @@ import {
 	About,
 	PostsContainer,
 	PostsRouter,
-	TagsRouter
+	TagsRouter,
+	ArchiveContainer
 } from '../page/pages';
 
 const MainDiv = styled.div`
@@ -24,7 +25,7 @@ export default function Router() {
 				<Route path="/tags" component={TagsRouter} />
 				<Route path="/about" component={About} />
 				<Route path="/tags" component={Prepare} />
-				<Route path="/archive" component={Prepare} />
+				<Route path="/archive" component={ArchiveContainer} />
 				<Route component={NoMatch} />
 			</Switch>
 		</MainDiv>

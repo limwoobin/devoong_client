@@ -1,4 +1,4 @@
-import React , { useState , useEffect , useLayoutEffect } from 'react';
+import React , { useState , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import PostsList from '../views/posts/PostsList';
 import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
@@ -41,12 +41,11 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 			setPageNumber(Number(targetPage));
 			onSearchPosts(dispatch , new Pageable(targetPage - 1));
 			return;
-		} else {
-			targetPage = 0;
-		}
+		} 
 
+		targetPage = 0;
 		onInitLoadingState(dispatch);
-		onSearchPosts(dispatch , new Pageable(pageNumber - 1));
+		onSearchPosts(dispatch , new Pageable(targetPage));
 	} , [targetPage]);
 
 	// useLayoutEffect(() => {

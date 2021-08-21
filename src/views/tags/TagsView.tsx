@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React , { useState , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
 import PostsList from '../posts/PostsList';
@@ -19,9 +19,9 @@ function onInitLoadingState(dispatch: Dispatch) {
 }
 
 export default function TagsView(props: any) {
-	const id = props.location.state?.id;
 	const name = props.match.params?.name;
 	const dispatch = useDispatch();
+	let targetPage: any = 0;
 
 	const [pageNumber , setPageNumber] = useState(1);
 
@@ -31,24 +31,40 @@ export default function TagsView(props: any) {
 		window.location.href=`/tags/${name}/?page=${page}`;
 	}
 
-	useEffect(() => {
-		onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
-	} , [pageNumber]);
-
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
+		targetPage = filtersFromParams.page;
 
-		if (filtersFromParams.page) {
-			setPageNumber(Number(filtersFromParams.page));
+		if (targetPage) {
+			setPageNumber(Number(targetPage));
+			onFindPostsByTags(dispatch , name , new Pageable(targetPage - 1));
 			return;
-		}
+		} 
 
-		if (!postsByTags.content) {
-			onInitLoadingState(dispatch);
-			onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
-		}
-	} , [name]);
+		targetPage = 0;
+		onInitLoadingState(dispatch);
+		onFindPostsByTags(dispatch , name , new Pageable(targetPage));	
+	} , [targetPage]);
+
+	// useEffect(() => {
+	// 	onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
+	// } , [pageNumber]);
+
+	// useEffect(() => {
+	// 	const filterParams = history.location.search.substr(1);
+	// 	const filtersFromParams = qs.parse(filterParams);
+
+	// 	if (filtersFromParams.page) {
+	// 		setPageNumber(Number(filtersFromParams.page));
+	// 		return;
+	// 	}
+
+	// 	if (!postsByTags.content) {
+	// 		onInitLoadingState(dispatch);
+	// 		onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
+	// 	}
+	// } , [name]);
 
 	const { postsByTags , isLoading } = useSelector(
 		(state: RootState) => state.postsReducer);
