@@ -29,29 +29,47 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 	const dispatch = useDispatch();
 	
 	const [pageNumber , setPageNumber] = useState(1);
-
+	let targetPage: any = 0;
 	const history = createBrowserHistory();
 
 	useLayoutEffect(() => {
-		console.log('### useHook param');
-		onSearchPosts(dispatch , new Pageable(pageNumber - 1));
-	} , [pageNumber]);
-
-	useLayoutEffect(() => {
-		console.log('### useHook');
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
+		targetPage = filtersFromParams.page;
 
-		if (filtersFromParams.page) {
-			setPageNumber(Number(filtersFromParams.page));
+		if (targetPage) {
+			setPageNumber(Number(targetPage));
+			onSearchPosts(dispatch , new Pageable(targetPage - 1));
 			return;
+		} else {
+			targetPage = 0;
 		}
 
-		if (posts.content === undefined) {
-			onInitLoadingState(dispatch);
-			onSearchPosts(dispatch , new Pageable(0));
-		}
-	} , []);
+		onInitLoadingState(dispatch);
+		onSearchPosts(dispatch , new Pageable(pageNumber - 1));
+	} , [targetPage]);
+
+	// useLayoutEffect(() => {
+	// 	console.log('### useHook Custom-->' , pageNumber);
+	// 	onSearchPosts(dispatch , new Pageable(pageNumber - 1));
+	// } , [pageNumber]);
+
+	// useLayoutEffect(() => {
+	// 	console.log('### useHook -->' , pageNumber);
+	// 	const filterParams = history.location.search.substr(1);
+	// 	const filtersFromParams = qs.parse(filterParams);
+
+	// 	if (filtersFromParams.page) {
+	// 		setPageNumber(Number(filtersFromParams.page));
+	// 		return;
+	// 	}
+
+	// 	console.log('after ???');
+	// 	if (posts.content === undefined) {
+	// 		onInitLoadingState(dispatch);
+	// 		onSearchPosts(dispatch , new Pageable(0));
+	// 	}
+	// } , []);
 
 	const { posts , isLoading } = useSelector(
 		(state: RootState) => state.postsReducer);

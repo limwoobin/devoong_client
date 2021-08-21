@@ -4,6 +4,7 @@ import { getMarkdownAsync , initMarkdown } from '../reducer/markdownReducer';
 import { Dispatch } from 'redux';
 import MarkdownRender from '../views/common/MarkdownRender';
 import { RootState } from '../reducer/rootReducer';
+import NoMatch from '../views/NoMatch';
 
 function onFindMarkdown(dispatch: Dispatch , uri: string) {
 	dispatch(getMarkdownAsync(uri));
@@ -31,7 +32,10 @@ export default function MarkdownContainer({uri} : IMarkdownContainer) {
 
 	return (
 		<>
-			<MarkdownRender data={data} isLoading={isLoading} />
+			{uri 
+				? <MarkdownRender data={data} isLoading={isLoading} />
+				: <NoMatch />
+			}
 		</>
 	);
 }
