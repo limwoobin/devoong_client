@@ -1,4 +1,4 @@
-import React , { useEffect, useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Progress from '../common/Progress';
@@ -7,7 +7,6 @@ import PostsCard from './PostsCard';
 import TitleView from '../common/TitleView';
 
 function renderPosts(posts: PostsModel[]) {
-	// if (posts.length > 0) {
 	if (posts) {
 		return posts.map((data) => (
 			<PostsCard key={data.id} post={data} />

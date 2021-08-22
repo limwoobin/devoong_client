@@ -1,4 +1,4 @@
-import { Pageable, PageModel, PostsModel, ArchiveModel } from '../models';
+import { Pageable, PageModel, PostsModel, ArchiveGroupModel } from '../models';
 import http from '../core/http/http';
 
 export const getPostsAll = async(pageable: Pageable): Promise<PageModel> => {
@@ -25,7 +25,7 @@ export const getPostsByTags = async(name: string , pageable: Pageable): Promise<
 	return response.data;
 };
 
-export const getPostsArchives = async(): Promise<ArchiveModel[]> => {
+export const getPostsArchives = async(): Promise<ArchiveGroupModel[]> => {
 	const url = 'http://localhost:8080/posts/archives';
 	const response = await http.get(url);
 	return response.data;

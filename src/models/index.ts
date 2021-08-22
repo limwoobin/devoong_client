@@ -5,3 +5,4 @@ export { default as PageModel } from './PageModel';
 export { default as PostsCard } from './PostsCard';
 export { default as Pageable } from './Pageable';
 export { default as ArchiveModel } from './ArchiveModel';
+export { default as ArchiveGroupModel } from './ArchiveGroupModel';

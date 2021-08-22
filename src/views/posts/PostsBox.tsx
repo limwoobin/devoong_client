@@ -18,14 +18,13 @@ export default function PostsBox(props: IPostsBox) {
 			{!emptyMessage ?
 				<Link key={id} to={{ pathname: `/posts/${id}` , state: {id}}}>
 					<div className="blockArea">
-						<label>{state} - {title}</label>
+						{state} - {title}
 					</div>
-			</Link> :
+				</Link> :
 				<div className="blockArea">
 					<label>{emptyMessage}</label>
 				</div>
 			}
-			
 		</div>
-	)
+	);
 }
