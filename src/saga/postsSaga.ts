@@ -1,10 +1,10 @@
 import * as API from '../api/posts';
 import { call , put , takeEvery } from 'redux-saga/effects';
-import { Pageable, PageModel, PostsModel } from '../models';
+import { ArchiveModel, Pageable, PageModel, PostsModel } from '../models';
 import { SEARCH_POSTS_ASYNC , GET_POSTS_ASYNC , FIND_LATEST_POSTS_ASYNC ,
-	FIND_POSTS_BY_TAGS_ASYNC , INIT_LOADING_STATE , INIT_STATE ,
+	FIND_POSTS_BY_TAGS_ASYNC , INIT_LOADING_STATE , INIT_STATE , FIND_POSTS_ARCHIVES_ASYNC ,
 	searchData , getPosts , findLatestPosts , findPostsByTags 
-	, initLoadingStateFalse , initStateComplete }
+	, initLoadingStateFalse , initStateComplete , findPostsArchives }
 	from '../reducer/postsReducer';
 
 export default function* postsSaga() {
@@ -14,6 +14,7 @@ export default function* postsSaga() {
 	yield takeEvery(FIND_POSTS_BY_TAGS_ASYNC , findPostsByTagsSaga);
 	yield takeEvery(INIT_LOADING_STATE , initLoadingStateSaga);
 	yield takeEvery(INIT_STATE , initStateSaga);
+	yield takeEvery(FIND_POSTS_ARCHIVES_ASYNC , findPostsArchivesSaga);
 }
 
 function* searchPostsSaga({payload: paggeable}: any) {
@@ -42,4 +43,9 @@ function* initLoadingStateSaga() {
 
 function* initStateSaga() {
 	yield put(initStateComplete());
+}
+
+function* findPostsArchivesSaga() {
+	const response: ArchiveModel[] = yield call(API.getPostsArchives);
+	yield put(findPostsArchives(response));
 }

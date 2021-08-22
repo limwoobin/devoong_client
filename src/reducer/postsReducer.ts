@@ -20,6 +20,9 @@ const INIT_LOADING_STATE_FALSE = 'INIT_LOADING_STATE_FALSE';
 export const INIT_STATE = 'INIT_STATE';
 const INIT_STATE_COMPLETE = 'INIT_STATE_COMPLETE';
 
+export const FIND_POSTS_ARCHIVES_ASYNC = 'FIND_POSTS_ARCHIVES_ASYNC';
+const FIND_POSTS_ARCHIVES = 'FIND_POSTS_ARCHIVES';
+
 // Action Creator
 export const searchPostsAsync: any = createAction(SEARCH_POSTS_ASYNC);
 export const searchData: any = createAction(SEARCH_DATA);
@@ -39,6 +42,9 @@ export const initLoadingStateFalse: any = createAction(INIT_LOADING_STATE_FALSE)
 export const initState: any = createAction(INIT_STATE);
 export const initStateComplete: any = createAction(INIT_STATE_COMPLETE);
 
+export const findPostsArchivesAsync: any = createAction(FIND_POSTS_ARCHIVES_ASYNC);
+export const findPostsArchives: any = createAction(FIND_POSTS_ARCHIVES);
+
 // initState
 const initialState = {
 	isLoading: false,
@@ -49,6 +55,7 @@ const initialState = {
 	data: {},
 	pagable: {},
 	totalElements: 0,
+	archives: [],
 };
 
 // Toolkit Reducer
@@ -75,11 +82,16 @@ export default createReducer(initialState , {
 		state.isLoading = false;
 	},
 	[INIT_STATE_COMPLETE]: (state) => {
-		state.isLoading= false;
+		state.isLoading = false;
 		state.posts= new PageModel();
 		state.lastId= 0;
 		state.latestPosts= [];
 		state.postsByTags= new PageModel();
 		state.data= {};
+	},
+	[FIND_POSTS_ARCHIVES]: (state , {payload: data}) => {
+		state.isLoading = false;
+		state.archives = data;
+		state.isLoading = true;
 	}
 });

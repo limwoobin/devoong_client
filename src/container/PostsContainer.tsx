@@ -1,5 +1,6 @@
 import React , { useState , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
+import { Dispatch } from 'redux';
 import PostsList from '../views/posts/PostsList';
 import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
 import { RootState } from '../reducer/rootReducer';
@@ -8,11 +9,11 @@ import { Pageable } from '../models';
 import qs from 'qs';
 import { createBrowserHistory } from 'history';
 
-function onSearchPosts(dispatch: any , pageable: Pageable) {
+function onSearchPosts(dispatch: Dispatch , pageable: Pageable) {
 	dispatch(searchPostsAsync(pageable));
 }
 
-function onInitLoadingState(dispatch: any) {
+function onInitLoadingState(dispatch: Dispatch) {
 	dispatch(initLoadingState());
 }
 
