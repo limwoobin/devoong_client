@@ -28,7 +28,9 @@ export default function TagsView(props: any) {
 	const history = createBrowserHistory({ forceRefresh: true });
 
 	function onChangePage(e: any , page: number) {
-		window.location.href=`/tags/${name}/?page=${page}`;
+		if (pageNumber !== page) {
+			window.location.href=`/tags/${name}/?page=${page}`;
+		}
 	}
 
 	useLayoutEffect(() => {

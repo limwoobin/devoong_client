@@ -17,10 +17,6 @@ function onInitLoadingState(dispatch: Dispatch) {
 	dispatch(initLoadingState());
 }
 
-function onChangePage(e: any , page: number) {
-	window.location.href=`/posts?page=${page}`;
-}
-
 interface IPostsContainer {
 	tagId: number;
 	searchWord: string;
@@ -32,6 +28,12 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 	const [pageNumber , setPageNumber] = useState(1);
 	let targetPage: any = 0;
 	const history = createBrowserHistory();
+
+	function onChangePage(e: any , page: number) {
+		if (pageNumber !== page) {
+			window.location.href=`/posts?page=${page}`;
+		}
+	}
 
 	useLayoutEffect(() => {
 		const filterParams = history.location.search.substr(1);
