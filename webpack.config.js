@@ -5,7 +5,6 @@ const path = require('path');
 const dotenv = require('dotenv');
 
 module.exports = (env , options) => {
-
     dotenv.config({
         path: `.env.${options.state || 'dev'}`
     });
@@ -23,7 +22,10 @@ module.exports = (env , options) => {
             publicPath: '/',
         },
         resolve:{
-            extensions: [".jsx" , ".js" , ".tsx" , ".ts"]
+            extensions: [".jsx" , ".js" , ".tsx" , ".ts"],
+            alias: {
+                '@': path.resolve(__dirname , 'src')
+            }
         },
         module:{
             rules:[
@@ -86,7 +88,7 @@ module.exports = (env , options) => {
             new webpack.DefinePlugin({
                 'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL)
             }),
-            new webpack.EnvironmentPlugin(['API_BASE_URL'])
+            new webpack.EnvironmentPlugin(['REACT_APP_BASE_URL'])
         ],
         devServer: {
             port: port,
