@@ -6,7 +6,7 @@
   "author": "drogba <drogba02@naver.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode none --open --hot",
     "start:dev": "webpack-dev-server --mode development --open --state dev",
     "start:prod": "webpack-dev-server --mode production --open --state prod",
     "build": "webpack"
