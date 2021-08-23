@@ -29,11 +29,12 @@ export default function TagsView(props: any) {
 
 	function onChangePage(e: any , page: number) {
 		if (pageNumber !== page) {
-			window.location.href=`/tags/${name}/?page=${page}`;
+			window.location.href=`/tags/${name}?page=${page}`;
 		}
 	}
 
 	useLayoutEffect(() => {
+		console.log('targetPage ###');
 		const filterParams = history.location.search.substr(1);
 		const filtersFromParams = qs.parse(filterParams);
 		targetPage = filtersFromParams.page;
@@ -46,8 +47,21 @@ export default function TagsView(props: any) {
 
 		targetPage = 0;
 		onInitLoadingState(dispatch);
-		onFindPostsByTags(dispatch , name , new Pageable(targetPage));	
+		onFindPostsByTags(dispatch , name , new Pageable(targetPage));
 	} , [targetPage]);
+
+	useLayoutEffect(() => {
+		const filterParams = history.location.search.substr(1);
+		const filtersFromParams = qs.parse(filterParams);
+
+		if (filtersFromParams.page) {
+			return;
+		}
+
+		setPageNumber(1);
+		onInitLoadingState(dispatch);
+		onFindPostsByTags(dispatch , name , new Pageable(0));
+	} , [name]);
 
 	// useEffect(() => {
 	// 	onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
