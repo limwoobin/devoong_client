@@ -1,23 +1,23 @@
 import axios from 'axios';
 import secret_data from '../../../secret_data.json';
 
-const instance = axios.create({
+const externalHttp = axios.create({
 	baseURL: '/',
 	timeout: 30000,
 	withCredentials: true,
 });
 
 // set default header config
-instance.defaults.headers['Accept'] = '*/*';
-instance.defaults.headers['Access-Control-Allow-Origin'] = "*";
-instance.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-instance.defaults.headers['Authorization'] = 'Bearer ' + secret_data.token.github;
+externalHttp.defaults.headers['Accept'] = '*/*';
+externalHttp.defaults.headers['Access-Control-Allow-Origin'] = "*";
+externalHttp.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+externalHttp.defaults.headers['Authorization'] = 'Bearer ' + secret_data.token.github;
 
-instance.interceptors.request.use((config) => {
+externalHttp.interceptors.request.use((config) => {
 	return config;
 });
 
-instance.interceptors.request.use((config) => {
+externalHttp.interceptors.request.use((config) => {
 	console.log("========== O K ==========");
 	return config;
 } , (error) => {
@@ -38,7 +38,7 @@ instance.interceptors.request.use((config) => {
 	}
 });
 
-instance.interceptors.response.use((response) => {
+externalHttp.interceptors.response.use((response) => {
 	console.log('axios response' , response);
 	return response;
 } , (error) => {
@@ -47,4 +47,4 @@ instance.interceptors.response.use((response) => {
 	location.href = "/about";
 });
 
-export default instance;
+export default externalHttp;

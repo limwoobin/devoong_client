@@ -1,6 +1,6 @@
 import { Pageable, PageModel, PostsModel, ArchiveGroupModel } from '../models';
 import { BASE_URL } from './config';
-import http from '../core/http/http';
+import { http } from '@/core/http';
 
 export const getPostsAll = async(pageable: Pageable): Promise<PageModel> => {
 	const url = BASE_URL + '/posts?page=' + pageable.page;

@@ -1,11 +1,11 @@
 import React , { useState , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
-import PostsList from '../views/posts/PostsList';
-import { searchPostsAsync , initLoadingState } from '../reducer/postsReducer';
-import { RootState } from '../reducer/rootReducer';
-import Paging from '../views/common/Paging';
-import { Pageable } from '../models';
+import PostsList from '@/views/posts/PostsList';
+import { searchPostsAsync , initLoadingState } from '@/reducer/postsReducer';
+import { RootState } from '@/reducer';
+import { Paging } from '@/views/common';
+import { Pageable } from '@/models';
 import qs from 'qs';
 import { createBrowserHistory } from 'history';
 

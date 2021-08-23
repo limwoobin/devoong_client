@@ -1,6 +1,6 @@
 import React  from 'react';
 import Container from '@material-ui/core/Container';
-import { TagsModel } from '../../models';
+import { TagsModel } from '@/models';
 import TitleView from '../../views/common/TitleView';
 import RenderTags from './RenderTags';
 

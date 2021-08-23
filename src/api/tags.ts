@@ -1,4 +1,4 @@
-import http from '../core/http/http';
+import { http } from '@/core/http';
 import { TagsModel } from '../models';
 import { BASE_URL } from './config';
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const instance = axios.create({
+const http = axios.create({
 	baseURL: '/',
 	timeout: 30000,
 	withCredentials: true,
@@ -8,16 +8,16 @@ const instance = axios.create({
 });
 
 // set default header config
-instance.defaults.headers['Accept'] = 'application/json';
-instance.defaults.headers['Authorization'] = localStorage.getItem('authorization');
-instance.defaults.headers['RefreshToken'] = localStorage.getItem('refreshtoken');
-instance.defaults.headers.post['Content-Type'] = 'application/json';
+http.defaults.headers['Accept'] = 'application/json';
+http.defaults.headers['Authorization'] = localStorage.getItem('authorization');
+http.defaults.headers['RefreshToken'] = localStorage.getItem('refreshtoken');
+http.defaults.headers.post['Content-Type'] = 'application/json';
 
-instance.interceptors.request.use((config) => {
+http.interceptors.request.use((config) => {
 	return config;
 });
 
-instance.interceptors.request.use((config) => {
+http.interceptors.request.use((config) => {
 	console.log("========== O K ==========");
 	return config;
 } , (error) => {
@@ -38,7 +38,7 @@ instance.interceptors.request.use((config) => {
 	}
 });
 
-instance.interceptors.response.use((response) => {
+http.interceptors.response.use((response) => {
 	console.log('axios response' , response);
 	return response;
 } , (error) => {
@@ -46,4 +46,4 @@ instance.interceptors.response.use((response) => {
 	return Promise.reject(error);
 });
 
-export default instance;
+export default http;

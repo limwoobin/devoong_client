@@ -1,10 +1,10 @@
 import React , { useLayoutEffect} from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { getMarkdownAsync , initMarkdown } from '../reducer/markdownReducer';
+import { getMarkdownAsync , initMarkdown } from '@/reducer/markdownReducer';
 import { Dispatch } from 'redux';
-import MarkdownRender from '../views/common/MarkdownRender';
-import { RootState } from '../reducer/rootReducer';
-import NoMatch from '../views/NoMatch';
+import MarkdownRender from '@/views/common/MarkdownRender';
+import { RootState } from '@/reducer';
+import NoMatch from '@/views/NoMatch';
 
 function onFindMarkdown(dispatch: Dispatch , uri: string) {
 	dispatch(getMarkdownAsync(uri));

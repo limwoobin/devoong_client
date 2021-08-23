@@ -1,11 +1,11 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import { constants } from '../core/constant';
-import LatestPostsPc from '../views/layout/components/recents/LatestPostsPc';
-import LatestPostsMobile from '../views/layout/components/recents/LatestPostsMobile';
-import { findLatestPostsAsync } from '../reducer/postsReducer';
-import { RootState } from '../reducer/rootReducer';
+import { constants } from '@/core/constant';
+import LatestPostsPc from '@/views/layout/components/recents/LatestPostsPc';
+import LatestPostsMobile from '@/views/layout/components/recents/LatestPostsMobile';
+import { findLatestPostsAsync } from '@/reducer/postsReducer';
+import { RootState } from '@/reducer';
 
 function onFindLatestPosts(dispatch: any) {
 	dispatch(findLatestPostsAsync());

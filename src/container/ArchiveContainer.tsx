@@ -1,9 +1,9 @@
 import React , { useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { RootState } from '../reducer/rootReducer';
+import { RootState } from '@/reducer';
 import { Dispatch } from 'redux';
-import { findPostsArchivesAsync , initLoadingState } from '../reducer/postsReducer';
-import Archives from '../views/archive/Archives';
+import { findPostsArchivesAsync , initLoadingState } from '@/reducer/postsReducer';
+import Archives from '@/views/archive/Archives';
 
 function onFindPostsArchives(dispatch: Dispatch) {
 	dispatch(findPostsArchivesAsync());
