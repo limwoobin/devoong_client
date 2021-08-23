@@ -7,7 +7,11 @@ export default function SubHeader() {
 		<Container maxWidth="lg">
 			<header className="sub_head">
 				<div className="sub_head_area">
-					<div className="main_text"><a href="/">Drogbalog</a></div>
+					<div className="main_text">
+						<a href="/">
+							Drogbalog
+						</a>
+					</div>
 				</div>
 			</header>
 		</Container>

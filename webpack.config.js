@@ -84,7 +84,7 @@ module.exports = (env , options) => {
                 filename: 'index.html'
             }),
             new webpack.DefinePlugin({
-                'process.env.API_BASE_URL': JSON.stringify(process.env.API_BASE_URL)
+                'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL)
             }),
             new webpack.EnvironmentPlugin(['API_BASE_URL'])
         ],

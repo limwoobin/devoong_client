@@ -45,7 +45,6 @@ instance.interceptors.response.use((response) => {
 	console.log('error.response ###' , error.response);
 	alert(error.message);
 	location.href = "/about";
-	// return Promise.reject(error.response);
 });
 
 export default instance;
