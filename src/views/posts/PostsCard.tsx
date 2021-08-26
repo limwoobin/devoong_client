@@ -13,8 +13,8 @@ import './posts.scss';
 
 const useStyles = makeStyles({
 	media: {
-		height: 300,
-		maxHeight: 500,
+		minHeight: 300,
+		maxHeight: 450,
 	},
 	card: {
 		display: 'flex',
@@ -36,24 +36,21 @@ export default function PostsCard(props: any) {
 				<div className={classes.cardDetails}>
 					<CardActionArea>
 						<CardMedia
+							component="img"
 							className={classes.media}
-							image="http://www.itworld.co.kr/files/itworld/2020/06_01/google-password-manager-primary-100841457-large.jpg"
+							image={post.bannerImage}
 							title="Contemplative Reptile"
 						/>
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
 								{post.title}
 							</Typography>
-							<Typography variant="body2" color="textSecondary" component="p">
+							<div style={{ height: '20px' }}></div>
+							<Typography variant="body1" color="textSecondary" component="p">
 								{post.createdDate}
 							</Typography>
 						</CardContent>
 					</CardActionArea>
-					<CardActions>
-						<Button size="small" color="primary">
-							View
-						</Button>
-					</CardActions>
 					</div>
 				</Card>
 			</Link>    
