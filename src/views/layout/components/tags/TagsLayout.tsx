@@ -1,8 +1,8 @@
 import React from 'react';
-import '../layout.scss';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { TagsModel } from '../../../../models';
 import { RenderTags } from '../../../tags';
+import '../layout.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -27,12 +27,12 @@ export default function TagsLayout(props: TagsPcProps) {
 
 	return (
 		<aside className="pDRpR">
-				<section className="fNlsam kPSwsK">
-						<h3>Tag</h3>
-						<div className={classes.root}>
-							<RenderTags tags={tags} />
-						</div>
-				</section>
+			<section className="fNlsam kPSwsK">
+				<h3>Tag</h3>
+				<div className={classes.root}>
+					<RenderTags tags={tags} />
+				</div>
+			</section>
 		</aside>
 	);
 }

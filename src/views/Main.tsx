@@ -23,7 +23,7 @@ const PcMainView = () => {
 						<div className="BAccj">
 							<Router />
 						</div>
-						<div className="sideBar">
+						<div>
 							<TagsLayoutContainer />
 							<LatestPostsContainer />
 							<Socials />

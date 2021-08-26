@@ -2,12 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PostsModel } from '../../../../models';
 import { ILatestPosts } from './ILatestPosts';
+import { DateUtils } from '@/core/utils';
+import { DateType } from '@/core/enums';
 import '../layout.scss';
 
 function renderLatestPosts(latestPosts: PostsModel[]) {
 	return latestPosts.map((data: PostsModel , index: number) => (
 		<Link key={index} to={{ pathname: `/posts/${data.id}` , state: {id: data.id} }}>
-			<li><b style={{ fontSize: '1.2rem' }}>{data.title}</b></li>
+			<div>
+				<span>
+					<p>
+						<b style={{ color: 'white' , fontSize: '1.0rem'}}>{data.title}</b>
+						<br />
+						<label style={{ fontSize: '0.8rem' }}>
+							{/* {data.createdDate} */}
+							{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , data.createdDate!)}
+						</label>
+					</p>
+				</span>
+			</div>
 		</Link>
 	));
 }
@@ -18,8 +31,8 @@ export default function LatestPostsPc(props: ILatestPosts) {
 	return (
 		<aside className="sc-csuQGl pDRpR">
 			<section className="fNlsam kPSwsK">
-				<h3>최신글</h3>
-					{renderLatestPosts(latestPosts)}
+				<h3>Latest</h3>
+				{renderLatestPosts(latestPosts)}
 			</section>
 		</aside>
 	);

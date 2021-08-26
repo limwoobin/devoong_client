@@ -9,7 +9,8 @@ export default function SubHeader() {
 				<div className="sub_head_area">
 					<div className="main_text">
 						<a href="/">
-							Drogbalog
+							{/* Drogbalog */}
+							Devoongii
 						</a>
 					</div>
 				</div>
