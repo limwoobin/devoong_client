@@ -13,6 +13,7 @@ import Progress from '../common/Progress';
 import { ArchiveGroupModel , ArchiveModel } from '../../models';
 import { Link } from 'react-router-dom';
 import Material_Link from '@material-ui/core/Link';
+import ArchiveBox from './ArchivesBox';
 import './archive.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -59,7 +60,14 @@ function renderArchives(data: ArchiveModel[]) {
 		return data.map((archive: ArchiveModel , index: number) => (
 			<Link to={`/posts/${archive.id}`} className="archive_label">
 				<Material_Link key={index} style={{ color: 'white' }}>
-					{archive.createdDate}{' - '}{archive.title}<br />
+					{/* <label style={{ fontSize: '13px' }}>
+						{archive.createdDate} &nbsp;
+					</label>
+					<label>
+						<b>{archive.title}</b>
+					</label>
+					<br /> */}
+					<ArchiveBox title={archive.title} />
 				</Material_Link>
 			</Link>
 		));

@@ -12,7 +12,7 @@ interface IRenderTags {
 function defaultRenderTags(tags: TagsModel[]) {
 	if (tags !== undefined) {
 		return tags.map((tag: TagsModel , index: number) => (
-			<Tag key={index} color="#757575" style={{ fontSize: '17px' , fontWeight: 'bold' }}>
+			<Tag key={index} color="#757575" style={{ fontSize: '17px' , fontWeight: 'bold' , lineHeight: '30px' }}>
 				<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
 			</Tag>
 		));
@@ -22,7 +22,7 @@ function defaultRenderTags(tags: TagsModel[]) {
 function customRenderTags(tags: TagsModel[] , tagType: TagType) {
 	if (tags !== undefined) {
 		return tags.map((tag: TagsModel , index: number) => (
-			<Tag key={index} color={tagType} style={{ fontSize: '17px' , fontWeight: 'bold' }}>
+			<Tag key={index} color={tagType} style={{ fontSize: '17px' , fontWeight: 'bold' , lineHeight: '30px' }}>
 				<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
 			</Tag>
 		));

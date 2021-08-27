@@ -51,7 +51,10 @@ export default function PostsCard(props: any) {
 								{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
 							</Typography>
 							<div style={{ paddingTop: '15px' }}>
-								<RenderTags tags={post.tagsResponseList} tagType={TagType.VOLCANO} />
+								{post.tagsResponseList 
+									? <RenderTags tags={post.tagsResponseList} tagType={TagType.VOLCANO} />
+									: '' 
+								}
 							</div>
 						</CardContent>
 					</CardActionArea>
