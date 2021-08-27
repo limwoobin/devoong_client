@@ -60,14 +60,7 @@ function renderArchives(data: ArchiveModel[]) {
 		return data.map((archive: ArchiveModel , index: number) => (
 			<Link to={`/posts/${archive.id}`} className="archive_label">
 				<Material_Link key={index} style={{ color: 'white' }}>
-					{/* <label style={{ fontSize: '13px' }}>
-						{archive.createdDate} &nbsp;
-					</label>
-					<label>
-						<b>{archive.title}</b>
-					</label>
-					<br /> */}
-					<ArchiveBox title={archive.title} />
+					<ArchiveBox title={ `${archive.title} (${archive.createdDate})` } />
 				</Material_Link>
 			</Link>
 		));

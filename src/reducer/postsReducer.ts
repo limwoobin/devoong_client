@@ -1,5 +1,5 @@
 import { createAction , createReducer } from '@reduxjs/toolkit';
-import { PageModel } from '../models';
+import { PageModel } from '@/models';
 
 // Action Type
 export const SEARCH_POSTS_ASYNC = 'SEARCH_POSTS_ASYNC';

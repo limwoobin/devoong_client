@@ -1,9 +1,9 @@
 import React , { useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { getPostsAsync , initLoadingState } from '../reducer/postsReducer';
+import { getPostsAsync , initLoadingState } from '@/reducer/postsReducer';
 import { Dispatch } from 'redux';
-import PostsView from '../views/posts/PostsView';
-import { RootState } from '../reducer/rootReducer';
+import { PostsView } from '@/views/posts';
+import { RootState } from '@/reducer';
 
 function onFindPosts(dispatch: Dispatch, id: number) {
 	dispatch(getPostsAsync(id));

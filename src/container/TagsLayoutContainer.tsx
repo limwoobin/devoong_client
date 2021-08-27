@@ -1,8 +1,8 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { findTagsAsync } from '../reducer/tagsReducer';
-import TagsLayout from '../views/layout/components/tags/TagsLayout';
-import { RootState } from '../reducer/rootReducer';
+import { findTagsAsync } from '@/reducer/tagsReducer';
+import TagsLayout from '@/views/layout/components/tags/TagsLayout';
+import { RootState } from '@/reducer';
 
 function onFindTags(dispatch: any) {
 	dispatch(findTagsAsync());

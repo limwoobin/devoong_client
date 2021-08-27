@@ -1,6 +1,6 @@
-import * as API from '../api/markdown';
+import * as API from '@/api/markdown';
 import { call , put , takeEvery } from 'redux-saga/effects'; 
-import { GET_MARKDOWN_ASYNC , INIT_MARKDOWN , getMarkdown , initMarkdownComplete }  from '../reducer/markdownReducer';
+import { GET_MARKDOWN_ASYNC , INIT_MARKDOWN , getMarkdown , initMarkdownComplete }  from '@/reducer/markdownReducer';
 
 export default function* markdownSaga() {
 	yield takeEvery(GET_MARKDOWN_ASYNC , getMarkdownSaga);
