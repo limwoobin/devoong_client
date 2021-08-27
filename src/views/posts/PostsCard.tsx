@@ -8,7 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { DateUtils } from '@/core/utils/DateUtils';
-import { DateType } from '@/core/enums';
+import { DateType, TagType } from '@/core/enums';
+import RenderTags from '@/views/tags/RenderTags';
 import './posts.scss';
 
 const useStyles = makeStyles({
@@ -44,12 +45,14 @@ export default function PostsCard(props: any) {
 						<CardContent>
 							<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
 								{post.title}
-								{/* <div dangerouslySetInnerHTML={ {__html: post.title} }></div> */}
 							</Typography>
 							<div style={{ height: '20px' }}></div>
 							<Typography variant="body1" color="textPrimary" component="p">
 								{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
 							</Typography>
+							<div style={{ paddingTop: '15px' }}>
+								<RenderTags tags={post.tagsResponseList} tagType={TagType.VOLCANO} />
+							</div>
 						</CardContent>
 					</CardActionArea>
 					</div>

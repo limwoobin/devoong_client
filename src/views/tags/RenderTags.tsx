@@ -2,26 +2,39 @@ import React from 'react';
 import { TagsModel } from '../../models';
 import { Tag } from 'antd';
 import { Link } from 'react-router-dom';
+import { TagType } from '@/core/enums';
 
 interface IRenderTags {
 	tags: TagsModel[];
+	tagType?: TagType; 
 }
 
-function renderTags(tags: TagsModel[]) {
-	console.log('rednerTags ###' , tags);
+function defaultRenderTags(tags: TagsModel[]) {
 	if (tags !== undefined) {
 		return tags.map((tag: TagsModel , index: number) => (
-			<Tag key={index} color="#757575" style={{ fontSize: '18px' , fontWeight: 'bold' , height: '25px' }}>
+			<Tag key={index} color="#757575" style={{ fontSize: '17px' , fontWeight: 'bold' }}>
 				<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
 			</Tag>
 		));
 	}
 }
 
-export default function RenderTags({tags} : IRenderTags) {
+function customRenderTags(tags: TagsModel[] , tagType: TagType) {
+	if (tags !== undefined) {
+		return tags.map((tag: TagsModel , index: number) => (
+			<Tag key={index} color={tagType} style={{ fontSize: '17px' , fontWeight: 'bold' }}>
+				<Link key={index} to={{ pathname: `/tags/${tag.name}` , state: {id: tag.id} }}>{ tag.name }</Link>
+			</Tag>
+		));
+	}
+}
+
+export default function RenderTags({tags , tagType} : IRenderTags) {
 	return (
 		<>
-			{renderTags(tags)}
+			{tagType 
+				? customRenderTags(tags , tagType)
+				: defaultRenderTags(tags)}
 		</>
 	);
 }
