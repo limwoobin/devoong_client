@@ -51,28 +51,6 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 		onSearchPosts(dispatch , new Pageable(targetPage));
 	} , [targetPage]);
 
-	// useLayoutEffect(() => {
-	// 	console.log('### useHook Custom-->' , pageNumber);
-	// 	onSearchPosts(dispatch , new Pageable(pageNumber - 1));
-	// } , [pageNumber]);
-
-	// useLayoutEffect(() => {
-	// 	console.log('### useHook -->' , pageNumber);
-	// 	const filterParams = history.location.search.substr(1);
-	// 	const filtersFromParams = qs.parse(filterParams);
-
-	// 	if (filtersFromParams.page) {
-	// 		setPageNumber(Number(filtersFromParams.page));
-	// 		return;
-	// 	}
-
-	// 	console.log('after ???');
-	// 	if (posts.content === undefined) {
-	// 		onInitLoadingState(dispatch);
-	// 		onSearchPosts(dispatch , new Pageable(0));
-	// 	}
-	// } , []);
-
 	const { posts , isLoading } = useSelector(
 		(state: RootState) => state.postsReducer);
 

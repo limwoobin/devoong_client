@@ -62,25 +62,6 @@ export default function TagsView(props: any) {
 		onFindPostsByTags(dispatch , name , new Pageable(0));
 	} , [name]);
 
-	// useEffect(() => {
-	// 	onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
-	// } , [pageNumber]);
-
-	// useEffect(() => {
-	// 	const filterParams = history.location.search.substr(1);
-	// 	const filtersFromParams = qs.parse(filterParams);
-
-	// 	if (filtersFromParams.page) {
-	// 		setPageNumber(Number(filtersFromParams.page));
-	// 		return;
-	// 	}
-
-	// 	if (!postsByTags.content) {
-	// 		onInitLoadingState(dispatch);
-	// 		onFindPostsByTags(dispatch , name , new Pageable(pageNumber - 1));
-	// 	}
-	// } , [name]);
-
 	const { postsByTags , isLoading } = useSelector(
 		(state: RootState) => state.postsReducer);
 

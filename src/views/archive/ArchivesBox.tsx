@@ -17,18 +17,19 @@ const useStyles = makeStyles(() =>
 
 interface IArchiveBox {
 	title: string;
+	key: number;
 }
 
 export default function ArchiveBox(props: IArchiveBox) {
 	const classes = useStyles();
-	const {title} = props;
+	const { title } = props;
 
 	return (
 		<>
 			<Box className={classes.root} p={0.1}>
-				<label style={{ marginLeft: '20px' }}>
+				<div style={{ marginLeft: '20px' }}>
 					{title}
-				</label>
+				</div>
 			</Box>
 		</>
 	);

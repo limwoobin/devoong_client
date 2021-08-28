@@ -6,7 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import { DateUtils } from '@/core/utils/DateUtils';
 import { DateType, TagType } from '@/core/enums';
 import RenderTags from '@/views/tags/RenderTags';
@@ -32,35 +31,33 @@ export default function PostsCard(props: any) {
 
 	return (
 		<Grid item xs={12} md={12} style={{ paddingBottom: '20px' }}>
-			<Link to={{ pathname: `/posts/${post.id}` }}>
 				<Card className={classes.card}>
 				<div className={classes.cardDetails}>
-					<CardActionArea>
+					<Link to={{ pathname: `/posts/${post.id}` }}>
 						<CardMedia
 							component="img"
 							className={classes.media}
 							image={post.bannerImage}
 							title="Contemplative Reptile"
 						/>
-						<CardContent>
-							<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
-								{post.title}
-							</Typography>
-							<div style={{ height: '20px' }}></div>
-							<Typography variant="body1" color="textPrimary" component="p">
-								{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
-							</Typography>
-							<div style={{ paddingTop: '15px' }}>
-								{post.tagsResponseList 
-									? <RenderTags tags={post.tagsResponseList} tagType={TagType.VOLCANO} />
-									: '' 
-								}
-							</div>
-						</CardContent>
-					</CardActionArea>
-					</div>
-				</Card>
-			</Link>    
+					</Link>
+					<CardContent>
+						<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
+							{post.title}
+						</Typography>
+						<div style={{ height: '20px' }}></div>
+						<Typography variant="body1" color="textPrimary" component="p">
+							{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
+						</Typography>
+						<div style={{ paddingTop: '15px' }}>
+							{post.tagsResponseList 
+								? <RenderTags tags={post.tagsResponseList} tagType={TagType.VOLCANO} />
+								: '' 
+							}
+						</div>
+					</CardContent>
+				</div>
+			</Card>
 		</Grid>
 	);
 }
