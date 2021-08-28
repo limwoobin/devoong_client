@@ -1,14 +1,14 @@
 import React from 'react';
-import '../layout.scss';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { PostsModel } from '../../../../models';
+import { PostsModel } from '@/models';
 import { ILatestPosts } from './ILatestPosts';
 import { Link } from 'react-router-dom';
+import '../layout.scss';
 import './mobileLatestPosts.scss';
 
 const useStyles = makeStyles((theme: Theme) =>

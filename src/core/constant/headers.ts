@@ -1,4 +1,4 @@
-import { HeaderModel } from '../../models';
+import { HeaderModel } from '@/models';
 
 export const headers: HeaderModel[] = [
 	{path:'' , value:'HOME'},

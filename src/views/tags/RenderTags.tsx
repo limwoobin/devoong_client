@@ -1,5 +1,5 @@
 import React from 'react';
-import { TagsModel } from '../../models';
+import { TagsModel } from '@/models';
 import { Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { TagType } from '@/core/enums';

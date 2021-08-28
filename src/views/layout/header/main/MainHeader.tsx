@@ -1,11 +1,10 @@
 import React from 'react';
-import '../scss/header.scss';
 import {useMediaQuery} from 'react-responsive';
-import { constants } from '../../../../core/constant';
-import { headers } from '../../../../core/constant';
+import { constants , headers } from '@/core/constant';
 import HeaderPC from './HeaderPc';
 import HeaderMobile from './HeaderMobile';
 import Container from '@material-ui/core/Container';
+import '../scss/header.scss';
 
 export default function MainHeader() {
 	const isPc = useMediaQuery({query: constants.MIN_WIDTH});

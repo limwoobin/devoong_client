@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { PostsContainer , PostsViewContainer } from '../../container';
+import { PostsContainer , PostsViewContainer } from '@/container';
 
 export default function PostsRouter() {
 	return (

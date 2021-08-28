@@ -1,10 +1,8 @@
-import React , { useState } from 'react';
+import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { HeaderModel } from '../../../../models';
+import { HeaderModel } from '@/models';
 import { Link } from 'react-router-dom';
-import '../scss/header.scss';
-
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -12,6 +10,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
+import '../scss/header.scss';
 
 const useStyles = makeStyles({
 	list: {

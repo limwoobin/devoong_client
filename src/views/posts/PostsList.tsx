@@ -1,10 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Progress from '../common/Progress';
-import { PageModel, PostsModel } from '../../models';
+import { Progress , TitleView } from '@/views/common';
+import { PageModel, PostsModel } from '@/models';
 import PostsCard from './PostsCard';
-import TitleView from '../common/TitleView';
 
 function renderPosts(posts: PostsModel[]) {
 	if (posts) {

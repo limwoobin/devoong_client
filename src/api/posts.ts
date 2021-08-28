@@ -1,4 +1,4 @@
-import { Pageable, PageModel, PostsModel, ArchiveGroupModel } from '../models';
+import { Pageable, PageModel, PostsModel, ArchiveGroupModel } from '@/models';
 import { BASE_URL } from './config';
 import { http } from '@/core/http';
 

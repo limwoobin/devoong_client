@@ -1,6 +1,6 @@
 import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HeaderModel } from '../../../../models';
+import { HeaderModel } from '@/models';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';

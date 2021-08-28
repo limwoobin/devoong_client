@@ -1,9 +1,9 @@
 import React from 'react';
 import Socials from './layout/components/socials/Socials';
 import { useMediaQuery } from 'react-responsive';
-import { constants } from '../core/constant';
+import { constants } from '@/core/constant';
 import Router from './Router';
-import { TagsLayoutContainer , LatestPostsContainer } from '../container';
+import { TagsLayoutContainer , LatestPostsContainer } from '@/container';
 import './main.scss';
 
 export default function Main() {

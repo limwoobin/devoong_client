@@ -1,5 +1,5 @@
 import React from 'react';
-import { Direction } from '../../core/enums';
+import { Direction } from '@/core/enums';
 import { Link } from 'react-router-dom';
 import './posts.scss';
 

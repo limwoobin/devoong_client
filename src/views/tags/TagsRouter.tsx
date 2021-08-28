@@ -1,7 +1,7 @@
-import React , {useEffect} from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
-import { TagsView , TagsList } from './';
-import { TagsContainer } from '../../container';
+import { TagsView } from './';
+import { TagsContainer } from '@/container';
 
 export default function TagsRouter() {
 	return (

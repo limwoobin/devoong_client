@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import { TagsModel } from '../../../../models';
-import { RenderTags } from '../../../tags';
+import { TagsModel } from '@/models';
+import { RenderTags } from '@/views/tags';
 import '../layout.scss';
 
 const useStyles = makeStyles((theme: Theme) =>

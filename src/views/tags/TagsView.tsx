@@ -1,14 +1,13 @@
 import React , { useState , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
-import { findPostsByTagsAsync , initLoadingState } from '../../reducer/postsReducer';
-import PostsList from '../posts/PostsList';
-import Progress from '../common/Progress';
-import { RootState } from '../../reducer/rootReducer';
+import { findPostsByTagsAsync , initLoadingState } from '@/reducer/postsReducer';
+import { PostsList } from '@/views/posts';
+import { Progress , Paging } from '@/views/common';
+import { RootState } from '@/reducer';
 import { Dispatch } from 'redux';
-import Paging from '../../views/common/Paging';
 import qs from 'qs';
 import { createBrowserHistory } from 'history';
-import { Pageable } from '../../models';
+import { Pageable } from '@/models';
 
 function onFindPostsByTags(dispatch: Dispatch , name: string , pageable: Pageable) {
 	dispatch(findPostsByTagsAsync({'name': name , 'pageable': pageable}));

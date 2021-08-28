@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './scss/header.scss';
 import MainHeader from './main/MainHeader';
 import SubHeader from './sub/SubHeader';

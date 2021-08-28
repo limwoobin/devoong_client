@@ -3,8 +3,7 @@ import './about.scss';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import MarkdownRender from '../common/MarkdownRender';
-import TitleView from '../../views/common/TitleView';
+import { TitleView , MarkdownRender } from '@/views/common';
 
 const data = `
 > # 임우빈 (woobeen lim)

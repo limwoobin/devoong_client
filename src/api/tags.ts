@@ -1,5 +1,5 @@
 import { http } from '@/core/http';
-import { TagsModel } from '../models';
+import { TagsModel } from '@/models';
 import { BASE_URL } from './config';
 
 export const findTags = async(): Promise<TagsModel[]> => {

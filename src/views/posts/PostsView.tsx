@@ -1,15 +1,14 @@
 import React from 'react';
-import Progress from '../common/Progress';
+import { Progress , TitleView } from '@/views/common';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { PostsModel, TagsModel, PostsCard } from '../../models';
-import TitleView from '../common/TitleView';
+import { PostsModel, TagsModel, PostsCard } from '@/models';
 import Utterances from './Utterances';
 import PostsBox from './PostsBox';
-import { Direction } from '../../core/enums';
-import { MarkdownContainer } from '../../container';
-import { RenderTags } from '../tags';
+import { Direction } from '@/core/enums';
+import { MarkdownContainer } from '@/container';
+import { RenderTags } from '@/views/tags';
 import './posts.scss';
 
 function Blank() {

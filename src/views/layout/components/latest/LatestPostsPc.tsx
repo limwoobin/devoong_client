@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PostsModel } from '../../../../models';
+import { PostsModel } from '@/models';
 import { ILatestPosts } from './ILatestPosts';
 import { DateUtils } from '@/core/utils';
 import { DateType } from '@/core/enums';
@@ -15,7 +15,6 @@ function renderLatestPosts(latestPosts: PostsModel[]) {
 						<b style={{ color: 'white' , fontSize: '1.0rem'}}>{data.title}</b>
 						<br />
 						<label style={{ fontSize: '0.8rem' }}>
-							{/* {data.createdDate} */}
 							{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , data.createdDate!)}
 						</label>
 					</p>

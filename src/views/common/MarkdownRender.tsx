@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Progress from '../common/Progress';
+import Progress from './Progress';
 import './markdown.scss';
 
 interface IMarkdownRender {
