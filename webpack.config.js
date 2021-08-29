@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const port = process.env.PORT || 3000;
 const path = require('path');
 const dotenv = require('dotenv');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env , options) => {
     dotenv.config({
@@ -89,6 +89,8 @@ module.exports = (env , options) => {
                     }
                 }
             },
+            minimize: true,
+            minimizer: [new TerserPlugin()]
         },
         devtool: 'inline-source-map',
         plugins:[
@@ -101,11 +103,6 @@ module.exports = (env , options) => {
                 'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL)
             }),
             new webpack.EnvironmentPlugin(['REACT_APP_BASE_URL']),
-            new BundleAnalyzerPlugin(),
-            [
-                "import",
-                { libraryName: "antd", libraryDirectory: "es", style: "css" }
-            ],
         ],
         devServer: {
             port: port,
