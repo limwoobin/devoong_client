@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const port = process.env.PORT || 3000;
 const path = require('path');
 const dotenv = require('dotenv');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env , options) => {
     dotenv.config({
@@ -78,6 +79,17 @@ module.exports = (env , options) => {
                 }
             ]
         },
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    commons: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        chunks: 'all'
+                    }
+                }
+            },
+        },
         devtool: 'inline-source-map',
         plugins:[
             new HtmlWebpackPlugin({
@@ -88,7 +100,12 @@ module.exports = (env , options) => {
             new webpack.DefinePlugin({
                 'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL)
             }),
-            new webpack.EnvironmentPlugin(['REACT_APP_BASE_URL'])
+            new webpack.EnvironmentPlugin(['REACT_APP_BASE_URL']),
+            new BundleAnalyzerPlugin(),
+            [
+                "import",
+                { libraryName: "antd", libraryDirectory: "es", style: "css" }
+            ],
         ],
         devServer: {
             port: port,
