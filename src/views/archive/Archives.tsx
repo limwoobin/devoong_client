@@ -12,7 +12,9 @@ import Typography from '@material-ui/core/Typography';
 import { Progress } from '@/views/common';
 import { ArchiveGroupModel , ArchiveModel } from '@/models';
 import { Link } from 'react-router-dom';
+import { TitleView } from '@/views/common';
 import ArchiveBox from './ArchivesBox';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -62,7 +64,8 @@ function renderArchives(data: ArchiveModel[]) {
 
 export default function Archives({data , isLoading}: IArchives) {
 	return (
-		<>
+		<Container maxWidth="md">
+			<TitleView title="Archives" />
 			{!isLoading ? <Progress /> :
 				<React.Fragment>
 					<Timeline align="left">
@@ -70,7 +73,7 @@ export default function Archives({data , isLoading}: IArchives) {
 					</Timeline>
 				</React.Fragment>	
 			}
-		</>
+		</Container>
 	);
 }
 

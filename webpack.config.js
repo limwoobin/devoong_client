@@ -6,6 +6,8 @@ const dotenv = require('dotenv');
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env , options) => {
+    console.log('env' , env);
+    console.log('options' , options);
     dotenv.config({
         path: `.env.${options.state || 'dev'}`
     });
@@ -81,13 +83,7 @@ module.exports = (env , options) => {
         },
         optimization: {
             splitChunks: {
-                cacheGroups: {
-                    commons: {
-                        test: /[\\/]node_modules[\\/]/,
-                        name: 'vendors',
-                        chunks: 'all'
-                    }
-                }
+                chunks: 'all'
             },
             minimize: true,
             minimizer: [new TerserPlugin()]

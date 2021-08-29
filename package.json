@@ -9,7 +9,9 @@
     "start": "webpack-dev-server --mode none --open --hot",
     "start:dev": "webpack-dev-server --mode development --open --state dev",
     "start:prod": "webpack-dev-server --mode production --open --state prod",
-    "build": "webpack"
+    "build": "webpack",
+    "build:dev": "webpack --state dev",
+    "build:prod": "webpack --state prod"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
