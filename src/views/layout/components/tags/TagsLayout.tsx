@@ -9,10 +9,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		root: {
 			display: 'flex',
 			justifyContent: 'center',
-			flexWrap: 'wrap',
-			'& > *': {
-				margin: theme.spacing(0.5),
-			},
 		},
 	}),
 );
@@ -29,7 +25,8 @@ export default function TagsLayout(props: TagsPcProps) {
 		<aside className="pDRpR">
 			<section className="fNlsam kPSwsK">
 				<h3>Tag</h3>
-				<div className={classes.root}>
+				{/* <div className={classes.root}>justifyContent */}
+				<div style={{ display: 'flex' , justifyContent: 'center' }}>
 					<RenderTags tags={tags} />
 				</div>
 			</section>

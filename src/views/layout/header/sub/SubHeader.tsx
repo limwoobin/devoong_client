@@ -8,7 +8,7 @@ export default function SubHeader() {
 			<header className="sub_head">
 				<div className="sub_head_area">
 					<div className="main_text">
-						<a href="/">
+						<a href="/" style={{ textDecoration: 'none' }}>
 							{/* Drogbalog */}
 							Devoongii
 						</a>
