@@ -61,7 +61,6 @@
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
     "@types/styled-components": "^5.1.9",
-    "antd": "^4.1.0",
     "axios": "^0.21.1",
     "babel-plugin-transform-imports": "^2.0.0",
     "bootstrap": "^4.5.0",

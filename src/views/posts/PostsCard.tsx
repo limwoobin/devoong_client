@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import { makeStyles } from '@material-ui/core/styles';
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { DateUtils } from '@/core/utils/DateUtils';
 import { DateType, TagType } from '@/core/enums';
@@ -25,8 +25,20 @@ const useStyles = makeStyles({
 	},
 });
 
+const useStyles2 = makeStyles((theme: Theme) =>
+	createStyles({
+		root: {
+			'& > *': {
+				margin: theme.spacing(0.5),
+			},
+		},
+	}),
+);
+
+
 export default function PostsCard(props: any) {
 	const classes = useStyles();
+	const classes2 = useStyles2();
 	const { post } = props;
 
 	return (
@@ -49,9 +61,9 @@ export default function PostsCard(props: any) {
 						<Typography variant="body1" color="textPrimary" component="p">
 							{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
 						</Typography>
-						<div style={{ paddingTop: '15px' }}>
+						<div className={classes2.root} style={{ paddingTop: '15px' }}>
 							{post.tagsResponseList 
-								? <RenderTags tags={post.tagsResponseList} tagType={TagType.VOLCANO} />
+								? <RenderTags tags={post.tagsResponseList} tagType={TagType.PURPLE} />
 								: '' 
 							}
 						</div>

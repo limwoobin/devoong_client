@@ -1,8 +1,7 @@
 export enum TagType {
-	MAGENTA = 'magenta',
 	ORANGE = 'orange',
-	LIME = 'lime',
-	PURPLE = 'purple',
+	LIFE_ORANGE = '#FFBB00',
+	PURPLE = '#0000B7',
 	RED = 'red',
-	VOLCANO = 'volcano'
+	GRAY = '#005766'
 }
