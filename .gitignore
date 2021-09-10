@@ -1,4 +1,4 @@
 node_modules
 secret_data.json
-build
+# build
 ./yarn-error.log

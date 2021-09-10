@@ -1,9 +1,10 @@
 {
-  "name": "react-hooks",
+  "name": "devoong",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/limwoobin/react-hooks.git",
+  "repository": "https://github.com/limwoobin/devoong_client.git",
   "author": "drogba <drogba02@naver.com>",
+  "homepage": "http://limwoobin.github.io/devoong_client",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode none --open --hot",
@@ -11,7 +12,9 @@
     "start:prod": "webpack-dev-server --mode=production --open --state prod",
     "build": "webpack",
     "build:dev": "webpack --mode=development --state dev",
-    "build:prod": "webpack --mode=production --state prod"
+    "build:prod": "webpack --mode=production --state prod",
+    "predeploy": "webpack --mode=production --state prod",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -79,6 +82,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "formik": "^2.1.4",
+    "gh-pages": "^3.2.3",
     "global": "^4.4.0",
     "immer": "^8.0.1",
     "immutable": "^4.0.0-rc.12",
