@@ -3,7 +3,6 @@ import { Route , Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import {
 	NoMatch,
-	Prepare,
 	About,
 	PostsContainer,
 	PostsRouter,
@@ -23,7 +22,6 @@ export default function Router() {
 				<Route path="/posts" component={PostsRouter} />
 				<Route path="/tags" component={TagsRouter} />
 				<Route path="/about" component={About} />
-				<Route path="/tags" component={Prepare} />
 				<Route path="/archive" component={ArchiveContainer} />
 				<Route component={NoMatch} />
 			</Switch>

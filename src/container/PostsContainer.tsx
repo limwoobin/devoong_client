@@ -8,6 +8,7 @@ import { Paging } from '@/views/common';
 import { Pageable } from '@/models';
 import qs from 'qs';
 import { createBrowserHistory } from 'history';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function onSearchPosts(dispatch: Dispatch , pageable: Pageable) {
 	dispatch(searchPostsAsync(pageable));
@@ -55,7 +56,8 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 		(state: RootState) => state.postsReducer);
 
 	return (
-		<>
+		<React.Fragment>
+			<CssBaseline />
 			<PostsList data={posts} isLoading={isLoading} />
 			<Paging 
 				totalPages={posts.totalPages} 
@@ -63,6 +65,6 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 				handlePageChange={onChangePage}
 				selectedPage={pageNumber}
 			/>
-		</>
+		</React.Fragment>	
 	);
 }

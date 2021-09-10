@@ -4,6 +4,7 @@ import { RootState } from '@/reducer';
 import { Dispatch } from 'redux';
 import { findPostsArchivesAsync , initLoadingState } from '@/reducer/postsReducer';
 import Archives from '@/views/archive/Archives';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function onFindPostsArchives(dispatch: Dispatch) {
 	dispatch(findPostsArchivesAsync());
@@ -26,8 +27,9 @@ export default function ArchiveContainer() {
 	);
 
 	return (
-		<div>
+		<React.Fragment>
+			<CssBaseline />
 			<Archives data={archives} isLoading={isLoading} />
-		</div>
+		</React.Fragment>
 	);
 }

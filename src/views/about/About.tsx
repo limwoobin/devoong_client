@@ -1,7 +1,5 @@
 import React from 'react';
-import './about.scss';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { TitleView , MarkdownRender } from '@/views/common';
 
@@ -35,10 +33,8 @@ export default function About() {
 		<React.Fragment>
 			<CssBaseline />
 			<Container maxWidth="md">
-				<Typography component="div" style={{ backgroundColor: '#363636' , height: '100vh' }}>
-					<TitleView title="About" />
-					<MarkdownRender data={data} isLoading={true} />
-				</Typography>
+				<TitleView title="About" />
+				<MarkdownRender data={data} isLoading={true} />
 			</Container>
 		</React.Fragment>
 	);
