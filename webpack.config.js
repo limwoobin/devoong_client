@@ -28,9 +28,8 @@ module.exports = (env , options) => {
             './src/index.tsx',
         ],
         output:{
-            filename: 'bundle.js',
-            path: path.resolve(__dirname + '/build'),
-            publicPath: '/',
+            path: path.resolve(__dirname , 'build'),
+            filename: 'main.bundle.js',
         },
         resolve:{
             extensions: [".jsx" , ".js" , ".tsx" , ".ts"],

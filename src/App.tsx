@@ -9,7 +9,7 @@ export default function App() {
 
 	return (
 		<div style={{backgroundColor: '#363636'}}>
-			<BrowserRouter>
+			<BrowserRouter basename={process.env.PUBLIC_URL}>
 				<Header />
 				<Container maxWidth="lg">
 					<div style={{paddingBottom: '20px' , minHeight: '100%'}}>
