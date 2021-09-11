@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from '@/views/layout/header/Header';
 import './styles/style.scss';
 import Main from '@/views/Main';
@@ -9,14 +9,14 @@ export default function App() {
 
 	return (
 		<div style={{backgroundColor: '#363636'}}>
-			<BrowserRouter basename={process.env.PUBLIC_URL}>
+			<Router basename="devoong_client">
 				<Header />
 				<Container maxWidth="lg">
 					<div style={{paddingBottom: '20px' , minHeight: '100%'}}>
 						<Main />
 					</div>
 				</Container>
-			</BrowserRouter>
+			</Router>
 			{/* <Footer /> */}
 		</div>
 	);
