@@ -4,23 +4,13 @@ const port = process.env.PORT || 3000;
 const path = require('path');
 const dotenv = require('dotenv');
 const TerserPlugin = require("terser-webpack-plugin");
-const removeConsolePlugIn = require('babel-plugin-transform-remove-console');
 
 module.exports = (env , options) => {
     dotenv.config({
         path: `.env.${options.state || 'dev'}`
     });
 
-    console.log('Server State:' + options.state);
-
-    let mode;
-    if (options.state === 'dev') {
-        mode = 'development';
-    } else if (options.state === 'prod') {
-        mode = 'production'
-    } else {
-        mode = 'none';
-    }
+    const mode = options.mode || 'none';
 
     return {
         mode: mode,
@@ -93,7 +83,19 @@ module.exports = (env , options) => {
                 chunks: 'all'
             },
             minimize: true,
-            minimizer: [new TerserPlugin()]
+            minimizer: [
+                options.mode === 'production' 
+                ? new TerserPlugin({
+                        terserOptions: {
+                            compress: { drop_console: true },
+                        }
+                })
+                : new TerserPlugin({
+                    terserOptions: {
+                        compress: { drop_console: false },
+                    }
+                })
+            ]
         },
         devtool: 'inline-source-map',
         plugins:[

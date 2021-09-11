@@ -11,8 +11,8 @@
     "start:dev": "webpack-dev-server --mode=development --open --state dev",
     "start:prod": "webpack-dev-server --mode=production --open --state prod",
     "build": "webpack",
-    "build:dev": "webpack --mode=development --state dev",
-    "build:prod": "webpack --mode=production --state prod",
+    "build:dev": "webpack --mode development --state dev",
+    "build:prod": "webpack --mode production --state prod",
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {

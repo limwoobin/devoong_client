@@ -6,10 +6,12 @@ import Main from '@/views/Main';
 import Container from '@material-ui/core/Container';
 
 export default function App() {
+	const basename = process.env.NODE_ENV === 'production' ? 'devoong_client' : '';
 
 	return (
 		<div style={{backgroundColor: '#363636'}}>
-			<Router basename="devoong_client">
+			{/* <Router basename="devoong_client"> */}
+			<Router basename={basename}>
 				<Header />
 				<Container maxWidth="lg">
 					<div style={{paddingBottom: '20px' , minHeight: '100%'}}>
