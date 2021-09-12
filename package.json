@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/limwoobin/devoong_client.git",
   "author": "drogba <drogba02@naver.com>",
-  "homepage": "https://limwoobin.github.io/devoong_client",
+  "homepage": "https://www.devoong.com",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode none --open --hot",

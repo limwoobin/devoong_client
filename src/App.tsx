@@ -10,8 +10,7 @@ export default function App() {
 
 	return (
 		<div style={{backgroundColor: '#363636'}}>
-			{/* <Router basename="devoong_client"> */}
-			<Router basename={basename}>
+			<Router>
 				<Header />
 				<Container maxWidth="lg">
 					<div style={{paddingBottom: '20px' , minHeight: '100%'}}>
