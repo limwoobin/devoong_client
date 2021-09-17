@@ -18,8 +18,11 @@ module.exports = (env , options) => {
             './src/index.tsx',
         ],
         output:{
-            path: path.resolve(__dirname , 'build'),
-            filename: 'main.bundle.js',
+            filename: 'bundle.js',
+            path: path.resolve(__dirname + '/build'),
+            publicPath: '/',
+            // path: path.resolve(__dirname , 'build'),
+            // filename: 'main.bundle.js',
         },
         resolve:{
             extensions: [".jsx" , ".js" , ".tsx" , ".ts"],
@@ -87,7 +90,8 @@ module.exports = (env , options) => {
                 options.mode === 'production' 
                 ? new TerserPlugin({
                         terserOptions: {
-                            compress: { drop_console: true },
+                            // compress: { drop_console: true },
+                            compress: { drop_console: false },
                         }
                 })
                 : new TerserPlugin({
@@ -105,7 +109,7 @@ module.exports = (env , options) => {
                 filename: 'index.html'
             }),
             new webpack.DefinePlugin({
-                'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL)
+                'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL),
             }),
             new webpack.EnvironmentPlugin(['REACT_APP_BASE_URL']),
         ],
@@ -114,10 +118,6 @@ module.exports = (env , options) => {
             open: true,
             historyApiFallback: true,
             proxy : {
-                // "**": {
-                //     target: 'http://localhost:8080',
-                //     changeOrigin: true,
-                // }
                 "/limwoobin": {
                     target: 'https://raw.githubusercontent.com',
                     changeOrigin: true,

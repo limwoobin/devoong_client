@@ -21,7 +21,7 @@ interface IPostViewContainer {
 	};
 }
 
-	export default function PostsViewContainer({match}: IPostViewContainer) {
+export default function PostsViewContainer({match}: IPostViewContainer) {
 	const id = match.params.id;
 	const dispatch = useDispatch();
 

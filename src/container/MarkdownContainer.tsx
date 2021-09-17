@@ -22,9 +22,10 @@ export default function MarkdownContainer({uri} : IMarkdownContainer) {
 	const dispatch = useDispatch();
 
 	useLayoutEffect(() => {
-		console.log('markdown effect ###');
-		onInitMarkdown(dispatch);
-		onFindMarkdown(dispatch , uri);
+		if (uri) {
+			onInitMarkdown(dispatch);
+			onFindMarkdown(dispatch , uri);
+		}
 	} , [uri]);
 
 	const { data , isLoading } = useSelector(

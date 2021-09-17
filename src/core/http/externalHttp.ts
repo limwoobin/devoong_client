@@ -18,6 +18,7 @@ externalHttp.interceptors.request.use((config) => {
 });
 
 externalHttp.interceptors.request.use((config) => {
+	console.log('token ###' , secret_data.token.github);
 	console.log("========== O K ==========");
 	return config;
 } , (error) => {
@@ -44,7 +45,7 @@ externalHttp.interceptors.response.use((response) => {
 } , (error) => {
 	console.log('error.response ###' , error.response);
 	alert(error.message);
-	location.href = "/about";
+	location.href = "/";
 });
 
 export default externalHttp;
