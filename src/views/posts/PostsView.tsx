@@ -7,7 +7,7 @@ import { PostsModel, TagsModel, PostsCard } from '@/models';
 import Utterances from './Utterances';
 import PostsBox from './PostsBox';
 import { Direction } from '@/core/enums';
-import { MarkdownContainer } from '@/container';
+import { MarkdownRender } from '@/views/common';
 import { RenderTags } from '@/views/tags';
 import './posts.scss';
 
@@ -55,7 +55,7 @@ export default function PostsView({data , isLoading}: IPostsView) {
 						<RenderTags tags={tags} />
 						<Typography component="div" style={{ height: '100vh' , paddingTop: '3rem' }}>
 							<TitleView title={data.title!} />
-							<MarkdownContainer uri={data.contents!} />
+							<MarkdownRender data={data.contents!} isLoading={true} />
 							<Blank />
 							{renderPreviousAndNextPosts(data.previousPostsCard! , data.nextPostsCard!)}
 							<Utterances />
