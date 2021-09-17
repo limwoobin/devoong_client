@@ -90,8 +90,7 @@ module.exports = (env , options) => {
                 options.mode === 'production' 
                 ? new TerserPlugin({
                         terserOptions: {
-                            // compress: { drop_console: true },
-                            compress: { drop_console: false },
+                            compress: { drop_console: true },
                         }
                 })
                 : new TerserPlugin({

@@ -26,7 +26,6 @@ export default function PostsViewContainer({match}: IPostViewContainer) {
 	const dispatch = useDispatch();
 
 	useLayoutEffect(() => {
-		console.log('PostsViewContainer ###');
 		onInitLoadingState(dispatch);
 		onFindPosts(dispatch , id);
 	} , [id]);

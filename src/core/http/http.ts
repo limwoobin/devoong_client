@@ -42,8 +42,9 @@ http.interceptors.response.use((response) => {
 	console.log('axios response' , response);
 	return response;
 } , (error) => {
-	console.log('axios response error' , error);
-	return Promise.reject(error);
+	console.log('error ###' , error);
+	alert(error.message);
+	window.location.href='/';
 });
 
 export default http;

@@ -2,7 +2,7 @@ import React , { useState , useLayoutEffect } from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
 import PostsList from '@/views/posts/PostsList';
-import { searchPostsAsync , initLoadingState } from '@/reducer/postsReducer';
+import { searchPostsAsync , initLoadingState , initState } from '@/reducer/postsReducer';
 import { RootState } from '@/reducer';
 import { Paging } from '@/views/common';
 import { Pageable } from '@/models';
@@ -16,6 +16,10 @@ function onSearchPosts(dispatch: Dispatch , pageable: Pageable) {
 
 function onInitLoadingState(dispatch: Dispatch) {
 	dispatch(initLoadingState());
+}
+
+function onInitState(dispatch : Dispatch) {
+	dispatch(initState());
 }
 
 interface IPostsContainer {
@@ -61,9 +65,9 @@ export default function PostsContainer({ tagId , searchWord }: IPostsContainer) 
 			<PostsList data={posts} isLoading={isLoading} />
 			<Paging 
 				totalPages={posts.totalPages} 
-				pagable={posts.pageable}
-				handlePageChange={onChangePage}
-				selectedPage={pageNumber}
+			 	pagable={posts.pageable}
+			 	handlePageChange={onChangePage}
+			 	selectedPage={pageNumber}
 			/>
 		</React.Fragment>	
 	);
