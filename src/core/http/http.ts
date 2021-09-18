@@ -41,7 +41,7 @@ http.interceptors.request.use((config) => {
 http.interceptors.response.use((response) => {
 	return response;
 } , (error) => {
-	alert(error.message);
+	console.log(error.message);
 	return Promise.reject(error);
 });
 

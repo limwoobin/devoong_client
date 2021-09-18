@@ -1,5 +1,4 @@
 import axios from 'axios';
-import secret_data from '../../../secret_data.json';
 
 const externalHttp = axios.create({
 	baseURL: '/',
@@ -11,14 +10,12 @@ const externalHttp = axios.create({
 externalHttp.defaults.headers['Accept'] = '*/*';
 externalHttp.defaults.headers['Access-Control-Allow-Origin'] = "*";
 externalHttp.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-externalHttp.defaults.headers['Authorization'] = 'Bearer ' + secret_data.token.github;
 
 externalHttp.interceptors.request.use((config) => {
 	return config;
 });
 
 externalHttp.interceptors.request.use((config) => {
-	console.log('token ###' , secret_data.token.github);
 	console.log("========== O K ==========");
 	return config;
 } , (error) => {

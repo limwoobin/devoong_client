@@ -13,6 +13,5 @@ function* findTagsSaga() {
 		yield put(findTags(response));
 	} catch (error) {
 		yield put ({ type: 'FAILED', error });
-		history.back();
 	}
 }

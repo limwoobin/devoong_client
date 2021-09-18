@@ -23,7 +23,8 @@ function* searchPostsSaga({payload: paggeable}: any) {
 		yield put(searchData(response));
 	} catch(error) {
 		yield put ({ type: 'FAILED', error });
-		history.back();
+		alert(error);
+		// history.back();
 	}
 }
 
@@ -33,6 +34,7 @@ function* getPostsSaga({payload: id}: any) {
 		yield put(getPosts(response));
 	} catch(error) {
 		yield put ({ type: 'FAILED', error });
+		alert(error);
 		history.back();
 	}
 }
@@ -43,7 +45,6 @@ function* findLatestPostsSaga() {
 		yield put(findLatestPosts(response));
 	} catch(error) {
 		yield put ({ type: 'FAILED', error });
-		history.back();
 	}
 }
 
@@ -53,6 +54,7 @@ function* findPostsByTagsSaga({payload: {name , pageable}}: any) {
 		yield put(findPostsByTags(response));
 	} catch (error) {
 		yield put ({ type: 'FAILED', error });
+		alert(error);
 		history.back();
 	}
 }
@@ -71,6 +73,7 @@ function* findPostsArchivesSaga() {
 		yield put(findPostsArchives(response));
 	} catch (error) {
 		yield put ({ type: 'FAILED', error });
+		alert(error);
 		history.back();
 	}
 }
