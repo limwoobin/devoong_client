@@ -39,12 +39,10 @@ http.interceptors.request.use((config) => {
 });
 
 http.interceptors.response.use((response) => {
-	console.log('axios response' , response);
 	return response;
 } , (error) => {
-	console.log('error ###' , error);
 	alert(error.message);
-	window.location.href='/';
+	return Promise.reject(error);
 });
 
 export default http;

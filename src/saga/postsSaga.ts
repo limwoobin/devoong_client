@@ -18,23 +18,43 @@ export default function* postsSaga() {
 }
 
 function* searchPostsSaga({payload: paggeable}: any) {
-	const response: PageModel = yield call(API.getPostsAll , paggeable);
-	yield put(searchData(response));
+	try {
+		const response: PageModel = yield call(API.getPostsAll , paggeable);
+		yield put(searchData(response));
+	} catch(error) {
+		yield put ({ type: 'FAILED', error });
+		history.back();
+	}
 }
 
 function* getPostsSaga({payload: id}: any) {
-	const response: PostsModel = yield call(API.getPosts , id);
-	yield put(getPosts(response));
+	try {
+		const response: PostsModel = yield call(API.getPosts , id);
+		yield put(getPosts(response));
+	} catch(error) {
+		yield put ({ type: 'FAILED', error });
+		history.back();
+	}
 }
 
 function* findLatestPostsSaga() {
-	const response: PostsModel[] = yield call(API.getLatestPosts);
-	yield put(findLatestPosts(response));
+	try {
+		const response: PostsModel[] = yield call(API.getLatestPosts);
+		yield put(findLatestPosts(response));
+	} catch(error) {
+		yield put ({ type: 'FAILED', error });
+		history.back();
+	}
 }
 
 function* findPostsByTagsSaga({payload: {name , pageable}}: any) {
-	const response: PageModel = yield call(API.getPostsByTags , name , pageable);
-	yield put(findPostsByTags(response));
+	try {
+		const response: PageModel = yield call(API.getPostsByTags , name , pageable);
+		yield put(findPostsByTags(response));
+	} catch (error) {
+		yield put ({ type: 'FAILED', error });
+		history.back();
+	}
 }
 
 function* initLoadingStateSaga() {
@@ -46,6 +66,11 @@ function* initStateSaga() {
 }
 
 function* findPostsArchivesSaga() {
-	const response: ArchiveGroupModel[] = yield call(API.getPostsArchives);
-	yield put(findPostsArchives(response));
+	try {
+		const response: ArchiveGroupModel[] = yield call(API.getPostsArchives);
+		yield put(findPostsArchives(response));
+	} catch (error) {
+		yield put ({ type: 'FAILED', error });
+		history.back();
+	}
 }

@@ -8,6 +8,11 @@ export default function* tagsSaga() {
 }
 
 function* findTagsSaga() {
-	const response: TagsModel = yield call(API.findTags);
-	yield put(findTags(response));
+	try {
+		const response: TagsModel = yield call(API.findTags);
+		yield put(findTags(response));
+	} catch (error) {
+		yield put ({ type: 'FAILED', error });
+		history.back();
+	}
 }
