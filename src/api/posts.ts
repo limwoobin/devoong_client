@@ -30,4 +30,4 @@ export const getPostsArchives = async(): Promise<ArchiveGroupModel[]> => {
 	const url = BASE_URL + '/posts/archives';
 	const response = await http.get(url);
 	return response.data;
-}
+};
