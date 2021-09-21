@@ -3,7 +3,7 @@ import { Progress , TitleView } from '@/views/common';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { PostsModel, TagsModel, PostsCard } from '@/models';
+import { PostsModel, TagsModel, PostsCard, ErrorModel } from '@/models';
 import Utterances from './Utterances';
 import PostsBox from './PostsBox';
 import { Direction } from '@/core/enums';
@@ -41,9 +41,10 @@ function renderPreviousAndNextPosts(previousData: PostsCard , nextData: PostsCar
 interface IPostsView {
 	data: PostsModel | any;
 	isLoading: boolean;
+	errorData: ErrorModel;
 }
 
-export default function PostsView({data , isLoading}: IPostsView) {
+export default function PostsView({data , isLoading , errorData}: IPostsView) {
 	const tags: TagsModel[] = data.tagsResponseList;
 
 	return (

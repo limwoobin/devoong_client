@@ -1,5 +1,5 @@
 import { createAction , createReducer } from '@reduxjs/toolkit';
-import { PageModel } from '@/models';
+import { ErrorModel, PageModel } from '@/models';
 
 // Action Type
 export const SEARCH_POSTS_ASYNC = 'SEARCH_POSTS_ASYNC';
@@ -7,6 +7,7 @@ const SEARCH_DATA = 'SEARCH_DATA';
 
 export const GET_POSTS_ASYNC = 'GET_POSTS_ASYNC';
 const GET_POSTS = 'GET_POSTS';
+export const GET_POSTS_ERROR = 'GET_POSTS_ERROR';
 
 export const FIND_LATEST_POSTS_ASYNC = 'FIND_LATEST_POSTS_ASYNC';
 const FIND_LATEST_POSTS = 'FIND_LATEST_POSTS';
@@ -29,6 +30,7 @@ export const searchData: any = createAction(SEARCH_DATA);
 
 export const getPostsAsync: any = createAction(GET_POSTS_ASYNC);
 export const getPosts: any = createAction(GET_POSTS);
+export const getPostsError: any = createAction(GET_POSTS_ERROR);
 
 export const findLatestPostsAsync: any = createAction(FIND_LATEST_POSTS_ASYNC);
 export const findLatestPosts: any = createAction(FIND_LATEST_POSTS);
@@ -48,6 +50,7 @@ export const findPostsArchives: any = createAction(FIND_POSTS_ARCHIVES);
 // initState
 const initialState = {
 	isLoading: false,
+	errorData: new ErrorModel(),
 	posts: new PageModel(),
 	lastId: 0,
 	latestPosts: [],
@@ -70,6 +73,13 @@ export default createReducer(initialState , {
 		state.data = data;
 		state.isLoading = true;
 	},
+	[GET_POSTS_ERROR]: (state , {payload: error}) => {
+		state.isLoading = false;
+		state.errorData.isError = true;
+		state.errorData.code = error.code;
+		state.errorData.message = error.message;
+		state.isLoading = true;
+	},
 	[FIND_LATEST_POSTS]: (state , {payload: data}) => {
 		state.latestPosts = data;
 	},
@@ -80,6 +90,7 @@ export default createReducer(initialState , {
 	},
 	[INIT_LOADING_STATE_FALSE]: (state) => {
 		state.isLoading = false;
+		state.errorData = new ErrorModel();
 	},
 	[INIT_STATE_COMPLETE]: (state) => {
 		state.isLoading = false;

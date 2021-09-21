@@ -3,7 +3,7 @@ import { call , put , takeEvery } from 'redux-saga/effects';
 import { ArchiveGroupModel, PageModel, PostsModel } from '@/models';
 import { SEARCH_POSTS_ASYNC , GET_POSTS_ASYNC , FIND_LATEST_POSTS_ASYNC ,
 	FIND_POSTS_BY_TAGS_ASYNC , INIT_LOADING_STATE , INIT_STATE , FIND_POSTS_ARCHIVES_ASYNC ,
-	searchData , getPosts , findLatestPosts , findPostsByTags 
+	searchData , getPosts , getPostsError , findLatestPosts , findPostsByTags 
 	, initLoadingStateFalse , initStateComplete , findPostsArchives }
 	from '@/reducer/postsReducer';
 
@@ -24,7 +24,7 @@ function* searchPostsSaga({payload: paggeable}: any) {
 	} catch(error) {
 		yield put ({ type: 'FAILED', error });
 		alert(error);
-		// history.back();
+		window.location.href="/";
 	}
 }
 
@@ -33,9 +33,7 @@ function* getPostsSaga({payload: id}: any) {
 		const response: PostsModel = yield call(API.getPosts , id);
 		yield put(getPosts(response));
 	} catch(error) {
-		yield put ({ type: 'FAILED', error });
-		alert(error);
-		history.back();
+		yield put(getPostsError(error));
 	}
 }
 

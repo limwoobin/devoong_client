@@ -14,10 +14,6 @@ http.defaults.headers['RefreshToken'] = localStorage.getItem('refreshtoken');
 http.defaults.headers.post['Content-Type'] = 'application/json';
 
 http.interceptors.request.use((config) => {
-	return config;
-});
-
-http.interceptors.request.use((config) => {
 	console.log("========== O K ==========");
 	return config;
 } , (error) => {
@@ -39,10 +35,11 @@ http.interceptors.request.use((config) => {
 });
 
 http.interceptors.response.use((response) => {
+	console.log(response);
 	return response;
 } , (error) => {
-	console.log(error.message);
-	return Promise.reject(error);
+	console.log(error.response.data);
+	return Promise.reject(error.response.data);
 });
 
 export default http;

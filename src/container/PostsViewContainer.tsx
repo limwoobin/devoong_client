@@ -4,6 +4,7 @@ import { getPostsAsync , initLoadingState } from '@/reducer/postsReducer';
 import { Dispatch } from 'redux';
 import { PostsView } from '@/views/posts';
 import { RootState } from '@/reducer';
+import { CustomModal } from '@/views/common';
 
 function onFindPosts(dispatch: Dispatch, id: number) {
 	dispatch(getPostsAsync(id));
@@ -30,12 +31,15 @@ export default function PostsViewContainer({match}: IPostViewContainer) {
 		onFindPosts(dispatch , id);
 	} , [id]);
 
-	const { data , isLoading } = useSelector(
+	const { data , isLoading , errorData } = useSelector(
 		(state: RootState) => state.postsReducer);
 
 	return (
 		<>
-			<PostsView data={data} isLoading={isLoading} />
+			{errorData.isError ? 
+				<CustomModal title={errorData.code} message={errorData.message} action={() => window.location.href="/"} /> 
+				: <PostsView data={data} isLoading={isLoading} errorData={errorData} />
+			}
 		</>
 	);
 }

@@ -6,3 +6,4 @@ export { default as PostsCard } from './PostsCard';
 export { default as Pageable } from './Pageable';
 export { default as ArchiveModel } from './ArchiveModel';
 export { default as ArchiveGroupModel } from './ArchiveGroupModel';
+export { default as ErrorModel } from './ErrorModel';
