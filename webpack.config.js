@@ -104,7 +104,7 @@ module.exports = (env , options) => {
         plugins:[
             new HtmlWebpackPlugin({
                 template: './public/index.html',
-                favicon: './public/favicon.png',
+                favicon: './public/myfavicon.ico',
                 filename: 'index.html'
             }),
             new webpack.DefinePlugin({
