@@ -4,13 +4,13 @@ import Header from '@/views/layout/header/Header';
 import './styles/style.scss';
 import Main from '@/views/Main';
 import Container from '@material-ui/core/Container';
-import SEO from './SEO';
+import SEO from './views/SEO';
 
 export default function App() {
 	return (
 		<div style={{backgroundColor: '#363636'}}>
+			<SEO />
 			<Router>
-				<SEO />
 				<Header />
 				<Container maxWidth="lg">
 					<div style={{paddingBottom: '20px' , minHeight: '100%'}}>
