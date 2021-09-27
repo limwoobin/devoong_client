@@ -11,14 +11,15 @@ export default function SEO() {
 		<>
 			<Helmet>
 				<title>{title}</title>
-				<meta name="description" content={description} />
-				<meta name="url" content={url} />
-				<meta name="image" content={image} />
-				<meta property="og:title" content={title} />
-				<meta property="og:type" content="website" />
-				<meta property="og:description" content={description} />
-				<meta property="og:url" content={url} />
-				<meta property="og:image" content={image} />
+				<meta charSet="utf-8" />
+				<meta name="description" content={description} data-react-helmet="true" />
+				<meta name="url" content={url} data-react-helmet="true" />
+				<meta name="image" content={image} data-react-helmet="true" />
+				<meta property="og:title" content={title} data-react-helmet="true" />
+				<meta property="og:type" content="website" data-react-helmet="true" />
+				<meta property="og:description" content={description} data-react-helmet="true" />
+				<meta property="og:url" content={url} data-react-helmet="true" />
+				<meta property="og:image" content={image} data-react-helmet="true" />
 			</Helmet>
 		</>
 	);
