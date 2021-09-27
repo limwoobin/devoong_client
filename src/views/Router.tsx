@@ -23,6 +23,7 @@ export default function Router() {
 				<Route path="/tags" component={TagsRouter} />
 				<Route path="/about" component={About} />
 				<Route path="/archive" component={ArchiveContainer} />
+				<Route path="/public" />
 				<Route component={NoMatch} />
 			</Switch>
 		</MainDiv>
