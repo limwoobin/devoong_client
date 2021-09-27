@@ -8,7 +8,7 @@ export default function SEO() {
 	const image = 'https://user-images.githubusercontent.com/28802545/134803711-b1d37a77-0b43-48cb-bafb-2b40057d86b5.png';
 
 	return (
-		<>
+		<div>
 			<Helmet>
 				<title>{title}</title>
 				<meta charSet="utf-8" />
@@ -21,6 +21,17 @@ export default function SEO() {
 				<meta property="og:url" content={url} data-react-helmet="true" />
 				<meta property="og:image" content={image} data-react-helmet="true" />
 			</Helmet>
-		</>
+			{/* <Helmet
+				title={title}
+				meta={[
+					{"name": "description" , "content": description},
+					{property: "og:title" , "content": title},
+					{property: "og:type" , "content": "website"},
+					{property: "og:description" , "content": description},
+					{property: "og:url" , "content": url},
+					{property: "og:image" , "content": image},
+				]}
+			/> */}
+		</div>
 	);
 }
