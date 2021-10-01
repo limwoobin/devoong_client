@@ -16,9 +16,9 @@ export default function PostsBox(props: IPostsBox) {
 	return (
 		<div>
 			{!emptyMessage ?
-				<Link key={id} to={{ pathname: `/posts/${id}` , state: {id}}}>
+				<Link key={id} to={{ pathname: `/posts/${id}` , state: {id}}} style={{ textDecoration: 'none' }}>
 					<div className="blockArea">
-						{state} - {title}
+						{state?.toLocaleUpperCase()} - {title}
 					</div>
 				</Link> :
 				<div className="blockArea">
