@@ -1,51 +1,51 @@
-div {
+.markdown-body div {
   font-size: 1rem;
-  line-height: 2.5rem;
+  // line-height: 2.5rem;
 }
 
-h1 {
+.markdown-body h1 {
   color: white;
 }
 
-h2 {
+.markdown-body h2 {
   color: white;
 }
 
-h3 {
+.markdown-body h3 {
   color: white;
 }
 
-h4 {
+.markdown-body h4 {
   color: white;
 }
 
-blockquote {
+.markdown-body blockquote {
   border-left: 5px #dd4c39 solid;
   padding-left: 10px;
   margin-bottom: 15px;
 }
 
-pre {
-  background: #21252b;
-  border-radius: 5px;
-  padding-top: 30px;
-  box-shadow: 0 10px 30px 0#21252b;
-  position: relative;
-}
+// pre {
+//   background: #21252b;
+//   border-radius: 5px;
+//   padding-top: 30px;
+//   box-shadow: 0 10px 30px 0#21252b;
+//   position: relative;
+// }
 
-pre::before {
-  background: #fc625d;
-  border-radius: 50%;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  content: " ";
-  height: 12px;
-  left: 12px;
-  margin-top: -20px;
-  position: absolute;
-  width: 12px;
-}
+// pre::before {
+//   background: #fc625d;
+//   border-radius: 50%;
+//   box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+//   content: " ";
+//   height: 12px;
+//   left: 12px;
+//   margin-top: -20px;
+//   position: absolute;
+//   width: 12px;
+// }
 
-code {
+.markdown-body code {
   display: block;
   overflow-x: auto;
   color: #abb2bf;
