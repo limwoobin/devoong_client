@@ -25,8 +25,7 @@ export default function TagsLayout(props: TagsPcProps) {
 		<aside className="pDRpR">
 			<section className="fNlsam kPSwsK">
 				<h3>Tag</h3>
-				{/* <div className={classes.root}>justifyContent */}
-				<div style={{ display: 'flex' , justifyContent: 'center' }}>
+				<div style={{ display: 'flex' , justifyContent: 'center' , lineHeight: '2.5rem' }}>
 					<RenderTags tags={tags} />
 				</div>
 			</section>
