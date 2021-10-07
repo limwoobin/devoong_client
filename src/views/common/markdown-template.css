@@ -675,6 +675,10 @@
   line-height: 1.25;
 }
 
+.markdown-body-dark p {
+  font-size: 1rem;
+}
+
 .markdown-body-dark h1 {
   font-size: 2em;
 }
