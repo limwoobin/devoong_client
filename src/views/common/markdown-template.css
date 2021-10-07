@@ -60,7 +60,7 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
-  color: #e8e8e8; /* 基本文字 */
+  color: #e8e8e8;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 16px;
@@ -137,7 +137,7 @@
 }
 
 .markdown-body-dark a {
-  color: #00bbff; /* 超链接 */
+  color: #00bbff;
   text-decoration: none;
 }
 
@@ -279,7 +279,6 @@
 .markdown-body-dark code,
 .markdown-body-dark pre {
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  font-size: 12px;
 }
 
 .markdown-body-dark pre {
@@ -398,7 +397,7 @@
 
 .markdown-body-dark .pl-c1,
 .markdown-body-dark .pl-s .pl-v {
-  color: #005cc5; /* 代码段函数名 */
+  color: #005cc5;
 }
 
 .markdown-body-dark .pl-e,
@@ -416,7 +415,7 @@
 }
 
 .markdown-body-dark .pl-k {
-  color: #d73a49; /* 代码段关键字 */
+  color: #d73a49;
 }
 
 .markdown-body-dark .pl-pds,
@@ -426,7 +425,7 @@
 .markdown-body-dark .pl-sr .pl-cce,
 .markdown-body-dark .pl-sr .pl-sra,
 .markdown-body-dark .pl-sr .pl-sre {
-  color: #032f62; /* 字符串常量 */
+  color: #032f62;
 }
 
 .markdown-body-dark .pl-smw,
@@ -646,14 +645,14 @@
   height: 0.25em;
   padding: 0;
   margin: 24px 0;
-  background-color: #888888; /* 分割线 */
+  background-color: #888888;
   border: 0;
 }
 
 .markdown-body-dark blockquote {
   padding: 0 1em;
-  color: #a8a8a8; /* 字体颜色 */
-  border-left: 0.25em solid #888888; /* 左边的线 */
+  color: #a8a8a8;
+  border-left: 0.25em solid #888888;
 }
 
 .markdown-body-dark blockquote > :first-child {
@@ -683,7 +682,7 @@
 .markdown-body-dark h1,
 .markdown-body-dark h2 {
   padding-bottom: 0.3em;
-  border-bottom: 1px solid #888888; /* 标题分割线 */
+  border-bottom: 1px solid #888888;
 }
 
 .markdown-body-dark h2 {
@@ -762,22 +761,22 @@
 .markdown-body-dark table td,
 .markdown-body-dark table th {
   padding: 6px 13px;
-  border: 1px solid #888888; /* 表格分割线 */
+  border: 1px solid #888888;
 }
 
 .markdown-body-dark table tr {
-  background-color: #323232; /* 表格背景色 */
+  background-color: #323232;
   border-top: 1px solid #c6cbd1;
 }
 
 .markdown-body-dark table tr:nth-child(2n) {
-  background-color: #4e4e4e; /* 表格深色背景 */
+  background-color: #4e4e4e;
 }
 
 .markdown-body-dark img {
   max-width: 100%;
   box-sizing: initial;
-  background-color: #282c34; /* 图片背景 */
+  background-color: #282c34;
 }
 
 .markdown-body-dark img[align="right"] {
@@ -792,7 +791,6 @@
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
-  background-color: #282828; /* `` 代码段背景 */
   border-radius: 3px;
 }
 
@@ -821,24 +819,23 @@
 
 .markdown-body-dark .highlight pre,
 .markdown-body-dark pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: #282828; /* 代码段背景 */
-  border-radius: 3px;
+  background: #21252b;
+  border-radius: 5px;
+  padding-top: 30px;
+  box-shadow: 0 10px 30px 0#21252b;
+  position: relative;
 }
 
-.markdown-body-dark pre code {
-  display: inline;
-  max-width: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  line-height: inherit;
-  word-wrap: normal;
-  background-color: initial;
-  border: 0;
+.markdown-body-dark pre:not(.devoong-cd-block)::before {
+  background: #fc625d;
+  border-radius: 50%;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  content: " ";
+  height: 12px;
+  left: 12px;
+  margin-top: -20px;
+  position: absolute;
+  width: 12px;
 }
 
 .markdown-body-dark .commit-tease-sha {
