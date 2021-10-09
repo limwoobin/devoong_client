@@ -21,7 +21,6 @@ export default function MarkdownRender({data , isLoading}: IMarkdownRender) {
 				<article className="markdown-body-dark">
 					<ReactMarkdown 
 						children={data}
-						// remarkPlugins={[[remarkGfm , { singleTilde: false }]]}
 						remarkPlugins={[remarkGfm , remarkSlug , remarkToc]}
 						rehypePlugins={[rehypeRaw]}
 						components={{

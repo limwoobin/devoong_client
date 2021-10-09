@@ -653,6 +653,7 @@
   padding: 0 1em;
   color: #a8a8a8;
   border-left: 0.25em solid #888888;
+  background-color: rgba(0, 0, 75, 0.1);
 }
 
 .markdown-body-dark blockquote > :first-child {
