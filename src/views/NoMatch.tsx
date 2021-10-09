@@ -22,7 +22,7 @@ export default function NoMatch() {
 		<React.Fragment>
 			<CssBaseline />
 			<Container maxWidth="md">
-				<img src="public/devoong-404.png" style={imageStyle} />
+				<img src="https://user-images.githubusercontent.com/28802545/136648906-a00b4a7a-d8ea-43e8-a3be-da8f9a68d950.png" style={imageStyle} />
 				<Link to="/" style={{ textDecoration: 'none' }}>
 					<button color="teal" className="homeBtn" style={homeBtnStyle}>Home</button>
 				</Link>
