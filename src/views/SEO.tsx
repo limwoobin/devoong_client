@@ -21,17 +21,6 @@ export default function SEO() {
 				<meta property="og:url" content={url} data-react-helmet="true" />
 				<meta property="og:image" content={image} data-react-helmet="true" />
 			</Helmet>
-			{/* <Helmet
-				title={title}
-				meta={[
-					{"name": "description" , "content": description},
-					{property: "og:title" , "content": title},
-					{property: "og:type" , "content": "website"},
-					{property: "og:description" , "content": description},
-					{property: "og:url" , "content": url},
-					{property: "og:image" , "content": image},
-				]}
-			/> */}
 		</div>
 	);
 }
