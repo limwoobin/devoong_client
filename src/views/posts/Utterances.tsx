@@ -13,8 +13,7 @@ export default function Utterances() {
 			src,
 			repo,
 			'issue-term': 'pathname',
-			theme: 'github-dark',
-			// theme: 'github-light',
+			theme: 'github-dark-orange',
 			crossorigin: 'anonymous',
 			async: 'true',
 		};

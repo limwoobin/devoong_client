@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
 const path = require('path');
 const dotenv = require('dotenv');
 const TerserPlugin = require("terser-webpack-plugin");
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env , options) => {
     dotenv.config({
@@ -111,6 +112,7 @@ module.exports = (env , options) => {
                 'process.env.REACT_APP_BASE_URL': JSON.stringify(process.env.REACT_APP_BASE_URL),
             }),
             new webpack.EnvironmentPlugin(['REACT_APP_BASE_URL']),
+            // new BundleAnalyzerPlugin(),
         ],
         devServer: {
             port: port,
