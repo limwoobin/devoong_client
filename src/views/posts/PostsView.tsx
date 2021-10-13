@@ -54,7 +54,7 @@ export default function PostsView({data , isLoading , errorData}: IPostsView) {
 					<CssBaseline />
 					<Container maxWidth="md">
 						<RenderTags tags={tags} />
-						<Typography component="div" style={{ height: '100vh' , paddingTop: '3rem' }}>
+						<Typography component="div" style={{ height: '100vh' }}>
 							<TitleView title={data.title!} />
 							<MarkdownRender data={data.contents!} isLoading={true} />
 							<Blank />

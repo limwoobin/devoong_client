@@ -34,7 +34,7 @@ const PcMainView = () => {
 const MobileMainView = () => {
 	return <div>
 					{/* <TagsLayoutContainer /> */}
-					<LatestPostsContainer />
+					{/* <LatestPostsContainer /> */}
 					<Router />
 				 </div>;
 };
