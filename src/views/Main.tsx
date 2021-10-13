@@ -8,33 +8,21 @@ import './main.scss';
 
 export default function Main() {
 const isPc = useMediaQuery({query: constants.MIN_WIDTH});
-const isMobile = useMediaQuery({query: constants.MAX_WIDTH});
-
 	return (
 		<>
-				{isPc && <PcMainView />}
-				{isMobile && <MobileMainView />}
+			<div className="lpgbkm">
+				<div className="BAccj">
+					<Router />
+				</div>
+				{isPc 
+					? <div>
+						<TagsLayoutContainer />
+						<LatestPostsContainer />
+						<Socials />
+					</div>
+					: '' 
+				}
+			</div>;
 		</>
 	);
 }
-
-const PcMainView = () => {
-	return <div className="lpgbkm">
-						<div className="BAccj">
-							<Router />
-						</div>
-						<div>
-							<TagsLayoutContainer />
-							<LatestPostsContainer />
-							<Socials />
-						</div>
-					</div>;
-};
-
-const MobileMainView = () => {
-	return <div>
-					{/* <TagsLayoutContainer /> */}
-					{/* <LatestPostsContainer /> */}
-					<Router />
-				 </div>;
-};
