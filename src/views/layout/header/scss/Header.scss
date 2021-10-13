@@ -24,6 +24,21 @@
   }
 }
 
+@media (max-width: 767px) {
+  .head_category {
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    p {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+  }
+}
+
 .btn_test_style {
   padding-left: 10px;
   margin-right: 2%;
@@ -87,6 +102,10 @@
 
 .menu_item {
   color: black;
+  font-weight: bold;
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .searchArea {

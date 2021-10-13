@@ -1,4 +1,5 @@
 export type HeaderModel = {
 	path: string,
-	value: string
+	value: string,
+	icon: any
 };

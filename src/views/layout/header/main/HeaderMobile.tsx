@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 import '../scss/header.scss';
 
@@ -31,7 +30,8 @@ function headerBtns (headers: HeaderModel[]) {
 										style={{ textDecoration: 'none'}}
 								>
 									<ListItem button key={c.value}>
-											<ListItemText primary={c.value} className="menu_item" />
+										<c.icon style={{color: 'gray'}} />&nbsp;&nbsp;&nbsp;
+										<h4 style={{color: 'gray'}}>{c.value}</h4>
 									</ListItem>
 								</Link>;
 							})}
@@ -83,7 +83,7 @@ export default function HeaderMobile({headers}: HeaderProps) {
 	return (
 		<>
 			<div className="menu_btn">
-				<IconButton onClick={toggleDrawer('top' , true)} className="menu_btn" color="primary" aria-label="menu">
+				<IconButton onClick={toggleDrawer('top' , true)} color="primary">
 					<MenuIcon />
 				</IconButton>
 				<CustomDrawer anchor="top" open={state.top} onClose={toggleDrawer('top' , false)}>
