@@ -19,7 +19,10 @@ import Container from '@material-ui/core/Container';
 const useStyles = makeStyles((theme) => ({
 	paper: {
 		padding: '6px 16px',
-		backgroundColor: '#6799FF',
+		color: 'white',
+		backgroundColor: 'transparent',
+		border: 0,
+		outline: 0,
 	},
 }));
 
@@ -55,7 +58,7 @@ function renderArchivesGroup(data: ArchiveGroupModel[]) {
 function renderArchives(data: ArchiveModel[]) {
 	if (data !== undefined) {
 		return data.map((archive: ArchiveModel , index: number) => (
-			<Link key={index} to={`/posts/${archive.id}`} style={{ color: 'white' }}>
+			<Link key={index} to={`/posts/${archive.id}`} style={{ color: 'white' , textDecoration: 'none' }}>
 				<ArchiveBox key={index} title={ `${archive.title} (${archive.createdDate})` } />
 			</Link>
 		));

@@ -7,7 +7,7 @@ const useStyles = makeStyles(() =>
 		root: {
 			backgroundColor: '#858585',
 			fontWeight: 'bold',
-			fontSize: '15px',
+			fontSize: '1rem',
 			color: 'white',
 			marginBottom: '8px',
 			marginTop: '5px',
@@ -26,7 +26,7 @@ export default function ArchiveBox(props: IArchiveBox) {
 
 	return (
 		<>
-			<Box className={classes.root} p={0.1}>
+			<Box className={classes.root} p={1}>
 				<div style={{ marginLeft: '20px' }}>
 					{title}
 				</div>
