@@ -4,6 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { PostsModel, TagsModel, PostsCard, ErrorModel } from '@/models';
+import { DateUtils } from '@/core/utils';
+import { DateType } from '@/core/enums';
 import Utterances from './Utterances';
 import PostsBox from './PostsBox';
 import { Direction } from '@/core/enums';
@@ -56,6 +58,9 @@ export default function PostsView({data , isLoading , errorData}: IPostsView) {
 						<RenderTags tags={tags} />
 						<Typography component="div" style={{ height: '100vh' }}>
 							<TitleView title={data.title!} />
+							<h4 style={{ color: 'white' }}>
+								{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , data.createdDate)}
+							</h4>
 							<MarkdownRender data={data.contents!} isLoading={true} />
 							<Blank />
 							{renderPreviousAndNextPosts(data.previousPostsCard! , data.nextPostsCard!)}
