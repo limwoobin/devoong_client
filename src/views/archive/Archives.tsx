@@ -7,7 +7,6 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { Progress } from '@/views/common';
 import { ArchiveGroupModel , ArchiveModel } from '@/models';
@@ -16,32 +15,19 @@ import { TitleView } from '@/views/common';
 import ArchiveBox from './ArchivesBox';
 import Container from '@material-ui/core/Container';
 
-const useStyles = makeStyles((theme) => ({
-	paper: {
-		padding: '6px 16px',
-		color: 'white',
-		backgroundColor: 'transparent',
-		border: 0,
-		outline: 0,
-	},
-}));
-
 interface IArchives {
 	data: ArchiveGroupModel[];
 	isLoading: boolean;
 }
 
 function renderArchivesGroup(data: ArchiveGroupModel[]) {
-	const classes = useStyles();
 	if (data !== undefined) {
 		return data.map((archive: ArchiveGroupModel , index: number) => (
 			<TimelineItem key={index}>
 				<TimelineOppositeContent>
-					<Paper className={classes.paper} variant="outlined">
-						<Typography variant="h6" component="h1" style={{ fontWeight: 'bold' }}>
-							{archive.createdYear} ({archive.archives.length})
-						</Typography>
-					</Paper>
+					<Typography variant="h6" component="h1" style={{ fontWeight: 'bold' }}>
+						{archive.createdYear} ({archive.archives.length})
+					</Typography>
 				</TimelineOppositeContent>
 				<TimelineSeparator>
 					<TimelineDot />
@@ -51,9 +37,10 @@ function renderArchivesGroup(data: ArchiveGroupModel[]) {
 					{renderArchives(archive.archives)}
 				</TimelineContent>
 			</TimelineItem>
-	));
+		));
+	}
 }
-}
+
 
 function renderArchives(data: ArchiveModel[]) {
 	if (data !== undefined) {
