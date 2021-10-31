@@ -1,19 +1,28 @@
+h1,
+h2,
 h3,
 h4,
 span {
   color: white;
+  font-family: "BMJUA";
 }
 
 ul li {
   color: white;
+  font-family: "BMJUA";
 }
 
 ol li {
   color: white;
+  font-family: "BMJUA";
 }
 
 li::marker {
   color: white;
+}
+
+.markdown-body-dark p {
+  font-family: "BMJUA";
 }
 
 .markdown-body-dark .octicon {

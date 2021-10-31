@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			color: 'white',
 			marginBottom: '25px',
 			marginTop: '20px',
+			fontFamily: 'BMJUA',
 		}
 	})
 );

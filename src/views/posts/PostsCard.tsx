@@ -43,11 +43,13 @@ export default function PostsCard(props: any) {
 					</Link>
 					<CardContent>
 						<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
-							<b>{post.title}</b>
+							<b style={{ fontFamily: 'BMJUA' }}>{post.title}</b>
 						</Typography>
 						<div style={{ height: '20px' }}></div>
 						<Typography variant="body1" color="textPrimary" component="p">
-							{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
+							<span>
+								{DateUtils.convertDate(DateType.YEAR_MONTH_DATE , post.createdDate)}
+							</span>
 						</Typography>
 						<div style={{ paddingTop: '15px' }}>
 							{post.tagsResponseList 
