@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 export default function SEO() {
 	const title = 'Devoong';
-	const description = 'Devoong 의 개발 blog';
+	const description = 'Devoong 의 Programming blog';
 	const url = 'https://www.devoong.com';
 	const image = 'https://user-images.githubusercontent.com/28802545/134803711-b1d37a77-0b43-48cb-bafb-2b40057d86b5.png';
 
