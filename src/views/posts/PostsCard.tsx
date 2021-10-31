@@ -43,7 +43,7 @@ export default function PostsCard(props: any) {
 					</Link>
 					<CardContent>
 						<Typography gutterBottom variant="h5" component="h2" style={{ color: 'black' }}>
-							{post.title}
+							<b>{post.title}</b>
 						</Typography>
 						<div style={{ height: '20px' }}></div>
 						<Typography variant="body1" color="textPrimary" component="p">

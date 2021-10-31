@@ -1,3 +1,21 @@
+h3,
+h4,
+span {
+  color: white;
+}
+
+ul li {
+  color: white;
+}
+
+ol li {
+  color: white;
+}
+
+li::marker {
+  color: white;
+}
+
 .markdown-body-dark .octicon {
   display: inline-block;
   fill: currentColor;
@@ -253,7 +271,8 @@
 
 .markdown-body-dark p {
   margin-top: 0;
-  margin-bottom: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .markdown-body-dark blockquote {
@@ -331,7 +350,8 @@
 }
 
 .markdown-body-dark .text-gray-light {
-  color: #6a737d !important;
+  /* color: #6a737d !important; */
+  color: white !important;
 }
 
 .markdown-body-dark .mb-0 {
@@ -834,7 +854,7 @@
   background: #21252b;
   border-radius: 5px;
   padding-top: 30px;
-  box-shadow: 0 10px 30px 0#21252b;
+  /* box-shadow: 0 10px 30px 0#21252b; */
   position: relative;
 }
 

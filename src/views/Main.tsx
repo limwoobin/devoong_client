@@ -16,10 +16,10 @@ const isPc = useMediaQuery({query: constants.MIN_WIDTH});
 				</div>
 				{isPc 
 					? <div>
-						<TagsLayoutContainer />
-						<LatestPostsContainer />
-						<Socials />
-					</div>
+							<TagsLayoutContainer />
+							<LatestPostsContainer />
+							<Socials />
+						</div>
 					: '' 
 				}
 			</div>;
