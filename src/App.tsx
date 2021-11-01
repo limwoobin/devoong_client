@@ -5,10 +5,11 @@ import './styles/style.scss';
 import Main from '@/views/Main';
 import Container from '@material-ui/core/Container';
 import SEO from './views/SEO';
+import '@/static/fonts/font.css';
 
 export default function App() {
 	return (
-		<div style={{backgroundColor: '#363636'}}>
+		<div style={{backgroundColor: '#363636' , fontFamily: "BMJUA"}}>
 			<SEO />
 			<Router>
 				<Header />

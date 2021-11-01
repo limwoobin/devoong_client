@@ -9,9 +9,6 @@ import {
 	TagsRouter,
 	ArchiveContainer
 } from '@/page/pages';
-import '@/static/fonts/font.css';
-
-// font-family: -apple-system,"Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
 
 const MainDiv = styled.div`
 	font-family: BMJUA;

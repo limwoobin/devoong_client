@@ -8,7 +8,7 @@ export default function SubHeader() {
 			<header className="sub_head">
 				<div className="sub_head_area">
 					<div className="main_text">
-						<a href="/" style={{ textDecoration: 'none' }}>
+						<a href="/" style={{ textDecoration: 'none' , fontFamily: "BMJUA"}}>
 							Devoong
 						</a>
 					</div>
