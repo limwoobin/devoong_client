@@ -21,6 +21,10 @@ li::marker {
   color: white;
 }
 
+.markdown-body-dark blockquote {
+  font-family: "BMJUA";
+}
+
 .markdown-body-dark p {
   font-family: "BMJUA";
 }

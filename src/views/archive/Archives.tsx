@@ -25,7 +25,7 @@ function renderArchivesGroup(data: ArchiveGroupModel[]) {
 		return data.map((archive: ArchiveGroupModel , index: number) => (
 			<TimelineItem key={index}>
 				<TimelineOppositeContent>
-					<Typography variant="h6" component="h1" style={{ fontWeight: 'bold' }}>
+					<Typography variant="h6" component="h1" style={{ fontWeight: 'bold' , fontFamily: 'BMJUA' }}>
 						{archive.createdYear} ({archive.archives.length})
 					</Typography>
 				</TimelineOppositeContent>
