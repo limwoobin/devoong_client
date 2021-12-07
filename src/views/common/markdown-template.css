@@ -137,9 +137,15 @@ li::marker {
 }
 
 @media (max-width: 767px) {
+  .markdown-body-dark {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
   .markdown-body-dark pre {
-    font-family: monospace, monospace;
-    font-size: 0.85rem;
+    width: 85vw;
+    font-size: 0.75rem;
   }
 }
 

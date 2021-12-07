@@ -4,7 +4,6 @@ import Container from '@material-ui/core/Container';
 import { Progress , TitleView } from '@/views/common';
 import { PageModel, PostsModel } from '@/models';
 import PostsCard from './PostsCard';
-import { CustomModal } from '@/views/common';
 
 function renderPosts(posts: PostsModel[]) {
 	if (posts) {
@@ -29,10 +28,6 @@ interface IPostsList {
 	isLoading: boolean;
 	name?: string;
 }
-
-const action = () => {
-	window.location.href = "/about";
-};
 
 export default function PostsList(props: IPostsList) {
 	const { data , isLoading , name } = props;
