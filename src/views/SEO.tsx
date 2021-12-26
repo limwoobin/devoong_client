@@ -1,25 +1,28 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-export default function SEO() {
-	const title = 'Devoong';
-	const description = 'Devoong 의 Programming blog';
-	const url = 'https://www.devoong.com';
-	const image = 'https://user-images.githubusercontent.com/28802545/134803711-b1d37a77-0b43-48cb-bafb-2b40057d86b5.png';
+interface SeoProps {
+	title: string;
+	description: string;
+	url: string;
+	image: string;
+}
 
+
+export default function SEO(props: SeoProps) {
 	return (
 		<div>
 			<Helmet>
-				<title>{title}</title>
+				<title>{props.title}</title>
 				<meta charSet="utf-8" />
-				<meta name="description" content={description} data-react-helmet="true" />
-				<meta name="url" content={url} data-react-helmet="true" />
-				<meta name="image" content={image} data-react-helmet="true" />
-				<meta property="og:title" content={title} data-react-helmet="true" />
+				<meta name="description" content={props.description} data-react-helmet="true" />
+				<meta name="url" content={props.url} data-react-helmet="true" />
+				<meta name="image" content={props.image} data-react-helmet="true" />
+				<meta property="og:title" content={props.title} data-react-helmet="true" />
 				<meta property="og:type" content="website" data-react-helmet="true" />
-				<meta property="og:description" content={description} data-react-helmet="true" />
-				<meta property="og:url" content={url} data-react-helmet="true" />
-				<meta property="og:image" content={image} data-react-helmet="true" />
+				<meta property="og:description" content={props.description} data-react-helmet="true" />
+				<meta property="og:url" content={props.url} data-react-helmet="true" />
+				<meta property="og:image" content={props.image} data-react-helmet="true" />
 			</Helmet>
 		</div>
 	);
