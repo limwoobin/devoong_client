@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import Progress from './Progress';
 import './markdown-template.css';
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { duotoneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import remarkToc from 'remark-toc';
@@ -29,7 +29,7 @@ export default function MarkdownRender({data , isLoading}: IMarkdownRender) {
 								return (
 										<SyntaxHighlighter
 											className="devoong-cd-block"
-											style={atomDark}
+											style={duotoneDark}
 											language={language}
 											children={children[0]}
 											showLineNumbers={true}
