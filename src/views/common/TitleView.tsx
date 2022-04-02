@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			fontWeight: 'bold',
 			fontSize: '25px',
 			color: 'white',
-			marginBottom: '25px',
+			marginBottom: '20px',
 			marginTop: '20px',
 			fontFamily: 'BMJUA',
 		}
@@ -27,7 +27,9 @@ export default function TitleView(props: ITitleView) {
 	return (
 		<>
 			<Box className={classes.root} p={2}>
-				{title}
+				<div style={{ marginTop: '7px' }}>
+					{title}
+				</div>
 			</Box>
 		</>
 	);
